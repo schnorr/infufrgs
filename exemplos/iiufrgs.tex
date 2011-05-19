@@ -1,48 +1,48 @@
 %
-% exemplo genÈrico de uso da classe iiufrgs.cls
+% exemplo gen√©rico de uso da classe iiufrgs.cls
 % $Id: iiufrgs.tex,v 1.1.1.1 2005/01/18 23:54:42 avila Exp $
 %
 % This is an example file and is hereby explicitly put in the
 % public domain.
 %
 \documentclass[diss]{iiufrgs}
-% um tipo especÌfico de monografia pode ser informado como par‚metro opcional:
+% um tipo espec√≠fico de monografia pode ser informado como par√¢metro opcional:
 %\documentclass[tese]{iiufrgs}
-% monografias em inglÍs devem receber o par‚metro `english':
+% monografias em ingl√™s devem receber o par√¢metro `english':
 %\documentclass[diss,english]{iiufrgs}
-% a opÁ„o `openright' pode ser usada para forÁar inÌcios de capÌtulos
-% em p·ginas Ìmpares
+% a op√ß√£o `openright' pode ser usada para for√ßar in√≠cios de cap√≠tulos
+% em p√°ginas √≠mpares
 % \documentclass[openright]{iiufrgs}
-% para gerar uma vers„o somente-frente, basta utilizar a opÁ„o `oneside':
+% para gerar uma vers√£o somente-frente, basta utilizar a op√ß√£o `oneside':
 % \documentclass[oneside]{iiufrgs}
 \usepackage[T1]{fontenc}        % pacote para conj. de caracteres correto
-\usepackage[latin1]{inputenc}   % pacote para acentuaÁ„o
+\usepackage[utf8]{inputenc}   % pacote para acentua√ß√£o
 \usepackage{graphicx}           % pacote para importar figuras
 \usepackage{times}              % pacote para usar fonte Adobe Times
-%\usepackage{mathptmx}          % p/ usar fonte Adobe Times nas fÛrmulas
+%\usepackage{mathptmx}          % p/ usar fonte Adobe Times nas f√≥rmulas
 
 %
-% InformaÁıes gerais
+% Informa√ß√µes gerais
 %
-\title{Um Exemplo de Monografia do Instituto de Inform·tica da UFRGS}
+\title{Um Exemplo de Monografia do Instituto de Inform√°tica da UFRGS}
 
 \author{Flaumann}{Fritz Gutenberg}
 % alguns documentos podem ter varios autores:
 %\author{Flaumann}{Frida Gutenberg}
 %\author{Flaumann}{Klaus Gutenberg}
 
-% orientador e co-orientador s„o opcionais (n„o diga isso pra eles :))
+% orientador e co-orientador s√£o opcionais (n√£o diga isso pra eles :))
 \advisor[Prof.~Dr.]{Lamport}{Leslie}
 %\coadvisor[Prof.~Dr.]{Knuth}{Donald Ervin}
 
-% a data deve ser a da defesa; se nao especificada, s„o gerados
+% a data deve ser a da defesa; se nao especificada, s√£o gerados
 % mes e ano correntes
 %\date{maio}{2001}
 
 % o nome do curso pode ser redefinido (ex. para TCs)
-%\course{Curso de EspecializaÁ„o em CachaÁa}
+%\course{Curso de Especializa√ß√£o em Cacha√ßa}
 
-% o local de realizaÁ„o do trabalho pode ser especificado (ex. para TCs)
+% o local de realiza√ß√£o do trabalho pode ser especificado (ex. para TCs)
 % com o comando \location:
 %\location{Itaquaquecetuba}{SP}
 
@@ -65,10 +65,10 @@
 % \renewcommand{\nominataChefeINT}{Prof.~Leila Ribeiro}
 % \renewcommand{\nominataChefeINTname}{Chefe do \deptINT}
 
-% A seguir s„o apresentados comandos especÌficos para alguns
+% A seguir s√£o apresentados comandos espec√≠ficos para alguns
 % tipos de documentos.
 
-% RelatÛrio de Pesquisa [rp]:
+% Relat√≥rio de Pesquisa [rp]:
 % \rp{123}             % numero do rp
 % \financ{CNPq, CAPES} % orgaos financiadores
 
@@ -76,29 +76,29 @@
 % \ti{123}     % numero do TI
 % \ti[II]{456} % no caso de ser o segundo TI
 
-% Trabalho de Conclus„o [tc]:
-% alÈm de definir explicitamente o nome do curso (\course) e o local
-% de realizaÁ„o (\location), È necess·rio redefinir a nominata,
-% pois as informaÁıes necess·rias dependem do curso. Ex.:
+% Trabalho de Conclus√£o [tc]:
+% al√©m de definir explicitamente o nome do curso (\course) e o local
+% de realiza√ß√£o (\location), √© necess√°rio redefinir a nominata,
+% pois as informa√ß√µes necess√°rias dependem do curso. Ex.:
 %\renewcommand{\nominata}{
 %        UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL\\
 %        Reitora: Prof\textsuperscript{a}.~Wrana Maria Panizzi\\
-%        PrÛ-Reitor de Ensino: Prof.~JosÈ Carlos Ferraz Hennemann\\
-%        Diretor do Instituto de Inform·tica: Prof.~Philippe Olivier Alexandre Navaux\\
+%        Pr√≥-Reitor de Ensino: Prof.~Jos√© Carlos Ferraz Hennemann\\
+%        Diretor do Instituto de Inform√°tica: Prof.~Philippe Olivier Alexandre Navaux\\
 %        Coordenador do curso: Prof.~Seu Creysson\\
-%        Bibliotec·ria-chefe do Instituto de Inform·tica: Beatriz Regina Bastos Haro
+%        Bibliotec√°ria-chefe do Instituto de Inform√°tica: Beatriz Regina Bastos Haro
 %}
 
-% Monografias de EspecializaÁ„o [espec]:
-% \espec{Redes e Sistemas DistribuÌdos}      % nome do curso
+% Monografias de Especializa√ß√£o [espec]:
+% \espec{Redes e Sistemas Distribu√≠dos}      % nome do curso
 % \coord[Profa.~Dra.]{Weber}{Taisy da Silva} % coordenador do curso
 % \dept{INA}                                 % departamento relacionado
 
 %
 % palavras-chave
-% iniciar todas com letras min˙sculas, exceto no caso de abreviaturas
+% iniciar todas com letras min√∫sculas, exceto no caso de abreviaturas
 %
-\keyword{formataÁ„o eletrÙnica de documentos}
+\keyword{formata√ß√£o eletr√¥nica de documentos}
 \keyword{\LaTeX}
 \keyword{ABNT}
 \keyword{UFRGS}
@@ -109,7 +109,7 @@
 \begin{document}
 
 % folha de rosto
-% ‡s vezes È necess·rio redefinir algum comando logo antes de produzir
+% √†s vezes √© necess√°rio redefinir algum comando logo antes de produzir
 % a folha de rosto:
 % \renewcommand{\coordname}{Coordenadora do Curso}
 \maketitle
@@ -126,7 +126,7 @@ it is because I stood on the shoulders of giants.''\\}
 
 % agradecimentos
 \chapter*{Agradecimentos}
-AgradeÁo ao \LaTeX\ por n„o ter vÌrus de macro\ldots
+Agrade√ßo ao \LaTeX\ por n√£o ter v√≠rus de macro\ldots
 
 % sumario
 \tableofcontents
@@ -138,13 +138,13 @@ AgradeÁo ao \LaTeX\ por n„o ter vÌrus de macro\ldots
         \item[NUMA] Non-Uniform Memory Access
         \item[SIMD] Single Instruction Multiple Data
         \item[SPMD] Single Program Multiple Data
-        \item[ABNT] AssociaÁ„o Brasileira de Normas TÈcnicas
+        \item[ABNT] Associa√ß√£o Brasileira de Normas T√©cnicas
 \end{listofabbrv}
 
-% idem para a lista de sÌmbolos
+% idem para a lista de s√≠mbolos
 %\begin{listofsymbols}{$\alpha\beta\pi\omega$}
-%       \item[$\sum{\frac{a}{b}}$] SomatÛrio do produtÛrio
-%       \item[$\alpha\beta\pi\omega$] Fator de inconst‚ncia do resultado
+%       \item[$\sum{\frac{a}{b}}$] Somat√≥rio do produt√≥rio
+%       \item[$\alpha\beta\pi\omega$] Fator de inconst√¢ncia do resultado
 %\end{listofsymbols}
 
 % lista de figuras
@@ -153,18 +153,18 @@ AgradeÁo ao \LaTeX\ por n„o ter vÌrus de macro\ldots
 % lista de tabelas
 %\listoftables
 
-% resumo na lÌngua do documento
+% resumo na l√≠ngua do documento
 \begin{abstract}
-Este documento È um exemplo de como formatar documentos para o
-Instituto de Inform·tica da UFRGS usando as classes \LaTeX\
+Este documento √© um exemplo de como formatar documentos para o
+Instituto de Inform√°tica da UFRGS usando as classes \LaTeX\
 disponibilizadas pelo UTUG\@. Ao mesmo tempo, pode servir de consulta
-para comandos mais genÈricos. \emph{O texto do resumo n„o deve
+para comandos mais gen√©ricos. \emph{O texto do resumo n√£o deve
 conter mais do que 500 palavras.}
 \end{abstract}
 
-% resumo na outra lÌngua
+% resumo na outra l√≠ngua
 % como parametros devem ser passados o titulo e as palavras-chave
-% na outra lÌngua, separadas por vÌrgulas
+% na outra l√≠ngua, separadas por v√≠rgulas
 \begin{englishabstract}{Using \LaTeX\ to Prepare Documents at II/UFRGS}{Electronic document preparation, \LaTeX, ABNT, UFRGS}
 This document is an example on how to prepare documents at II/UFRGS
 using the \LaTeX\ classes provided by the UTUG\@. At the same time, it
@@ -175,22 +175,22 @@ the abstract should not contain more than 500~words.}
 % aqui comeca o texto propriamente dito
 
 % introducao
-\chapter{IntroduÁ„o}
-No inÌcio dos tempos, Donald E. Knuth criou o \TeX. Algum tempo depois, Leslie Lamport criou o \LaTeX. GraÁas a eles, n„o somos obrigados a usar o Word nem o StarOffice.
+\chapter{Introdu√ß√£o}
+No in√≠cio dos tempos, Donald E. Knuth criou o \TeX. Algum tempo depois, Leslie Lamport criou o \LaTeX. Gra√ßas a eles, n√£o somos obrigados a usar o Word nem o StarOffice.
 
 \section{Figuras e tabelas}
-Esta seÁ„o faz referÍncia ‡s Figuras~\ref{fig:ex1} e~\ref{fig:ex2}, a tÌtulo de exemplo. A primeira representa o caso mais comum, onde a figura propriamente dita È importada de um arquivo \texttt{.eps} (aplicativos como \emph{xfig} e \emph{dia} est„o entre os mais usados para gerar figuras no formato \texttt{.eps}). A segunda exemplifica o uso do environment \texttt{picture}, para desenhar usando o prÛprio~\LaTeX.
+Esta se√ß√£o faz refer√™ncia √†s Figuras~\ref{fig:ex1} e~\ref{fig:ex2}, a t√≠tulo de exemplo. A primeira representa o caso mais comum, onde a figura propriamente dita √© importada de um arquivo \texttt{.eps} (aplicativos como \emph{xfig} e \emph{dia} est√£o entre os mais usados para gerar figuras no formato \texttt{.eps}). A segunda exemplifica o uso do environment \texttt{picture}, para desenhar usando o pr√≥prio~\LaTeX.
 
 \begin{figure}
         \centerline{\includegraphics[width=8em]{fig.eps}}
-        \caption{Exemplo de figura importada de um arquivo \texttt{.eps} e tambÈm exemplo de caption muito grande que ocupa mais de uma linha na Lista de~Figuras}
+        \caption{Exemplo de figura importada de um arquivo \texttt{.eps} e tamb√©m exemplo de caption muito grande que ocupa mais de uma linha na Lista de~Figuras}
         \label{fig:ex1}
 \end{figure}
 
-% o `[h]' abaixo È um par‚metro opcional que sugere que o LaTeX coloque a
+% o `[h]' abaixo √© um par√¢metro opcional que sugere que o LaTeX coloque a
 % figura exatamente neste ponto do texto. Somente preocupe-se com esse tipo
-% de formataÁ„o quando o texto estiver completamente pronto (uma frase a mais
-% pode fazer o LaTeX mudar completamente de idÈia sobre onde colocar as
+% de formata√ß√£o quando o texto estiver completamente pronto (uma frase a mais
+% pode fazer o LaTeX mudar completamente de id√©ia sobre onde colocar as
 % figuras e tabelas)
 %\begin{figure}[h]
 \begin{figure}
@@ -208,42 +208,42 @@ Esta seÁ„o faz referÍncia ‡s Figuras~\ref{fig:ex1} e~\ref{fig:ex2}, a tÌtulo de 
         \label{fig:ex2}
 \end{figure}
 
-Tabelas s„o construÌdas com praticamente os mesmos comandos. Lembre-se, porÈm, que o caption das tabelas deve ir em cima.
+Tabelas s√£o constru√≠das com praticamente os mesmos comandos. Lembre-se, por√©m, que o caption das tabelas deve ir em cima.
 
-\subsection{ClassificaÁ„o dos etc.}
+\subsection{Classifica√ß√£o dos etc.}
 
-O formato adotado pela ABNT prevÍ apenas trÍs nÌveis (capÌtulo, seÁ„o e subseÁ„o). Assim, \texttt{\char'134subsubsection} n„o È aconselhado.
+O formato adotado pela ABNT prev√™ apenas tr√™s n√≠veis (cap√≠tulo, se√ß√£o e subse√ß√£o). Assim, \texttt{\char'134subsubsection} n√£o √© aconselhado.
 
-\section{Sobre as referÍncias bibliogr·ficas}
-Recomenda-se seriamente fazer uso do pacote \emph{bibabnt}, tambÈm disponibilizado na p·gina do UTUG~\citeyearpar{UTUG:Homepage-01}. Esse pacote provÍ um estilo \textsc{BibTeX} para formataÁ„o de referÍncias bibliogr·ficas combinando normas da ABNT e do Instituto de Inform·tica da UFRGS\@.
+\section{Sobre as refer√™ncias bibliogr√°ficas}
+Recomenda-se seriamente fazer uso do pacote \emph{bibabnt}, tamb√©m disponibilizado na p√°gina do UTUG~\citeyearpar{UTUG:Homepage-01}. Esse pacote prov√™ um estilo \textsc{BibTeX} para formata√ß√£o de refer√™ncias bibliogr√°ficas combinando normas da ABNT e do Instituto de Inform√°tica da UFRGS\@.
 
-As seguintes referÍncias s„o colocadas aqui a tÌtulo de exemplo:
+As seguintes refer√™ncias s√£o colocadas aqui a t√≠tulo de exemplo:
 \cite{Andrews:CP-91, Silberschatz:OSC-3-91, Wilson:MME-01}.
 
 A classe \emph{iiufrgs} faz uso do pacote \emph{natbib}. Esse pacote
 disponibiliza diversos comandos alternativos para
-citaÁıes. Os mais ˙teis para nÛs s„o o \texttt{\char'134citeyearpar},
-que produz somente o ano (ex.~``[\ldots] s„o apresentados por Baker e
+cita√ß√µes. Os mais √∫teis para n√≥s s√£o o \texttt{\char'134citeyearpar},
+que produz somente o ano (ex.~``[\ldots] s√£o apresentados por Baker e
 Smith~\citeyearpar{Baker:PP-96}.'') e o
-\texttt{\char'134citep*}, que produz a citaÁ„o com a lista
+\texttt{\char'134citep*}, que produz a cita√ß√£o com a lista
 completa de autores (ex.~``[\ldots] na linguagem Panda~\citep*{Assenmacher:Panda-ECOOP93}.'')
 
 % e aqui vai a parte principal
 %
 % \chapter{Estado da arte}
 % \chapter{Mais estado da arte}
-% \chapter{A minha contribuiÁ„o}
-% \chapter{Prova de que a minha contribuiÁ„o È v·lida}
-% \chapter{Conclus„o}
+% \chapter{A minha contribui√ß√£o}
+% \chapter{Prova de que a minha contribui√ß√£o √© v√°lida}
+% \chapter{Conclus√£o}
 
 % referencias
-% aqui ser· usado o environment padrao `thebibliography'; porÈm, sugere-se
-% seriamente o uso de BibTeX e do estilo abnt.bst (veja na p·gina do
+% aqui ser√° usado o environment padrao `thebibliography'; por√©m, sugere-se
+% seriamente o uso de BibTeX e do estilo abnt.bst (veja na p√°gina do
 % UTUG)
 %
-% observe tambÈm o estilo meio estranho de alguns labels; isso È
-% devido ao uso do pacote `natbib', que permite fazer citaÁıes de
-% autores, ano, e diversas combinaÁıes desses
+% observe tamb√©m o estilo meio estranho de alguns labels; isso √©
+% devido ao uso do pacote `natbib', que permite fazer cita√ß√µes de
+% autores, ano, e diversas combina√ß√µes desses
 \begin{thebibliography}{este-parametro-nao-eh-usado-pelo-estilo-ABNT}
 
 \bibitem[ANDREWS, 1991]{Andrews:CP-91} ANDREWS,
@@ -283,12 +283,12 @@ completa de autores (ex.~``[\ldots] na linguagem Panda~\citep*{Assenmacher:Panda
   SILBERSCHATZ, A.; PETERSON, J.~L.; GALVIN, P.~B\@. \textbf{Operating
   system concepts}. 3.ed.  Reading, USA: Addison-Wesley, 1991. 696p.
 
-\bibitem[UTUG(2001)UTUG]{UTUG:Homepage-01} UTUG\@. \textbf{P·gina do grupo
-  de usu·rios {\TeX} da {UFRGS}}. DisponÌvel em:
+\bibitem[UTUG(2001)UTUG]{UTUG:Homepage-01} UTUG\@. \textbf{P√°gina do grupo
+  de usu√°rios {\TeX} da {UFRGS}}. Dispon√≠vel em:
   $<$http://www.inf.ufrgs.br/utug$>$. Acesso em: maio 2001.
 
 \bibitem[WILSON, 2001]{Wilson:MME-01} WILSON, P.~C\@. \textbf{Um
-  mÈtodo Ûtimo para o preparo de cafÈ em laboratÛrio baseado na
+  m√©todo √≥timo para o preparo de caf√© em laborat√≥rio baseado na
   reciclagem de filtros}. 2001. 123p.  Disserta{\c{c}}{\~a}o (Mestrado
   em Ci{\^e}ncia da Computa{\c{c}}{\~a}o) --- Instituto de
   Inform{\'a}tica, Universidade Federal do Rio Grande do Sul,

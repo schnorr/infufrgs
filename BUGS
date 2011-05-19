@@ -4,5 +4,5 @@ Lista de bugs
 1) mensagem ``Underfull [...] while \output is active''
 - Registro: 2003/03/08 avila
 - Status: PENDENTE
-- Desc: a msg aparece v·rias vezes enquanto o documento est· sendo
+- Desc: a msg aparece v√°rias vezes enquanto o documento est√° sendo
   processado; aparentemente tem algo a ver com os floating bodies

@@ -1,5 +1,5 @@
 %==============================================================================
-% iiufrgs - classe de documento com padrıes do II/UFRGS
+% iiufrgs - classe de documento com padr√µes do II/UFRGS
 % $Id: iiufrgs.cls,v 1.1.1.1 2005/01/18 23:54:45 avila Exp $
 %
 % Copyright (C) 2001,2002,2003,2004,2005 UFRGS TeX Users Group
@@ -26,13 +26,13 @@
 %==============================================================================
 
 %==============================================================================
-% IdentificaÁ„o
+% Identifica√ß√£o
 %==============================================================================
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{iiufrgs}[2005/01/14 v4.3.1 Formatacao de documentos para o II/UFRGS]
 
 %==============================================================================
-% DeclaraÁ„o de opÁıes
+% Declara√ß√£o de op√ß√µes
 %==============================================================================
 \newcommand{\iiu@novodoc}[1]{\DeclareOption{#1}{\AtEndOfClass{\input{#1.def}}}}
 \iiu@novodoc{rp}
@@ -52,7 +52,7 @@
 \ProcessOptions\relax
 
 %==============================================================================
-% HeranÁa da classe `report' e inclus„o de pacotes e arquivos necess·rios
+% Heran√ßa da classe `report' e inclus√£o de pacotes e arquivos necess√°rios
 %==============================================================================
 \LoadClass[12pt,a4paper,twoside]{report}
 \RequirePackage[english,brazilian]{babel}
@@ -78,7 +78,7 @@
 
 % ajuste das medidas verticais
 \setlength{\topmargin}{\ii@pagenummargin}
-        \addtolength{\topmargin}{-1em} % isto È +- a altura do n˙m. da p·gina
+        \addtolength{\topmargin}{-1em} % isto √© +- a altura do n√∫m. da p√°gina
         \addtolength{\topmargin}{-1in}
 \setlength{\headheight}{1em}
 \setlength{\headsep}{\ii@topmargin}
@@ -99,7 +99,7 @@
         \setlength{\marginparsep}{.5\marginparsep}
 
 %==============================================================================
-% NumeraÁ„o das p·ginas
+% Numera√ß√£o das p√°ginas
 %==============================================================================
 \def\ps@iiufrgs{
         \let\@oddfoot\@empty
@@ -111,7 +111,7 @@
 \let\ps@plain\ps@empty
 
 %==============================================================================
-% DefiniÁ„o de autor(es), orientador e co-orientador
+% Defini√ß√£o de autor(es), orientador e co-orientador
 %==============================================================================
 \newcounter{ii@authorcount}
 \renewcommand{\author}[2]{
@@ -132,13 +132,13 @@
 }
 
 %==============================================================================
-% DefiniÁ„o do Departamento relacionado ao documento
+% Defini√ß√£o do Departamento relacionado ao documento
 % deve ser definido como `ina' ou `int'
 %==============================================================================
 \newcommand{\dept}[1]{\gdef\@dept{#1}}
 
 %==============================================================================
-% DefiniÁ„o das palavras-chave (m·x. 10)
+% Defini√ß√£o das palavras-chave (m√°x. 10)
 %==============================================================================
 \newcounter{kwcounter}
 \newcommand{\keyword}[1]{
@@ -171,7 +171,7 @@
 }
 
 %==============================================================================
-% RedefiniÁ„o da data (para ter mÍs e ano separados)
+% Redefini√ß√£o da data (para ter m√™s e ano separados)
 %==============================================================================
 \renewcommand{\date}[2]{
         \gdef\@publmonth{#1}
@@ -180,10 +180,10 @@
 \date{\monthname}{\number\year}
 
 %==============================================================================
-% DefiniÁ„o padr„o da folha de rosto.
-% Os dados especÌficos do tipo de trabalho (dissertaÁ„o, tese, etc.) s„o
+% Defini√ß√£o padr√£o da folha de rosto.
+% Os dados espec√≠ficos do tipo de trabalho (disserta√ß√£o, tese, etc.) s√£o
 % informados definindo-se o comando \titlepagespecificinfo. Veja os
-% arquivos .def incluÌdos com a classe.
+% arquivos .def inclu√≠dos com a classe.
 %==============================================================================
 \newlength{\titlepagewinwidth}\setlength{\titlepagewinwidth}{95mm}
 \newlength{\titlepagewinheight}\setlength{\titlepagewinheight}{64mm}
@@ -255,7 +255,7 @@
 }
 
 %==============================================================================
-% CatalogaÁ„o na fonte (CIP) e nominata
+% Cataloga√ß√£o na fonte (CIP) e nominata
 %==============================================================================
 \newcommand{\@makecippage}{%
         \clearpage%
@@ -266,7 +266,7 @@
         \vfill
         \nominata
 }
-% definiÁ„o do quadro
+% defini√ß√£o do quadro
 \def\iiu@cipwindow{%
         \framebox[120mm]{%
         \begin{minipage}{110mm}%
@@ -313,7 +313,7 @@
 }
 
 %==============================================================================
-% Ajuste do sum·rio (nada indentado) 
+% Ajuste do sum√°rio (nada indentado) 
 %==============================================================================
 \newlength{\ii@chapnumindent}\setlength{\ii@chapnumindent}{1.8em}
 \renewcommand*{\l@chapter}[2]{
@@ -326,7 +326,7 @@
         \leavevmode\bfseries\sffamily
         \advance\leftskip\@tempdima
         \hskip -\leftskip
-%      esta È a definicao original da classe report:
+%      esta √© a definicao original da classe report:
 %      #1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
         \@dottedtocline{0}{0em}{\ii@chapnumindent}{\uppercase{#1}}{#2}
 %        \@dottedtocline{0}{0em}{\ii@chapnumindent}{\MakeUppercase{#1}}{#2}
@@ -344,7 +344,7 @@
 }
 
 %==============================================================================
-% DefiniÁ„o das listas de abreviaturas e siglas e de sÌmbolos
+% Defini√ß√£o das listas de abreviaturas e siglas e de s√≠mbolos
 %==============================================================================
 \newenvironment{listofabbrv}[1]{
         \chapter*{\listabbrvname}
@@ -395,7 +395,7 @@
                 \begin{otherlanguage}{english}
         }
                 \chapter*{\abstractname}
-                % os 22ex abaixo fazem o tÌtulo em inglÍs iniciar a
+                % os 22ex abaixo fazem o t√≠tulo em ingl√™s iniciar a
                 % aproximadamente 5cm da borda superior
                 \noindent\raisebox{22ex}[0pt][0pt]{%
                        \parbox[t]{\textwidth}{\centering\textbf{#1}}
@@ -407,13 +407,13 @@
 }
 
 %==============================================================================
-% FormataÁ„o dos capÌtulos.
-% Os comandos \@chapter e \@schapter s„o redefinidos para que a
-% numeraÁ„o de p·ginas seja correta (deve aparecer somente a partir do
-% primeiro capÌtulo do texto, mas n„o nas p·ginas iniciais de
-% capÌtulos).
+% Formata√ß√£o dos cap√≠tulos.
+% Os comandos \@chapter e \@schapter s√£o redefinidos para que a
+% numera√ß√£o de p√°ginas seja correta (deve aparecer somente a partir do
+% primeiro cap√≠tulo do texto, mas n√£o nas p√°ginas iniciais de
+% cap√≠tulos).
 % Os comandos \@makechapterhead e \@makeschapterhead fazem a
-% formataÁ„o dos tÌtulos propriamente ditos.
+% formata√ß√£o dos t√≠tulos propriamente ditos.
 %==============================================================================
 \newcommand{\ii@chapterfont}{\@setfontsize\Large{16}{20}}
 \def\@chapapp{}
@@ -455,7 +455,7 @@
 \newcommand{\annex}{\appendix[\annexname]}
 
 %==============================================================================
-% FormataÁ„o das seÁıes
+% Formata√ß√£o das se√ß√µes
 %==============================================================================
 \setcounter{secnumdepth}{4}
 \renewcommand{\section}{%
@@ -475,7 +475,7 @@
 }
 
 %==============================================================================
-% RedefiniÁ„o do conte˙do das listas de figuras e tabelas
+% Redefini√ß√£o do conte√∫do das listas de figuras e tabelas
 %==============================================================================
 \newif\if@captionlisting\@captionlistingtrue
 \long\def\@caption#1[#2]#3{%
@@ -497,7 +497,7 @@
 \let\l@table\l@figure
 
 %==============================================================================
-% RedefiniÁ„o do formato de citaÁıes longas
+% Redefini√ß√£o do formato de cita√ß√µes longas
 %==============================================================================
 \renewenvironment{quote}{%
         \small%
@@ -507,7 +507,7 @@
 }
 
 %==============================================================================
-% Ajuste do formato das citaÁıes e referÍncias
+% Ajuste do formato das cita√ß√µes e refer√™ncias
 %==============================================================================
 \setlength{\bibhang}{0pt}
 \let\cite\citep

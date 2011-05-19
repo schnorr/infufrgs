@@ -1,145 +1,145 @@
-Vers„o 4.3.1 - 14/jan/2005
+Vers√£o 4.3.1 - 14/jan/2005
 ==========================
 - uso de macros babel nos nomes da area de Formais (thanks Felipe Damasio)
 - atualizacao da nominata
 
-Vers„o 4.3.0 - 20/set/2004
+Vers√£o 4.3.0 - 20/set/2004
 ==========================
-- adiÁıes do Felipe Damasio <felipewd@terra.com.br> para
-  a ·rea de Formais
+- adi√ß√µes do Felipe Damasio <felipewd@terra.com.br> para
+  a √°rea de Formais
 
-Vers„o 4.2.0 - 21/nov/2003
+Vers√£o 4.2.0 - 21/nov/2003
 ==========================
-- adaptaÁ„o do exemplo para a opcao `espec'
-- inclus„o do comando `\dept' para indicaÁ„o do depto. relacionado
-  ao documento (necess·rio p/ cursos de EspecializaÁ„o).
+- adapta√ß√£o do exemplo para a opcao `espec'
+- inclus√£o do comando `\dept' para indica√ß√£o do depto. relacionado
+  ao documento (necess√°rio p/ cursos de Especializa√ß√£o).
   Ex.: \dept{INA}
-- correÁ„o do nome do curso nos projetos de diplomaÁ„o
+- corre√ß√£o do nome do curso nos projetos de diploma√ß√£o
 - itens da nominata foram separados em comandos individuais, para
-  facilitar a alteraÁ„o
+  facilitar a altera√ß√£o
 - adicionado o tipo "espec" para Monografias dos cursos de
-  EspecializaÁ„o
-- persiste o problema da \tableofcontents com pdflatex... ele n„o
-  aceita o uso do comando \MakeUppercase na redefiniÁ„o do comando
+  Especializa√ß√£o
+- persiste o problema da \tableofcontents com pdflatex... ele n√£o
+  aceita o uso do comando \MakeUppercase na redefini√ß√£o do comando
   \l@chapter
 - corrigido posicionamento e largura das notas de margens
-- correÁ„o na titulaÁ„o dos Trabalhos de Conclus„o
+- corre√ß√£o na titula√ß√£o dos Trabalhos de Conclus√£o
 
-Vers„o 4.1.1 - 28/mai/2003
+Vers√£o 4.1.1 - 28/mai/2003
 ==========================
-- esta vers„o, na verdade, n„o existiu :-)
+- esta vers√£o, na verdade, n√£o existiu :-)
 
-Vers„o 4.1.0 - 13/mai/2003
+Vers√£o 4.1.0 - 13/mai/2003
 ==========================
-- correÁ„o da geraÁ„o das entradas dos ApÍndices e Anexos no sum·rio, agora
-  aparece a palavra "ApÍndice" ou "Anexo"
-- sum·rio e listas de figuras e tabelas n„o apresentam mais os itens dos
+- corre√ß√£o da gera√ß√£o das entradas dos Ap√™ndices e Anexos no sum√°rio, agora
+  aparece a palavra "Ap√™ndice" ou "Anexo"
+- sum√°rio e listas de figuras e tabelas n√£o apresentam mais os itens dos
   Apendices e Anexos
-- invers„o da ordem do tÌtulo em inglÍs e da indicaÁ„o "Abstract"
-- retorno ao tamanho default da indentaÁ„o dos par·grafos (+- 0,6cm)
+- invers√£o da ordem do t√≠tulo em ingl√™s e da indica√ß√£o "Abstract"
+- retorno ao tamanho default da indenta√ß√£o dos par√°grafos (+- 0,6cm)
 
-Vers„o 4.0.0 - 13/mar/2003
+Vers√£o 4.0.0 - 13/mar/2003
 ==========================
-- ajuste da indentaÁ„o dos par·grafos e listas para 1,25cm
-- corrigida falta de indentaÁ„o no 1o. par·grafo do abstract
-- adaptaÁ„o do estilo ``rp'' ao esquema da vers„o 4
-- convers„o das medidas para pt
+- ajuste da indenta√ß√£o dos par√°grafos e listas para 1,25cm
+- corrigida falta de indenta√ß√£o no 1o. par√°grafo do abstract
+- adapta√ß√£o do estilo ``rp'' ao esquema da vers√£o 4
+- convers√£o das medidas para pt
 
-Vers„o 4.0.0pre10 - 07/mar/2003
+Vers√£o 4.0.0pre10 - 07/mar/2003
 ==============================
-- abandonado o uso do geometry; como sugest„o para o futuro, evitar
-  utilizar pacotes que n„o s„o padr„o do LaTeX2e
+- abandonado o uso do geometry; como sugest√£o para o futuro, evitar
+  utilizar pacotes que n√£o s√£o padr√£o do LaTeX2e
 - oficializado uso do ``make install''
-- arquivo TO-DO-LIST transformou-se em BUGS, vamos tentar manter um histÛrico
+- arquivo TO-DO-LIST transformou-se em BUGS, vamos tentar manter um hist√≥rico
   dos bugs
 
-Vers„o 4.0.0pre9 - 03/fev/2003
+Vers√£o 4.0.0pre9 - 03/fev/2003
 ==============================
-- criaÁ„o do estilo de documento ``tc'' para Trabalho de Conclus„o (cursos
-  de especializaÁ„o)
-- definiÁ„o do comando \location para definir cidade e estado de realizaÁ„o
+- cria√ß√£o do estilo de documento ``tc'' para Trabalho de Conclus√£o (cursos
+  de especializa√ß√£o)
+- defini√ß√£o do comando \location para definir cidade e estado de realiza√ß√£o
   do trabalho (default: \location{Porto~Alegre}{RS})
-- alteraÁ„o no comando que define o curso (n„o mais \coursename; deve ser
+- altera√ß√£o no comando que define o curso (n√£o mais \coursename; deve ser
   definido com \course)
-- invertida sem‚ntica do frente-e-verso; agora o padr„o È frente-e-verso e
-  para forÁar o somente-frente deve-se incluir a opÁ„o `oneside' do
+- invertida sem√¢ntica do frente-e-verso; agora o padr√£o √© frente-e-verso e
+  para for√ßar o somente-frente deve-se incluir a op√ß√£o `oneside' do
   \documentclass
-- adequaÁ„o do exemplo ao estilo ``tc'' e correÁ„o no uso do twoside/oneside
-- removido CIP do prop-tese (n„o sei por que tinha... ??)
-- alteraÁ„o na estruturaÁ„o das informaÁıes do CIP (iiufrgs.cls mais genÈrico,
+- adequa√ß√£o do exemplo ao estilo ``tc'' e corre√ß√£o no uso do twoside/oneside
+- removido CIP do prop-tese (n√£o sei por que tinha... ??)
+- altera√ß√£o na estrutura√ß√£o das informa√ß√µes do CIP (iiufrgs.cls mais gen√©rico,
   .def mais enxuto)
 
-Vers„o 4.0.0pre8 - 14/dez/2002
+Vers√£o 4.0.0pre8 - 14/dez/2002
 ==============================
 - inclusao do pacote `natbib', que permite diversas variacoes de citacoes no
   sistema autor-data
-- adaptaÁ„o do exemplo para ilustrar o uso do natbib
-- corrigida definiÁ„o errada das margens quando do uso da opÁ„o `twoside'
+- adapta√ß√£o do exemplo para ilustrar o uso do natbib
+- corrigida defini√ß√£o errada das margens quando do uso da op√ß√£o `twoside'
 
-vers„o 4.0.0pre7 - 12/dez/2002
+vers√£o 4.0.0pre7 - 12/dez/2002
 ==============================
-- opÁ„o `twoside' n„o È mais default :(
+- op√ß√£o `twoside' n√£o √© mais default :(
 
-vers„o 4.0.0pre6 - 12/dez/2002
+vers√£o 4.0.0pre6 - 12/dez/2002
 ==============================
-- margem externa aumentada para 3cm; o texto fica difÌcil de ler com a margem
-  de 2cm definida pela norma e com espaÁamento simples
-- listas de figuras e tabelas agora apresentam dois-pontos em vez de traÁo
-- o tÌtulo em inglÍs, no abstract, foi reposicionado
-- alterados textos descritivos de dissertaÁıes e teses para caracterizar
-  apresentaÁ„o do trabalho em vez de submiss„o a avaliaÁ„o
-- pequena alteraÁ„o na folha de rosto dos TIs, invertendo a ordem das informaÁıes
-- vers„o preliminar de regras para instalaÁ„o do pacote, no Makefile
+- margem externa aumentada para 3cm; o texto fica dif√≠cil de ler com a margem
+  de 2cm definida pela norma e com espa√ßamento simples
+- listas de figuras e tabelas agora apresentam dois-pontos em vez de tra√ßo
+- o t√≠tulo em ingl√™s, no abstract, foi reposicionado
+- alterados textos descritivos de disserta√ß√µes e teses para caracterizar
+  apresenta√ß√£o do trabalho em vez de submiss√£o a avalia√ß√£o
+- pequena altera√ß√£o na folha de rosto dos TIs, invertendo a ordem das informa√ß√µes
+- vers√£o preliminar de regras para instala√ß√£o do pacote, no Makefile
 
-vers„o 4.0.0pre[1-5] - 07/dez/2002
+vers√£o 4.0.0pre[1-5] - 07/dez/2002
 ==================================
-- diversas adaptaÁıes para ficar em conformidade com as normas da ABNT e
+- diversas adapta√ß√µes para ficar em conformidade com as normas da ABNT e
   do PPGC
-- definiÁ„o do environment ``listofsymbols'', para formataÁ„o da Lista de
-  SÌmbolos; sua utilizaÁ„o È idÍntica ‡ do ``listofabbrv''
-- definiÁ„o do comando \annex, para iniciar os Anexos; seu uso È idÍntico ao
-  do \appendix, que produz os ApÍndices
-- adaptaÁ„o do environment ``quote'' para produzir a indentaÁ„o correta
-- p·ginas iniciais n„o s„o numeradas
-- numeraÁ„o das p·ginas alinhada ‡ margem externa, a 20mm do topo da folha
+- defini√ß√£o do environment ``listofsymbols'', para formata√ß√£o da Lista de
+  S√≠mbolos; sua utiliza√ß√£o √© id√™ntica √† do ``listofabbrv''
+- defini√ß√£o do comando \annex, para iniciar os Anexos; seu uso √© id√™ntico ao
+  do \appendix, que produz os Ap√™ndices
+- adapta√ß√£o do environment ``quote'' para produzir a indenta√ß√£o correta
+- p√°ginas iniciais n√£o s√£o numeradas
+- numera√ß√£o das p√°ginas alinhada √† margem externa, a 20mm do topo da folha
 - uso de `:' nas legendas de Figuras e Tabelas
-- legendas e numeraÁ„o de p·ginas em fonte menor que o texto normal
-- a impress„o deve ser feita sempre em frente e verso, portanto o par‚metro
-  ``twoside'' passa a ser padr„o na classe
+- legendas e numera√ß√£o de p√°ginas em fonte menor que o texto normal
+- a impress√£o deve ser feita sempre em frente e verso, portanto o par√¢metro
+  ``twoside'' passa a ser padr√£o na classe
 - uso do pacote ``geometry'' para lidar com as margens do documento
-- os termos que sofrem traduÁ„o s„o agora configurados usando o namedef do
-  babel (incluÌdos pelos arquivos com extens„o .babel); isso faz com que
+- os termos que sofrem tradu√ß√£o s√£o agora configurados usando o namedef do
+  babel (inclu√≠dos pelos arquivos com extens√£o .babel); isso faz com que
   eles sejam apropriadamente escolhidos quando se muda o idioma
   com os comandos do pacote
 - removidos os environments ``dedicatoria'' e ``agradecimentos''; sua formata-
-  Á„o È bastante pessoal e podem ser definidos mais facilmente com \clearpage
-  e/ou \chapter* (Obs.: ser„o mantidos temporariamente para manter a compati-
+  √ß√£o √© bastante pessoal e podem ser definidos mais facilmente com \clearpage
+  e/ou \chapter* (Obs.: ser√£o mantidos temporariamente para manter a compati-
   bilidade de documentos em desenvolvimento)
 - os tipos de documentos ``eq'', ``prop-ti'', ``relat-ic'' e ``relat-projeto''
-  e ``relat-projeto'' n„o s„o mais suportados
-- a nominata agora pode ser definida pelo usu·rio, basta redefinir o comando
-  \nominata; isto È necess·rio nos casos de TCs de cursos de especializaÁ„o
+  e ``relat-projeto'' n√£o s√£o mais suportados
+- a nominata agora pode ser definida pelo usu√°rio, basta redefinir o comando
+  \nominata; isto √© necess√°rio nos casos de TCs de cursos de especializa√ß√£o
 - as listas de figuras e de tabelas agora produzem alinhamento mais coerente
 
-vers„o 3.4.0 - 11/out/2002 - avila
-- referÍncias bibliogr·ficas agora s„o geradas com () em vez de []
-- adicionada opÁ„o "english" para permitir documentos redigidos em inglÍs; a
-  opÁ„o È nomeada dessa forma para permitir compatibilidade com o babel
-- adaptados diversos .def para o suporte a inglÍs
+vers√£o 3.4.0 - 11/out/2002 - avila
+- refer√™ncias bibliogr√°ficas agora s√£o geradas com () em vez de []
+- adicionada op√ß√£o "english" para permitir documentos redigidos em ingl√™s; a
+  op√ß√£o √© nomeada dessa forma para permitir compatibilidade com o babel
+- adaptados diversos .def para o suporte a ingl√™s
 - corrigido o alinhamento de itens na folha de rosto
 - corrigido o alinhamento dos itens da lista de tabelas
-- corrigida a numeraÁ„o dos anexos, agora s„o utilizadas somente letras
-- corrigido posicionamento do tÌtulo
+- corrigida a numera√ß√£o dos anexos, agora s√£o utilizadas somente letras
+- corrigido posicionamento do t√≠tulo
 - ativados os comandos `\subsubsection', `\paragraph' e `\subparagraph';
-  geram as subdivisoes no texto mas sem produzir entradas no sum·rio
-- removida redefiniÁ„o do comando `\chapter'; foi substituÌda pela inclus„o
-  do pacote `indentfirst' e \let do estilo de p·gina `plain' para `iiufrgs'
-  (por causa da formataÁ„o das p·ginas iniciais de capÌtulos)
-- substituÌda a criaÁ„o do label `totalpages' pela inclus„o do
+  geram as subdivisoes no texto mas sem produzir entradas no sum√°rio
+- removida redefini√ß√£o do comando `\chapter'; foi substitu√≠da pela inclus√£o
+  do pacote `indentfirst' e \let do estilo de p√°gina `plain' para `iiufrgs'
+  (por causa da formata√ß√£o das p√°ginas iniciais de cap√≠tulos)
+- substitu√≠da a cria√ß√£o do label `totalpages' pela inclus√£o do
   pacote `lastpage'
-- reestruturaÁ„o parcial do cÛdigo para facilitar a manutenÁ„o
+- reestrutura√ß√£o parcial do c√≥digo para facilitar a manuten√ß√£o
 
-versıes 3.3.0 a 3.1.0 - logs obtidos pelo CVS 
+vers√µes 3.3.0 a 3.1.0 - logs obtidos pelo CVS 
 date: 2002/06/17 16:55:40;  author: mozart;  state: Exp;  lines: +2 -2
 lista de abraviaturas sem negrito nas abreviaturas
 ----------------------------
@@ -173,7 +173,7 @@ reestruturacao da distribuicao; os arquivos estavam, originalmente, todos no dir
 versao 3.0 - 27/abr/01 - anacul, mozart, pilla, avila
 - nomes dos environments mudados para ingles
 - `resumo' e `abstract' mudados para `abstract' e `englishabstract'
-- reformulacao do CIP: agora È definido na classe principal, e os .def
+- reformulacao do CIP: agora √© definido na classe principal, e os .def
   definem a macro \@cipspecificinfo
 
 versao 2.0.1 - 30/jan/01 - avila
@@ -181,13 +181,13 @@ versao 2.0.1 - 30/jan/01 - avila
 
 versao 2.0.0 - 22/jan/01 - avila
 - troca do nome para `iiufrgs' (ack: casantos)
-- adequaÁ„o a novas normas ABNT (ex. formatacao referencias)
-- mudanÁa na definiÁ„o da lista de abreviaturas; os comandos `\listofabbr' e
-  `\abbr' foram substituÌdos por um ˙nico environment `\listadeabreviaturas'
-  onde as abreviaturas s„o colocadas diretamente com comandos `\item[abrev] desc'
-- correÁ„o na geraÁ„o do n˙mero de p·gina
-- correÁ„o nos comandos `\listoffigures' e `\listoftables' (adiÁ„o ‡ toc)
-- correÁ„o no comando \keywords
+- adequa√ß√£o a novas normas ABNT (ex. formatacao referencias)
+- mudan√ßa na defini√ß√£o da lista de abreviaturas; os comandos `\listofabbr' e
+  `\abbr' foram substitu√≠dos por um √∫nico environment `\listadeabreviaturas'
+  onde as abreviaturas s√£o colocadas diretamente com comandos `\item[abrev] desc'
+- corre√ß√£o na gera√ß√£o do n√∫mero de p√°gina
+- corre√ß√£o nos comandos `\listoffigures' e `\listoftables' (adi√ß√£o √† toc)
+- corre√ß√£o no comando \keywords
 - redefinicao do environment `thebibliography' com ligeiras alteracoes
   nos espacamentos
 

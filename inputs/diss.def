@@ -10,6 +10,6 @@
 % a look in `iiufrgs.cls' to see complete information on using, copying
 % and redistributing these files
 %
-\ProvidesFile{diss.def}[2003/02/03 Dissertação de Mestrado]
+\ProvidesFile{diss.def}[2003/02/03 DissertaÃ§Ã£o de Mestrado]
 \newcommand{\titlepagespecificinfo}{\dissspecificinfo}
 \def\@cipspecificinfo{\dissname}
