@@ -1,0 +1,227 @@
+Versão 4.3.1 - 14/jan/2005
+==========================
+- uso de macros babel nos nomes da area de Formais (thanks Felipe Damasio)
+- atualizacao da nominata
+
+Versão 4.3.0 - 20/set/2004
+==========================
+- adições do Felipe Damasio <felipewd@terra.com.br> para
+  a área de Formais
+
+Versão 4.2.0 - 21/nov/2003
+==========================
+- adaptação do exemplo para a opcao `espec'
+- inclusão do comando `\dept' para indicação do depto. relacionado
+  ao documento (necessário p/ cursos de Especialização).
+  Ex.: \dept{INA}
+- correção do nome do curso nos projetos de diplomação
+- itens da nominata foram separados em comandos individuais, para
+  facilitar a alteração
+- adicionado o tipo "espec" para Monografias dos cursos de
+  Especialização
+- persiste o problema da \tableofcontents com pdflatex... ele não
+  aceita o uso do comando \MakeUppercase na redefinição do comando
+  \l@chapter
+- corrigido posicionamento e largura das notas de margens
+- correção na titulação dos Trabalhos de Conclusão
+
+Versão 4.1.1 - 28/mai/2003
+==========================
+- esta versão, na verdade, não existiu :-)
+
+Versão 4.1.0 - 13/mai/2003
+==========================
+- correção da geração das entradas dos Apêndices e Anexos no sumário, agora
+  aparece a palavra "Apêndice" ou "Anexo"
+- sumário e listas de figuras e tabelas não apresentam mais os itens dos
+  Apendices e Anexos
+- inversão da ordem do título em inglês e da indicação "Abstract"
+- retorno ao tamanho default da indentação dos parágrafos (+- 0,6cm)
+
+Versão 4.0.0 - 13/mar/2003
+==========================
+- ajuste da indentação dos parágrafos e listas para 1,25cm
+- corrigida falta de indentação no 1o. parágrafo do abstract
+- adaptação do estilo ``rp'' ao esquema da versão 4
+- conversão das medidas para pt
+
+Versão 4.0.0pre10 - 07/mar/2003
+==============================
+- abandonado o uso do geometry; como sugestão para o futuro, evitar
+  utilizar pacotes que não são padrão do LaTeX2e
+- oficializado uso do ``make install''
+- arquivo TO-DO-LIST transformou-se em BUGS, vamos tentar manter um histórico
+  dos bugs
+
+Versão 4.0.0pre9 - 03/fev/2003
+==============================
+- criação do estilo de documento ``tc'' para Trabalho de Conclusão (cursos
+  de especialização)
+- definição do comando \location para definir cidade e estado de realização
+  do trabalho (default: \location{Porto~Alegre}{RS})
+- alteração no comando que define o curso (não mais \coursename; deve ser
+  definido com \course)
+- invertida semântica do frente-e-verso; agora o padrão é frente-e-verso e
+  para forçar o somente-frente deve-se incluir a opção `oneside' do
+  \documentclass
+- adequação do exemplo ao estilo ``tc'' e correção no uso do twoside/oneside
+- removido CIP do prop-tese (não sei por que tinha... ??)
+- alteração na estruturação das informações do CIP (iiufrgs.cls mais genérico,
+  .def mais enxuto)
+
+Versão 4.0.0pre8 - 14/dez/2002
+==============================
+- inclusao do pacote `natbib', que permite diversas variacoes de citacoes no
+  sistema autor-data
+- adaptação do exemplo para ilustrar o uso do natbib
+- corrigida definição errada das margens quando do uso da opção `twoside'
+
+versão 4.0.0pre7 - 12/dez/2002
+==============================
+- opção `twoside' não é mais default :(
+
+versão 4.0.0pre6 - 12/dez/2002
+==============================
+- margem externa aumentada para 3cm; o texto fica difícil de ler com a margem
+  de 2cm definida pela norma e com espaçamento simples
+- listas de figuras e tabelas agora apresentam dois-pontos em vez de traço
+- o título em inglês, no abstract, foi reposicionado
+- alterados textos descritivos de dissertações e teses para caracterizar
+  apresentação do trabalho em vez de submissão a avaliação
+- pequena alteração na folha de rosto dos TIs, invertendo a ordem das informações
+- versão preliminar de regras para instalação do pacote, no Makefile
+
+versão 4.0.0pre[1-5] - 07/dez/2002
+==================================
+- diversas adaptações para ficar em conformidade com as normas da ABNT e
+  do PPGC
+- definição do environment ``listofsymbols'', para formatação da Lista de
+  Símbolos; sua utilização é idêntica à do ``listofabbrv''
+- definição do comando \annex, para iniciar os Anexos; seu uso é idêntico ao
+  do \appendix, que produz os Apêndices
+- adaptação do environment ``quote'' para produzir a indentação correta
+- páginas iniciais não são numeradas
+- numeração das páginas alinhada à margem externa, a 20mm do topo da folha
+- uso de `:' nas legendas de Figuras e Tabelas
+- legendas e numeração de páginas em fonte menor que o texto normal
+- a impressão deve ser feita sempre em frente e verso, portanto o parâmetro
+  ``twoside'' passa a ser padrão na classe
+- uso do pacote ``geometry'' para lidar com as margens do documento
+- os termos que sofrem tradução são agora configurados usando o namedef do
+  babel (incluídos pelos arquivos com extensão .babel); isso faz com que
+  eles sejam apropriadamente escolhidos quando se muda o idioma
+  com os comandos do pacote
+- removidos os environments ``dedicatoria'' e ``agradecimentos''; sua formata-
+  ção é bastante pessoal e podem ser definidos mais facilmente com \clearpage
+  e/ou \chapter* (Obs.: serão mantidos temporariamente para manter a compati-
+  bilidade de documentos em desenvolvimento)
+- os tipos de documentos ``eq'', ``prop-ti'', ``relat-ic'' e ``relat-projeto''
+  e ``relat-projeto'' não são mais suportados
+- a nominata agora pode ser definida pelo usuário, basta redefinir o comando
+  \nominata; isto é necessário nos casos de TCs de cursos de especialização
+- as listas de figuras e de tabelas agora produzem alinhamento mais coerente
+
+versão 3.4.0 - 11/out/2002 - avila
+- referências bibliográficas agora são geradas com () em vez de []
+- adicionada opção "english" para permitir documentos redigidos em inglês; a
+  opção é nomeada dessa forma para permitir compatibilidade com o babel
+- adaptados diversos .def para o suporte a inglês
+- corrigido o alinhamento de itens na folha de rosto
+- corrigido o alinhamento dos itens da lista de tabelas
+- corrigida a numeração dos anexos, agora são utilizadas somente letras
+- corrigido posicionamento do título
+- ativados os comandos `\subsubsection', `\paragraph' e `\subparagraph';
+  geram as subdivisoes no texto mas sem produzir entradas no sumário
+- removida redefinição do comando `\chapter'; foi substituída pela inclusão
+  do pacote `indentfirst' e \let do estilo de página `plain' para `iiufrgs'
+  (por causa da formatação das páginas iniciais de capítulos)
+- substituída a criação do label `totalpages' pela inclusão do
+  pacote `lastpage'
+- reestruturação parcial do código para facilitar a manutenção
+
+versões 3.3.0 a 3.1.0 - logs obtidos pelo CVS 
+date: 2002/06/17 16:55:40;  author: mozart;  state: Exp;  lines: +2 -2
+lista de abraviaturas sem negrito nas abreviaturas
+----------------------------
+date: 2002/04/29 16:37:09;  author: pilla;  state: Exp;  lines: +47 -30
+Preparado para Ingles...
+----------------------------
+date: 2002/04/09 13:16:27;  author: pilla;  state: Exp;  lines: +5 -4
+Adicao do \inenglish
+----------------------------
+date: 2002/04/08 20:01:49;  author: pilla;  state: Exp;  lines: +79 -28
+Opcao inenglish
+----------------------------
+date: 2002/03/05 14:44:48;  author: avila;  state: Exp;  lines: +20 -17
+adicionado ponto no final da data na folha de rosto; adicionada nota GPL completa no iiufrgs.cls; advisor colocado como comentario no iiufrgs.tex, pois nao eh obrigatorio; atualizada lista de pendencias
+----------------------------
+date: 2002/02/22 12:24:47;  author: pilla;  state: Exp;  lines: +2 -2
+Mudado o nome do Pro-Reitor de Pos-Graduacao
+----------------------------
+date: 2001/09/02 10:21:53;  author: avila;  state: Exp;  lines: +124 -79
+possibilidade de varios autores, repetindo-se o comando \author; adicoes ao exemplo iiufrgs.tex; exemplo de carta; modificacoes na estrutura da folha de rosto e nas definicoes de margens; inclusao da GPL
+----------------------------
+date: 2001/08/14 03:12:34;  author: avila;  state: Exp;  lines: +7 -2
+adicionado modelo de relatorio de projeto
+----------------------------
+date: 2001/08/07 19:08:27;  author: pilla;  state: Exp;  lines: +5 -2
+Modelo de Proposta de Trabalho Individual.
+----------------------------
+date: 2001/08/03 17:54:23;  author: avila;  state: Exp;
+reestruturacao da distribuicao; os arquivos estavam, originalmente, todos no diretorio inicial
+
+versao 3.0 - 27/abr/01 - anacul, mozart, pilla, avila
+- nomes dos environments mudados para ingles
+- `resumo' e `abstract' mudados para `abstract' e `englishabstract'
+- reformulacao do CIP: agora é definido na classe principal, e os .def
+  definem a macro \@cipspecificinfo
+
+versao 2.0.1 - 30/jan/01 - avila
+- corrigido espacamento nos itens da toc
+
+versao 2.0.0 - 22/jan/01 - avila
+- troca do nome para `iiufrgs' (ack: casantos)
+- adequação a novas normas ABNT (ex. formatacao referencias)
+- mudança na definição da lista de abreviaturas; os comandos `\listofabbr' e
+  `\abbr' foram substituídos por um único environment `\listadeabreviaturas'
+  onde as abreviaturas são colocadas diretamente com comandos `\item[abrev] desc'
+- correção na geração do número de página
+- correção nos comandos `\listoffigures' e `\listoftables' (adição à toc)
+- correção no comando \keywords
+- redefinicao do environment `thebibliography' com ligeiras alteracoes
+  nos espacamentos
+
+versao 1.4 - 18/aug/00 - avila
+- inclusao da opcao `eq'
+
+versao 1.3 - 14/mai/00 - avila
+- inclusao da opcao `plano-doutorado'
+
+versao 1.2 - 21/feb/00 - avila
+- inclusao da opcao `relat-ic'
+- pequena redefinicao na montagem da folha de rosto
+
+versao 1.1 - 21/jan/2000 - pilla
+- inclusao da opcao 'tese' 
+
+versao 1.0 - 16/out/99 - avila
+- troca do nome para `ii-ufrgs'
+- utilizacao do pacote `babel'
+- strings sao padronizados em comandos (ex. \ufrgsname)
+- a formatacao da folha de rosto agora define o comando
+  `\titlepagespecificinfo', de modo que nos estilos especificos
+  (ti, diss, etc) nao se tenha que redefinir todo o conteudo da pagina
+
+versao 1.3 - 18/mar/99 - avila
+- ultima versao com nome `cpgcc'
+- muitos bug fix... :)
+
+versao 1.0 - 01/jul/98 - piccoli & avila
+
+===============================================
+
+Copyright (C) 2001,2002,2003,2004,2005 UFRGS TeX Users Group
+
+This file is part of the iiufrgs package, released under the GNU General
+Public License (GPL).  Please check the file `iiufrgs.cls' for information
+on copying and distributing the files in the package.

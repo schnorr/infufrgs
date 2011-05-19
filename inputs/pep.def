@@ -1,0 +1,14 @@
+%
+% UFRGS TeX Users Group
+% Institute of Informatics --- UFRGS
+% Porto Alegre, Brazil
+% http://www.inf.ufrgs.br/utug
+% Discussion list: utug-l@inf.ufrgs.br
+%
+% Copyright (C) 2001,2002 UFRGS TeX Users Group
+% This is free software, distributed under the GNU GPL; please take
+% a look in `iiufrgs.cls' to see complete information on using, copying
+% and redistributing these files
+%
+\ProvidesFile{pep.def}[2002/11/14 Plano de Estudos e Pesquisa]
+\newcommand{\titlepagespecificinfo}{Plano de Estudos e Pesquisa}

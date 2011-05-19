@@ -1,0 +1,58 @@
+%
+% UFRGS TeX Users Group
+% Institute of Informatics --- UFRGS
+% Porto Alegre, Brazil
+% http://www.inf.ufrgs.br/utug
+% Discussion list: utug-l@inf.ufrgs.br
+%
+% Copyright (C) 2004,2005 Felipe Damasio
+% This is free software, distributed under the GNU GPL; please take
+% a look in `iiufrgs.cls' to see complete information on using, copying
+% and redistributing these files
+%
+\ProvidesFile{formais.def}[2005/03/28 Definicoes para area formal]
+
+\DeclareRobustCommand{\listofdefinitions}{
+    \chapter*{\listdefname}
+    \@starttoc{lod}
+}
+
+\DeclareRobustCommand{\listoftheorems}{
+    \chapter*{\listtheoremsname}
+    \@starttoc{loth}
+}
+
+\newtheorem{envtheorem}{\theoremname}[chapter]
+\newtheorem{lemma}{\lemmaname}[chapter]
+\newtheorem{corollary}{\corollaryname}[chapter]
+\newtheorem{proposition}{\propositionname}[chapter]
+\newtheorem{envdefinition}{\definitionname}[chapter]
+\newtheorem{conjecture}{\conjecturename}[chapter]
+\newtheorem{envexample}{\examplename}[chapter]
+\newtheorem{exercise}{\exercisename}[chapter]
+\newtheorem{property}{\propertyname}[chapter]
+\newtheorem{remark}{\remarkname}[chapter]
+
+\def\squareforqed{\hbox{\rlap{$\sqcap$}$\sqcup$}}
+\def\qed{\ifmmode\squareforqed\else{\unskip\nobreak\hfil
+\penalty50\hskip1em\null\nobreak\hfil\squareforqed
+\parfillskip=0pt\finalhyphendemerits=0\endgraf}\fi}
+
+\newenvironment{proof}{\emph{\proofname:}\begin{small}}{\end{small}\qed\vskip 12pt}
+\newenvironment{example}[1]{\begin{envexample}[#1]\begin{slshape}}{\end{slshape}\end{envexample}}
+
+\newcounter{defcounter}[chapter]
+\newenvironment{definition}[1]%
+{\begin{envdefinition}[#1]%
+        \stepcounter{defcounter}
+        \addcontentsline{lod}{subsection}{\protect{\normalfont\definitionname\nobreakspace\thechapter.\arabic{defcounter}: #1}}
+}%
+{\end{envdefinition}}
+
+\newcounter{thcounter}[chapter]
+\newenvironment{theorem}[1]%
+{\begin{envtheorem}[#1]%
+        \stepcounter{thcounter}
+        \addcontentsline{loth}{subsection}{\protect{\normalfont\theoremname\nobreakspace\thechapter.\arabic{thcounter}: #1}}
+}%
+{\end{envtheorem}}
