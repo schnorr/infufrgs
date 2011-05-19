@@ -12,7 +12,7 @@
 % a look in `iiufrgs.cls' to see complete information on using, copying
 % and redistributing these files
 %
-\ProvidesFile{espec.def}[2003/11/21 Monografia de Especialização]
+\ProvidesFile{espec.def}[2003/11/21 Monografia de EspecializaÃ§Ã£o]
 \newcommand{\titlepagespecificinfo}{\especspecificinfo}
 \def\@cipspecificinfo{\especname}
 \course{Curso de Especializa{\c{c}}{\~a}o em \ii@espec}

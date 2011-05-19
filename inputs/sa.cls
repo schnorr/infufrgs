@@ -109,7 +109,7 @@
 }
 
 %==============================================================================
-% Redefinição da bibliografia
+% RedefiniÃ§Ã£o da bibliografia
 %==============================================================================
 \renewenvironment{thebibliography}[1]{
 	\section*{\MakeUppercase{\refname}}

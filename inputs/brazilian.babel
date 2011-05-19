@@ -1,5 +1,5 @@
 %
-% definições para textos em português
+% definiÃ§Ãµes para textos em portuguÃªs
 %
 % UFRGS TeX Users Group
 % Institute of Informatics --- UFRGS
@@ -64,10 +64,10 @@
 	}%
 	\def\rpname{Relat{\'o}rio de Pesquisa}%
 	\def\financname{{\'O}rg{\~a}os Financiadores}%
-	\def\especname{Monografia (especialização)}%
+	\def\especname{Monografia (especializaÃ§Ã£o)}%
 	\def\especspecificinfo{%
-		Monografia de Conclusão de Curso apresentada como
-		requisito parcial para a obtenção do grau de Especialista
+		Monografia de ConclusÃ£o de Curso apresentada como
+		requisito parcial para a obtenÃ§Ã£o do grau de Especialista
 	}%
 	\def\coordname{Coordenador do Curso}%
 }

@@ -10,7 +10,7 @@
 % a look in `iiufrgs.cls' to see complete information on using, copying
 % and redistributing these files
 %
-\ProvidesFile{rp.def}[2003/03/12 Relatório de Pesquisa]
+\ProvidesFile{rp.def}[2003/03/12 RelatÃ³rio de Pesquisa]
 \newcommand{\rp}[1]{\gdef\ii@rp{#1}}
 \newcommand{\financ}[1]{\gdef\ii@financ{#1}}
 \newcommand{\titlepagespecificinfo}{%
