@@ -215,6 +215,27 @@
 }
 \location{Porto~Alegre}{RS}
 \renewcommand{\maketitle}{%
+        \hypersetup{%
+                pdftitle={\@title},%
+                pdfauthor={%
+                        \@authora%
+                        \@ifundefined{@authorb}{}{, \@authorb}%
+                        \@ifundefined{@authorc}{}{, \@authorc}%
+                        \@ifundefined{@authord}{}{, \@authord}%
+                },%
+                pdfkeywords={%
+                        \@ifundefined{keywa}{}{\keywa}%
+                        \@ifundefined{keywb}{}{, \keywb}%
+                        \@ifundefined{keywc}{}{, \keywc}%
+                        \@ifundefined{keywd}{}{, \keywd}%
+                        \@ifundefined{keywe}{}{, \keywe}%
+                        \@ifundefined{keywf}{}{, \keywf}%
+                        \@ifundefined{keywg}{}{, \keywg}%
+                        \@ifundefined{keywh}{}{, \keywh}%
+                        \@ifundefined{keywi}{}{, \keywi}%
+                        \@ifundefined{keywj}{}{, \keywj}%
+                }%
+        }%
         \begin{titlepage}
                 \thetitlepage
         \end{titlepage}%
