@@ -56,12 +56,12 @@
 	}%
 	\def\planodoutoradospecificinfo{Plano de Curso para Doutorado}%
 	\def\proptesespecificinfo{Proposta de Tese de Doutorado}%
-	\def\tcname{Trabalho de Conclus{\~a}o (mestrado)}%
+	\def\tcname{Trabalho de Conclus\~{a}o}%
 	\def\tcspecificinfo{%
-		Trabalho de Conclus{\~a}o apresentado como\\
-		requisito parcial para a obten{\c{c}}{\~a}o do grau de\\
-		Mestre em Inform{\'a}tica
-	}%
+		Trabalho de Conclus\~{a}o apresentado como\\
+		requisito parcial para a obten\c{c}\~{a}o do grau de\\
+		Bacharel em Ci\^{e}ncia da Computa\c{c}\~{a}o
+    }%
 	\def\rpname{Relat{\'o}rio de Pesquisa}%
 	\def\financname{{\'O}rg{\~a}os Financiadores}%
 	\def\especname{Monografia (especialização)}%

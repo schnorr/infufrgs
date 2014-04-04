@@ -509,12 +509,12 @@
 %==============================================================================
 % Ajuste do formato das citações e referências
 %==============================================================================
-\setlength{\bibhang}{0pt}
-\let\cite\citep
+%\setlength{\bibhang}{0pt} 
+%\let\cite\citep %Linhas desativadas pelo Valdez, faziam o layout nunca ter parenteses
 
 %
 % comandos DEPRECATED
-% mantidos aqui somente para compatibilidade, nao constam mais do exemplo
+% mantidos aqui somente para compatibilidade, nao constam mais no exemplo
 % sugere-se remove-los a partir de julho/2003
 % 07/dez/2002 - avila
 %
