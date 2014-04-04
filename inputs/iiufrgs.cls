@@ -55,6 +55,12 @@
 % Herança da classe `report' e inclusão de pacotes e arquivos necessários
 %==============================================================================
 \LoadClass[12pt,a4paper,twoside]{report}
+
+\RequirePackage{keyval}
+\RequirePackage{fixltx2e}
+
+\RequirePackage{subfig}
+
 \RequirePackage[english,brazilian]{babel}
 \input{brazilian.babel}
 \input{english.babel}
@@ -62,11 +68,25 @@
         \selectlanguage{english}
         \AtBeginDocument{\selectlanguage{english}}
 \fi
+
 \RequirePackage{lastpage}
 \RequirePackage{indentfirst}
 \RequirePackage{iidefs}
 \RequirePackage{natbib}
 
+\RequirePackage[%
+        bookmarksnumbered=true,	
+        breaklinks=true,
+        unicode=true,
+%
+        colorlinks=true,
+        anchorcolor=black,
+        citecolor=black,
+        filecolor=black,
+        linkcolor=black,
+        urlcolor=black
+]{hyperref}[2009/10/09]
+\RequirePackage{hypcap}
 %==============================================================================
 % Margens do texto
 %==============================================================================
