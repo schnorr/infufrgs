@@ -15,8 +15,8 @@ all:
 install:
 	install -d $(INPUTS) $(DOC)
 	cp -R inputs/* $(INPUTS)
-	cp -R exemplos/* MINI-HOWTO-prosper.txt $(DOC)
-	cp README GPL CHANGELOG BUGS $(INSTALLDIR)
+	#cp -R exemplos/* MINI-HOWTO-prosper.txt $(DOC)
+	cp README COPYING CHANGELOG BUGS $(INSTALLDIR)
 	@echo
 	@echo "Arquivos instalados com sucesso."
 	@echo
