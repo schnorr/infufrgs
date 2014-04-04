@@ -593,4 +593,6 @@
 }{
         \end{flushright}
 }
-\newenvironment{agradecimentos}{\chapter*{Agradecimentos}}{}
+\newenvironment{agradecimentos}{
+	\chapter*{Agradecimentos}
+}{}
