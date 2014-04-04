@@ -533,7 +533,7 @@
   \par
   \if@captionlisting%
     \addcontentsline{\csname ext@#1\endcsname}{#1}%
-        {\protect\numberline{\csname fnum@#1\endcsname:}{\ignorespaces #2}}%
+        {\protect\numberline{\csname fnum@#1\endcsname}{\ignorespaces #2}}%
   \fi%
   \begingroup
     \@parboxrestore
