@@ -29,7 +29,7 @@
 % Identificação
 %==============================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{iiufrgs}[2005/01/14 v4.3.1 Formatacao de documentos para o II/UFRGS]
+\ProvidesClass{iiufrgs}[2010/08/13 v4.4.0 Formatacao de documentos para o II/UFRGS]
 
 %==============================================================================
 % Declaração de opções
