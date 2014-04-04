@@ -1,8 +1,8 @@
 %==============================================================================
 % iiufrgs - classe de documento com padrões do II/UFRGS
-% $Id: iiufrgs.cls,v 1.1.1.1 2005/01/18 23:54:45 avila Exp $
+% $Id: iiufrgs.cls,v 4.4.0 2010/08/13 12:00:00 laffernandes Exp $
 %
-% Copyright (C) 2001,2002,2003,2004,2005 UFRGS TeX Users Group
+% Copyright (C) 2001-2014 UFRGS TeX Users Group
 %
 % This program is free software; you can redistribute it and/or modify
 % it under the terms of the GNU General Public License as published by
