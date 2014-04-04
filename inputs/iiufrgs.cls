@@ -491,16 +491,17 @@
         \reset@font\centerline{\ii@chapterfont\sffamily\textbf{\MakeUppercase{#1}}}
         \addvspace{42pt}
 }
-\renewcommand{\appendix}[1][\appendixname]{%
-        \setcounter{chapter}{0}%
-        \renewcommand{\thechapter}{\Alph{chapter}}%
-        \setcounter{tocdepth}{0}%
-        \@captionlistingfalse%
-        \gdef\@chapapp{\MakeUppercase{#1}\space}%
-        \addtocontents{toc}{%
-          \settowidth{\ii@chapnumindent}{{\sffamily\textbf{\@chapapp}}}
-          \addtolength{\ii@chapnumindent}{1.8em}
-        }%
+\renewcommand{\appendix}[1][\appendixname]{
+    \@captionlistingfalse
+    \setcounter{chapter}{0}%
+    \renewcommand{\thechapter}{\Alph{chapter}}%
+    \gdef\@chapapp{\texorpdfstring{\MakeUppercase{#1}}{#1}\space}%
+    \addtocontents{toc}{%
+% Comentado pois gera conflito com a package 'algorithmic'. 1.2in eh aproximadamente o tamanho do termo APPENDIX X (ou APENDICE X) na formatação do sumario. Para o termo ANNEX X (ou ANEXO X) o espaço a direita fica maior que o recomendado. Mas eu duvido que alguem note :)
+%       \settowidth{\ii@chapnumindent}{{\sffamily\textbf{\@chapapp}}}%
+%       \addtolength{\ii@chapnumindent}{1.8em}
+        \setlength{\ii@chapnumindent}{1.2in}
+    }%
 }
 \newcommand{\annex}{\appendix[\annexname]}
 
