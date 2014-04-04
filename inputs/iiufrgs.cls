@@ -557,6 +557,23 @@
         \end{list}
 }
 
+
+%==============================================================================
+% Ajuste do espaçamento entre itens em 'enumerate', 'itemize' e 'description'
+%==============================================================================
+\renewenvironment{enumerate}{%
+  \begin{list}{\arabic{enumi}.}{\topsep=6pt\itemsep=2pt\parsep=0pt\partopsep=0pt\usecounter{enumi}}%
+}{\end{list}}
+
+\renewenvironment{itemize}{%
+  \begin{list}{\bfseries\upshape $\bullet$}{\topsep=6pt\itemsep=2pt\parsep=0pt\partopsep=0pt}%
+}{\end{list}}
+
+\renewenvironment{description}{
+  \begin{list}{}{\topsep=6pt\itemsep=2pt\parsep=0pt\partopsep=0pt \labelwidth\z@ \itemindent-\leftmargin \let\makelabel\descriptionlabel}
+}{\end{list}}
+
+
 %==============================================================================
 % Ajuste do formato das citações e referências
 %==============================================================================
