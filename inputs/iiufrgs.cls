@@ -454,15 +454,18 @@
 % Os comandos \@makechapterhead e \@makeschapterhead fazem a
 % formatação dos títulos propriamente ditos.
 %==============================================================================
+\newcounter{schapter}
 \newcommand{\ii@chapterfont}{\@setfontsize\Large{16}{20}}
 \def\@chapapp{}
 \def\@chapter[#1]#2{%
+        \xdef\Hy@chapapp{CHAPTER}%
+        \gdef\theHchapter{\thechapter}%
         \refstepcounter{chapter}%
         \addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}#1}%
         \addtocontents{lof}{\protect\addvspace{10\p@}}%
         \addtocontents{lot}{\protect\addvspace{10\p@}}%
         \pagestyle{iiufrgs}\let\ps@plain\ps@iiufrgs%
-        \@makechapterhead{#2}\@afterheading
+        \@makechapterhead{#2}\@afterheading%
 }
 \def\@makechapterhead#1{%
         \vspace*{90pt}
@@ -470,10 +473,18 @@
         \addvspace{42pt}
 }
 \def\@schapter#1{%
-        \if@aftertoc\addcontentsline{toc}{chapter}{#1}\fi%
+        \xdef\Hy@chapapp{SCHAPTER}%
+        \refstepcounter{schapter}%
+        \if@aftertoc%
+            \hyperdef{SCHAPTER}{\theschapter}{}%
+            \@makeschapterhead{#1}\@afterheading%
+            \addcontentsline{toc}{chapter}{#1}%
+        \else%
+            \pdfbookmark[0]{#1}{MUTESCHAPTER.\theschapter}%
+            \@makeschapterhead{#1}\@afterheading%
+        \fi%
         \addtocontents{lof}{\protect\addvspace{10\p@}}%
         \addtocontents{lot}{\protect\addvspace{10\p@}}%
-        \@makeschapterhead{#1}\@afterheading
 }
 \def\@makeschapterhead#1{%
         \vspace*{90pt}
