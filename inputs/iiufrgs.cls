@@ -43,7 +43,8 @@
 \iiu@novodoc{pep}
 \iiu@novodoc{diss}
 \iiu@novodoc{tese}
-\iiu@novodoc{tc}
+\iiu@novodoc{tc-cic}
+\iiu@novodoc{tc-ecp}
 \iiu@novodoc{espec}
 \iiu@novodoc{formais}
 \DeclareOption{english}{\@englishtrue\OptionNotUsed}\newif\if@english
@@ -175,7 +176,7 @@
 %==============================================================================
 \renewcommand{\date}[2]{
         \gdef\@publmonth{#1}
-        \gdef\@publyear{#2}
+        \gdef\@publyear{#2}%
 }
 \date{\monthname}{\number\year}
 
@@ -204,19 +205,22 @@
 \newcommand{\thetitlepage}{%
         \noindent\@topbox\\
         \vfill
+				%\lefthyphenmin=64 remove hifenização
         \@ifundefined{titlepagespecificinfo}{}{
                 \hspace*{\fill}\makebox[.5\textwidth][l]{%
-                        \parbox[b]{8.5cm}{\raggedright\titlepagespecificinfo}%
-                }
-                \vfill
+                        \parbox[b]{217pt}{\lefthyphenmin=64\titlepagespecificinfo}%
+                }%
+                %\vfill\\
+								\vspace{24pt}\\
         }
         \@ifundefined{@advisor}{}{
-                \hspace*{\fill}\parbox[b]{.5\textwidth}{%
-                        {\titlepageadvisorinfo}
-                }
+								\hspace*{\fill}\makebox[.5\textwidth][l]{%
+                        \parbox[b]{217pt}{\raggedright\lefthyphenmin=64\titlepageadvisorinfo}%
+                }%
                 \vfill
         }
-        \centerline{\@city, \ii@date}
+        \centerline{\@city}
+				\centerline{\ii@date}				
 }
 \def\@topbox{%
         \parbox[t]{\textwidth}{%
@@ -250,8 +254,8 @@
         \MakeUppercase{\@course}\\
 }
 \newcommand{\titlepageadvisorinfo}{%
-        \@ifundefined{@advisor}{}{\vfill\@advisor\\\advisorname}
-        \@ifundefined{@coadvisor}{}{\\[6ex]\@coadvisor\\\coadvisorname}
+        \@ifundefined{@advisor}{}{\advisorname:~\@advisor\\}%
+        \@ifundefined{@coadvisor}{}{\coadvisorname:~\@coadvisor\\}%
 }
 
 %==============================================================================

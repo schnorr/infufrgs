@@ -1,5 +1,5 @@
 %
-% definições para textos em português
+% defini{\c{c}}{\~o}es para textos em portugu{\^e}s
 %
 % UFRGS TeX Users Group
 % Institute of Informatics --- UFRGS
@@ -44,30 +44,30 @@
 	\def\byname{por}%
 	\def\dissname{Disserta{\c{c}}{\~a}o (mestrado)}%
 	\def\dissspecificinfo{%
-		Disserta{\c{c}}{\~a}o apresentada como requisito parcial\\
-		para a obten{\c{c}}{\~a}o do grau de\\
+		Disserta{\c{c}}{\~a}o apresentada como requisito parcial
+		para a obten{\c{c}}{\~a}o do grau de
 		Mestre em Ci{\^e}ncia da Computa{\c{c}}{\~a}o
 	}%
 	\def\tesename{Tese (doutorado)}%
 	\def\tesespecificinfo{%
-		Tese apresentada como requisito parcial\\
-		para a obten{\c{c}}{\~a}o do grau de\\
+		Tese apresentada como requisito parcial
+		para a obten{\c{c}}{\~a}o do grau de
 		Doutor em Ci{\^e}ncia da Computa{\c{c}}{\~a}o
 	}%
 	\def\planodoutoradospecificinfo{Plano de Curso para Doutorado}%
 	\def\proptesespecificinfo{Proposta de Tese de Doutorado}%
 	\def\tcname{Trabalho de Conclus\~{a}o}%
 	\def\tcspecificinfo{%
-		Trabalho de Conclus\~{a}o apresentado como\\
-		requisito parcial para a obten\c{c}\~{a}o do grau de\\
-		Bacharel em Ci\^{e}ncia da Computa\c{c}\~{a}o
+		Monografia apresentada como requisito
+		parcial para a obten{\c{c}}{\~a}o do grau de Bacharel
+		em Ci{\^e}ncia da Computa{\c{c}}{\~a}o.
     }%
 	\def\rpname{Relat{\'o}rio de Pesquisa}%
 	\def\financname{{\'O}rg{\~a}os Financiadores}%
-	\def\especname{Monografia (especialização)}%
+	\def\especname{Monografia (especializa{\c{c}}{\~a}o)}%
 	\def\especspecificinfo{%
-		Monografia de Conclusão de Curso apresentada como
-		requisito parcial para a obtenção do grau de Especialista
+		Monografia de Conclus{\~a}o de Curso apresentada como
+		requisito parcial para a obten{\c{c}}{\~a}o do grau de Especialista
 	}%
 	\def\coordname{Coordenador do Curso}%
 }
@@ -79,5 +79,5 @@
 			outubro\or novembro\or dezembro%
 		\fi%
 	}%
-	\def\ii@date{\@publmonth\ de~\@publyear}%
+	\def\ii@date{\@publyear}%
 }
