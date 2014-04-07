@@ -1,8 +1,8 @@
 %==============================================================================
 % iiufrgs - classe de documento com padrões do II/UFRGS
-% $Id: iiufrgs.cls,v 1.1.1.1 2005/01/18 23:54:45 avila Exp $
+% $Id: iiufrgs.cls,v 4.4.0 2010/08/13 12:00:00 laffernandes Exp $
 %
-% Copyright (C) 2001,2002,2003,2004,2005 UFRGS TeX Users Group
+% Copyright (C) 2001-2014 UFRGS TeX Users Group
 %
 % This program is free software; you can redistribute it and/or modify
 % it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
 % Identificação
 %==============================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{iiufrgs}[2005/01/14 v4.3.1 Formatacao de documentos para o II/UFRGS]
+\ProvidesClass{iiufrgs}[2010/08/13 v4.4.0 Formatacao de documentos para o II/UFRGS]
 
 %==============================================================================
 % Declaração de opções
@@ -56,6 +56,12 @@
 % Herança da classe `report' e inclusão de pacotes e arquivos necessários
 %==============================================================================
 \LoadClass[12pt,a4paper,twoside]{report}
+
+\RequirePackage{keyval}
+\RequirePackage{fixltx2e}
+
+\RequirePackage{subfig}
+
 \RequirePackage[english,brazilian]{babel}
 \input{brazilian.babel}
 \input{english.babel}
@@ -63,10 +69,25 @@
         \selectlanguage{english}
         \AtBeginDocument{\selectlanguage{english}}
 \fi
+
 \RequirePackage{lastpage}
 \RequirePackage{indentfirst}
 \RequirePackage{iidefs}
 \RequirePackage{natbib}
+
+\RequirePackage[%
+        bookmarksnumbered=true,	
+        breaklinks=true,
+        unicode=true,
+%
+        colorlinks=true,
+        anchorcolor=black,
+        citecolor=black,
+        filecolor=black,
+        linkcolor=black,
+        urlcolor=black
+]{hyperref}[2009/10/09]
+\RequirePackage{hypcap}
 
 %==============================================================================
 % Margens do texto
@@ -195,6 +216,27 @@
 }
 \location{Porto~Alegre}{RS}
 \renewcommand{\maketitle}{%
+        \hypersetup{%
+                pdftitle={\@title},%
+                pdfauthor={%
+                        \@authora%
+                        \@ifundefined{@authorb}{}{, \@authorb}%
+                        \@ifundefined{@authorc}{}{, \@authorc}%
+                        \@ifundefined{@authord}{}{, \@authord}%
+                },%
+                pdfkeywords={%
+                        \@ifundefined{keywa}{}{\keywa}%
+                        \@ifundefined{keywb}{}{, \keywb}%
+                        \@ifundefined{keywc}{}{, \keywc}%
+                        \@ifundefined{keywd}{}{, \keywd}%
+                        \@ifundefined{keywe}{}{, \keywe}%
+                        \@ifundefined{keywf}{}{, \keywf}%
+                        \@ifundefined{keywg}{}{, \keywg}%
+                        \@ifundefined{keywh}{}{, \keywh}%
+                        \@ifundefined{keywi}{}{, \keywi}%
+                        \@ifundefined{keywj}{}{, \keywj}%
+                }%
+        }%
         \begin{titlepage}
                 \thetitlepage
         \end{titlepage}%
@@ -286,25 +328,21 @@
         \end{minipage}%
         }%
 }
-\newcommand{\nominataReit}{Prof.~Jos{\'e} Carlos Ferraz Hennemann}
+\newcommand{\nominataReit}{Prof.~Carlos Alexandre Netto}
 \newcommand{\nominataReitname}{Reitor}
-\newcommand{\nominataPRCA}{Prof.~Pedro Cezar Dutra Fonseca}
-\newcommand{\nominataPRCAname}{Pr{\'o}-Reitor de Coordena{\c{c}}{\~a}o Acad{\^e}mica}
-% os dois proximos comandos nao sao mais usados
-\newcommand{\nominataPRE}{Prof.~Jos{\'e} Carlos Ferraz Hennemann}
-\newcommand{\nominataPREname}{Pr{\'o}-Reitor de Ensino}
-\newcommand{\nominataPRAPG}{Prof\textsuperscript{a}.~Valqu{\'\i}ria Linck Bassani}
-\newcommand{\nominataPRAPGname}{Pr{\'o}-Reitora de P{\'o}s-Gradua{\c{c}}{\~a}o}
-\newcommand{\nominataDir}{Prof.~Philippe Olivier Alexandre Navaux}
+\newcommand{\nominataPRCA}{Prof.~Rui Vicente Oppermann}
+\newcommand{\nominataPRCAname}{Vice-Reitor}
+\newcommand{\nominataPRAPG}{Prof.~Aldo Bolten Lucion}
+\newcommand{\nominataPRAPGname}{Pr{\'o}-Reitor de P{\'o}s-Gradua{\c{c}}{\~a}o}
+\newcommand{\nominataDir}{Prof.~Fl{\'a}vio Rech Wagner}
 \newcommand{\nominataDirname}{Diretor do Instituto de Inform{\'a}tica}
-\newcommand{\nominataCoord}{Prof.~Carlos Alberto Heuser}
+\newcommand{\nominataCoord}{Prof.~{\'A}lvaro Freitas Moreira}
 \newcommand{\nominataCoordname}{Coordenador do PPGC}
 \newcommand{\nominataBibchefe}{Beatriz Regina Bastos Haro}
-\newcommand{\nominataBibchefename}{Bibliotec{\'a}ria-chefe do
-  Instituto de Inform{\'a}tica}
-\newcommand{\nominataChefeINA}{Prof.~Jos{\'e} Valdeni de Lima}
+\newcommand{\nominataBibchefename}{Bibliotec{\'a}ria-chefe do Instituto de Inform{\'a}tica}
+\newcommand{\nominataChefeINA}{Prof.~Renato Perez Ribas}
 \newcommand{\nominataChefeINAname}{Chefe do \deptINA}
-\newcommand{\nominataChefeINT}{Prof.~Leila Ribeiro}
+\newcommand{\nominataChefeINT}{Prof.~Ana L{\'u}cia Cetertich Bazzan}
 \newcommand{\nominataChefeINTname}{Chefe do \deptINT}
 \newcommand{\nominata}{
         \MakeUppercase{\ufrgs}\\
@@ -315,6 +353,7 @@
         \nominataCoordname: \nominataCoord\\
         \nominataBibchefename: \nominataBibchefe
 }
+
 
 %==============================================================================
 % Ajuste do sumário (nada indentado) 
@@ -419,15 +458,18 @@
 % Os comandos \@makechapterhead e \@makeschapterhead fazem a
 % formatação dos títulos propriamente ditos.
 %==============================================================================
+\newcounter{schapter}
 \newcommand{\ii@chapterfont}{\@setfontsize\Large{16}{20}}
 \def\@chapapp{}
 \def\@chapter[#1]#2{%
+        \xdef\Hy@chapapp{CHAPTER}%
+        \gdef\theHchapter{\thechapter}%
         \refstepcounter{chapter}%
         \addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}#1}%
         \addtocontents{lof}{\protect\addvspace{10\p@}}%
         \addtocontents{lot}{\protect\addvspace{10\p@}}%
         \pagestyle{iiufrgs}\let\ps@plain\ps@iiufrgs%
-        \@makechapterhead{#2}\@afterheading
+        \@makechapterhead{#2}\@afterheading%
 }
 \def\@makechapterhead#1{%
         \vspace*{90pt}
@@ -435,26 +477,35 @@
         \addvspace{42pt}
 }
 \def\@schapter#1{%
-        \if@aftertoc\addcontentsline{toc}{chapter}{#1}\fi%
+        \xdef\Hy@chapapp{SCHAPTER}%
+        \refstepcounter{schapter}%
+        \if@aftertoc%
+            \hyperdef{SCHAPTER}{\theschapter}{}%
+            \@makeschapterhead{#1}\@afterheading%
+            \addcontentsline{toc}{chapter}{#1}%
+        \else%
+            \pdfbookmark[0]{#1}{MUTESCHAPTER.\theschapter}%
+            \@makeschapterhead{#1}\@afterheading%
+        \fi%
         \addtocontents{lof}{\protect\addvspace{10\p@}}%
         \addtocontents{lot}{\protect\addvspace{10\p@}}%
-        \@makeschapterhead{#1}\@afterheading
 }
 \def\@makeschapterhead#1{%
         \vspace*{90pt}
         \reset@font\centerline{\ii@chapterfont\sffamily\textbf{\MakeUppercase{#1}}}
         \addvspace{42pt}
 }
-\renewcommand{\appendix}[1][\appendixname]{%
-        \setcounter{chapter}{0}%
-        \renewcommand{\thechapter}{\Alph{chapter}}%
-        \setcounter{tocdepth}{0}%
-        \@captionlistingfalse%
-        \gdef\@chapapp{\MakeUppercase{#1}\space}%
-        \addtocontents{toc}{%
-          \settowidth{\ii@chapnumindent}{{\sffamily\textbf{\@chapapp}}}
-          \addtolength{\ii@chapnumindent}{1.8em}
-        }%
+\renewcommand{\appendix}[1][\appendixname]{
+    \@captionlistingfalse
+    \setcounter{chapter}{0}%
+    \renewcommand{\thechapter}{\Alph{chapter}}%
+    \gdef\@chapapp{\texorpdfstring{\MakeUppercase{#1}}{#1}\space}%
+    \addtocontents{toc}{%
+% Comentado pois gera conflito com a package 'algorithmic'. 1.2in eh aproximadamente o tamanho do termo APPENDIX X (ou APENDICE X) na formatação do sumario. Para o termo ANNEX X (ou ANEXO X) o espaço a direita fica maior que o recomendado. Mas eu duvido que alguem note :)
+%       \settowidth{\ii@chapnumindent}{{\sffamily\textbf{\@chapapp}}}%
+%       \addtolength{\ii@chapnumindent}{1.8em}
+        \setlength{\ii@chapnumindent}{1.2in}
+    }%
 }
 \newcommand{\annex}{\appendix[\annexname]}
 
@@ -486,7 +537,7 @@
   \par
   \if@captionlisting%
     \addcontentsline{\csname ext@#1\endcsname}{#1}%
-        {\protect\numberline{\csname fnum@#1\endcsname:}{\ignorespaces #2}}%
+        {\protect\numberline{\csname fnum@#1\endcsname}{\ignorespaces #2}}%
   \fi%
   \begingroup
     \@parboxrestore
@@ -510,6 +561,23 @@
         \end{list}
 }
 
+
+%==============================================================================
+% Ajuste do espaçamento entre itens em 'enumerate', 'itemize' e 'description'
+%==============================================================================
+\renewenvironment{enumerate}{%
+  \begin{list}{\arabic{enumi}.}{\topsep=6pt\itemsep=2pt\parsep=0pt\partopsep=0pt\usecounter{enumi}}%
+}{\end{list}}
+
+\renewenvironment{itemize}{%
+  \begin{list}{\bfseries\upshape $\bullet$}{\topsep=6pt\itemsep=2pt\parsep=0pt\partopsep=0pt}%
+}{\end{list}}
+
+\renewenvironment{description}{
+  \begin{list}{}{\topsep=6pt\itemsep=2pt\parsep=0pt\partopsep=0pt \labelwidth\z@ \itemindent-\leftmargin \let\makelabel\descriptionlabel}
+}{\end{list}}
+
+
 %==============================================================================
 % Ajuste do formato das citações e referências
 %==============================================================================
@@ -529,4 +597,6 @@
 }{
         \end{flushright}
 }
-\newenvironment{agradecimentos}{\chapter*{Agradecimentos}}{}
+\newenvironment{agradecimentos}{
+	\chapter*{Agradecimentos}
+}{}
