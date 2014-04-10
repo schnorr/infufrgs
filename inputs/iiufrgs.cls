@@ -529,25 +529,6 @@
         \@startsection{subparagraph}{5}{0pt}{1ex}{-1em}{\reset@font\bfseries}
 }
 
-%==============================================================================
-% Redefinição do conteúdo das listas de figuras e tabelas
-%==============================================================================
-\newif\if@captionlisting\@captionlistingtrue
-\long\def\@caption#1[#2]#3{%
-  \par
-  \if@captionlisting%
-    \addcontentsline{\csname ext@#1\endcsname}{#1}%
-        {\protect\numberline{\csname fnum@#1\endcsname}{\ignorespaces #2}}%
-  \fi%
-  \begingroup
-    \@parboxrestore
-    \if@minipage
-      \@setminipage
-    \fi
-    \normalsize
-    \@makecaption{\csname fnum@#1\endcsname}{\ignorespaces #3}\par
-  \endgroup%
-}
 \renewcommand*{\l@figure}{\@dottedtocline{1}{0em}{5.5em}}
 \let\l@table\l@figure
 
