@@ -1,0 +1,30 @@
+%
+% UFRGS TeX Users Group
+% Institute of Informatics --- UFRGS
+% Porto Alegre, Brazil
+% http://www.inf.ufrgs.br/utug
+% Discussion list: utug-l@inf.ufrgs.br
+%
+% Copyright (C) 2001,2003 UFRGS TeX Users Group
+% This is free software, distributed under the GNU GPL; please take
+% a look in `iiufrgs.cls' to see complete information on using, copying
+% and redistributing these files
+%
+
+\ProvidesFile{nominata.def}[2014/04/10 Nominata]
+\newcommand{\nominataReit}{Prof.~Carlos Alexandre Netto}
+\newcommand{\nominataReitname}{Reitor}
+\newcommand{\nominataPRCA}{Prof.~Rui Vicente Oppermann}
+\newcommand{\nominataPRCAname}{Vice-Reitor}
+\newcommand{\nominataPRAPG}{Prof.~Aldo Bolten Lucion}
+\newcommand{\nominataPRAPGname}{Pr{\'o}-Reitor de P{\'o}s-Gradua{\c{c}}{\~a}o}
+\newcommand{\nominataDir}{Prof.~Fl{\'a}vio Rech Wagner}
+\newcommand{\nominataDirname}{Diretor do Instituto de Inform{\'a}tica}
+\newcommand{\nominataCoord}{Prof.~{\'A}lvaro Freitas Moreira}
+\newcommand{\nominataCoordname}{Coordenador do PPGC}
+\newcommand{\nominataBibchefe}{Beatriz Regina Bastos Haro}
+\newcommand{\nominataBibchefename}{Bibliotec{\'a}ria-chefe do Instituto de Inform{\'a}tica} \newcommand{\nominataChefeINA}{Prof.~Renato Perez Ribas}
+\newcommand{\nominataChefeINAname}{Chefe do \deptINA}
+\newcommand{\nominataChefeINT}{Prof.~Ana L{\'u}cia Cetertich Bazzan}
+\newcommand{\nominataChefeINTname}{Chefe do \deptINT}
+

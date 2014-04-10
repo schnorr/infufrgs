@@ -328,22 +328,8 @@
         \end{minipage}%
         }%
 }
-\newcommand{\nominataReit}{Prof.~Carlos Alexandre Netto}
-\newcommand{\nominataReitname}{Reitor}
-\newcommand{\nominataPRCA}{Prof.~Rui Vicente Oppermann}
-\newcommand{\nominataPRCAname}{Vice-Reitor}
-\newcommand{\nominataPRAPG}{Prof.~Aldo Bolten Lucion}
-\newcommand{\nominataPRAPGname}{Pr{\'o}-Reitor de P{\'o}s-Gradua{\c{c}}{\~a}o}
-\newcommand{\nominataDir}{Prof.~Fl{\'a}vio Rech Wagner}
-\newcommand{\nominataDirname}{Diretor do Instituto de Inform{\'a}tica}
-\newcommand{\nominataCoord}{Prof.~{\'A}lvaro Freitas Moreira}
-\newcommand{\nominataCoordname}{Coordenador do PPGC}
-\newcommand{\nominataBibchefe}{Beatriz Regina Bastos Haro}
-\newcommand{\nominataBibchefename}{Bibliotec{\'a}ria-chefe do Instituto de Inform{\'a}tica}
-\newcommand{\nominataChefeINA}{Prof.~Renato Perez Ribas}
-\newcommand{\nominataChefeINAname}{Chefe do \deptINA}
-\newcommand{\nominataChefeINT}{Prof.~Ana L{\'u}cia Cetertich Bazzan}
-\newcommand{\nominataChefeINTname}{Chefe do \deptINT}
+
+\AtEndOfClass{\input{nominata.def}}
 \newcommand{\nominata}{
         \MakeUppercase{\ufrgs}\\
         \nominataReitname: \nominataReit\\
