@@ -47,6 +47,7 @@
 \iiu@novodoc{tc-ecp}
 \iiu@novodoc{espec}
 \iiu@novodoc{formais}
+\iiu@novodoc{nominatalocal}
 \DeclareOption{english}{\@englishtrue\OptionNotUsed}\newif\if@english
 \DeclareOption{oneside}{\AtEndOfClass{\@twosidefalse}\OptionNotUsed}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
