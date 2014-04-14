@@ -43,16 +43,18 @@
 	\def\cipcaption{CIP -- CATALOGA{\c{C}}{\~A}O NA PUBLICA{\c{C}}{\~A}O}%
 	\def\byname{por}%
 	\def\dissname{Disserta{\c{c}}{\~a}o (mestrado)}%
+        \def\pgmicroTitulacaoEm{Microeletr{\^o}nica}
+        \def\ppgcTitulacaoEm{Ci{\^e}ncia da Computa{\'c}{\~a}o}
 	\def\dissspecificinfo{%
 		Disserta{\c{c}}{\~a}o apresentada como requisito parcial
 		para a obten{\c{c}}{\~a}o do grau de
-		Mestre em Ci{\^e}ncia da Computa{\c{c}}{\~a}o
+		Mestre em \titulacaoEm
 	}%
 	\def\tesename{Tese (doutorado)}%
 	\def\tesespecificinfo{%
 		Tese apresentada como requisito parcial
 		para a obten{\c{c}}{\~a}o do grau de
-		Doutor em Ci{\^e}ncia da Computa{\c{c}}{\~a}o
+		Doutor em \titulacaoEm
 	}%
 	\def\planodoutoradospecificinfo{Plano de Curso para Doutorado}%
 	\def\proptesespecificinfo{Proposta de Tese de Doutorado}%

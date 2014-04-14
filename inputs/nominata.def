@@ -12,20 +12,40 @@
 %
 
 \ProvidesFile{nominata.def}[2014/04/10 Nominata]
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+% Reitoria
 \providecommand{\nominataReit}{Prof.~Carlos Alexandre Netto}
 \providecommand{\nominataReitname}{Reitor}
 \providecommand{\nominataPRCA}{Prof.~Rui Vicente Oppermann}
 \providecommand{\nominataPRCAname}{Vice-Reitor}
-\providecommand{\nominataPRAPG}{Prof.~Aldo Bolten Lucion}
+
+% PROPG
+\providecommand{\nominataPRAPG}{Prof.~Vladimir Pinheiro do Nascimento}
 \providecommand{\nominataPRAPGname}{Pr{\'o}-Reitor de P{\'o}s-Gradua{\c{c}}{\~a}o}
-\providecommand{\nominataDir}{Prof.~Fl{\'a}vio Rech Wagner}
+
+% Instituto de Informática
+\providecommand{\nominataDir}{Prof.~Luis da Cunha Lamb}
 \providecommand{\nominataDirname}{Diretor do Instituto de Inform{\'a}tica}
-\providecommand{\nominataCoord}{Prof.~{\'A}lvaro Freitas Moreira}
-\providecommand{\nominataCoordname}{Coordenador do PPGC}
+
+% PPGC
+\providecommand{\nominataCoordPPGC}{Prof.~Luigi Carro}
+\providecommand{\nominataCoordnamePPGC}{Coordenador do PPGC}
+
+% PGMicro
+\providecommand{\nominataCoordPGMICRO}{Prof.~Gilson Inácio Wirth}
+\providecommand{\nominataCoordnamePGMICRO}{Coordenador do PGMICRO}
+
+% Biblioteca
 \providecommand{\nominataBibchefe}{Beatriz Regina Bastos Haro}
 \providecommand{\nominataBibchefename}{Bibliotec{\'a}ria-chefe do Instituto de Inform{\'a}tica}
-\providecommand{\nominataChefeINA}{Prof.~Renato Perez Ribas}
+
+% INA (Informática Aplicada)
+\providecommand{\nominataChefeINA}{Prof.~Carlos Arthur Lang Lisbôa}
 \providecommand{\nominataChefeINAname}{Chefe do \deptINA}
-\providecommand{\nominataChefeINT}{Prof.~Ana L{\'u}cia Cetertich Bazzan}
+
+% INT (Informática Teórica)
+\providecommand{\nominataChefeINT}{Prof.~Edson Prestes e Silva Junior}
 \providecommand{\nominataChefeINTname}{Chefe do \deptINT}
 

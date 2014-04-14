@@ -42,6 +42,8 @@
 \iiu@novodoc{ti}
 \iiu@novodoc{pep}
 \iiu@novodoc{diss}
+\iiu@novodoc{ppgc}
+\iiu@novodoc{pgmicro}
 \iiu@novodoc{tese}
 \iiu@novodoc{tc-cic}
 \iiu@novodoc{tc-ecp}
@@ -289,7 +291,7 @@
 %       }%
 }
 \newcommand{\course}[1]{\gdef\@course{#1}}
-\course{\ppgc}
+\course{\coursename}
 \newcommand{\titlepagetopinfo}{%
         \MakeUppercase{\ufrgs}\\
         \MakeUppercase{\ii}\\
@@ -321,7 +323,7 @@
                 \setlength{\parindent}{1.5em}%
                 \setlength{\parskip}{1.3ex}%
                 \noindent\@authoralast, \@authorafirst\par
-                \@title\ / \@authora.\ -- \@city: PPGC da~UFRGS, \@publyear.\par
+                \@title\ / \@authora.\ -- \@city: \nomeDoProgramaPG~da~UFRGS, \@publyear.\par
                 \pageref{LastPage}~f.: il.\par
                 \@cipspecificinfo\ -- \ufrgs. \@course, \@city, BR--\@state, \@publyear. \advisorname: \@advisorfirst\ \@advisorlast\@ifundefined{@coadvisor}{}{; \coadvisorname: \@coadvisorfirst\ \@coadvisorlast}.\par
                 \@cipkw I.~\@advisorlast, \@advisorfirst. \@ifundefined{@coadvisorfirst}{II.~T\'{\i}tulo.}{II.~\@coadvisorlast, \@coadvisorfirst. III.~T\'{\i}tulo.}\\

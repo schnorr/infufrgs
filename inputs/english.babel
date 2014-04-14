@@ -43,16 +43,18 @@
 	\def\cipcaption{CIP -- CATALOGING-IN-PUBLICATION}%
 	\def\byname{by}%
 	\def\dissname{Thesis (Master)}%
+        \def\pgmicroTitulacaoEm{Microeletronics}
+        \def\ppgcTitulacaoEm{Computer Science}
 	\def\dissspecificinfo{%
 		Thesis presented in partial fulfillment\\
 		of the requirements for the degree of\\
-		Master of Computer Science
+		Master of \titulacaoEm
 	}%
 	\def\tesename{Thesis (Ph.D.)}%
 	\def\tesespecificinfo{%
 		Thesis presented in partial fulfillment\\
 		of the requirements for the degree of\\
-		Doctor of Computer Science
+		Doctor of \titulacaoEm
 	}%
 	\def\planodoutoradospecificinfo{PhD Work Plan}%
 	\def\proptesename{Ph.D. Thesis Proposal}%
