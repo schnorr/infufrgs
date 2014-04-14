@@ -245,7 +245,7 @@
         \end{titlepage}%
         \clearpage
         \setcounter{page}{2}%
-        \@ifundefined{@cipspecificinfo}{}{\@makecippage}
+        \@ifundefined{@cipspecificinfo}{\@makenominatapage}{\@makecippage}
 }
 \newcommand{\thetitlepage}{%
         \noindent\@topbox\\
@@ -315,6 +315,17 @@
         \vfill
         \nominata
 }
+
+%===============================================================================
+% Faz apenas a nomionata (TCs não tem nominata, aparentemente)
+%===============================================================================
+\newcommand{\@makenominatapage}{%
+    \clearpage
+    ~
+    \vfill
+    \nominata
+}%
+
 % definição do quadro
 \def\iiu@cipwindow{%
         \framebox[120mm]{%
@@ -334,7 +345,7 @@
 
 \AtEndOfClass{\input{nominata.def}}
 \newcommand{\nominata}{
-        \MakeUppercase{\ufrgs}\\
+        \noindent\MakeUppercase{\ufrgs}\\
         \nominataReitname: \nominataReit\\
         \nominataPRCAname: \nominataPRCA\\
         \nominataPRAPGname: \nominataPRAPG\\
