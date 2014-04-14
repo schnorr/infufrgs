@@ -12,8 +12,7 @@
 %
 
 \ProvidesFile{nominata.def}[2014/04/10 Nominata]
-\usepackage{ucs}
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
 
 % Reitoria
 \providecommand{\nominataReit}{Prof.~Carlos Alexandre Netto}
