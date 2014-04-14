@@ -60,10 +60,12 @@
 	\def\proptesename{Ph.D. Thesis Proposal}%
 	\def\proptesespecificinfo{Ph.D. Thesis Proposal}%
 	\def\tcname{Trabalho de Conclus\~{a}o}%
+        \def\cicTitulacaoEm{Computer Science}
+        \def\ecpTitulacaoEm{Computer Engeneering}
 	\def\tcspecificinfo{%
-		Trabalho de Conclus\~{a}o apresentado como\\
-		requisito parcial para a obten\c{c}\~{a}o do grau de\\
-		Bacharel em Ci\^{e}ncia da Computa\c{c}\~{a}o
+                Work presented in partial fulfillment\\
+                of the requirements for the degree of\\
+                Bachelor in \titulacaoEm
 	}%
 	\def\rpname{Research Report}%
 	\def\financname{Supporting Agencies}%

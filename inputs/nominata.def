@@ -49,3 +49,11 @@
 \providecommand{\nominataChefeINT}{Prof.~Edson Prestes e Silva Junior}
 \providecommand{\nominataChefeINTname}{Chefe do \deptINT}
 
+%CIC
+\providecommand{\nominataCoordCIC}{Prof.~Raul Fernando Weber}
+\providecommand{\nominataCoordCICname}{Coordenador do Curso de Ciência de Computação}
+
+%ECP
+\providecommand{\nominataCoordECP}{Prof~Prof. Marcelo Götz}
+\providecommand{\nominataCoordECPname}{Coordenador do Curso de Engenharia de Computação}
+

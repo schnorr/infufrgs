@@ -45,8 +45,8 @@
 \iiu@novodoc{ppgc}
 \iiu@novodoc{pgmicro}
 \iiu@novodoc{tese}
-\iiu@novodoc{tc-cic}
-\iiu@novodoc{tc-ecp}
+\iiu@novodoc{cic}
+\iiu@novodoc{ecp}
 \iiu@novodoc{espec}
 \iiu@novodoc{formais}
 \iiu@novodoc{nominatalocal}

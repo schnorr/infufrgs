@@ -10,6 +10,5 @@
 % a look in `iiufrgs.cls' to see complete information on using, copying
 % and redistributing these files
 %
-\ProvidesFile{dipl.def}[2003/11/21 Projeto de Diplomação]
-\course{\cbcc}
-\newcommand{\titlepagespecificinfo}{Projeto de Diploma{\c{c}}{\~a}o}
+\ProvidesFile{dipl.def}[2014/04/14 Projeto de Diplomação]
+\newcommand{\titlepagespecificinfo}{\tcspecificinfo}
