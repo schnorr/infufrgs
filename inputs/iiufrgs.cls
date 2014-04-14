@@ -90,7 +90,7 @@
         linkcolor=black,
         urlcolor=black
 ]{hyperref}[2009/10/09]
-\RequirePackage{hypcap}
+\RequirePackage[all]{hypcap}
 
 %==============================================================================
 % Margens do texto
