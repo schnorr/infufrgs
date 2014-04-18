@@ -13,7 +13,7 @@
 
 \ProvidesFile{nominata.def}[2014/04/10 Nominata]
 \usepackage{ucs}
-\usepackage[utf8x]{inputenc}
+% \usepackage[utf8x]{inputenc} % se este pacote for inserido aqui, não poderá ser inserido no documento principal (o que provoca confusão)
 
 % Reitoria
 \providecommand{\nominataReit}{Prof.~Carlos Alexandre Netto}
@@ -49,11 +49,15 @@
 \providecommand{\nominataChefeINT}{Prof.~Edson Prestes e Silva Junior}
 \providecommand{\nominataChefeINTname}{Chefe do \deptINT}
 
+% Graduação
+\providecommand{\nominataPRAG}{Prof.~S{\'e}rgio Roberto Kieling}
+\providecommand{\nominataPRAGname}{Pr{\'o}-Reitor de Gradua{\c{c}}{\~a}o}
+
 %CIC
 \providecommand{\nominataCoordCIC}{Prof.~Raul Fernando Weber}
-\providecommand{\nominataCoordCICname}{Coordenador do Curso de Ciência de Computação}
+\providecommand{\nominataCoordCICname}{Coordenador do Curso de Ci{\^e}ncia de Computa{\c{c}}{\~a}o}
 
 %ECP
-\providecommand{\nominataCoordECP}{Prof~Prof. Marcelo Götz}
-\providecommand{\nominataCoordECPname}{Coordenador do Curso de Engenharia de Computação}
+\providecommand{\nominataCoordECP}{Prof.~Marcelo G{\"o}tz}
+\providecommand{\nominataCoordECPname}{Coordenador do Curso de Engenharia de Computa{\c{c}}{\~a}o}
 
