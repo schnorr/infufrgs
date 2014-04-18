@@ -11,6 +11,11 @@
 % and redistributing these files
 %
 \ProvidesFile{ecp.def}[2003/02/03 Trabalho de Conclusao]
-\providecommnad{\titulacaoEm}{\pgmicroTitulacaoEm}
+\providecommand{\titulacaoEm}{\pgmicroTitulacaoEm}
 \course{\pgmicro}
 \def\@cipspecificinfo{\tcname}
+%
+% Nominata
+%
+\providecommand{\nominataCoord}{\nominataCoordPGMICRO}
+\providecommand{\nominataCoordname}{\nominataCoordnamePGMICRO}
