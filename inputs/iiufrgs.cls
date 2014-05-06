@@ -35,23 +35,31 @@
 % Declaração de opções
 %==============================================================================
 \newcommand{\iiu@novodoc}[1]{\DeclareOption{#1}{\AtEndOfClass{\input{#1.def}}}}
-\iiu@novodoc{grad}
-\iiu@novodoc{mestrado}
-\iiu@novodoc{doutorado}
+\newcommand{\iiu@aliasdoc}[2]{\DeclareOption{#1}{\AtEndOfClass{\input{#2.def}}}}
+
+% programas
 \iiu@novodoc{cic}
 \iiu@novodoc{ecp}
 \iiu@novodoc{pgmicro}
 \iiu@novodoc{ppgc}
+
+% tipos de documento
+\iiu@novodoc{dipl}
 \iiu@novodoc{ti}
 \iiu@novodoc{rp}
+\iiu@novodoc{pep}
 \iiu@novodoc{prop-tese}
 \iiu@novodoc{plano-doutorado}
-\iiu@novodoc{dipl}
-\iiu@novodoc{pep}
+
+% Documentos de Doutorado e Mestrado
 \iiu@novodoc{diss}
 \iiu@novodoc{tese}
+\iiu@aliasdoc{mestrado}{diss}
+\iiu@aliasdoc{doutorado}{tese}
 \iiu@novodoc{espec}
 \iiu@novodoc{formais}
+
+% outros
 \iiu@novodoc{nominatalocal}
 \DeclareOption{english}{\@englishtrue\OptionNotUsed}\newif\if@english
 \DeclareOption{oneside}{\AtEndOfClass{\@twosidefalse}\OptionNotUsed}
