@@ -345,7 +345,7 @@
                 \setlength{\parindent}{1.5em}%
                 \setlength{\parskip}{1.3ex}%
                 \noindent\@authoralast, \@authorafirst\par
-                \@title\ / \@authora.\ -- \@city: nomeDoProgramaPG~da~UFRGS, \@publyear.\par
+                \@title\ / \@authora.\ -- \@city: \nomeDoProgramaPG~da~UFRGS, \@publyear.\par
                 \pageref{LastPage}~f.: il.\par
                 \@cipspecificinfo\ -- \ufrgs. \@course, \@city, BR--\@state, \@publyear. \advisorname: \@advisorfirst\ \@advisorlast\@ifundefined{@coadvisor}{}{; \coadvisorname: \@coadvisorfirst\ \@coadvisorlast}.\par
                 \@cipkw I.~\@advisorlast, \@advisorfirst. \@ifundefined{@coadvisorfirst}{II.~T\'{\i}tulo.}{II.~\@coadvisorlast, \@coadvisorfirst. III.~T\'{\i}tulo.}\\
