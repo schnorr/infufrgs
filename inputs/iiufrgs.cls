@@ -302,7 +302,6 @@
 %       }%
 }
 \newcommand{\course}[1]{\gdef\@course{#1}}
-% \course{\coursename} % faz mais sentido definir isso nos defs ; \coursename não existe
 \newcommand{\titlepagetopinfo}{%
         \MakeUppercase{\ufrgs}\\
         \MakeUppercase{\ii}\\
