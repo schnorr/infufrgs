@@ -10,9 +10,13 @@
 % a look in `iiufrgs.cls' to see complete information on using, copying
 % and redistributing these files
 %
-\ProvidesFile{cic.def}[2014/04/12 Definições para a CIC]
-\providecommand{\nominataCoord}{\nominataCoordCIC}
-\providecommand{\nominataCoordname}{\nominataCoordCICname}
-\providecommand{\nomeDoProgramaPG}{CIC}
-\providecommand{\titulacaoEm}{\cicTitulacaoEm}
-\course{\cgcc}
+\ProvidesFile{grad.def}[2003/02/03 Trabalho de Conclusao]
+\providecommand{\titlepagespecificinfo}{\tcspecificinfo}
+\def\@cipspecificinfo{\tcname}
+%
+% Nominata
+%
+\providecommand{\nominataPRAPGname}{}
+\renewcommand{\nominataPRAPGname}{\nominataPRAGname}
+\providecommand{\nominataPRAPG}{}
+\renewcommand{\nominataPRAPG}{\nominataPRAG}

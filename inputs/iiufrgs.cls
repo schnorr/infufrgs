@@ -35,18 +35,21 @@
 % Declaração de opções
 %==============================================================================
 \newcommand{\iiu@novodoc}[1]{\DeclareOption{#1}{\AtEndOfClass{\input{#1.def}}}}
+\iiu@novodoc{grad}
+\iiu@novodoc{mestrado}
+\iiu@novodoc{doutorado}
+\iiu@novodoc{cic}
+\iiu@novodoc{ecp}
+\iiu@novodoc{pgmicro}
+\iiu@novodoc{ppgc}
+\iiu@novodoc{ti}
 \iiu@novodoc{rp}
 \iiu@novodoc{prop-tese}
 \iiu@novodoc{plano-doutorado}
 \iiu@novodoc{dipl}
-\iiu@novodoc{ti}
 \iiu@novodoc{pep}
 \iiu@novodoc{diss}
-\iiu@novodoc{ppgc}
-\iiu@novodoc{pgmicro}
 \iiu@novodoc{tese}
-\iiu@novodoc{cic}
-\iiu@novodoc{ecp}
 \iiu@novodoc{espec}
 \iiu@novodoc{formais}
 \iiu@novodoc{nominatalocal}
@@ -291,7 +294,7 @@
 %       }%
 }
 \newcommand{\course}[1]{\gdef\@course{#1}}
-\course{\coursename}
+% \course{\coursename} % faz mais sentido definir isso nos defs ; \coursename não existe
 \newcommand{\titlepagetopinfo}{%
         \MakeUppercase{\ufrgs}\\
         \MakeUppercase{\ii}\\
@@ -334,7 +337,7 @@
                 \setlength{\parindent}{1.5em}%
                 \setlength{\parskip}{1.3ex}%
                 \noindent\@authoralast, \@authorafirst\par
-                \@title\ / \@authora.\ -- \@city: \nomeDoProgramaPG~da~UFRGS, \@publyear.\par
+                \@title\ / \@authora.\ -- \@city: nomeDoProgramaPG~da~UFRGS, \@publyear.\par
                 \pageref{LastPage}~f.: il.\par
                 \@cipspecificinfo\ -- \ufrgs. \@course, \@city, BR--\@state, \@publyear. \advisorname: \@advisorfirst\ \@advisorlast\@ifundefined{@coadvisor}{}{; \coadvisorname: \@coadvisorfirst\ \@coadvisorlast}.\par
                 \@cipkw I.~\@advisorlast, \@advisorfirst. \@ifundefined{@coadvisorfirst}{II.~T\'{\i}tulo.}{II.~\@coadvisorlast, \@coadvisorfirst. III.~T\'{\i}tulo.}\\

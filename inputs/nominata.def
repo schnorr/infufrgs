@@ -11,9 +11,6 @@
 % and redistributing these files
 %
 
-\ProvidesFile{nominata.def}[2014/04/10 Nominata]
-\usepackage[utf8]{inputenc}
-
 % Reitoria
 \providecommand{\nominataReit}{Prof.~Carlos Alexandre Netto}
 \providecommand{\nominataReitname}{Reitor}
@@ -33,7 +30,7 @@
 \providecommand{\nominataCoordnamePPGC}{Coordenador do PPGC}
 
 % PGMicro
-\providecommand{\nominataCoordPGMICRO}{Prof.~Gilson Inácio Wirth}
+\providecommand{\nominataCoordPGMICRO}{Prof.~Gilson In{\'a}cio Wirth}
 \providecommand{\nominataCoordnamePGMICRO}{Coordenador do PGMICRO}
 
 % Biblioteca
@@ -41,18 +38,22 @@
 \providecommand{\nominataBibchefename}{Bibliotec{\'a}ria-chefe do Instituto de Inform{\'a}tica}
 
 % INA (Informática Aplicada)
-\providecommand{\nominataChefeINA}{Prof.~Carlos Arthur Lang Lisbôa}
+\providecommand{\nominataChefeINA}{Prof.~Carlos Arthur Lang Lisb{\^o}a}
 \providecommand{\nominataChefeINAname}{Chefe do \deptINA}
 
 % INT (Informática Teórica)
 \providecommand{\nominataChefeINT}{Prof.~Edson Prestes e Silva Junior}
 \providecommand{\nominataChefeINTname}{Chefe do \deptINT}
 
+% Graduação
+\providecommand{\nominataPRAG}{Prof.~S{\'e}rgio Roberto Kieling}
+\providecommand{\nominataPRAGname}{Pr{\'o}-Reitor de Gradua{\c{c}}{\~a}o}
+
 %CIC
 \providecommand{\nominataCoordCIC}{Prof.~Raul Fernando Weber}
-\providecommand{\nominataCoordCICname}{Coordenador do Curso de Ciência de Computação}
+\providecommand{\nominataCoordCICname}{Coordenador do Curso de Ci{\^e}ncia de Computa{\c{c}}{\~a}o}
 
 %ECP
-\providecommand{\nominataCoordECP}{Prof~Prof. Marcelo Götz}
-\providecommand{\nominataCoordECPname}{Coordenador do Curso de Engenharia de Computação}
+\providecommand{\nominataCoordECP}{Prof.~Marcelo G{\"o}tz}
+\providecommand{\nominataCoordECPname}{Coordenador do Curso de Engenharia de Computa{\c{c}}{\~a}o}
 

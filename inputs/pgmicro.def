@@ -14,5 +14,5 @@
 \providecommand{\nominataCoord}{\nominataCoordPGMICRO}
 \providecommand{\nominataCoordname}{\nominataCoordnamePGMICRO}
 \providecommand{\nomeDoProgramaPG}{PGMICRO}
-\providecommand{\coursename}{\pgmicro}
 \providecommand{\titulacaoEm}{\pgmicroTitulacaoEm}
+\course{\pgmicro}
