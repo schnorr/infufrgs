@@ -45,6 +45,7 @@
 
 % tipos de documento
 \iiu@novodoc{dipl}
+\iiu@aliasdoc{tc}{dipl}
 \iiu@novodoc{ti}
 \iiu@novodoc{rp}
 \iiu@novodoc{pep}
