@@ -21,8 +21,10 @@ install:
 	@echo "Arquivos instalados com sucesso."
 	@echo
 	@echo "Para o iiufrgs ser incluído no path padrão do LaTeX:"
-	@echo "# cd /usr/local/share/texmf/tex/latex"
-	@echo "# ln -sf $(INSTALLDIR)/tex/latex/iiufrgs"
-	@echo "# mktexlsr"
+	@echo "make add_to_latex_default_path"
 	@echo
 	@echo "Bom trabalho. ;-)"
+
+add_to_latex_default_path: $(INSTALLDIR)/tex/latex/iiufrgs
+	ln -sf $(INSTALLDIR)/tex/latex/iiufrgs /usr/local/share/texmf/tex/latex/
+	mktexlsr
