@@ -1,0 +1,65 @@
+% Criado por Maurício Lima Pilla (2001/01/11) para UTUG II/UFRGS
+% pilla@inf.ufrgs.br
+% Para maiores informações sobre este documento,  utilize a lista
+%    utug-l@inf.ufrgs.br
+
+MINI-HOWTO-prosper
+
+Como utilizar a classe Prosper para criar apresentações
+
+1. Introdução
+
+Este MINI-HOWTO se destina aos usuários de LaTeX do Instituto de Informática da UFRGS, dando uma visão geral e apresentando a forma de gerar apresentações em formato PostScript ou PDF.
+
+As instruções referem-se ao uso em Linux com shell bash, porém podem ser facilmente modificadas para outros ambientes (deixado como exercício para o usuário). Considera-se que os pacotes necessários para gerar arquivos LaTeX e os utilitários dvips e ps2pdf já encontram-se instalados.
+
+Maiores detalhes sobre Prosper podem ser encontrados no manual (prosper-doc.pdf) no diretório doc da distribuição. É fortemente aconselhada a leitura desse manual antes de perguntar sobre o funcionamento do Prosper e as opções disponíveis.
+
+
+
+
+
+2. Arquivos necessários
+
+- Distribuição Prosper: pode ser encontrada em http://prosper.sourceforge.net . Os estilos apresentados aqui foram desenvolvidos sob a versão 1.00.4.
+
+- .dvipsrc
+  Este arquivo deve existir no diretório $HOME do usuário e conter as seguintes linhas, para que as fontes utilizadas sejam todas vetoriais e não bitmaps:
+
+p +psfonts.cmz
+p +psfonts.amz
+
+
+- .bashrc ou .bash_profile
+  Inclua o seguinte ambiente em .bashrc ou em .bash_profile para gerar os slides com o tamanho correto de página (A4):
+
+export GS_OPTIONS="-sPAPERSIZE=a4"
+
+  Inclua também os diretórios com os arquivos do Prosper no TEXINPUTS. Por exemplo, se o diretório em que o Prosper está instalado é o $HOME e os arquivos de estilo do IIUFRGS estão em $HOME/iiufrgs-slides:
+
+
+TEXINPUTS=$TEXINPUTS:$HOME/prosper:$HOME/prosper/img:$HOME/prosper/img:$HOME/prosper/contrib:$HOME/prosper/contrib/img:$HOME/iiufrgs-slides:$HOME/iiufrgs-slides/img
+
+export TEXINPUTS
+
+
+
+
+
+3. Utilizando os estilos iiufrgs e iiufrgs-alt
+
+Dois estilos de slides II/UFRGS podem ser utilizados: iiufrgs e iiufrgs-alt. Os exemplos exemplo-iiufrgs.tex e exemplo-iiufrgs-alt.tex apresentam a forma de uso destes estilos.
+
+Update: mais duas variantes, iiufrgs-2 e iiufrgs-light foram inseridos.
+
+
+
+4.Gerando os slides no formato PDF
+
+latex arquivo.tex
+dvips arquivo -o
+ps2pdf arquivo.ps arquivo.pdf
+
+5.Gerando slides no formato 4 por pagina
+
+psnup -pa4 -nup 4 -l < arquivo.ps > novo_arquivo.ps
