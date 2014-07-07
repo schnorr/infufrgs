@@ -6,13 +6,14 @@
 # DO NOT CHANGE
 # This is the default user package directory, by installing here
 # there is no need to run mktexlsr or to use sudo
-DEFAULT_INSTALLDIR = $(HOME)/texmf/tex/latex/iiufrgs
+DEFAULT_INSTALLDIR = $(HOME)/texmf/
 
 # USER CONFIG
 INSTALLDIR = $(DEFAULT_INSTALLDIR)
 
 INPUTS = $(INSTALLDIR)/tex/latex/iiufrgs
 DOC = $(INSTALLDIR)/doc/latex/iiufrgs
+BIB = $(INSTALLDIR)/bibtex/bst
 
 all:
 	@echo "Digite \`\`make install'' para instalar o pacote."
@@ -26,8 +27,9 @@ all:
 	@echo
 
 install:
-	install -d $(INPUTS) $(DOC)
+	install -d $(INPUTS) $(DOC) $(BIB)
 	cp -R inputs/* $(INPUTS)
+	cp inputs/abnt-ufrgs.bst $(BIB)
 	cp README COPYING CHANGELOG BUGS $(INSTALLDIR)
 	@echo
 	@echo "Arquivos instalados com sucesso em $(INSTALLDIR)."
