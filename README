@@ -2,17 +2,17 @@ README
 UFRGS TeX Users Group
 $Id: README,v 1.1.1.1 2005/01/18 23:54:37 avila Exp $
 
-Estes arquivos compoem o pacote de estilos LaTeX de documentos para o II/UFRGS. 
+Estes arquivos compoem o pacote de estilos LaTeX de documentos para o II/UFRGS.
 
 Varias classes de documentos sao disponibilizadas:
 
 	- iiufrgs.cls, para documentos do tipo TI, dissertacao, tese, etc.
-	- sa.cls, para produzir artigos para o Semin·rio de Andamento
-	- iiletter, para produzir cartas com logotÌpos do II, em duas versıes
+	- sa.cls, para produzir artigos para o Semin√°rio de Andamento
+	- iiletter, para produzir cartas com logot√≠pos do II, em duas vers√µes
 
-Cada uma tem um arquivo de exemplo, no diretÛrio ``exemplos''.
+Cada uma tem um arquivo de exemplo, no diret√≥rio ``exemplos''.
 
-Coment·rios e sugestıes sao MUITO bem-vindos. Envie-os para a lista de discussıes do grupo de usu·rios TeX da UFRGS:
+Coment√°rios e sugest√µes sao MUITO bem-vindos. Envie-os para a lista de discuss√µes do grupo de usu√°rios TeX da UFRGS:
 
 	utug-l@inf.ufrgs.br
 
@@ -22,9 +22,9 @@ Para cadastrar-se na lista, visite
 
 ou envie e-mail para utug-l-request@inf.ufrgs.br com a palavra subscribe no corpo da mensagem.
 
-InstalaÁ„o
+Instala√ß√£o
 
-Os links abaixo podem ser ˙teis para a instalaÁ„o do pacote:
+Os links abaixo podem ser √∫teis para a instala√ß√£o do pacote:
 
 	http://www.tex.ac.uk/cgi-bin/texfaq2html?label=privinst
 	http://www.tex.ac.uk/cgi-bin/texfaq2html?label=what-TDS
