@@ -1,0 +1,81 @@
+/*
+Original design: andreas02 (v3.0 - Apr 24, 2008) - A free xhtml/css website template by Andreas Viklund.
+For more information, see http://andreasviklund.com/templates/andreas02/
+*/
+
+/* always show scrollbar in firefox */
+html {
+     overflow: -moz-scrollbars-vertical;
+}
+
+/* General layout */
+body {background:#e0e0e0; color:#303030; font: 85% tahoma, verdana, sans-serif; margin:0; padding:15px 0 0;}
+#container {background:#fff; margin:0 auto 20px; padding:5px 20px 20px; width:730px;}
+
+#nextevent
+{
+    font-size: 1.2em;
+}
+
+#events
+{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 5px 0 5px 0;
+}
+
+#events th
+{
+  font-size: 1.1em;
+  text-align: left;
+  color: #000000;
+}
+
+#sponsoring
+{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 5px 0 5px 0;
+  font-size: 0.8em;
+  text-align: center;
+  color: #c0c0c0;
+}
+
+/* Site title */
+#logo {margin:10px 0 0 0;}
+#logo h1 a {border:none; color:#505050; margin: 0; padding: 0;}
+#logo h1 a:hover {border:none; color:#303030; text-decoration:none; }
+#logo h1 { display: inline; border: 0; margin: 0; padding: 0;}
+#logo h2 { display: inline; border: 0; margin: 0; padding: 0; font-size: 1.1em;};
+#logo p {font-size:1.3em;  color:#505050; margin:0 0 20px 0;}
+
+/* Tags */
+a {border-bottom: 1px solid #c0c0c0; color:#050505; text-decoration:none;}
+a:hover {border-bottom:1px solid #505050; color:#303030; text-decoration:none;}
+a img {border:0;}
+h1 {font-size: 1.6em; }
+h2 {font-size:1.3em; margin-bottom: 0px; padding: 0}
+p {font-size: 1em; text-align: justify; }
+ul,ol {margin:0 0 15px 15px; padding:0;}
+li {margin:0 0 3px 0;}
+
+/* To
+/* Header description area */
+#desc {background-color: #000000; clear:both; color:#fff; height:3px; }
+
+/* Main content */
+#main {float:left; margin:0; padding:0 15px 0 0; width:715px;}
+#text {float:left; width: 550px;}
+#photo {float:right; }
+
+/* Footer */
+#footer {background:#fff; border-top:1px solid #d8d8d8; clear:both; margin: 10px 0 0 0; padding:0; text-align:center; color:gray; font-size:0.8em}
+#footer a {color:gray;}
+#footer a:hover {color:#303030;}
+
+/* Additional classes */
+.photo {background-color:#f0f0f0; border:1px solid #d8d8d8; margin:0 0 15px; padding:2px;}
+.timestamp {font-size:1.2em; color:#606060; margin:-12px 0 12px 0;}
+.right {margin:-8px 0 8px 0; text-align:right;}
+.block {background:#f0f0f0; padding:10px;}
+.hide {display:none;}
