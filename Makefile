@@ -30,7 +30,7 @@ install:
 	install -d $(INPUTS) $(DOC) $(BIB)
 	cp -R inputs/* $(INPUTS)
 	cp inputs/abnt-ufrgs.bst $(BIB)
-	cp README COPYING CHANGELOG BUGS $(INSTALLDIR)
+	cp README.md COPYING CHANGELOG BUGS $(INSTALLDIR)
 	@echo
 	@echo "Arquivos instalados com sucesso em $(INSTALLDIR)."
 	@echo
