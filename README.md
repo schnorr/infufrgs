@@ -13,7 +13,7 @@ Cada uma tem um arquivo de exemplo, no diretório ``exemplos''.
 
 ### Participação
 
-Comentários e sugestões sao **MUITO** bem-vindos. Envie-os para a lista de discussões do grupo de usuários TeX da UFRGS:
+Comentários e sugestões são **MUITO** bem-vindos. Envie-os para a lista de discussões do grupo de usuários TeX da UFRGS:
 
   * utug-l@inf.ufrgs.br
 
