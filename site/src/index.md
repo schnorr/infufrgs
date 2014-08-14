@@ -19,7 +19,7 @@ A versão mais atual do estilo INF/UFRGS encontra-se no github:
 + <a href="https://github.com/schnorr/iiufrgs">https://github.com/schnorr/iiufrgs</a>
 
 Caso tu venhas encontrar algum problema de compatibilidade com o
-estilo exigido pela biblioteca do INF/UFRGS, não êxite em nos enviar
+estilo exigido pela biblioteca do INF/UFRGS, não hesitas em nos enviar
 um pull request através do github, ou um patch para a lista de
 e-mails do grupo.
 
