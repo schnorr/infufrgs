@@ -75,8 +75,6 @@
 \RequirePackage{keyval}
 \RequirePackage{fixltx2e}
 
-\RequirePackage{subfig}
-
 \RequirePackage[english,brazilian]{babel}
 \input{brazilian.babel}
 \input{english.babel}
