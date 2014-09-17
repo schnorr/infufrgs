@@ -46,7 +46,7 @@
 \providecommand{\nominataChefeINTname}{Chefe do \deptINT}
 
 % Graduação
-\providecommand{\nominataPRAG}{Prof.~S{\'e}rgio Roberto Kieling}
+\providecommand{\nominataPRAG}{Prof.~S{\'e}rgio Roberto Kieling Franco}
 \providecommand{\nominataPRAGname}{Pr{\'o}-Reitor de Gradua{\c{c}}{\~a}o}
 
 %CIC
