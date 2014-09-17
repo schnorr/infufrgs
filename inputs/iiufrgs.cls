@@ -87,6 +87,7 @@
 \RequirePackage{indentfirst}
 \RequirePackage{iidefs}
 \RequirePackage{natbib}
+\RequirePackage{setspace}
 
 \RequirePackage[%
         bookmarksnumbered=true,	
@@ -128,11 +129,15 @@
         \addtolength{\oddsidemargin}{-1in}
 \setlength{\evensidemargin}{\oddsidemargin}
 \setlength{\textwidth}{\paperwidth}
-        \addtolength{\textwidth}{-2\ii@sidemargin}
+        \addtolength{\textwidth}{-\ii@sidemargin} % remove margem à esquerda
+        \addtolength{\textwidth}{-20mm} % remove margem à direita
 \setlength{\marginparsep}{\ii@sidemargin}
         \addtolength{\marginparsep}{-\marginparwidth}
         \setlength{\marginparsep}{.5\marginparsep}
 
+% espaçamento entre as linhas
+\onehalfspace
+        
 %==============================================================================
 % Numeração das páginas
 %==============================================================================
@@ -435,8 +440,11 @@
 \renewenvironment{abstract}{%
         \chapter*{\abstractname}
 }{%
-        \par\vfill
-        \noindent\textbf{\keywordsname:} \@abstractkw.
+        %\par\vfill
+				%\\
+        \\
+
+				\vspace{\parskip}\noindent\textbf{\keywordsname:} \@abstractkw.
 }
 \newenvironment{englishabstract}[2]{%
         \if@openright\cleardoublepage\else\clearpage\fi%
@@ -452,9 +460,12 @@
                 \noindent\raisebox{22ex}[0pt][0pt]{%
                        \parbox[t]{\textwidth}{\centering\textbf{#1}}
                 }\vspace{-\baselineskip}\par
-}{
-        \par\vfill
-        \noindent\textbf{\keywordsname:} \@englishkeywords.
+}{%
+        %\par\vfill
+				%\\
+        \\
+
+				\noindent\textbf{\keywordsname:} \@englishkeywords.
         \end{otherlanguage}
 }
 
@@ -468,7 +479,7 @@
 % formatação dos títulos propriamente ditos.
 %==============================================================================
 \newcounter{schapter}
-\newcommand{\ii@chapterfont}{\@setfontsize\Large{16}{20}}
+\newcommand{\ii@chapterfont}{\@setfontsize\Large{12}{18}}
 \def\@chapapp{}
 \def\@chapter[#1]#2{%
         \xdef\Hy@chapapp{CHAPTER}%
@@ -481,9 +492,11 @@
         \@makechapterhead{#2}\@afterheading%
 }
 \def\@makechapterhead#1{%
-        \vspace*{90pt}
+        %\vspace*{90pt}
+        %\vspace{12pt}
         \reset@font\noindent{\ii@chapterfont\sffamily\textbf{\@chapapp\thechapter\hspace{1em}\MakeUppercase{#1}}\par}
-        \addvspace{42pt}
+        \addvspace{12pt}
+        %\par
 }
 \def\@schapter#1{%
         \xdef\Hy@chapapp{SCHAPTER}%
@@ -500,7 +513,7 @@
         \addtocontents{lot}{\protect\addvspace{10\p@}}%
 }
 \def\@makeschapterhead#1{%
-        \vspace*{90pt}
+        %\vspace*{90pt}
         \reset@font\centerline{\ii@chapterfont\sffamily\textbf{\MakeUppercase{#1}}}
         \addvspace{42pt}
 }
@@ -522,21 +535,22 @@
 % Formatação das seções
 %==============================================================================
 \setcounter{secnumdepth}{4}
+
 \renewcommand{\section}{%
-        \@startsection{section}{1}{0pt}{18pt}{9pt}{\reset@font\large\bfseries}
+        \@startsection{section}{2}{0pt}{18pt}{18pt}{\reset@font\normalsize\bfseries}
 }
 \renewcommand{\subsection}{%
-        \@startsection{subsection}{2}{0pt}{12pt}{6pt}{\reset@font\bfseries}
+        \@startsection{subsection}{3}{0pt}{18pt}{18pt}{\reset@font\bfseries}
 }
 \renewcommand{\subsubsection}{%
-        \@startsection{subsubsection}{3}{0pt}{12pt}{6pt}{\reset@font\itshape}
+        \@startsection{subsubsection}{4}{0pt}{18pt}{18pt}{\reset@font\itshape}
 }
 \renewcommand{\paragraph}{%
-        \@startsection{paragraph}{4}{0pt}{12pt}{6pt}{\reset@font}
+        \@startsection{paragraph}{5}{0pt}{18pt}{18pt}{\reset@font}
 }
-\renewcommand{\subparagraph}{%
-        \@startsection{subparagraph}{5}{0pt}{1ex}{-1em}{\reset@font\bfseries}
-}
+%\renewcommand{\subparagraph}{%
+%        \@startsection{subparagraph}{5}{0pt}{1ex}{-1em}{\reset@font\bfseries}
+%}
 
 \renewcommand*{\l@figure}{\@dottedtocline{1}{0em}{5.5em}}
 \let\l@table\l@figure
