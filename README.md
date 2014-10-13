@@ -9,7 +9,7 @@ Várias classes de documentos são disponibilizadas, como por exemplo:
   * **sa.cls**, para produzir artigos para o Seminário de Andamento
   * **iiletter**, para produzir cartas com logotípos do II, em duas versões
 
-Cada uma tem um arquivo de exemplo, no diretório ``exemplos''.
+Cada uma tem um arquivo de exemplo, no diretório "exemplos".
 
 ### Participação
 
@@ -24,6 +24,8 @@ Para cadastrar-se na lista, visite
 ou envie e-mail para utug-l-request@inf.ufrgs.br com a palavra _subscribe_ no corpo da mensagem.
 
 ### Instalação
+
+Os arquivos necessários para compilar os fontes tex encontram-se no diretório *inputs/* . Copie todos os arquivos para o diretório do seu documento ou utilize o Makefile para outras opções.
 
 Os links abaixo podem ser úteis para a instalação do pacote:
 
