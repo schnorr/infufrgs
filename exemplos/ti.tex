@@ -6,22 +6,39 @@
 % public domain.
 %
 \documentclass[ppgc,ti]{iiufrgs}
-% um tipo específico de monografia pode ser informado como parâmetro opcional:
-%\documentclass[tese]{iiufrgs}
-% monografias em inglês devem receber o parâmetro `english':
-%\documentclass[diss,english]{iiufrgs}
-% a opção `openright' pode ser usada para forçar inícios de capítulos
-% em páginas ímpares
-% \documentclass[openright]{iiufrgs}
-% para gerar uma versão somente-frente, basta utilizar a opção `oneside':
-% \documentclass[oneside]{iiufrgs}
-\usepackage[T1]{fontenc}        % pacote para conj. de caracteres correto
-\usepackage[utf8]{inputenc}     % pacote para acentuação
-\usepackage{graphicx}           % pacote para importar figuras
-\usepackage{times}              % pacote para usar fonte Adobe Times
-%\usepackage{mathptmx}          % p/ usar fonte Adobe Times nas fórmulas
+% Para usar o modelo, deve-se informar o programa e o tipo de documento.
+% Programas :
+%   * cic       -- Graduação em Ciência da Computação
+%   * ecp       -- Graduação em Ciência da Computação
+%   * ppgc      -- Programa de Pós Graduação em Computação
+%   * pgmigro   -- Programa de Pós Graduação em Microeletrônica
+%   
+% Tipos de Documento:
+%   * tc                -- Trabalhos de Conclusão (apenas cic e ecp)
+%   * diss ou mestrado  -- Dissertações de Mestrado (ppgc e pgmicro)
+%   * tese ou doutorado -- Teses de Doutorado (ppgc e pgmicro)
+%   * ti                -- Trabalho Individual (ppgc e pgmicro)
+% 
+% Outras Opções:
+%   * english    -- para textos em inglês
+%   * openright  -- Força início de capítulos em páginas ímpares (padrão da
+%                   biblioteca)
+%   * oneside    -- Desliga frente-e-verso
+%   * nominatalocal -- Lê os dados da nominata do arquivo nominatalocal.def
 
-\ti[I]{3}
+
+% Use unicode
+\usepackage[utf8]{inputenc}   % pacote para acentuação
+
+% Necessário para incluir figuras
+\usepackage{graphicx}           % pacote para importar figuras
+
+
+\usepackage{times}              % pacote para usar fonte Adobe Times
+% \usepackage{palatino}
+% \usepackage{mathptmx}          % p/ usar fonte Adobe Times nas fórmulas
+
+\usepackage[alf,abnt-emphasize=bf]{abntex2cite}	% pacote para usar citações abnt
 
 %
 % Informações gerais
@@ -34,15 +51,12 @@
 %\author{Flaumann}{Klaus Gutenberg}
 
 % orientador e co-orientador são opcionais (não diga isso pra eles :))
-% \advisor[Prof.~Dr.]{Lamport}{Leslie}
+\advisor[Prof.~Dr.]{Lamport}{Leslie}
 %\coadvisor[Prof.~Dr.]{Knuth}{Donald Ervin}
 
 % a data deve ser a da defesa; se nao especificada, são gerados
 % mes e ano correntes
 %\date{maio}{2001}
-
-% o nome do curso pode ser redefinido (ex. para TCs)
-%\course{Curso de Especialização em Cachaça}
 
 % o local de realização do trabalho pode ser especificado (ex. para TCs)
 % com o comando \location:
@@ -75,21 +89,8 @@
 % \financ{CNPq, CAPES} % orgaos financiadores
 
 % Trabalho Individual [ti]:
-% \ti{123}     % numero do TI
+\ti{123}     % numero do TI
 % \ti[II]{456} % no caso de ser o segundo TI
-
-% Trabalho de Conclusão [tc]:
-% além de definir explicitamente o nome do curso (\course) e o local
-% de realização (\location), é necessário redefinir a nominata,
-% pois as informações necessárias dependem do curso. Ex.:
-%\renewcommand{\nominata}{
-%        UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL\\
-%        Reitora: Prof\textsuperscript{a}.~Wrana Maria Panizzi\\
-%        Pró-Reitor de Ensino: Prof.~José Carlos Ferraz Hennemann\\
-%        Diretor do Instituto de Informática: Prof.~Philippe Olivier Alexandre Navaux\\
-%        Coordenador do curso: Prof.~Seu Creysson\\
-%        Bibliotecária-chefe do Instituto de Informática: Beatriz Regina Bastos Haro
-%}
 
 % Monografias de Especialização [espec]:
 % \espec{Redes e Sistemas Distribuídos}      % nome do curso
@@ -178,14 +179,14 @@ the abstract should not contain more than 500~words.}
 
 % introducao
 \chapter{Introdução}
-No início dos tempos, Donald E. Knuth criou o \TeX. Algum tempo depois, Leslie Lamport criou o \LaTeX. Graças a eles, não somos obrigados a usar o Word nem o StarOffice.
+No início dos tempos, Donald E. Knuth criou o \TeX. Algum tempo depois, Leslie Lamport criou o \LaTeX. Graças a eles, não somos obrigados a usar o Word nem o LibreOffice.
 
 \section{Figuras e tabelas}
-Esta seção faz referência às Figuras~\ref{fig:ex1} e~\ref{fig:ex2}, a título de exemplo. A primeira representa o caso mais comum, onde a figura propriamente dita é importada de um arquivo \texttt{.eps} (aplicativos como \emph{xfig} e \emph{dia} estão entre os mais usados para gerar figuras no formato \texttt{.eps}). A segunda exemplifica o uso do environment \texttt{picture}, para desenhar usando o próprio~\LaTeX.
+Esta seção faz referência às Figuras~\ref{fig:ex1} e~\ref{fig:ex2}, a título de exemplo. A primeira representa o caso mais comum, onde a figura propriamente dita é importada de um arquivo \texttt{.eps} (veja a seção \ref{sec:fig_format}). A segunda exemplifica o uso do environment \texttt{picture}, para desenhar usando o próprio~\LaTeX.
 
 \begin{figure}
         \centerline{\includegraphics[width=8em]{fig.eps}}
-        \caption{Exemplo de figura importada de um arquivo \texttt{.eps} e também exemplo de caption muito grande que ocupa mais de uma linha na Lista de~Figuras}
+        \caption{Exemplo de figura importada de um arquivo \texttt{.eps} e também exemplo de caption muito grande que ocupa mais de uma linha na Lista~de~Figuras}
         \label{fig:ex1}
 \end{figure}
 
@@ -212,23 +213,43 @@ Esta seção faz referência às Figuras~\ref{fig:ex1} e~\ref{fig:ex2}, a títul
 
 Tabelas são construídas com praticamente os mesmos comandos. Lembre-se, porém, que o caption das tabelas deve ir em cima.
 
+\subsection{Formato de Figuras}
+\label{sec:fig_format}
+
+O LaTeX permite utilizar vários formatos de figuras, entre eles \emph{eps}, \emph{pdf}, \emph{jpeg} e \emph{png}. Programas de diagramação como Inkscape (e mesmo LibreOffice) permitem gerar arquivos de imagens vetoriais que podem ser utilizados pelo LaTeX sem dificuldade. Pacotes externos permitem utilizar SVG e outros formatos.
+
+Dia e xfig são programas utilizados por dinossauros para gerar figuras vetoriais. Se possível, evite-os.
+
 \subsection{Classificação dos etc.}
 
 O formato adotado pela ABNT prevê apenas três níveis (capítulo, seção e subseção). Assim, \texttt{\char'134subsubsection} não é aconselhado.
 
 \section{Sobre as referências bibliográficas}
-Recomenda-se seriamente fazer uso do pacote \emph{bibabnt}, também disponibilizado na página do UTUG~\citeyearpar{UTUG:Homepage-01}. Esse pacote provê um estilo \textsc{BibTeX} para formatação de referências bibliográficas combinando normas da ABNT e do Instituto de Informática da UFRGS\@.
 
-As seguintes referências são colocadas aqui a título de exemplo:
-\cite{Andrews:CP-91, Silberschatz:OSC-3-91, Wilson:MME-01}.
+A classe \emph{iiufrgs} faz uso do pacote \emph{abnTeX2} com algumas alterações
+feitas por Sandro Rama Fiorini. Culpe ele se algo der errado. Agradeça a ele
+pelo que der certo. As modificações dão uma camada de tinta NATBIB-style,
+já que o abntex2 usa uns comandos de citação feitos para alienígenas de 5 braços 
+wtf. Exemplos de citação:
 
-A classe \emph{iiufrgs} faz uso do pacote \emph{natbib}. Esse pacote
-disponibiliza diversos comandos alternativos para
-citações. Os mais úteis para nós são o \texttt{\char'134citeyearpar},
-que produz somente o ano (ex.~``[\ldots] são apresentados por Baker e
-Smith~\citeyearpar{Baker:PP-96}.'') e o
-\texttt{\char'134citep*}, que produz a citação com a lista
-completa de autores (ex.~``[\ldots] na linguagem Panda~\citep*{Assenmacher:Panda-ECOOP93}.'')
+\begin{itemize}
+    \item \emph{cite}: Unicórnios são verdes \cite{Adams2009Conceptual};
+    \item \emph{citep}:Unicórnios são verdes \citep{Adams2009Conceptual};
+    \item \emph{citet}: Segundo \citet{Adams2009Conceptual}, unicórnios são
+                        verdes.
+    \item \emph{citen or citenum}: Segundo \citen{Adams2009Conceptual},
+        unicórnios são verdes.
+    \item \emph{citeauthor e citeyearpar}: Segundo artigos de
+        \citeauthor{Adams2009Conceptual} , unicórnios são verdes 
+        \citeyearpar{Adams2009Conceptual}.
+
+\end{itemize}
+
+O estilo abnt fornecido antigamente pelo UTUG não é mais recomendado, pois não
+produz saída de acordo com as exigências da biblioteca.
+
+Recomenda-se o uso de bibtex para gerenciar as referências (veja o arquivo
+biblio.bib).
 
 % e aqui vai a parte principal
 %
@@ -246,56 +267,9 @@ completa de autores (ex.~``[\ldots] na linguagem Panda~\citep*{Assenmacher:Panda
 % observe também o estilo meio estranho de alguns labels; isso é
 % devido ao uso do pacote `natbib', que permite fazer citações de
 % autores, ano, e diversas combinações desses
-\begin{thebibliography}{este-parametro-nao-eh-usado-pelo-estilo-ABNT}
 
-\bibitem[ANDREWS, 1991]{Andrews:CP-91} ANDREWS,
-  G.~R\@. \textbf{Concurrent programming}: principles and
-  practice. Redwood~City, USA: Benjamin/Cummings, 1991. 637p.
-  
-\bibitem[ASSENMACHER et~al.(1993)ASSENMACHER; BREITBACH; BUHLER;
-  H{\"U}BSCH; SCHWARZ]{Assenmacher:Panda-ECOOP93} ASSENMACHER, H.;
-  BREITBACH, T.; BUHLER, P.; H{\"U}BSCH, V.; SCHWARZ, R\@.
-  Panda---supporting distributed programming in {C}++. In: EUROPEAN
-  CONFERENCE ON OBJECT-ORIENTED PROGRAMMING, 7., 1993, Kaiserslautern,
-  Germany. \textbf{Proceedings{\ldots}} Berlin: Springer-Verlag, 1993.
-  p.361--383. (Lecture Notes in Computer Science, v.707).
-
-\bibitem[BAKER; SMITH, 1996]{Baker:PP-96} BAKER, L.; SMITH,
-  B.~J\@. \textbf{Parallel programming}. New~York: McGraw-Hill,
-  1996. 381p.
-
-\bibitem[CAROMEL; KLAUSER; VAYSSIERE, 1998]{Caromel:TSC-CPE-10-11-98}
-  CAROMEL, D.; KLAUSER, W.; VAYSSIERE, J\@. Towards seamless computing
-  and metacomputing in {J}ava.  \textbf{Concurrency: Practice and
-  Experience}, West~Sussex, v.10, n.11--13, p.1043--1061,
-  Sept./Nov.~1998.
-
-\bibitem[FURMENTO; ROUDIER; SIEGEL, 1995]{Furmento:PDC-95} FURMENTO,
-  N.; ROUDIER, Y.; SIEGEL, G\@. \textbf{Parall{\'e}lisme et
-  distribution en {C}++}: une revue des langages existants. Valbonne,
-  FR: I3S, Universit\'{e} de Nice Sophia-Antipolis, 1995. (RR~95-02).
-
-\bibitem[INSTITUTE OF ELECTRICAL AND ELECTRONIC ENGINEERS,
-  1995]{IEEE:Pthreads-95} INSTITUTE OF ELECTRICAL AND ELECTRONIC
-  ENGINEERS\@. \textbf{Information Technology---Portable Operating
-  System Interface (POSIX), Threads Extension [C Language]},
-  \mbox{IEEE}~1003.1c-1995.  New~York, 1995.
-
-\bibitem[SILBERSCHATZ; PETERSON; GALVIN, 1991]{Silberschatz:OSC-3-91}
-  SILBERSCHATZ, A.; PETERSON, J.~L.; GALVIN, P.~B\@. \textbf{Operating
-  system concepts}. 3.ed.  Reading, USA: Addison-Wesley, 1991. 696p.
-
-\bibitem[UTUG(2001)UTUG]{UTUG:Homepage-01} UTUG\@. \textbf{Página do grupo
-  de usuários {\TeX} da {UFRGS}}. Disponível em:
-  $<$http://www.inf.ufrgs.br/utug$>$. Acesso em: maio 2001.
-
-\bibitem[WILSON, 2001]{Wilson:MME-01} WILSON, P.~C\@. \textbf{Um
-  método ótimo para o preparo de café em laboratório baseado na
-  reciclagem de filtros}. 2001. 123p.  Disserta{\c{c}}{\~a}o (Mestrado
-  em Ci{\^e}ncia da Computa{\c{c}}{\~a}o) --- Instituto de
-  Inform{\'a}tica, Universidade Federal do Rio Grande do Sul,
-  Porto~Alegre.
-
-\end{thebibliography}
+\bibliographystyle{abntex2-alf}
+\bibliography{biblio}
 
 \end{document}
+
