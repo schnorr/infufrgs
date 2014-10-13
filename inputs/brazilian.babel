@@ -44,7 +44,7 @@
 	\def\byname{por}%
 	\def\dissname{Disserta{\c{c}}{\~a}o (mestrado)}%
         \def\pgmicroTitulacaoEm{Microeletr{\^o}nica}
-        \def\ppgcTitulacaoEm{Ci{\^e}ncia da Computa{\'c}{\~a}o}
+        \def\ppgcTitulacaoEm{Ci{\^e}ncia da Computa{\c{c}}{\~a}o}
 	\def\dissspecificinfo{%
 		Disserta{\c{c}}{\~a}o apresentada como requisito parcial
 		para a obten{\c{c}}{\~a}o do grau de
@@ -59,8 +59,8 @@
 	\def\planodoutoradospecificinfo{Plano de Curso para Doutorado}%
 	\def\proptesespecificinfo{Proposta de Tese de Doutorado}%
 	\def\tcname{Trabalho de Conclus\~{a}o}%
-        \def\cicTitulacaoEm{Ci{\^e}ncia da Computa{\'c}{\~a}o}
-        \def\ecpTitulacaoEm{Engenharia da Computa{\'c}{\~a}o}
+        \def\cicTitulacaoEm{Ci{\^e}ncia da Computa{\c{c}}{\~a}o}
+        \def\ecpTitulacaoEm{Engenharia da Computa{\c{c}}{\~a}o}
 	\def\tcspecificinfo{%
 		Monografia apresentada como requisito
 		parcial para a obten{\c{c}}{\~a}o do grau de Bacharel
