@@ -519,7 +519,6 @@
         \addvspace{42pt}
 }
 \renewcommand{\appendix}[1][\appendixname]{
-    \@captionlistingfalse
     \setcounter{chapter}{0}%
     \renewcommand{\thechapter}{\Alph{chapter}}%
     \gdef\@chapapp{\texorpdfstring{\MakeUppercase{#1}}{#1}\space}%
