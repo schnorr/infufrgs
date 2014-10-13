@@ -86,7 +86,6 @@
 \RequirePackage{lastpage}
 \RequirePackage{indentfirst}
 \RequirePackage{iidefs}
-\RequirePackage{natbib}
 \RequirePackage{setspace}
 
 \RequirePackage[%
