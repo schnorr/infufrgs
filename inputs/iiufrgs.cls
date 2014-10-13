@@ -102,6 +102,8 @@
 ]{hyperref}[2009/10/09]
 \RequirePackage[all]{hypcap}
 
+\RequirePackage[T1]{fontenc}    % accedted characters in a T1 encoding are 1 glyph -- works better for pt_BR and other
+
 %==============================================================================
 % Margens do texto
 %==============================================================================
