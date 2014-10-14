@@ -1,0 +1,13 @@
+*.pdf
+*.lof
+*.log
+*.lot
+*.out
+*.pdf
+*.toc
+*.texe
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
