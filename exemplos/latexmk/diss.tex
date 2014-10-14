@@ -1,7 +1,7 @@
 % LaTex source code
 % File: "diss.tex"
 % Created: "Ter, 08 Abr 2014 14:27:10 +0200 (kassick)"
-% Updated: "Seg, 13 Out 2014 12:29:29 -0300 (kassick)"
+% Updated: "Ter, 14 Out 2014 13:19:01 -0300 (kassick)"
 % $Id$
 % Copyright (C) 2014, Rodrigo Virote Kassick <rvkassick@inf.ufrgs.br> 
 % exemplo genérico de uso da classe iiufrgs.cls baseado em
@@ -10,9 +10,19 @@
 % This is an example file and is hereby explicitly put in the
 % public domain.
 %
-
-
-% Um tipo específico de monografia pode ser informado como parâmetro opcional:
+\documentclass[diss,ppgc,openright,english]{iiufrgs}
+% Para usar o modelo, deve-se informar o programa e o tipo de documento.
+% Programas :
+%   * cic       -- Graduação em Ciência da Computação
+%   * ecp       -- Graduação em Ciência da Computação
+%   * ppgc      -- Programa de Pós Graduação em Computação
+%   * pgmigro   -- Programa de Pós Graduação em Microeletrônica
+%   
+% Tipos de Documento:
+%   * tc                -- Trabalhos de Conclusão (apenas cic e ecp)
+%   * diss ou mestrado  -- Dissertações de Mestrado (ppgc e pgmicro)
+%   * tese ou doutorado -- Teses de Doutorado (ppgc e pgmicro)
+%   * ti                -- Trabalho Individual (ppgc e pgmicro)
 % 
 %\documentclass[tese]{iiufrgs}
 %\documentclass[tc-cic]{iiufrgs}
@@ -20,7 +30,6 @@
 %...
 %@TODO: Atualizar depois que todos os .def tenham sido criados
 
-\documentclass[diss,ppgc,openright,english]{iiufrgs}
 
 % Outras Opções:
 %   * english    -- para textos em inglês
@@ -31,21 +40,17 @@
 
 
 % Estamos no século 21. Use unicode.
-%\usepackage{ucs}
-\usepackage{subfigure}
 \usepackage[utf8]{inputenc}
-
-% @TODO: t1 fontenc ainda é necessário? Se sim, @TODO: Mover t1 fontenc para a
-% classe
-\usepackage[T1]{fontenc}
-
-% @TODO: Qual dessas é o padrão da biblioteca ?
-\usepackage{times}
+\usepackage{times}              % pacote para usar fonte Adobe Times
 % \usepackage{palatino}
+% \usepackage{mathptmx}          % p/ usar fonte Adobe Times nas fórmulas
+\usepackage{subfigure}
+\usepackage[alf,abnt-emphasize=bf]{abntex2cite}	% pacote para usar citações abnt
 
 % Alguns pacotes úteis
-% \usepackage{url}                % comando \url{} para formatar urls corretamente
 \usepackage{graphicx}           % suporte a vários formatos gráficos
+\usepackage{listings}
+%\usepackage{url}                % comando \url{} para formatar urls corretamente
 %\usepackage{mathptmx}           % p/ usar fonte Adobe Times nas fórmulas
 %\usepackage{amsmath}            % Extensões da American Mathematical Society
 %\usepackage{array}              % Formatação de fórmulas
@@ -59,7 +64,6 @@
 %\usepackage{ifthen}             % Útil para construir comandos de latex
 %\usepackage{xspace}             % Insere um espaço SSE o próximo caracter nâo for de pontuação.
 
-\usepackage[alf,abnt-emphasize=bf]{abntex2cite}	% pacote para usar citações abnt
 
 
 
@@ -81,9 +85,6 @@
 % a data deve ser a da defesa; se nao especificada, são gerados
 % mes e ano correntes
 %\date{maio}{2001}
-
-% o nome do curso pode ser redefinido (ex. para TCs)
-%\course{Curso de Especialização em Cachaça}
 
 % o local de realização do trabalho pode ser especificado (ex. para TCs)
 % com o comando \location:
@@ -118,19 +119,6 @@
 % Trabalho Individual [ti]:
 % \ti{123}     % numero do TI
 % \ti[II]{456} % no caso de ser o segundo TI
-
-% Trabalho de Conclusão [tc]:
-% além de definir explicitamente o nome do curso (\course) e o local
-% de realização (\location), é necessário redefinir a nominata,
-% pois as informações necessárias dependem do curso. Ex.:
-%\renewcommand{\nominata}{
-%        UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL\\
-%        Reitora: Prof\textsuperscript{a}.~Wrana Maria Panizzi\\
-%        Pró-Reitor de Ensino: Prof.~José Carlos Ferraz Hennemann\\
-%        Diretor do Instituto de Informática: Prof.~Philippe Olivier Alexandre Navaux\\
-%        Coordenador do curso: Prof.~Seu Creysson\\
-%        Bibliotecária-chefe do Instituto de Informática: Beatriz Regina Bastos Haro
-%}
 
 % Monografias de Especialização [espec]:
 % \espec{Redes e Sistemas Distribuídos}      % nome do curso
@@ -174,8 +162,25 @@ and me, of course.
 \chapter*{Agradecimentos}
 Agradeço ao \LaTeX\ por não ter vírus de macro\ldots
 
-% sumario
-\tableofcontents
+
+% resumo na língua do documento
+\begin{abstract}
+Este documento é um exemplo de como formatar documentos para o
+Instituto de Informática da UFRGS usando as classes \LaTeX\
+disponibilizadas pelo UTUG\@. Ao mesmo tempo, pode servir de consulta
+para comandos mais genéricos. \emph{O texto do resumo não deve
+conter mais do que 500 palavras.}
+\end{abstract}
+
+% resumo na outra língua
+% como parametros devem ser passados o titulo e as palavras-chave
+% na outra língua, separadas por vírgulas
+\begin{englishabstract}{Using \LaTeX\ to Prepare Documents at II/UFRGS}{Electronic document preparation, \LaTeX, ABNT, UFRGS}
+This document is an example on how to prepare documents at II/UFRGS
+using the \LaTeX\ classes provided by the UTUG\@. At the same time, it
+may serve as a guide for general-purpose commands. \emph{The text in
+the abstract should not contain more than 500~words.}
+\end{englishabstract}
 
 % lista de abreviaturas e siglas
 % o parametro deve ser a abreviatura mais longa
@@ -197,26 +202,10 @@ Agradeço ao \LaTeX\ por não ter vírus de macro\ldots
 \listoffigures
 
 % lista de tabelas
-%\listoftables
+\listoftables
 
-% resumo na língua do documento
-\begin{abstract}
-Este documento é um exemplo de como formatar documentos para o
-Instituto de Informática da UFRGS usando as classes \LaTeX\
-disponibilizadas pelo UTUG\@. Ao mesmo tempo, pode servir de consulta
-para comandos mais genéricos. \emph{O texto do resumo não deve
-conter mais do que 500 palavras.}
-\end{abstract}
-
-% resumo na outra língua
-% como parametros devem ser passados o titulo e as palavras-chave
-% na outra língua, separadas por vírgulas
-\begin{englishabstract}{Using \LaTeX\ to Prepare Documents at II/UFRGS}{Electronic document preparation, \LaTeX, ABNT, UFRGS}
-This document is an example on how to prepare documents at II/UFRGS
-using the \LaTeX\ classes provided by the UTUG\@. At the same time, it
-may serve as a guide for general-purpose commands. \emph{The text in
-the abstract should not contain more than 500~words.}
-\end{englishabstract}
+% sumario
+\tableofcontents
 
 % aqui comeca o texto propriamente dito
 
@@ -227,18 +216,34 @@ No início dos tempos, Donald E. Knuth criou o \TeX. Algum tempo depois, Leslie 
 
 \section{Figuras e tabelas}
 
-Esta seção faz referência às Figuras~\ref{fig:ex1} e~\ref{fig:ex2}, a título de exemplo. A primeira representa o caso mais comum, onde a figura propriamente dita é importada de um arquivo \texttt{.eps} (aplicativos como \emph{xfig} e \emph{dia} estão entre os mais usados para gerar figuras no formato \texttt{.eps}). A segunda exemplifica o uso do environment \texttt{picture}, para desenhar usando o próprio~\LaTeX.
+Esta seção faz referência às Figuras~\ref{fig:estrutura},~\ref{fig:ex1} e~\ref{fig:ex2}, a título de exemplo. A primeira figura apresenta a estrutura de uma figura. A \emph{descrição} deve aparecer \textbf{acima} da figura. Abaixo da figura, deve ser indicado a origem da imagem, mesmo se essa for apenas os autores do texto.
 
+A Figura~\ref{fig:ex1} representa o caso mais comum, onde a figura propriamente dita é importada de um arquivo (neste exemplo em formato \texttt{.pdf}. Veja a seção \ref{sec:fig_format}). A Figura~\ref{fig:ex2} exemplifica o uso do environment \texttt{picture}, para desenhar usando o próprio~\LaTeX.
 
-\begin{figure}
-    \subfigure[a]{aaa}
-        \centerline{
-            \includegraphics[width=8em]{fig.pdf}
-        }
-        \caption{Exemplo de figura importada de um arquivo \texttt{.svg} e também exemplo de caption muito grande que ocupa mais de uma linha na Lista~de~Figuras}
-        \label{fig:ex1}
+\begin{figure}[h]
+    \caption{Descrição da Figura deve ir no topo}
+    \begin{center}
+        % Aqui vai um includegraphics , um picture environment ou qualquer
+        % outro comando necessário para incorporar o formato de imagem
+        % utilizado.
+        \begin{picture}(100,100)
+                \put(0,0){\line(0,1){100}}
+                \put(0,0){\line(1,0){100}}
+                \put(100,100){\line(0,-1){100}}
+                \put(100,100){\line(-1,0){100}}
+                \put(10,50){Uma Imagem}
+        \end{picture}
+    \end{center}
+    \label{fig:estrutura}
+    \legend{Fonte: Os Autores}
 \end{figure}
 
+\begin{figure}
+    \caption{Exemplo de figura importada de um arquivo \texttt{.pdf} e também exemplo de caption muito grande que ocupa mais de uma linha na Lista~de~Figuras}
+    \centerline{\includegraphics[width=8em]{fig.pdf}}
+    \legend{Fonte: Os Autores}
+    \label{fig:ex1}
+\end{figure}
 
 % o `[h]' abaixo é um parâmetro opcional que sugere que o LaTeX coloque a
 % figura exatamente neste ponto do texto. Somente preocupe-se com esse tipo
@@ -247,7 +252,8 @@ Esta seção faz referência às Figuras~\ref{fig:ex1} e~\ref{fig:ex2}, a títul
 % figuras e tabelas)
 %\begin{figure}[h]
 \begin{figure}
-        \begin{center}
+    \caption{Exemplo de figura desenhada com o environment \texttt{picture}.}
+    \begin{center}
         \setlength{\unitlength}{.1em}
         \begin{picture}(100,100)
                 \put(20,20){\circle{20}}
@@ -256,12 +262,39 @@ Esta seção faz referência às Figuras~\ref{fig:ex1} e~\ref{fig:ex2}, a títul
                 \put(80,80){\small\makebox(0,0){b}}
                 \put(28,28){\vector(1,1){44}}
         \end{picture}
-        \end{center}
-        \caption{Exemplo de figura desenhada com o environment \texttt{picture}.}
-        \label{fig:ex2}
+    \end{center}
+    \legend{Fonte: Os Autores}
+    \label{fig:ex2}
 \end{figure}
 
-Tabelas são construídas com praticamente os mesmos comandos. Lembre-se, porém, que o caption das tabelas deve ir em cima.
+Tabelas são construídas com praticamente os mesmos comandos. Ver a tabela \ref{tbl:ex1}.
+
+\begin{table}[h]
+    \caption{Uma tabela de Exemplo}
+    \begin{center}
+        \begin{tabular}{c|c|p{5cm}}
+            \textit{Col 1}  &   \textit{Col 2}  &   \textit{Col 3} \\
+            \hline
+            \hline
+            Val 1           &   Val 2           & Esta coluna funciona como um parágrafo, tendo uma margem definida em 5cm. Quebras de linha funcionam como em qualquer parágrafo do tex. \\
+            Valor Longo     & Val 2             & Val 3 \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \legend{Fonte: Os Autores}
+    \label{tbl:ex1}
+\end{table}
+
+\subsection{Formato de Figuras}
+\label{sec:fig_format}
+
+O LaTeX permite utilizar vários formatos de figuras, entre eles \emph{eps}, \emph{pdf}, \emph{jpeg} e \emph{png}. Programas de diagramação como Inkscape (e mesmo LibreOffice) permitem gerar arquivos de imagens vetoriais que podem ser utilizados pelo LaTeX sem dificuldade. Pacotes externos permitem utilizar SVG e outros formatos.
+
+Outra opção é utilizar programas externos para converter as figuras automaticamente (i.e. svg -> pdf). Pode-se incluir um comando de conversão em um Makefile ou uma regra para um utilitário de compilação de tex como Rubber ou LatexMK. Este documento utiliza LatexMK, com um arquivo de configuração para definir os caminhos dos arquivos da classe IIUFRGS e para adicionar um comando para converter SVGs para PDFs utilizando Inkscape -- ver listagem~\ref{lst:latexmk}.
+
+\lstinputlisting[label=lst:latexmk,caption={Exemplo de LatexMk},float=h]{latexmkrc}
+
+Dia e xfig são programas utilizados por dinossauros para gerar figuras vetoriais. Se possível, evite-os.
 
 \subsection{Classificação dos etc.}
 
@@ -276,16 +309,23 @@ já que o abntex2 usa uns comandos de citação feitos para alienívenas de 5 br
 wtf. Exemplos de citação:
 
 \begin{itemize}
-    \item \emph{cite}: \cite{Adams2009Conceptual};
-    \item \emph{citep}:\citep{Adams2009Conceptual};
-    \item \emph{citet}: \citet{Adams2009Conceptual}
-    \item \emph{citen or citenum}: \citen{Adams2009Conceptual}
-    \item \emph{citeyearpar} \citeyearpar{Adams2009Conceptual};
+    \item \emph{cite}: Unicórnios são verdes \cite{Adams2009Conceptual};
+    \item \emph{citep}:Unicórnios são verdes \citep{Adams2009Conceptual};
+    \item \emph{citet}: Segundo \citet{Adams2009Conceptual}, unicórnios são
+                        verdes.
+    \item \emph{citen or citenum}: Segundo \citen{Adams2009Conceptual},
+        unicórnios são verdes.
+    \item \emph{citeauthor e citeyearpar}: Segundo artigos de
+        \citeauthor{Adams2009Conceptual} , unicórnios são verdes 
+        \citeyearpar{Adams2009Conceptual}.
+
 \end{itemize}
 
 O estilo abnt fornecido antigamente pelo UTUG não é mais recomendado, pois não
 produz saída de acordo com as exigências da biblioteca.
 
+Recomenda-se o uso de bibtex para gerenciar as referências (veja o arquivo
+biblio.bib).
 
 % e aqui vai a parte principal
 %
