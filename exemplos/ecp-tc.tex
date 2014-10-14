@@ -131,8 +131,26 @@ it is because I stood on the shoulders of giants.''\\}
 \chapter*{Agradecimentos}
 Agradeço ao \LaTeX\ por não ter vírus de macro\ldots
 
-% sumario
-\tableofcontents
+
+
+% resumo na língua do documento
+\begin{abstract}
+Este documento é um exemplo de como formatar documentos para o
+Instituto de Informática da UFRGS usando as classes \LaTeX\
+disponibilizadas pelo UTUG\@. Ao mesmo tempo, pode servir de consulta
+para comandos mais genéricos. \emph{O texto do resumo não deve
+conter mais do que 500 palavras.}
+\end{abstract}
+
+% resumo na outra língua
+% como parametros devem ser passados o titulo e as palavras-chave
+% na outra língua, separadas por vírgulas
+\begin{englishabstract}{Using \LaTeX\ to Prepare Documents at II/UFRGS}{Electronic document preparation, \LaTeX, ABNT, UFRGS}
+This document is an example on how to prepare documents at II/UFRGS
+using the \LaTeX\ classes provided by the UTUG\@. At the same time, it
+may serve as a guide for general-purpose commands. \emph{The text in
+the abstract should not contain more than 500~words.}
+\end{englishabstract}
 
 % lista de abreviaturas e siglas
 % o parametro deve ser a abreviatura mais longa
@@ -154,26 +172,10 @@ Agradeço ao \LaTeX\ por não ter vírus de macro\ldots
 \listoffigures
 
 % lista de tabelas
-%\listoftables
+\listoftables
 
-% resumo na língua do documento
-\begin{abstract}
-Este documento é um exemplo de como formatar documentos para o
-Instituto de Informática da UFRGS usando as classes \LaTeX\
-disponibilizadas pelo UTUG\@. Ao mesmo tempo, pode servir de consulta
-para comandos mais genéricos. \emph{O texto do resumo não deve
-conter mais do que 500 palavras.}
-\end{abstract}
-
-% resumo na outra língua
-% como parametros devem ser passados o titulo e as palavras-chave
-% na outra língua, separadas por vírgulas
-\begin{englishabstract}{Using \LaTeX\ to Prepare Documents at II/UFRGS}{Electronic document preparation, \LaTeX, ABNT, UFRGS}
-This document is an example on how to prepare documents at II/UFRGS
-using the \LaTeX\ classes provided by the UTUG\@. At the same time, it
-may serve as a guide for general-purpose commands. \emph{The text in
-the abstract should not contain more than 500~words.}
-\end{englishabstract}
+% sumario
+\tableofcontents
 
 % aqui comeca o texto propriamente dito
 
@@ -182,12 +184,34 @@ the abstract should not contain more than 500~words.}
 No início dos tempos, Donald E. Knuth criou o \TeX. Algum tempo depois, Leslie Lamport criou o \LaTeX. Graças a eles, não somos obrigados a usar o Word nem o LibreOffice.
 
 \section{Figuras e tabelas}
-Esta seção faz referência às Figuras~\ref{fig:ex1} e~\ref{fig:ex2}, a título de exemplo. A primeira representa o caso mais comum, onde a figura propriamente dita é importada de um arquivo \texttt{.eps} (veja a seção \ref{sec:fig_format}). A segunda exemplifica o uso do environment \texttt{picture}, para desenhar usando o próprio~\LaTeX.
+
+Esta seção faz referência às Figuras~\ref{fig:estrutura},~\ref{fig:ex1} e~\ref{fig:ex2}, a título de exemplo. A primeira figura apresenta a estrutura de uma figura. A \emph{descrição} deve aparecer \textbf{acima} da figura. Abaixo da figura, deve ser indicado a origem da imagem, mesmo se essa for apenas os autores do texto.
+
+A Figura~\ref{fig:ex1} representa o caso mais comum, onde a figura propriamente dita é importada de um arquivo (neste exemplo em formato \texttt{.eps}. Veja a seção \ref{sec:fig_format}). A Figura~\ref{fig:ex2} exemplifica o uso do environment \texttt{picture}, para desenhar usando o próprio~\LaTeX.
+
+\begin{figure}[h]
+    \caption{Descrição da Figura deve ir no topo}
+    \begin{center}
+        % Aqui vai um includegraphics , um picture environment ou qualquer
+        % outro comando necessário para incorporar o formato de imagem
+        % utilizado.
+        \begin{picture}(100,100)
+                \put(0,0){\line(0,1){100}}
+                \put(0,0){\line(1,0){100}}
+                \put(100,100){\line(0,-1){100}}
+                \put(100,100){\line(-1,0){100}}
+                \put(10,50){Uma Imagem}
+        \end{picture}
+    \end{center}
+    \label{fig:estrutura}
+    \legend{Fonte: Os Autores}
+\end{figure}
 
 \begin{figure}
-        \centerline{\includegraphics[width=8em]{fig.eps}}
-        \caption{Exemplo de figura importada de um arquivo \texttt{.eps} e também exemplo de caption muito grande que ocupa mais de uma linha na Lista~de~Figuras}
-        \label{fig:ex1}
+    \caption{Exemplo de figura importada de um arquivo \texttt{.eps} e também exemplo de caption muito grande que ocupa mais de uma linha na Lista~de~Figuras}
+    \centerline{\includegraphics[width=8em]{fig.eps}}
+    \legend{Fonte: Os Autores}
+    \label{fig:ex1}
 \end{figure}
 
 % o `[h]' abaixo é um parâmetro opcional que sugere que o LaTeX coloque a
@@ -197,7 +221,8 @@ Esta seção faz referência às Figuras~\ref{fig:ex1} e~\ref{fig:ex2}, a títul
 % figuras e tabelas)
 %\begin{figure}[h]
 \begin{figure}
-        \begin{center}
+    \caption{Exemplo de figura desenhada com o environment \texttt{picture}.}
+    \begin{center}
         \setlength{\unitlength}{.1em}
         \begin{picture}(100,100)
                 \put(20,20){\circle{20}}
@@ -206,12 +231,28 @@ Esta seção faz referência às Figuras~\ref{fig:ex1} e~\ref{fig:ex2}, a títul
                 \put(80,80){\small\makebox(0,0){b}}
                 \put(28,28){\vector(1,1){44}}
         \end{picture}
-        \end{center}
-        \caption{Exemplo de figura desenhada com o environment \texttt{picture}.}
-        \label{fig:ex2}
+    \end{center}
+    \legend{Fonte: Os Autores}
+    \label{fig:ex2}
 \end{figure}
 
-Tabelas são construídas com praticamente os mesmos comandos. Lembre-se, porém, que o caption das tabelas deve ir em cima.
+Tabelas são construídas com praticamente os mesmos comandos. Ver a tabela \ref{tbl:ex1}.
+
+\begin{table}[h]
+    \caption{Uma tabela de Exemplo}
+    \begin{center}
+        \begin{tabular}{c|c|p{5cm}}
+            \textit{Col 1}  &   \textit{Col 2}  &   \textit{Col 3} \\
+            \hline
+            \hline
+            Val 1           &   Val 2           & Esta coluna funciona como um parágrafo, tendo uma margem definida em 5cm. Quebras de linha funcionam como em qualquer parágrafo do tex. \\
+            Valor Longo     & Val 2             & Val 3 \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \legend{Fonte: Os Autores}
+    \label{tbl:ex1}
+\end{table}
 
 \subsection{Formato de Figuras}
 \label{sec:fig_format}
@@ -272,4 +313,3 @@ biblio.bib).
 \bibliography{biblio}
 
 \end{document}
-
