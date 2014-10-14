@@ -1,7 +1,7 @@
 % LaTex source code
 % File: "diss.tex"
 % Created: "Ter, 08 Abr 2014 14:27:10 +0200 (kassick)"
-% Updated: "Ter, 14 Out 2014 13:19:01 -0300 (kassick)"
+% Updated: "Ter, 14 Out 2014 16:51:02 -0300 (kassick)"
 % $Id$
 % Copyright (C) 2014, Rodrigo Virote Kassick <rvkassick@inf.ufrgs.br> 
 % exemplo genérico de uso da classe iiufrgs.cls baseado em
@@ -40,11 +40,15 @@
 
 
 % Estamos no século 21. Use unicode.
-\usepackage[utf8]{inputenc}
-\usepackage{times}              % pacote para usar fonte Adobe Times
 % \usepackage{palatino}
 % \usepackage{mathptmx}          % p/ usar fonte Adobe Times nas fórmulas
 \usepackage{subfigure}
+\usepackage{ifxetex}
+\ifxetex
+\else
+    \usepackage[utf8]{inputenc}
+\fi
+    
 \usepackage[alf,abnt-emphasize=bf]{abntex2cite}	% pacote para usar citações abnt
 
 % Alguns pacotes úteis

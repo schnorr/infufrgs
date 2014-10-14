@@ -103,7 +103,16 @@
 ]{hyperref}[2009/10/09]
 \RequirePackage[all]{hypcap}
 
-\RequirePackage[T1]{fontenc}    % accedted characters in a T1 encoding are 1 glyph -- works better for pt_BR and other
+%\RequirePackage[T1]{fontenc}    % accedted characters in a T1 encoding are 1 glyph -- works better for pt_BR and other
+\ifxetex
+  \usepackage{fontspec}
+  \setmainfont{Times New Roman}
+  %\usepackage{polyglossia}
+  %\setmainlanguage{portuguese}
+\else
+    \usepackage{times}              % pacote para usar fonte Adobe Times
+    \usepackage[T1]{fontenc}
+\fi
 
 %==============================================================================
 % Margens do texto
