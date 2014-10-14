@@ -87,6 +87,7 @@
 \RequirePackage{indentfirst}
 \RequirePackage{iidefs}
 \RequirePackage{setspace}
+\RequirePackage{ccaption}
 
 \RequirePackage[%
         bookmarksnumbered=true,	
@@ -580,6 +581,17 @@
 \renewenvironment{description}{
   \begin{list}{}{\topsep=6pt\itemsep=2pt\parsep=0pt\partopsep=0pt \labelwidth\z@ \itemindent-\leftmargin \let\makelabel\descriptionlabel}
 }{\end{list}}
+
+%==============================================================================
+% Ajuste das legendas das figuras e tabelas
+%==============================================================================
+\captiondelim{ -- }
+\setlength{\belowcaptionskip}{10pt}
+\setlength{\belowlegendskip}{0pt}
+
+\captiontitlefont{\small}
+
+
 
 
 %==============================================================================
