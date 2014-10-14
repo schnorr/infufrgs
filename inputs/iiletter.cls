@@ -15,6 +15,7 @@
 %
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{iiletter}
+
 \DeclareOption{variilogo}{
 	\gdef\ii@variilogo{1}
 }
@@ -24,6 +25,10 @@
 \ProcessOptions\relax
 \LoadClass[a4paper,12pt]{letter}
 \RequirePackage[brazilian]{babel}
+\RequirePackage{graphicx}
+    \RequirePackage{keyval}
+\RequirePackage{fixltx2e}
+\RequirePackage{epstopdf}
 \RequirePackage{iidefs}
 
 %
