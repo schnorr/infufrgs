@@ -106,7 +106,7 @@
 %\RequirePackage[T1]{fontenc}    % accedted characters in a T1 encoding are 1 glyph -- works better for pt_BR and other
 \ifxetex
   \usepackage{fontspec}
-  \setmainfont{Times New Roman}
+  \setmainfont{TeX Gyre Termes}
   %\usepackage{polyglossia}
   %\setmainlanguage{portuguese}
 \else
