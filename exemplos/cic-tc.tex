@@ -131,8 +131,26 @@ it is because I stood on the shoulders of giants.''\\}
 \chapter*{Agradecimentos}
 Agradeço ao \LaTeX\ por não ter vírus de macro\ldots
 
-% sumario
-\tableofcontents
+
+
+% resumo na língua do documento
+\begin{abstract}
+Este documento é um exemplo de como formatar documentos para o
+Instituto de Informática da UFRGS usando as classes \LaTeX\
+disponibilizadas pelo UTUG\@. Ao mesmo tempo, pode servir de consulta
+para comandos mais genéricos. \emph{O texto do resumo não deve
+conter mais do que 500 palavras.}
+\end{abstract}
+
+% resumo na outra língua
+% como parametros devem ser passados o titulo e as palavras-chave
+% na outra língua, separadas por vírgulas
+\begin{englishabstract}{Using \LaTeX\ to Prepare Documents at II/UFRGS}{Electronic document preparation, \LaTeX, ABNT, UFRGS}
+This document is an example on how to prepare documents at II/UFRGS
+using the \LaTeX\ classes provided by the UTUG\@. At the same time, it
+may serve as a guide for general-purpose commands. \emph{The text in
+the abstract should not contain more than 500~words.}
+\end{englishabstract}
 
 % lista de abreviaturas e siglas
 % o parametro deve ser a abreviatura mais longa
@@ -154,26 +172,10 @@ Agradeço ao \LaTeX\ por não ter vírus de macro\ldots
 \listoffigures
 
 % lista de tabelas
-%\listoftables
+\listoftables
 
-% resumo na língua do documento
-\begin{abstract}
-Este documento é um exemplo de como formatar documentos para o
-Instituto de Informática da UFRGS usando as classes \LaTeX\
-disponibilizadas pelo UTUG\@. Ao mesmo tempo, pode servir de consulta
-para comandos mais genéricos. \emph{O texto do resumo não deve
-conter mais do que 500 palavras.}
-\end{abstract}
-
-% resumo na outra língua
-% como parametros devem ser passados o titulo e as palavras-chave
-% na outra língua, separadas por vírgulas
-\begin{englishabstract}{Using \LaTeX\ to Prepare Documents at II/UFRGS}{Electronic document preparation, \LaTeX, ABNT, UFRGS}
-This document is an example on how to prepare documents at II/UFRGS
-using the \LaTeX\ classes provided by the UTUG\@. At the same time, it
-may serve as a guide for general-purpose commands. \emph{The text in
-the abstract should not contain more than 500~words.}
-\end{englishabstract}
+% sumario
+\tableofcontents
 
 % aqui comeca o texto propriamente dito
 
