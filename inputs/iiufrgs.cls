@@ -210,15 +210,15 @@
 }
 \newcommand{\@abstractkw}{%
         \@ifundefined{keywa}{}{\expandafter\MakeUppercase\keywa}%
-        \@ifundefined{keywb}{}{, \keywb}%
-        \@ifundefined{keywc}{}{, \keywc}%
-        \@ifundefined{keywd}{}{, \keywd}%
-        \@ifundefined{keywe}{}{, \keywe}%
-        \@ifundefined{keywf}{}{, \keywf}%
-        \@ifundefined{keywg}{}{, \keywg}%
-        \@ifundefined{keywh}{}{, \keywh}%
-        \@ifundefined{keywi}{}{, \keywi}%
-        \@ifundefined{keywj}{}{, \keywj}%
+        \@ifundefined{keywb}{}{. \keywb}%
+        \@ifundefined{keywc}{}{. \keywc}%
+        \@ifundefined{keywd}{}{. \keywd}%
+        \@ifundefined{keywe}{}{. \keywe}%
+        \@ifundefined{keywf}{}{. \keywf}%
+        \@ifundefined{keywg}{}{. \keywg}%
+        \@ifundefined{keywh}{}{. \keywh}%
+        \@ifundefined{keywi}{}{. \keywi}%
+        \@ifundefined{keywj}{}{. \keywj}%
 }
 
 %==============================================================================
@@ -255,15 +255,15 @@
                 },%
                 pdfkeywords={%
                         \@ifundefined{keywa}{}{\keywa}%
-                        \@ifundefined{keywb}{}{, \keywb}%
-                        \@ifundefined{keywc}{}{, \keywc}%
-                        \@ifundefined{keywd}{}{, \keywd}%
-                        \@ifundefined{keywe}{}{, \keywe}%
-                        \@ifundefined{keywf}{}{, \keywf}%
-                        \@ifundefined{keywg}{}{, \keywg}%
-                        \@ifundefined{keywh}{}{, \keywh}%
-                        \@ifundefined{keywi}{}{, \keywi}%
-                        \@ifundefined{keywj}{}{, \keywj}%
+                        \@ifundefined{keywb}{}{. \keywb}%
+                        \@ifundefined{keywc}{}{. \keywc}%
+                        \@ifundefined{keywd}{}{. \keywd}%
+                        \@ifundefined{keywe}{}{. \keywe}%
+                        \@ifundefined{keywf}{}{. \keywf}%
+                        \@ifundefined{keywg}{}{. \keywg}%
+                        \@ifundefined{keywh}{}{. \keywh}%
+                        \@ifundefined{keywi}{}{. \keywi}%
+                        \@ifundefined{keywj}{}{. \keywj}%
                 }%
         }%
         \begin{titlepage}
