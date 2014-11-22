@@ -1,54 +1,54 @@
-%
+% 
 % exemplo genérico de uso da classe iiufrgs.cls
 % $Id: iiufrgs.tex,v 1.1.1.1 2005/01/18 23:54:42 avila Exp $
-%
+% 
 % This is an example file and is hereby explicitly put in the
 % public domain.
-%
+% 
 \documentclass[cic,tc]{iiufrgs}
 % Para usar o modelo, deve-se informar o programa e o tipo de documento.
 % Programas :
-%   * cic       -- Graduação em Ciência da Computação
-%   * ecp       -- Graduação em Ciência da Computação
-%   * ppgc      -- Programa de Pós Graduação em Computação
-%   * pgmigro   -- Programa de Pós Graduação em Microeletrônica
-%   
+% * cic       -- Graduação em Ciência da Computação
+% * ecp       -- Graduação em Ciência da Computação
+% * ppgc      -- Programa de Pós Graduação em Computação
+% * pgmigro   -- Programa de Pós Graduação em Microeletrônica
+% 
 % Tipos de Documento:
-%   * tc                -- Trabalhos de Conclusão (apenas cic e ecp)
-%   * diss ou mestrado  -- Dissertações de Mestrado (ppgc e pgmicro)
-%   * tese ou doutorado -- Teses de Doutorado (ppgc e pgmicro)
-%   * ti                -- Trabalho Individual (ppgc e pgmicro)
+% * tc                -- Trabalhos de Conclusão (apenas cic e ecp)
+% * diss ou mestrado  -- Dissertações de Mestrado (ppgc e pgmicro)
+% * tese ou doutorado -- Teses de Doutorado (ppgc e pgmicro)
+% * ti                -- Trabalho Individual (ppgc e pgmicro)
 % 
 % Outras Opções:
-%   * english    -- para textos em inglês
-%   * openright  -- Força início de capítulos em páginas ímpares (padrão da
-%                   biblioteca)
-%   * oneside    -- Desliga frente-e-verso
-%   * nominatalocal -- Lê os dados da nominata do arquivo nominatalocal.def
+% * english    -- para textos em inglês
+% * openright  -- Força início de capítulos em páginas ímpares (padrão da
+% biblioteca)
+% * oneside    -- Desliga frente-e-verso
+% * nominatalocal -- Lê os dados da nominata do arquivo nominatalocal.def
 
 
 % Use unicode
 \usepackage[utf8]{inputenc}   % pacote para acentuação
 
 % Necessário para incluir figuras
-\usepackage{graphicx}           % pacote para importar figuras
+\usepackage{graphicx}         % pacote para importar figuras
 
 
-\usepackage{times}              % pacote para usar fonte Adobe Times
+\usepackage{times}            % pacote para usar fonte Adobe Times
 % \usepackage{palatino}
-% \usepackage{mathptmx}          % p/ usar fonte Adobe Times nas fórmulas
+% \usepackage{mathptmx}       % p/ usar fonte Adobe Times nas fórmulas
 
 \usepackage[alf,abnt-emphasize=bf]{abntex2cite}	% pacote para usar citações abnt
 
-%
+% 
 % Informações gerais
-%
+% 
 \title{Um Exemplo de Monografia do Instituto de Informática da UFRGS}
 
 \author{Flaumann}{Fritz Gutenberg}
 % alguns documentos podem ter varios autores:
-%\author{Flaumann}{Frida Gutenberg}
-%\author{Flaumann}{Klaus Gutenberg}
+% \author{Flaumann}{Frida Gutenberg}
+% \author{Flaumann}{Klaus Gutenberg}
 
 % orientador e co-orientador são opcionais (não diga isso pra eles :))
 \advisor[Prof.~Dr.]{Lamport}{Leslie}
@@ -56,11 +56,11 @@
 
 % a data deve ser a da defesa; se nao especificada, são gerados
 % mes e ano correntes
-%\date{maio}{2001}
+% \date{maio}{2001}
 
 % o local de realização do trabalho pode ser especificado (ex. para TCs)
 % com o comando \location:
-%\location{Itaquaquecetuba}{SP}
+% \location{Itaquaquecetuba}{SP}
 
 % itens individuais da nominata podem ser redefinidos com os comandos
 % abaixo:
@@ -97,18 +97,18 @@
 % \coord[Profa.~Dra.]{Weber}{Taisy da Silva} % coordenador do curso
 % \dept{INA}                                 % departamento relacionado
 
-%
+% 
 % palavras-chave
 % iniciar todas com letras minúsculas, exceto no caso de abreviaturas
-%
+% 
 \keyword{formatação eletrônica de documentos}
 \keyword{\LaTeX}
 \keyword{ABNT}
 \keyword{UFRGS}
 
-%
+% 
 % inicio do documento
-%
+% 
 \begin{document}
 
 % folha de rosto
@@ -120,11 +120,11 @@
 % dedicatoria
 \clearpage
 \begin{flushright}
-\mbox{}\vfill
-{\sffamily\itshape
-``If I have seen farther than others,\\
-it is because I stood on the shoulders of giants.''\\}
---- \textsc{Sir~Isaac Newton}
+    \mbox{}\vfill
+    {\sffamily\itshape
+      ``If I have seen farther than others,\\
+      it is because I stood on the shoulders of giants.''\\}
+    --- \textsc{Sir~Isaac Newton}
 \end{flushright}
 
 % agradecimentos
@@ -135,21 +135,21 @@ Agradeço ao \LaTeX\ por não ter vírus de macro\ldots
 
 % resumo na língua do documento
 \begin{abstract}
-Este documento é um exemplo de como formatar documentos para o
-Instituto de Informática da UFRGS usando as classes \LaTeX\
-disponibilizadas pelo UTUG\@. Ao mesmo tempo, pode servir de consulta
-para comandos mais genéricos. \emph{O texto do resumo não deve
-conter mais do que 500 palavras.}
+    Este documento é um exemplo de como formatar documentos para o
+    Instituto de Informática da UFRGS usando as classes \LaTeX\
+    disponibilizadas pelo UTUG\@. Ao mesmo tempo, pode servir de consulta
+    para comandos mais genéricos. \emph{O texto do resumo não deve
+      conter mais do que 500 palavras.}
 \end{abstract}
 
 % resumo na outra língua
 % como parametros devem ser passados o titulo e as palavras-chave
 % na outra língua, separadas por vírgulas
 \begin{englishabstract}{Using \LaTeX\ to Prepare Documents at II/UFRGS}{Electronic document preparation. \LaTeX. ABNT. UFRGS}
-This document is an example on how to prepare documents at II/UFRGS
-using the \LaTeX\ classes provided by the UTUG\@. At the same time, it
-may serve as a guide for general-purpose commands. \emph{The text in
-the abstract should not contain more than 500~words.}
+    This document is an example on how to prepare documents at II/UFRGS
+    using the \LaTeX\ classes provided by the UTUG\@. At the same time, it
+    may serve as a guide for general-purpose commands. \emph{The text in
+      the abstract should not contain more than 500~words.}
 \end{englishabstract}
 
 % lista de figuras
@@ -161,18 +161,18 @@ the abstract should not contain more than 500~words.}
 % lista de abreviaturas e siglas
 % o parametro deve ser a abreviatura mais longa
 \begin{listofabbrv}{SPMD}
-        \item[SMP] Symmetric Multi-Processor
-        \item[NUMA] Non-Uniform Memory Access
-        \item[SIMD] Single Instruction Multiple Data
-        \item[SPMD] Single Program Multiple Data
-        \item[ABNT] Associação Brasileira de Normas Técnicas
+    \item[SMP] Symmetric Multi-Processor
+    \item[NUMA] Non-Uniform Memory Access
+    \item[SIMD] Single Instruction Multiple Data
+    \item[SPMD] Single Program Multiple Data
+    \item[ABNT] Associação Brasileira de Normas Técnicas
 \end{listofabbrv}
 
 % idem para a lista de símbolos
-%\begin{listofsymbols}{$\alpha\beta\pi\omega$}
-%       \item[$\sum{\frac{a}{b}}$] Somatório do produtório
-%       \item[$\alpha\beta\pi\omega$] Fator de inconstância do resultado
-%\end{listofsymbols}
+% \begin{listofsymbols}{$\alpha\beta\pi\omega$}
+%     \item[$\sum{\frac{a}{b}}$] Somatório do produtório
+%     \item[$\alpha\beta\pi\omega$] Fator de inconstância do resultado
+% \end{listofsymbols}
 
 % sumario
 \tableofcontents
@@ -196,11 +196,11 @@ A Figura~\ref{fig:ex1} representa o caso mais comum, onde a figura propriamente 
         % outro comando necessário para incorporar o formato de imagem
         % utilizado.
         \begin{picture}(100,100)
-                \put(0,0){\line(0,1){100}}
-                \put(0,0){\line(1,0){100}}
-                \put(100,100){\line(0,-1){100}}
-                \put(100,100){\line(-1,0){100}}
-                \put(10,50){Uma Imagem}
+            \put(0,0){\line(0,1){100}}
+            \put(0,0){\line(1,0){100}}
+            \put(100,100){\line(0,-1){100}}
+            \put(100,100){\line(-1,0){100}}
+            \put(10,50){Uma Imagem}
         \end{picture}
     \end{center}
     \label{fig:estrutura}
@@ -219,17 +219,17 @@ A Figura~\ref{fig:ex1} representa o caso mais comum, onde a figura propriamente 
 % de formatação quando o texto estiver completamente pronto (uma frase a mais
 % pode fazer o LaTeX mudar completamente de idéia sobre onde colocar as
 % figuras e tabelas)
-%\begin{figure}[h]
+% \begin{figure}[h]
 \begin{figure}
     \caption{Exemplo de figura desenhada com o environment \texttt{picture}.}
     \begin{center}
         \setlength{\unitlength}{.1em}
         \begin{picture}(100,100)
-                \put(20,20){\circle{20}}
-                \put(20,20){\small\makebox(0,0){a}}
-                \put(80,80){\circle{20}}
-                \put(80,80){\small\makebox(0,0){b}}
-                \put(28,28){\vector(1,1){44}}
+            \put(20,20){\circle{20}}
+            \put(20,20){\small\makebox(0,0){a}}
+            \put(80,80){\circle{20}}
+            \put(80,80){\small\makebox(0,0){b}}
+            \put(28,28){\vector(1,1){44}}
         \end{picture}
     \end{center}
     \legend{Fonte: Os Autores}
@@ -242,12 +242,12 @@ Tabelas são construídas com praticamente os mesmos comandos. Ver a tabela \ref
     \caption{Uma tabela de Exemplo}
     \begin{center}
         \begin{tabular}{c|c|p{5cm}}
-            \textit{Col 1}  &   \textit{Col 2}  &   \textit{Col 3} \\
-            \hline
-            \hline
-            Val 1           &   Val 2           & Esta coluna funciona como um parágrafo, tendo uma margem definida em 5cm. Quebras de linha funcionam como em qualquer parágrafo do tex. \\
-            Valor Longo     & Val 2             & Val 3 \\
-            \hline
+          \textit{Col 1}  &   \textit{Col 2}  &   \textit{Col 3} \\
+          \hline
+          \hline
+          Val 1           &   Val 2           & Esta coluna funciona como um parágrafo, tendo uma margem definida em 5cm. Quebras de linha funcionam como em qualquer parágrafo do tex. \\
+          Valor Longo     & Val 2             & Val 3 \\
+          \hline
         \end{tabular}
     \end{center}
     \legend{Fonte: Os Autores}
@@ -266,29 +266,29 @@ Dia e xfig são programas utilizados por dinossauros para gerar figuras vetoriai
 O formato do instituo de informática define 5 níveis: capítulo, seção, subseção e outros 2 sem nome.
 
 \subsubsection{Subsubseção}
-	Exemplo de uma subsubseção.
+Exemplo de uma subsubseção.
 
 \paragraph{Parágrafo}
-	Exemplo de um parágrafo.
+Exemplo de um parágrafo.
 
 \section{Sobre as referências bibliográficas}
 
 A classe \emph{iiufrgs} faz uso do pacote \emph{abnTeX2} com algumas alterações
 feitas por Sandro Rama Fiorini. Culpe ele se algo der errado. Agradeça a ele
 pelo que der certo. As modificações dão uma camada de tinta NATBIB-style,
-já que o abntex2 usa uns comandos de citação feitos para alienígenas de 5 braços 
+já que o abntex2 usa uns comandos de citação feitos para alienígenas de 5 braços
 wtf. Exemplos de citação:
 
 \begin{itemize}
     \item \emph{cite}: Unicórnios são verdes \cite{Adams2009Conceptual};
     \item \emph{citep}:Unicórnios são verdes \citep{Adams2009Conceptual};
     \item \emph{citet}: Segundo \citet{Adams2009Conceptual}, unicórnios são
-                        verdes.
+    verdes.
     \item \emph{citen or citenum}: Segundo \citen{Adams2009Conceptual},
-        unicórnios são verdes.
+    unicórnios são verdes.
     \item \emph{citeauthor e citeyearpar}: Segundo artigos de
-        \citeauthor{Adams2009Conceptual} , unicórnios são verdes 
-        \citeyearpar{Adams2009Conceptual}.
+    \citeauthor{Adams2009Conceptual} , unicórnios são verdes
+    \citeyearpar{Adams2009Conceptual}.
 
 \end{itemize}
 
@@ -299,7 +299,7 @@ Recomenda-se o uso de bibtex para gerenciar as referências (veja o arquivo
 biblio.bib).
 
 % e aqui vai a parte principal
-%
+% 
 % \chapter{Estado da arte}
 % \chapter{Mais estado da arte}
 % \chapter{A minha contribuição}
@@ -310,7 +310,7 @@ biblio.bib).
 % aqui será usado o environment padrao `thebibliography'; porém, sugere-se
 % seriamente o uso de BibTeX e do estilo abnt.bst (veja na página do
 % UTUG)
-%
+% 
 % observe também o estilo meio estranho de alguns labels; isso é
 % devido ao uso do pacote `natbib', que permite fazer citações de
 % autores, ano, e diversas combinações desses
