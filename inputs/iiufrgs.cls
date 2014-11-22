@@ -1,10 +1,10 @@
 %==============================================================================
-% iiufrgs - classe de documento com padrões do II/UFRGS
+% iiufrgs - classe de documento com padrões do II/UFRGS 
 % $Id: iiufrgs.cls,v 4.4.0 2010/08/13 12:00:00 laffernandes Exp $
 %
 % Copyright (C) 2001-2014 UFRGS TeX Users Group
 %
-% This program is free software; you can redistribute it and/or modify
+% This program is free software; you can redistribute it and/or modify 
 % it under the terms of the GNU General Public License as published by
 % the Free Software Foundation; either version 2 of the License, or
 % (at your option) any later version.
@@ -88,6 +88,7 @@
 \RequirePackage{iidefs}
 \RequirePackage{setspace}
 \RequirePackage{ccaption}
+\RequirePackage{fancyhdr}
 
 \RequirePackage[%
         bookmarksnumbered=true,	
@@ -383,6 +384,14 @@
 %==============================================================================
 % Ajuste do sumário (nada indentado) 
 %==============================================================================
+
+\newcommand\samepagechapter{
+                    %\thispagestyle{plain}%
+                    \global\@topnum\z@
+                    \@afterindentfalse
+                    \secdef\@chapter\@schapter}
+                  
+
 \newlength{\ii@chapnumindent}\setlength{\ii@chapnumindent}{1.8em}
 \renewcommand*{\l@chapter}[2]{
         \addpenalty{-\@highpenalty}
@@ -456,7 +465,8 @@
         \\
 
 				\vspace{\parskip}\noindent\textbf{\keywordsname:} \@abstractkw.
-}
+			}
+
 \newenvironment{englishabstract}[2]{%
         \if@openright\cleardoublepage\else\clearpage\fi%
         \gdef\@englishkeywords{#2}%
@@ -465,20 +475,18 @@
         }{
                 \begin{otherlanguage}{english}
         }
-                \chapter*{\abstractname}
-                % os 22ex abaixo fazem o título em inglês iniciar a
-                % aproximadamente 5cm da borda superior
-                \noindent\raisebox{22ex}[0pt][0pt]{%
-                       \parbox[t]{\textwidth}{\centering\textbf{#1}}
-                }\vspace{-\baselineskip}\par
+        \begin{center}%
+            \textbf{#1}%
+            \vspace{12pt}
+        \end{center}
+        \samepagechapter*{\abstractname}
 }{%
-        %\par\vfill
-				%\\
-        \\
-
-				\noindent\textbf{\keywordsname:} \@englishkeywords.
-        \end{otherlanguage}
+  \vspace{12pt}
+  
+  \noindent\textbf{\keywordsname:} \@englishkeywords.
+\end{otherlanguage}
 }
+
 
 %==============================================================================
 % Formatação dos capítulos.
@@ -526,7 +534,7 @@
 \def\@makeschapterhead#1{%
         %\vspace*{90pt}
         \reset@font\centerline{\ii@chapterfont\sffamily\textbf{\MakeUppercase{#1}}}
-        \addvspace{42pt}
+        \addvspace{18pt}
 }
 \renewcommand{\appendix}[1][\appendixname]{
     \setcounter{chapter}{0}%
@@ -544,7 +552,7 @@
 %==============================================================================
 % Formatação das seções
 %==============================================================================
-\setcounter{secnumdepth}{4}
+\setcounter{secnumdepth}{5}
 
 \renewcommand{\section}{%
         \@startsection{section}{2}{0pt}{18pt}{18pt}{\reset@font\normalsize\bfseries}
