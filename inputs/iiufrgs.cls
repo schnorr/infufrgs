@@ -385,6 +385,7 @@
 % Ajuste do sumário (nada indentado) 
 %==============================================================================
 
+\setcounter{tocdepth}{3}
 \newcommand\samepagechapter{
                     %\thispagestyle{plain}%
                     \global\@topnum\z@
@@ -413,9 +414,13 @@
 
 \newlength{\seclen}\settowidth{\seclen}{\textbf{2.2~}}
 \newlength{\subseclen}\settowidth{\subseclen}{2.2.2~}
+\newlength{\subsubseclen}\settowidth{\subsubseclen}{2.2.2.2~}
+
 \renewcommand*{\l@section}[2]
               {\@dottedtocline{1}{0em}{\seclen}{\textbf{#1}}{\hss #2}}
 \renewcommand*{\l@subsection}{\@dottedtocline{2}{0em}{\subseclen}}
+\renewcommand*{\l@subsubsection}{\@dottedtocline{3}{0em}{\subsubseclen}}
+
 \newif\if@aftertoc
 \@aftertocfalse
 \renewcommand{\tableofcontents}{%
