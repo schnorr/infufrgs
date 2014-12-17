@@ -148,7 +148,8 @@
         \setlength{\marginparsep}{.5\marginparsep}
 
 % espaçamento entre as linhas
-\onehalfspace
+\newcommand{\setlinespacing}{\setstretch{1.425}}
+\setlinespacing
         
 %==============================================================================
 % Numeração das páginas
@@ -384,7 +385,31 @@
 %==============================================================================
 % Ajuste do sumário (nada indentado) 
 %==============================================================================
-
+\renewcommand{\@dotsep}{0}
+\newlength{\dotlinelen}%\settowidth{\dotlinelen}{22}
+%\setlength{\dotlinelen}{0.5em}
+\def\@dottedtocline#1#2#3#4#5{%
+  \ifnum #1>\c@tocdepth \else
+    \vskip \z@ \@plus.2\p@
+    {\leftskip #2\relax \rightskip \@tocrmarg \parfillskip -\rightskip
+     \parindent #2\relax\@afterindenttrue
+     \interlinepenalty\@M
+     \leavevmode
+     \@tempdima #3\relax
+     \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     {#4}\nobreak
+     % {\the\dotlinelen}
+     \settowidth{\dotlinelen}{#5}
+     \leaders\hbox{$\m@th
+        \mkern \@dotsep mu\hbox{.}\mkern \@dotsep
+        mu$}\hfill
+			\nobreak%
+			\hb@xt@\dotlinelen
+			{\normalfont \normalcolor #5}%
+			\par
+		}%
+\fi}
+      
 \newcommand\samepagechapter{
                     %\thispagestyle{plain}%
                     \global\@topnum\z@
@@ -400,27 +425,35 @@
         \begingroup
         \parindent \z@ \rightskip \@pnumwidth
         \parfillskip -\@pnumwidth
-        \leavevmode\bfseries\sffamily
+        \leavevmode\bfseries
         \advance\leftskip\@tempdima
         \hskip -\leftskip
 %      esta é a definicao original da classe report:
 %      #1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
-        \@dottedtocline{0}{0em}{\ii@chapnumindent}{\uppercase{#1}}{#2}
-%        \@dottedtocline{0}{0em}{\ii@chapnumindent}{\MakeUppercase{#1}}{#2}
+        \@dottedtocline{0}{0em}{\ii@chapnumindent}{\uppercase{#1}}{\textbf{#2}}
         \penalty\@highpenalty
         \endgroup
 }
 
 \newlength{\seclen}\settowidth{\seclen}{\textbf{2.2~}}
 \newlength{\subseclen}\settowidth{\subseclen}{2.2.2~}
-\renewcommand*{\l@section}[2]
-              {\@dottedtocline{1}{0em}{\seclen}{\textbf{#1}}{\hss #2}}
+\newlength{\subsubseclen}\settowidth{\subsubseclen}{2.2.2.2~}
+\renewcommand*{\l@section}[2]{
+  \begingroup\bfseries
+    \@dottedtocline{1}{0em}{\seclen}{\textbf{#1}}{\textbf{#2}}
+  \endgroup%
+}
 \renewcommand*{\l@subsection}{\@dottedtocline{2}{0em}{\subseclen}}
+\renewcommand*{\l@subsubsection}{\@dottedtocline{3}{0em}{\subsubseclen}}
+\setcounter{tocdepth}{3}
 \newif\if@aftertoc
 \@aftertocfalse
 \renewcommand{\tableofcontents}{%
-        \chapter*{\contentsname}
-        \@starttoc{toc}\@aftertoctrue%
+  \singlespacing
+  \chapter*{\contentsname} 
+  \@starttoc{toc}\@aftertoctrue%
+  % retorna o espaçamento ao seu valor original
+  \setlinespacing
 }
 
 %==============================================================================
@@ -516,7 +549,7 @@
 \def\@makechapterhead#1{%
         %\vspace*{90pt}
         %\vspace{12pt}
-        \reset@font\noindent{\ii@chapterfont\sffamily\textbf{\@chapapp\thechapter\hphantom{~}\MakeUppercase{#1}}\par}
+        \reset@font\noindent{\ii@chapterfont\textbf{\@chapapp\thechapter\hphantom{~}\MakeUppercase{#1}}\par}
         \addvspace{12pt}
         %\par
 }
@@ -536,7 +569,7 @@
 }
 \def\@makeschapterhead#1{%
         %\vspace*{90pt}
-        \reset@font\centerline{\ii@chapterfont\sffamily\textbf{\MakeUppercase{#1}}}
+        \reset@font\centerline{\ii@chapterfont\textbf{\MakeUppercase{#1}}}
         \addvspace{18pt}
 }
 \renewcommand{\appendix}[1][\appendixname]{
