@@ -410,9 +410,12 @@
         \penalty\@highpenalty
         \endgroup
 }
+
+\newlength{\seclen}\settowidth{\seclen}{\textbf{2.2~}}
+\newlength{\subseclen}\settowidth{\subseclen}{2.2.2~}
 \renewcommand*{\l@section}[2]
-              {\@dottedtocline{1}{0em}{2.8em}{\textbf{#1}}{\hss #2}}
-\renewcommand*{\l@subsection}{\@dottedtocline{2}{0em}{3.7em}}
+              {\@dottedtocline{1}{0em}{\seclen}{\textbf{#1}}{\hss #2}}
+\renewcommand*{\l@subsection}{\@dottedtocline{2}{0em}{\subseclen}}
 \newif\if@aftertoc
 \@aftertocfalse
 \renewcommand{\tableofcontents}{%
@@ -504,7 +507,7 @@
         \xdef\Hy@chapapp{CHAPTER}%
         \gdef\theHchapter{\thechapter}%
         \refstepcounter{chapter}%
-        \addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}#1}%
+        \addcontentsline{toc}{chapter}{\protect\@chapapp\thechapter~#1}%
         \addtocontents{lof}{\protect\addvspace{10\p@}}%
         \addtocontents{lot}{\protect\addvspace{10\p@}}%
         \pagestyle{iiufrgs}\let\ps@plain\ps@iiufrgs%
@@ -513,7 +516,7 @@
 \def\@makechapterhead#1{%
         %\vspace*{90pt}
         %\vspace{12pt}
-        \reset@font\noindent{\ii@chapterfont\sffamily\textbf{\@chapapp\thechapter\hspace{1em}\MakeUppercase{#1}}\par}
+        \reset@font\noindent{\ii@chapterfont\sffamily\textbf{\@chapapp\thechapter\hphantom{~}\MakeUppercase{#1}}\par}
         \addvspace{12pt}
         %\par
 }
@@ -553,6 +556,7 @@
 % Formatação das seções
 %==============================================================================
 \setcounter{secnumdepth}{5}
+\renewcommand{\@seccntformat}[1]{\csname the#1\endcsname\ }
 
 \renewcommand{\section}{%
         \@startsection{section}{2}{0pt}{18pt}{18pt}{\reset@font\normalsize\bfseries}
