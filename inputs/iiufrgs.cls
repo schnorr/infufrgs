@@ -111,8 +111,8 @@
   %\usepackage{polyglossia}
   %\setmainlanguage{portuguese}
 \else
-    \usepackage{times}              % pacote para usar fonte Adobe Times
-    \usepackage[T1]{fontenc}
+  \usepackage{times}              % pacote para usar fonte Adobe Times
+  \usepackage[T1]{fontenc}
 \fi
 
 %==============================================================================
@@ -461,14 +461,14 @@
 % Resumo (abstract) e Abstract (englishabstract)
 %==============================================================================
 \renewenvironment{abstract}{%
-        \chapter*{\abstractname}
+        \chapter*{\abstractname}\setlength{\parindent}{0pt}
 }{%
-        %\par\vfill
-				%\\
-        \\
+    %\par\vfill
+    %\\
+    \\
 
-				\vspace{\parskip}\noindent\textbf{\keywordsname:} \@abstractkw.
-			}
+    \vspace{\parskip}\noindent\textbf{\keywordsname:} \@abstractkw.
+}
 
 \newenvironment{englishabstract}[2]{%
         \if@openright\cleardoublepage\else\clearpage\fi%
@@ -482,7 +482,7 @@
             \textbf{#1}%
             \vspace{12pt}
         \end{center}
-        \samepagechapter*{\abstractname}
+        \samepagechapter*{\abstractname}\setlength{\parindent}{0pt}
 }{%
   \vspace{12pt}
   
