@@ -383,7 +383,7 @@
 
 
 %==============================================================================
-% Ajuste do sumário (nada indentado) 
+% Ajuste do sumário
 %==============================================================================
 \renewcommand{\@dotsep}{0}
 \newlength{\dotlinelen}%\settowidth{\dotlinelen}{22}
@@ -420,7 +420,7 @@
 \newlength{\ii@chapnumindent}\setlength{\ii@chapnumindent}{1.8em}
 \renewcommand*{\l@chapter}[2]{
         \addpenalty{-\@highpenalty}
-        \vskip -1ex \@plus\p@
+        \vskip -\the\baselineskip \@plus\p@
         \setlength\@tempdima{1.5em}
         \begingroup
         \parindent \z@ \rightskip \@pnumwidth
@@ -449,8 +449,9 @@
 \newif\if@aftertoc
 \@aftertocfalse
 \renewcommand{\tableofcontents}{%
-  \singlespacing
-  \chapter*{\contentsname} 
+  \chapter*{\contentsname}
+  \vspace{0.4\baselineskip}
+  \setstretch{0.95}  
   \@starttoc{toc}\@aftertoctrue%
   % retorna o espaçamento ao seu valor original
   \setlinespacing
