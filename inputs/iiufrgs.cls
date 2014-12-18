@@ -420,7 +420,7 @@
 \newlength{\ii@chapnumindent}\setlength{\ii@chapnumindent}{1.8em}
 \renewcommand*{\l@chapter}[2]{
         \addpenalty{-\@highpenalty}
-        \vskip -1ex \@plus\p@
+        \vskip -1.2em \@plus\p@
         \setlength\@tempdima{1.5em}
         \begingroup
         \parindent \z@ \rightskip \@pnumwidth
