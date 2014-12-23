@@ -388,6 +388,8 @@
 %==============================================================================
 \renewcommand{\@dotsep}{0}
 \newlength{\dotlinelen}
+% desabilita a redefinição de \l@section, \l@figure, etc. feita pelo tocstyle
+\renewcommand*{\tocstyle@l@define}[2]{} 
 % \def\@dottedtocline#1#2#3#4#5{%
 %   \ifnum #1>\c@tocdepth \else
 %     \vskip \z@ \@plus.2\p@
