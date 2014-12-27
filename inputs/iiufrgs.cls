@@ -89,7 +89,7 @@
 \RequirePackage{setspace}
 \RequirePackage{ccaption}
 \RequirePackage{fancyhdr}
-\RequirePackage[tocindentauto,tocfullflat]{iiufrgstocstyle}
+\RequirePackage[tocindentauto,tocfullflat]{tocstyle}
 
 \RequirePackage[%
         bookmarksnumbered=true,	
