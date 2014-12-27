@@ -90,6 +90,11 @@
 \RequirePackage{ccaption}
 \RequirePackage{fancyhdr}
 \RequirePackage[tocindentauto,tocfullflat]{tocstyle}
+\settocfeature[toc][0]{entryhook}{\bfseries\uppercase}
+\settocfeature[toc][1]{entryhook}{\bfseries}
+\settocstylefeature{pagenumberbox}{\pnbox}
+\settocfeature[lof][1]{entryhook}{\figurename\hspace{0.2em}} % valor calculado no olho. Deveria ser um espaço de tamanho fixo, mas ~ tem tamanho variável
+\settocfeature[lot][1]{entryhook}{\tablename\hspace{0.2em}}
 
 \RequirePackage[%
         bookmarksnumbered=true,	
@@ -387,194 +392,15 @@
 % Ajuste do sumário
 %==============================================================================
 \renewcommand{\@dotsep}{0}
-\newlength{\dotlinelen}
-% desabilita a redefinição de \l@section, \l@figure, etc. feita pelo tocstyle
-\renewcommand*{\tocstyle@l@define}[2]{} 
-% \def\@dottedtocline#1#2#3#4#5{%
-%   \ifnum #1>\c@tocdepth \else
-%     \vskip \z@ \@plus.2\p@
-%     {\leftskip #2\relax \rightskip \@tocrmarg \parfillskip -\rightskip
-%      \parindent #2\relax\@afterindenttrue
-%      \interlinepenalty\@M
-%      \leavevmode
-%      \@tempdima #3\relax
-%      \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
-%      {#4}\nobreak     
-%      \settowidth{\dotlinelen}{#5}
-%      \leaders\hbox{$\m@th
-%         \mkern \@dotsep mu\hbox{.}\mkern \@dotsep
-%         mu$}\hfill
-% 			\nobreak%
-% 			\hb@xt@\dotlinelen
-% 			{\normalfont \normalcolor #5}%
-% 			\par
-% 		}%
-% \fi}
+\newlength{\dottedspace}
+\newcommand{\pnbox}[1]{\settowidth{\dottedspace}{\bfseries#1}\hb@xt@\dottedspace{#1}}
       
 \newcommand\samepagechapter{
                     %\thispagestyle{plain}%
                     \global\@topnum\z@
                     \@afterindentfalse
                     \secdef\@chapter\@schapter}
-                  
 
-\newlength{\ii@chapnumindent}\setlength{\ii@chapnumindent}{1.8em}
-\renewcommand*{\l@chapter}[2]{
-  \addpenalty{-\@highpenalty}
-  \vskip -\the\baselineskip \@plus\p@
-  \setlength\@tempdima{1.5em}
-  \begingroup
-  \parindent \z@ \rightskip \@pnumwidth
-  \parfillskip -\@pnumwidth
-  \leavevmode\bfseries
-  \advance\leftskip\@tempdima
-  \hskip -\leftskip
-  % esta é a definicao original da classe report:
-  % #1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
-  \@dottedtocline{0}{0em}{\ii@chapnumindent}{\uppercase{#1}}{\textbf{#2}}
-  \penalty\@highpenalty
-  \endgroup
-}
-
-\renewcommand*{\tocstyle@dottedtocline}[5]{%
-  \let\numberline\tocstyle@numberline
-  \ifnum #1>\c@tocdepth \else
-    \if@tocstyle@penalties
-      \begingroup
-        \@tempcnta 20010
-        \advance \@tempcnta by -#1
-        \ifnum \@tempcnta>\lastpenalty
-          \aftergroup\penalty\aftergroup\@lowpenalty
-        \fi
-      \endgroup
-    \fi
-    \edef\tocstyledepth{#1}%
-    \tocstyle@activate@features
-    \ifx\tocstyle@feature@entryvskip\relax
-      \vskip \z@ \@plus.2\p@
-    \else
-      \addvspace{\tocstyle@feature@entryvskip}%
-    \fi
-    {%
-      \parskip \z@ \parindent \z@ \leftskip \z@ \rightskip \z@
-      \tocstyle@feature@raggedhook
-      \@tempdima #3\relax
-      \@tempdimb #2\relax
-      \typeout{number indent by \string\l@... (\tocstyleTOC, \tocstyledepth): \space\the\@tempdimb}%
-      \typeout{text indent by \string\l@... (\tocstyleTOC, \tocstyledepth): \space\the\@tempdima}%
-      \ifnum #1>\z@\relax
-        \@tempcnta #1\relax \advance\@tempcnta \m@ne
-        \ifcsname tocstyle@maxskipwidth@\tocstyleTOC @\the\@tempcnta\endcsname
-          \ifcsname tocstyle@maxnumwidth@\tocstyleTOC @\the\@tempcnta\endcsname
-            \@tempdimb
-            \csname tocstyle@maxskipwidth@\tocstyleTOC @\the\@tempcnta\endcsname
-            \advance\@tempdimb
-            \csname tocstyle@maxnumwidth@\tocstyleTOC @\the\@tempcnta\endcsname
-          \fi
-        \fi
-      \fi
-      \typeout{number indent by parent (\tocstyleTOC, \tocstyledepth): \space\the\@tempdimb}%
-      \ifcsname tocstyle@skipwidth@\tocstyleTOC @#1\endcsname
-        \ifdim \@tempdimb>
-        \csname tocstyle@skipwidth@\tocstyleTOC @#1\endcsname\relax
-          \expandafter\xdef\csname tocstyle@skipwidth@\tocstyleTOC
-          @#1\endcsname{\the\@tempdimb}%
-        \fi
-      \else
-        \expandafter\xdef\csname tocstyle@skipwidth@\tocstyleTOC
-        @#1\endcsname{\the\@tempdimb}%
-      \fi
-      \iftocstyle@autolength
-        \ifcsname tocstyle@maxskipwidth@\tocstyleTOC @#1\endcsname
-          \@tempdimb \csname tocstyle@maxskipwidth@\tocstyleTOC @#1\endcsname
-          \relax
-        \fi
-        \ifcsname tocstyle@maxnumwidth@\tocstyleTOC @#1\endcsname
-          \@tempdima \csname tocstyle@maxnumwidth@\tocstyleTOC @#1\endcsname
-          \relax
-        \fi
-        \typeout{text indent calculated (\tocstyleTOC, \tocstyledepth): \the\@tempdima}%
-        \typeout{number indent calculated (\tocstyleTOC, \tocstyledepth): \the\@tempdimb}%
-      \else
-        \@tempdimb #2\relax
-        \typeout{number indent explicite (\tocstyleTOC, \tocstyledepth): \the\@tempdimb}%
-      \fi
-      \ifcsname tocstyle@unumwidth@\tocstyleTOC @\endcsname
-        \ifdim \@tempdima>
-        \csname tocstyle@unumwidth@\tocstyleTOC @\endcsname\relax
-          \expandafter\xdef\csname tocstyle@unumwidth@\tocstyleTOC
-          @\endcsname{\the\@tempdima}%
-        \fi
-      \else
-        \expandafter\xdef\csname tocstyle@unumwidth@\tocstyleTOC
-        @\endcsname{\the\@tempdima}%
-      \fi
-      \ifcase\tocstyle@indentstyle\relax\else
-        \@tempdimb \z@
-        \ifcsname tocstyle@maxunumwidth@\tocstyleTOC @\endcsname
-          \@tempdima \csname tocstyle@maxunumwidth@\tocstyleTOC @\endcsname
-          \relax
-        \fi
-        \typeout{text noindent (\tocstyleTOC, \tocstyledepth): \the\@tempdima}%
-        \typeout{number noindent (\tocstyleTOC, \tocstyledepth): \the\@tempdimb}%
-      \fi
-      \advance\parindent \@tempdimb\@afterindenttrue
-      \advance\leftskip \parindent
-      \advance\rightskip \@tocrmarg
-      \parfillskip -\rightskip
-      \ifx\tocstyle@feature@parfillskip\relax\else
-        \advance\parfillskip \tocstyle@feature@parfillskip\relax
-      \fi
-      \interlinepenalty\@M
-      \leavevmode
-      \advance\leftskip \@tempdima
-      \null\nobreak
-      \iftocstyle@indentnotnumbered\else
-        \hskip -\leftskip
-      \fi
-      \tocstyle@feature@entryhook
-      {#4}\nobreak
-      \ifx\tocstyle@feature@leaders\relax
-        \leaders\hbox{$\m@th
-          \mkern \@dotsep mu\hbox{\tocstyle@feature@dothook .}%
-         \mkern \@dotsep mu$}\hfill
-      \else
-        \tocstyle@feature@leaders
-      \fi
-      \nobreak
-      \ifx\tocstyle@feature@pagenumberbox\relax
-        \settowidth{\dotlinelen}{#5}\hb@xt@\dotlinelen{\normalfont\normalcolor#5}
-      \else
-        \tocstyle@feature@pagenumberbox{\tocstyle@feature@pagenumberhook #5}%
-      \fi
-      \par
-    }%
-    \if@tocstyle@penalties
-      \bgroup
-        \@tempcnta 20009
-        \advance\@tempcnta by -#1
-        \edef\reserved@a{\egroup\penalty\the\@tempcnta\relax}%
-      \reserved@a
-    \fi
-    \fi}
-  
-\newlength{\seclen}\settowidth{\seclen}{\textbf{2.2.2.2~}}
-\newlength{\subseclen}\settowidth{\subseclen}{2.2.2~}
-\newlength{\subsubseclen}\settowidth{\subsubseclen}{2.2.2.2~}
-% \def\@magic#1#2#3#4#5#6{#6}
- 
-\AtBeginDocument{%
-  \renewcommand*{\l@section}[2]{
-   %\settowidth{\seclen}{\ttfamily{2.2.2}}
-   \begingroup\bfseries
-   %\{\expandafter\@magic#1\}
-   % \@dottedtocline{1}{0em}{\seclen}{\textbf{#1}}{\textbf{#2}}
-   \tocstyle@dottedtocline{1}{0em}{\seclen}{\textbf{#1}}{\textbf{#2}}
-   \endgroup%
- }
-}
-%\renewcommand*{\l@subsection}{\@dottedtocline{2}{0em}{\subseclen}}
-%\renewcommand*{\l@subsubsection}{\@dottedtocline{3}{0em}{\subsubseclen}}
 \setcounter{tocdepth}{3}
 \newif\if@aftertoc
 \@aftertocfalse
@@ -748,12 +574,6 @@
 \renewcommand{\paragraph}{%
         \@startsection{paragraph}{5}{0pt}{18pt}{18pt}{\reset@font}
 }
-%\renewcommand{\subparagraph}{%
-%        \@startsection{subparagraph}{5}{0pt}{1ex}{-1em}{\reset@font\bfseries}
-%}
-
-\renewcommand*{\l@figure}[2]{\@dottedtocline{1}{0em}{5.5em}{\figurename~#1}{#2}}
-\renewcommand*{\l@table}[2]{\@dottedtocline{1}{0em}{5.5em}{\tablename~#1}{#2}}
 
 %==============================================================================
 % Redefinição do formato de citações longas
