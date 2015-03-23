@@ -124,9 +124,10 @@
 %==============================================================================
 % Margens do texto
 %==============================================================================
-\newlength{\ii@topmargin}\setlength{\ii@topmargin}{31mm}
+% estes valores estão no segundo parágrafo da introdução dos documentos da biblioteca e, portanto, estão corretos
+\newlength{\ii@topmargin}\setlength{\ii@topmargin}{30mm}
 \newlength{\ii@pagenummargin}\setlength{\ii@pagenummargin}{20mm}
-\newlength{\ii@bottommargin}\setlength{\ii@bottommargin}{28mm}
+\newlength{\ii@bottommargin}\setlength{\ii@bottommargin}{20mm}
 \newlength{\ii@sidemargin}\setlength{\ii@sidemargin}{30mm}
 \setlength{\marginparwidth}{25mm}
 
@@ -303,6 +304,7 @@
   }
   \centerline{\@city}
   \centerline{\ii@date}				
+  \vspace{8mm}
 }
 \def\@topbox{%
         \parbox[t]{\textwidth}{%
@@ -350,7 +352,7 @@
                 \iiu@cipwindow
         \end{center}
         \vfill
-        \nominata
+        \nominata        
 }
 
 %===============================================================================
@@ -382,13 +384,23 @@
 
 \AtEndOfClass{\input{nominata.def}}
 \newcommand{\nominata}{
-        \noindent\MakeUppercase{\ufrgs}\\
-        \nominataReitname: \nominataReit\\
-        \nominataPRCAname: \nominataPRCA\\
-        \nominataPRAPGname: \nominataPRAPG\\
-        \nominataDirname: \nominataDir\\
-        \nominataCoordname: \nominataCoord\\
-        \nominataBibchefename: \nominataBibchefe
+  \setstretch{0.95}
+  \noindent\MakeUppercase{\ufrgs}
+  
+  \noindent\nominataReitname: \nominataReit
+  
+  \noindent\nominataPRCAname: \nominataPRCA
+  
+  \noindent\nominataPRAPGname: \nominataPRAPG
+  
+  \noindent\nominataDirname: \nominataDir
+  
+  \noindent\nominataCoordname: \nominataCoord
+  
+  \noindent\nominataBibchefename: \nominataBibchefe
+  
+  \setlinespacing
+  \vspace{18.25mm}
 }
 
 
