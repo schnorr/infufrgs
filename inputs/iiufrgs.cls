@@ -124,9 +124,9 @@
 %==============================================================================
 % Margens do texto
 %==============================================================================
-\newlength{\ii@topmargin}\setlength{\ii@topmargin}{30mm}
+\newlength{\ii@topmargin}\setlength{\ii@topmargin}{31mm}
 \newlength{\ii@pagenummargin}\setlength{\ii@pagenummargin}{20mm}
-\newlength{\ii@bottommargin}\setlength{\ii@bottommargin}{20mm}
+\newlength{\ii@bottommargin}\setlength{\ii@bottommargin}{28mm}
 \newlength{\ii@sidemargin}\setlength{\ii@sidemargin}{30mm}
 \setlength{\marginparwidth}{25mm}
 
@@ -253,53 +253,56 @@
 }
 \location{Porto~Alegre}{RS}
 \renewcommand{\maketitle}{%
-        \hypersetup{%
-                pdftitle={\@title},%
-                pdfauthor={%
-                        \@authora%
-                        \@ifundefined{@authorb}{}{, \@authorb}%
-                        \@ifundefined{@authorc}{}{, \@authorc}%
-                        \@ifundefined{@authord}{}{, \@authord}%
-                },%
-                pdfkeywords={%
-                        \@ifundefined{keywa}{}{\keywa}%
-                        \@ifundefined{keywb}{}{. \keywb}%
-                        \@ifundefined{keywc}{}{. \keywc}%
-                        \@ifundefined{keywd}{}{. \keywd}%
-                        \@ifundefined{keywe}{}{. \keywe}%
-                        \@ifundefined{keywf}{}{. \keywf}%
-                        \@ifundefined{keywg}{}{. \keywg}%
-                        \@ifundefined{keywh}{}{. \keywh}%
-                        \@ifundefined{keywi}{}{. \keywi}%
-                        \@ifundefined{keywj}{}{. \keywj}%
-                }%
-        }%
-        \begin{titlepage}
-                \thetitlepage
-        \end{titlepage}%
-        \clearpage
-        \setcounter{page}{2}%
-        \@ifundefined{@cipspecificinfo}{\@makenominatapage}{\@makecippage}
+  \setstretch{0.92}
+  \hypersetup{%
+    pdftitle={\@title},%
+    pdfauthor={%
+      \@authora%
+      \@ifundefined{@authorb}{}{, \@authorb}%
+      \@ifundefined{@authorc}{}{, \@authorc}%
+      \@ifundefined{@authord}{}{, \@authord}%
+    },%
+    pdfkeywords={%
+      \@ifundefined{keywa}{}{\keywa}%
+      \@ifundefined{keywb}{}{. \keywb}%
+      \@ifundefined{keywc}{}{. \keywc}%
+      \@ifundefined{keywd}{}{. \keywd}%
+      \@ifundefined{keywe}{}{. \keywe}%
+      \@ifundefined{keywf}{}{. \keywf}%
+      \@ifundefined{keywg}{}{. \keywg}%
+      \@ifundefined{keywh}{}{. \keywh}%
+      \@ifundefined{keywi}{}{. \keywi}%
+      \@ifundefined{keywj}{}{. \keywj}%
+    }%
+  }%
+  \begin{titlepage}
+      \thetitlepage
+  \end{titlepage}%
+  \clearpage        
+  \setcounter{page}{2}%
+  \@ifundefined{@cipspecificinfo}{\@makenominatapage}{\@makecippage}
+  \setlinespacing
 }
 \newcommand{\thetitlepage}{%
-        \noindent\@topbox\\
-        \vfill
-				%\lefthyphenmin=64 remove hifenização
-        \@ifundefined{titlepagespecificinfo}{}{
-                \hspace*{\fill}\makebox[.5\textwidth][l]{%
-                        \parbox[b]{217pt}{\lefthyphenmin=64\titlepagespecificinfo}%
-                }%
-                %\vfill\\
-								\vspace{24pt}\\
-        }
-        \@ifundefined{@advisor}{}{
-								\hspace*{\fill}\makebox[.5\textwidth][l]{%
-                        \parbox[b]{217pt}{\raggedright\lefthyphenmin=64\titlepageadvisorinfo}%
-                }%
-                \vfill
-        }
-        \centerline{\@city}
-				\centerline{\ii@date}				
+  \noindent\@topbox\\
+  \vspace{5.9ex}\\
+  % \lefthyphenmin=64 remove hifenização
+  \setstretch{0.95}
+  \@ifundefined{titlepagespecificinfo}{}{
+    \hspace*{\fill}\makebox[.56\textwidth][l]{%
+      \parbox[b]{0.56\textwidth}{\lefthyphenmin=64\titlepagespecificinfo}%
+    }%
+    % \vfill\\
+    \vspace{5.5ex}\\
+  }
+  \@ifundefined{@advisor}{}{
+    \hspace*{\fill}\makebox[.56\textwidth][l]{%
+      \parbox[b]{0.56\textwidth}{\raggedright\lefthyphenmin=64\titlepageadvisorinfo}%
+    }%
+    \vfill
+  }
+  \centerline{\@city}
+  \centerline{\ii@date}				
 }
 \def\@topbox{%
         \parbox[t]{\textwidth}{%
@@ -313,12 +316,13 @@
 %       \fbox{
         \parbox[b]{\titlepagewinwidth}{%
         \centering\vbox to \titlepagewinheight{%
-                \vspace*{\fill}
+                \vspace*{3ex}
                 \MakeUppercase{\@authora}\\
                 \@ifundefined{@authorb}{}{\MakeUppercase{\@authorb}\\}%
                 \@ifundefined{@authorc}{}{\MakeUppercase{\@authorc}\\}%
                 \@ifundefined{@authord}{}{\MakeUppercase{\@authord}\\}%
-                \vspace{\stretch{4}}
+                %\vspace{\stretch{4}}
+                \vspace{12.65ex}
                 {\large\textbf{\@title}\par}
                 \vfill
         }}%
