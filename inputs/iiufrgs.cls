@@ -88,6 +88,7 @@
 \RequirePackage{iidefs}
 \RequirePackage{setspace}
 \RequirePackage{ccaption}
+\RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
 \RequirePackage[tocindentauto,tocfullflat]{tocstyle}
 \settocfeature[toc][0]{entryhook}{\bfseries\uppercase}
@@ -155,7 +156,7 @@
         \setlength{\marginparsep}{.5\marginparsep}
 
 % espaçamento entre as linhas
-\newcommand{\setlinespacing}{\setstretch{1.425}}
+\newcommand{\setlinespacing}{\setstretch{1.415}}
 \setlinespacing
         
 %==============================================================================
@@ -537,7 +538,7 @@
         %\vspace*{90pt}
         %\vspace{12pt}
         \reset@font\noindent{\ii@chapterfont\textbf{\@chapapp\thechapter\hphantom{~}\MakeUppercase{#1}}\par}
-        \addvspace{12pt}
+        \addvspace{\baselineskip}
         %\par
 }
 \def\@schapter#1{%
@@ -578,18 +579,27 @@
 \setcounter{secnumdepth}{5}
 \renewcommand{\@seccntformat}[1]{\csname the#1\endcsname\ }
 
-\renewcommand{\section}{%
-        \@startsection{section}{2}{0pt}{18pt}{18pt}{\reset@font\normalsize\bfseries}
-}
-\renewcommand{\subsection}{%
-        \@startsection{subsection}{3}{0pt}{18pt}{18pt}{\reset@font\bfseries}
-}
-\renewcommand{\subsubsection}{%
-        \@startsection{subsubsection}{4}{0pt}{18pt}{18pt}{\reset@font\itshape}
-}
-\renewcommand{\paragraph}{%
-        \@startsection{paragraph}{5}{0pt}{18pt}{18pt}{\reset@font}
-}
+% \renewcommand{\section}{%
+%         \@startsection{section}{2}{0pt}{18pt}{18pt}{\reset@font\normalsize\bfseries}
+% }
+%\titleformat*{\section}{\reset@font\normalsize\bfseries}
+\titleformat{\section}[hang]{\bfseries}{\thesection~}{0pt}{}
+\titlespacing\section{0pt}{1.5\baselineskip}{\baselineskip}
+\titleformat*{\subsection}{\reset@font\normalsize\bfseries}
+\titlespacing\subsection{0pt}{1.5\baselineskip}{\baselineskip}
+\titleformat*{\subsubsection}{\reset@font\normalsize\itshape}
+\titlespacing\subsubsection{0pt}{1\baselineskip}{0.5\baselineskip}
+\titleformat*{\paragraph}{\reset@font\normalsize}
+\titlespacing\paragraph{0pt}{1\baselineskip}{0.5\baselineskip}
+% \renewcommand{\subsection}{%
+%         \@startsection{subsection}{3}{0pt}{18pt}{18pt}{\reset@font\bfseries}
+% }
+% \renewcommand{\subsubsection}{%
+%         \@startsection{subsubsection}{4}{0pt}{18pt}{18pt}{\reset@font\itshape}
+% }
+% \renewcommand{\paragraph}{%
+%         \@startsection{paragraph}{5}{0pt}{18pt}{18pt}{\reset@font}
+% }
 
 %==============================================================================
 % Redefinição do formato de citações longas
@@ -621,7 +631,8 @@
 % Ajuste das legendas das figuras e tabelas
 %==============================================================================
 \captiondelim{ -- }
-\setlength{\belowcaptionskip}{10pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{0pt}
 \setlength{\belowlegendskip}{0pt}
 
 \captiontitlefont{\small}
