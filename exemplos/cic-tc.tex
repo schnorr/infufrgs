@@ -196,14 +196,14 @@ A Figura~\ref{fig:ex1} representa o caso mais comum, onde a figura propriamente 
     \begin{center}
         % Aqui vai um includegraphics , um picture environment ou qualquer
         % outro comando necessário para incorporar o formato de imagem
-        % utilizado.
+        % utilizado.        
         \begin{picture}(100,100)
             \put(0,0){\line(0,1){100}}
             \put(0,0){\line(1,0){100}}
             \put(100,100){\line(0,-1){100}}
             \put(100,100){\line(-1,0){100}}
             \put(10,50){Uma Imagem}
-        \end{picture}
+        \end{picture}    
     \end{center}
     \label{fig:estrutura}
     \legend{Fonte: Os Autores}
@@ -211,7 +211,9 @@ A Figura~\ref{fig:ex1} representa o caso mais comum, onde a figura propriamente 
 
 \begin{figure}
     \caption{Exemplo de figura importada de um arquivo \texttt{.eps} e também exemplo de caption muito grande que ocupa mais de uma linha na Lista~de~Figuras}
-    \centerline{\includegraphics[width=8em]{fig.eps}}
+    \begin{center}
+        \includegraphics[width=8em]{fig.eps}
+    \end{center}
     \legend{Fonte: Os Autores}
     \label{fig:ex1}
 \end{figure}
@@ -242,8 +244,11 @@ Tabelas são construídas com praticamente os mesmos comandos. Ver a tabela \ref
 
 \begin{table}[h]
     \caption{Uma tabela de Exemplo}
-    \begin{center}
+    % OBS: não use \begin{center}, pois este aumenta o espaçamento entre a caption/legend e a tabela
+    % Para figuras, a aparência é melhor com o espaçamento extra
+    \centering
         \begin{tabular}{c|c|p{5cm}}
+          \hline
           \textit{Col 1}  &   \textit{Col 2}  &   \textit{Col 3} \\
           \hline
           \hline
@@ -251,7 +256,6 @@ Tabelas são construídas com praticamente os mesmos comandos. Ver a tabela \ref
           Valor Longo     & Val 2             & Val 3 \\
           \hline
         \end{tabular}
-    \end{center}
     \legend{Fonte: Os Autores}
     \label{tbl:ex1}
 \end{table}
