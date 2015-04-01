@@ -5,6 +5,7 @@ $ENV{'TEXINPUTS'}='./iiufrgs/inputs/:' . $ENV{'TEXINPUTS'};
 $ENV{'BIBINPUTS'}='./:./iiufrgs/inputs/:' . $ENV{'BIBINPUTS'};
 $ENV{'BSTINPUTS'}='./:./iiufrgs/inputs/:' . $ENV{'BSTINPUTS'};
 
+#$pdflatex = 'xelatex --shell-escape %O %S';
 $pdflatex = 'pdflatex --shell-escape %O %S';
 $pdf_mode=1;
 $postscript_mode = $dvi_mode = 0;

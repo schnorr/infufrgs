@@ -7,8 +7,10 @@
 \documentclass[ppgc,diss]{iiufrgs}
 
 % Pacotes relacionados a codificação de arquivos e de fontes.
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+\ifxetex
+\else
+    \usepackage[utf8]{inputenc}
+\fi
 
 % Necessário para incluir figuras.
 \usepackage{graphicx}
@@ -46,9 +48,9 @@
 
 % Dados gerais do documento.
 \title{
-    Normas para apresentação de dissertações do Instituto de Informática e do
-    PPGC
+    Normas para apredentação de teses do Instituto de Informática e do PPGC
 }
+
 % Esta divisão que coloca "Silva" como sobrenome ao invés de "da Silva" não faz
 % muito sentido, mas reflete o modelo da biblioteca.
 \author{Silva}{João da}
