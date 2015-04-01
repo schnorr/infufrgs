@@ -114,8 +114,9 @@
 
 %\RequirePackage[T1]{fontenc}    % accedted characters in a T1 encoding are 1 glyph -- works better for pt_BR and other
 \ifxetex
-  \usepackage{fontspec}
-  \setmainfont{TeX Gyre Termes}
+%\usepackage{fontspec}
+  %\setmainfont{TeX Gyre Termes}
+  \usepackage{tgtermes}
   %\usepackage{polyglossia}
   %\setmainlanguage{portuguese}
 \else
