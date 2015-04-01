@@ -524,6 +524,7 @@
 \newcounter{schapter}
 \newcommand{\ii@chapterfont}{\@setfontsize\Large{12}{18}}
 \def\@chapapp{}
+\def\@chappositioning{\noindent}
 \def\@chapter[#1]#2{%
         \xdef\Hy@chapapp{CHAPTER}%
         \gdef\theHchapter{\thechapter}%
@@ -532,13 +533,15 @@
         \addtocontents{lof}{\protect\addvspace{10\p@}}%
         \addtocontents{lot}{\protect\addvspace{10\p@}}%
         \pagestyle{iiufrgs}\let\ps@plain\ps@iiufrgs%
-        \@makechapterhead{#2}\@afterheading%
+        \@makechapterhead{#2}{\@chappositioning}\@afterheading%
 }
-\def\@makechapterhead#1{%
+
+\def\@makechapterhead#1#2{%
         %\vspace*{90pt}
         %\vspace{12pt}
-        \reset@font\noindent{\ii@chapterfont\textbf{\@chapapp\thechapter\hphantom{~}\MakeUppercase{#1}}\par}
+        \reset@font{#2{\ii@chapterfont\textbf{\@chapapp\thechapter\hphantom{~}\MakeUppercase{#1}}\par}}
         \addvspace{\baselineskip}
+        \noindent
         %\par
 }
 \def\@schapter#1{%
@@ -564,6 +567,7 @@
     \setcounter{chapter}{0}%
     \renewcommand{\thechapter}{\Alph{chapter}}%
     \gdef\@chapapp{\texorpdfstring{\MakeUppercase{#1}}{#1}\space}%
+    \gdef\@chappositioning{\centering}
 }
 \newcommand{\annex}{\appendix[\annexname]}
 
