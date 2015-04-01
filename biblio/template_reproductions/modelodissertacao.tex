@@ -379,15 +379,37 @@ xxxxxxxxxxxxx xxxx xxxxxxxxxx xxxxxxxxxxx xxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxx
 xxxxx xxxxxxxxxxx xxxxxxxx xxxxx xxxxx xxxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxx
 xxxxxxxxxxxx xxxxxxxxx xxxxxxxx xxxxx xxxxxx xxxxxx xxxxxxxxxxxx
 
-\chapter{Uso de referências}
-Este capítulo não faz parte do exemplo original --- serve apenas para que as
-referências abaixo sejam incluídas na bibliografia.
+% estes comandos (nocite) servem apenas para que as
+% referências abaixo sejam incluídas na bibliografia.
 
-\cite{goncalves}, \cite{lisboa}, \cite{high}, \cite{krieger},
-\cite{goncalves2}, \cite{pedrosa}
+\nocite{goncalves}
+\nocite{lisboa}
+\nocite{high}
+\nocite{krieger},
+\nocite{goncalves2}
+\nocite{pedrosa}
+
+%%%
 
 \bibliographystyle{abntex2-alf}
 \bibliography{bibliografia_exemplo.bib,bibliografia.bib}
+
+\appendix
+
+\chapter*{Descrição do Apêndice}
+
+Destina-se à inclusão de informações complementares ao trabalho, mas que não são essenciais à sua compreensão. Os apêndices devem apresentar material desenvolvido pelo \textbf{próprio autor}, formatado de acordo com a norma NBR 14724. No caso de haver apenas um apêndice, utiliza-se a palavra apêndice no singular.
+
+\annex
+
+\chapter{Descrição do Anexo}
+
+Os anexos destinam-se à inclusão de material como cópias de artigos, manuais, etc., que não necessariamente precisam estar em conformidade com o modelo, e que não foram desenvolvidos pelo autor do trabalho. Nos anexos os números não precisam ser indicados, a não ser na página inicial de cada um. 
+
+\chapter{Exemplo de Anexo}
+
+xxxxxxx xxxx xxxxxxxxxx xxxxxxx xxxx xxxxxxxxxxxxx x xxxxxxx xxxxxxx x xxxxxxx xxxxx xxxxxxxxxxxxxxx xxxxx xxxxxxxx xxxxxxxx xxxxxxxxxxx x xxxx xxxxxx xxxxxxx xxxx xxxxxxxxxxxxxxxxxx xxxxxxx xxxxxxx xxxxxx x xxxxxxxxxxxxxxxxxx xxxxx xxxxxxx xxxxxxxxx xxxxxxxxx xxxxxx xxxxxx xxxxxx xxxxxx xxxxxxxx xxxxxxx xxxx xxxx.
+
 
 % Os apêndices são um TODO. Parece que há algum problema com eles, inicialmente.
 \end{document}
