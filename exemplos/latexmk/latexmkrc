@@ -2,8 +2,11 @@
 # see http://www.ctan.org/tex-archive/support/latexmk/example_rcfiles
 
 $ENV{'TEXINPUTS'}='./iiufrgs/inputs/:' . $ENV{'TEXINPUTS'};
+$ENV{'BIBINPUTS'}='./:./iiufrgs/inputs/:' . $ENV{'BIBINPUTS'};
+$ENV{'BSTINPUTS'}='./:./iiufrgs/inputs/:' . $ENV{'BSTINPUTS'};
 
 # $pdflatex = 'pdflatex --shell-escape %O %S';
+$pdflatex = 'xelatex --shell-escape %O %S';
 $pdf_mode=1;
 $postscript_mode = $dvi_mode = 0;
 
