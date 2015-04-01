@@ -72,6 +72,7 @@
 %==============================================================================
 \LoadClass[12pt,a4paper,twoside]{report}
 
+\RequirePackage{xspace}
 \RequirePackage{keyval}
 \RequirePackage{fixltx2e}
 
@@ -550,7 +551,7 @@
         \if@aftertoc%
             \hyperdef{SCHAPTER}{\theschapter}{}%
             \@makeschapterhead{#1}\@afterheading%
-            \addcontentsline{toc}{chapter}{\@chapapp~#1}%
+            \addcontentsline{toc}{chapter}{\@chapapp\xspace{}#1}%
         \else%
             \pdfbookmark[0]{#1}{MUTESCHAPTER.\theschapter}%
             \@makeschapterhead{#1}\@afterheading%
@@ -560,7 +561,7 @@
 }
 \def\@makeschapterhead#1{%
         %\vspace*{90pt}
-        \reset@font\centerline{\ii@chapterfont\textbf{\@chapapp~\MakeUppercase{#1}}}
+        \reset@font\centerline{\ii@chapterfont\textbf{\MakeUppercase{\@chapapp\xspace{}#1}}}
         \addvspace{18pt}
 }
 \renewcommand{\appendix}[1][\appendixname]{
