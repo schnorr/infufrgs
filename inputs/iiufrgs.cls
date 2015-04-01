@@ -528,7 +528,7 @@
         \xdef\Hy@chapapp{CHAPTER}%
         \gdef\theHchapter{\thechapter}%
         \refstepcounter{chapter}%
-        \addcontentsline{toc}{chapter}{\protect\@chapapp\thechapter~#1}%
+        \addcontentsline{toc}{chapter}{\@chapapp\thechapter~#1}%
         \addtocontents{lof}{\protect\addvspace{10\p@}}%
         \addtocontents{lot}{\protect\addvspace{10\p@}}%
         \pagestyle{iiufrgs}\let\ps@plain\ps@iiufrgs%
@@ -564,12 +564,6 @@
     \setcounter{chapter}{0}%
     \renewcommand{\thechapter}{\Alph{chapter}}%
     \gdef\@chapapp{\texorpdfstring{\MakeUppercase{#1}}{#1}\space}%
-    \addtocontents{toc}{%
-% Comentado pois gera conflito com a package 'algorithmic'. 1.2in eh aproximadamente o tamanho do termo APPENDIX X (ou APENDICE X) na formatação do sumario. Para o termo ANNEX X (ou ANEXO X) o espaço a direita fica maior que o recomendado. Mas eu duvido que alguem note :)
-%       \settowidth{\ii@chapnumindent}{{\sffamily\textbf{\@chapapp}}}%
-%       \addtolength{\ii@chapnumindent}{1.8em}
-        \setlength{\ii@chapnumindent}{1.2in}
-    }%
 }
 \newcommand{\annex}{\appendix[\annexname]}
 
