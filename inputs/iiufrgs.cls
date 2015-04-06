@@ -535,7 +535,8 @@
         \addtocontents{lof}{\protect\addvspace{10\p@}}%
         \addtocontents{lot}{\protect\addvspace{10\p@}}%
         \pagestyle{iiufrgs}\let\ps@plain\ps@iiufrgs%
-        \@makechapterhead{#2}{\@chappositioning}\@afterheading%
+        \@makechapterhead{#2}{\@chappositioning}\@afterheading
+        
 }
 
 \def\@makechapterhead#1#2{%
