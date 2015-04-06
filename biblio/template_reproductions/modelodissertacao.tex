@@ -276,6 +276,7 @@ encontra a ideia referida. Não são indicadas páginas já que a ideia pode est
 resumida de uma obra inteira, de um capítulo, de diversas partes ou de um
 conjunto delas. Desta forma (com o nome no corpo do texto):
 
+%%% OBS: os framed fazem parte do exemplo, e não devem aparecer no documento final
 \begin{framed}
     Depois de analisar a situação, \citeonline{novoa1993} chegou a
     afirmar que o brasileiro ainda não está capacitado para escolher sua
@@ -362,13 +363,17 @@ documento efetivamente consultado. Outra opção é incluir as duas referências
 dos documentos na lista de referências do trabalho; neste caso, não se inclui
 nota de rodapé. A seguir um exemplo com nota de rodapé:
 
-    % Este exemplo não foi reproduzido.
-    % Não sei como fazer, e não creio que seja muito usado.
-	Segundo Franco\footciteref{franco} (apud FURTADO, 1996, p. 5), texto texto texto texto texto
+
+\begin{framed}
+	Segundo \apudonline[ p.~5]{franco}{furtado}, texto texto texto texto texto
+\end{framed}
 
 ou
 
-	texto texto texto texto texto \apud[p.~5]{franco}{furtado}
+\begin{framed}
+	texto texto texto texto texto \apud[ p.~5]{franco}{furtado}
+\end{framed}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
