@@ -156,6 +156,8 @@
 \setlength{\marginparsep}{\ii@sidemargin}
         \addtolength{\marginparsep}{-\marginparwidth}
         \setlength{\marginparsep}{.5\marginparsep}
+% indentação dos parágrafos (medido no olho)
+\setlength{\parindent}{3em}
 
 % espaçamento entre as linhas
 \newcommand{\setlinespacing}{\setstretch{1.415}}
@@ -622,9 +624,9 @@
 % Redefinição do formato de citações longas
 %==============================================================================
 \renewenvironment{quote}{%
-        \small%
         \setstretch{1}%
         \begin{list}{}{\setlength{\leftmargin}{40mm}\item\relax}
+        \fontsize{10bp}{12bp}\selectfont%
 }{%
         \end{list}
 }
