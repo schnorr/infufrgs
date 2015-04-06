@@ -552,14 +552,17 @@
         \refstepcounter{schapter}%
         \if@aftertoc%
             \hyperdef{SCHAPTER}{\theschapter}{}%
-            \@makeschapterhead{#1}\@afterheading%
+            \@makeschapterhead{#1}\@afterheading
+            
             \addcontentsline{toc}{chapter}{\@chapapp\xspace{}#1}%
         \else%
             \pdfbookmark[0]{#1}{MUTESCHAPTER.\theschapter}%
-            \@makeschapterhead{#1}\@afterheading%
+            \@makeschapterhead{#1}\@afterheading
+            
         \fi%
         \addtocontents{lof}{\protect\addvspace{10\p@}}%
-        \addtocontents{lot}{\protect\addvspace{10\p@}}%
+        \addtocontents{lot}{\protect\addvspace{10\p@}}
+        
 }
 \def\@makeschapterhead#1{%
         %\vspace*{90pt}
@@ -567,10 +570,23 @@
         \addvspace{18pt}
 }
 \renewcommand{\appendix}[1][\appendixname]{
-    \setcounter{chapter}{0}%
-    \renewcommand{\thechapter}{\Alph{chapter}}%
-    \gdef\@chapapp{\texorpdfstring{\MakeUppercase{#1}}{#1}\space}%
-    \gdef\@chappositioning{\centering}
+  \def\@makechapterhead##1##2{%
+    % \vspace*{90pt}
+    % \vspace{12pt}
+    \reset@font{##2{\ii@chapterfont\textbf{\@chapapp\thechapter\hphantom{~}<\MakeUppercase{##1}>}\par}}
+    \addvspace{\baselineskip}%
+    %\noindent%
+    % \par
+  }
+  \def\@makeschapterhead##1{%
+    % \vspace*{90pt}
+    \reset@font\centerline{\ii@chapterfont\textbf{\MakeUppercase{\@chapapp\xspace{}<##1>}}}
+    \addvspace{\baselineskip}
+  }
+  \setcounter{chapter}{0}%
+  \renewcommand{\thechapter}{\Alph{chapter}}%
+  \gdef\@chapapp{\texorpdfstring{\MakeUppercase{#1}}{#1}\space}%
+  \gdef\@chappositioning{\centering}
 }
 \newcommand{\annex}{\appendix[\annexname]}
 
@@ -607,6 +623,7 @@
 %==============================================================================
 \renewenvironment{quote}{%
         \small%
+        \setstretch{1}%
         \begin{list}{}{\setlength{\leftmargin}{40mm}\item\relax}
 }{%
         \end{list}
