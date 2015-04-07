@@ -83,7 +83,6 @@
         \selectlanguage{english}
         \AtBeginDocument{\selectlanguage{english}}
 \fi
-
 \RequirePackage{lastpage}
 \RequirePackage{indentfirst}
 \RequirePackage{iidefs}
@@ -123,6 +122,15 @@
   \usepackage{times}              % pacote para usar fonte Adobe Times
   \RequirePackage[T1]{fontenc}
 \fi
+
+\RequirePackage[
+    % Habilita o uso de citações no formato autor-data.
+	alf,
+	% O modelo da UFRGS requer que os títulos dos trabalhos estejam em negrito.
+    % Isso é opcional na norma ABNT (que permite que seja usado itálico) e
+    % não é o padrão do abntex2.
+    abnt-emphasize=bf
+]{abntex2cite}
 
 %==============================================================================
 % Margens do texto
@@ -579,7 +587,7 @@
     \addvspace{\baselineskip}%
     %\noindent%
     % \par
-  }
+  } 
   \def\@makeschapterhead##1{%
     % \vspace*{90pt}
     \reset@font\centerline{\ii@chapterfont\textbf{\MakeUppercase{\@chapapp\xspace{}<##1>}}}
