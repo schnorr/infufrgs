@@ -187,7 +187,7 @@ No início dos tempos, Donald E. Knuth criou o \TeX. Algum tempo depois, Leslie 
 
 Esta seção faz referência às Figuras~\ref{fig:estrutura},~\ref{fig:ex1} e~\ref{fig:ex2}, a título de exemplo. A primeira figura apresenta a estrutura de uma figura. A \emph{descrição} deve aparecer \textbf{acima} da figura. Abaixo da figura, deve ser indicado a origem da imagem, mesmo se essa for apenas os autores do texto.
 
-A Figura~\ref{fig:ex1} representa o caso mais comum, onde a figura propriamente dita é importada de um arquivo (neste exemplo em formato \texttt{.eps}. Veja a seção \ref{sec:fig_format}). A Figura~\ref{fig:ex2} exemplifica o uso do environment \texttt{picture}, para desenhar usando o próprio~\LaTeX.
+A Figura~\ref{fig:ex1} representa o caso mais comum, onde a figura propriamente dita é importada de um arquivo (neste exemplo em formato \texttt{eps} ou \texttt{pdf}. Veja a seção \ref{sec:fig_format}). A Figura~\ref{fig:ex2} exemplifica o uso do environment \texttt{picture}, para desenhar usando o próprio~\LaTeX.
 
 \begin{figure}[h]
     \caption{Descrição da Figura deve ir no topo}
@@ -208,8 +208,8 @@ A Figura~\ref{fig:ex1} representa o caso mais comum, onde a figura propriamente 
 \end{figure}
 
 \begin{figure}
-    \caption{Exemplo de figura importada de um arquivo \texttt{.eps} e também exemplo de caption muito grande que ocupa mais de uma linha na Lista~de~Figuras}
-    \centerline{\includegraphics[width=8em]{fig.eps}}
+    \caption{Exemplo de figura importada de um arquivo e também exemplo de caption muito grande que ocupa mais de uma linha na Lista~de~Figuras}
+    \centerline{\includegraphics[width=8em]{fig}}
     \legend{Fonte: Os Autores}
     \label{fig:ex1}
 \end{figure}
