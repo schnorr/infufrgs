@@ -40,7 +40,7 @@
 	\def\listsymbolname{Lista de S{\'\i}mbolos}%
 	\def\annexname{Anexo}%
 	\def\keywordsname{Palavras-chave}%
-	\def\cipcaption{CIP -- CATALOGA{\c{C}}{\~A}O NA PUBLICA{\c{C}}{\~A}O}%
+	\def\cipcaption{CIP --- CATALOGA{\c{C}}{\~A}O NA PUBLICA{\c{C}}{\~A}O}%
 	\def\byname{por}%
 	\def\dissname{Disserta{\c{c}}{\~a}o (mestrado)}%
         \def\pgmicroTitulacaoEm{Microeletr{\^o}nica}

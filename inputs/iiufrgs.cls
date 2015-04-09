@@ -581,7 +581,7 @@
     \setcounter{chapter}{0}%
     \renewcommand{\thechapter}{\Alph{chapter}}%
     \gdef\@chapapp{\texorpdfstring{\MakeUppercase{#1}}{#1}\space}%
-    \gdef\@chapappextra{--\space}%
+    \gdef\@chapappextra{---\space}%
     \gdef\@chappositioning{\centering}
 }
 \newcommand{\annex}{\appendix[\annexname]}
