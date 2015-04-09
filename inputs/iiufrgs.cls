@@ -1,10 +1,10 @@
 %==============================================================================
-% iiufrgs - classe de documento com padrões do II/UFRGS 
+% iiufrgs - classe de documento com padrões do II/UFRGS
 % $Id: iiufrgs.cls,v 4.4.0 2010/08/13 12:00:00 laffernandes Exp $
 %
 % Copyright (C) 2001-2014 UFRGS TeX Users Group
 %
-% This program is free software; you can redistribute it and/or modify 
+% This program is free software; you can redistribute it and/or modify
 % it under the terms of the GNU General Public License as published by
 % the Free Software Foundation; either version 2 of the License, or
 % (at your option) any later version.
@@ -98,7 +98,7 @@
 \settocfeature[lot][1]{entryhook}{\tablename\hspace{0.2em}}
 
 \RequirePackage[%
-        bookmarksnumbered=true,	
+        bookmarksnumbered=true,
         breaklinks=true,
         unicode=true,
 %
@@ -170,7 +170,7 @@
 % espaçamento entre as linhas
 \newcommand{\setlinespacing}{\setstretch{1.415}}
 \setlinespacing
-        
+
 %==============================================================================
 % Numeração das páginas
 %==============================================================================
@@ -292,7 +292,7 @@
   \begin{titlepage}
       \thetitlepage
   \end{titlepage}%
-  \clearpage        
+  \clearpage
   \setcounter{page}{2}%
   \@ifundefined{@cipspecificinfo}{\@makenominatapage}{\@makecippage}
   \setlinespacing
@@ -316,7 +316,7 @@
     \vfill
   }
   \centerline{\@city}
-  \centerline{\ii@date}				
+  \centerline{\ii@date}
   \vspace{8mm}
 }
 \def\@topbox{%
@@ -365,7 +365,7 @@
                 \iiu@cipwindow
         \end{center}
         \vfill
-        \nominata        
+        \nominata
 }
 
 %===============================================================================
@@ -399,19 +399,19 @@
 \newcommand{\nominata}{
   \setstretch{0.95}
   \noindent\MakeUppercase{\ufrgs}
-  
+
   \noindent\nominataReitname: \nominataReit
-  
+
   \noindent\nominataPRCAname: \nominataPRCA
-  
+
   \noindent\nominataPRAPGname: \nominataPRAPG
-  
+
   \noindent\nominataDirname: \nominataDir
-  
+
   \noindent\nominataCoordname: \nominataCoord
-  
+
   \noindent\nominataBibchefename: \nominataBibchefe
-  
+
   \setlinespacing
   \vspace{18.25mm}
 }
@@ -423,7 +423,7 @@
 \renewcommand{\@dotsep}{0}
 \newlength{\dottedspace}
 \newcommand{\pnbox}[1]{\settowidth{\dottedspace}{\bfseries#1}\hb@xt@\dottedspace{#1}}
-      
+
 \newcommand\samepagechapter{
                     %\thispagestyle{plain}%
                     \global\@topnum\z@
@@ -443,14 +443,14 @@
 }
 \renewcommand{\listoffigures}{%
   \chapter*{\listfigurename}
-  \setstretch{0.95}  
+  \setstretch{0.95}
   \@starttoc{lof}%
   % retorna o espaçamento ao seu valor original
   \setlinespacing
 }
 \renewcommand{\listoftables}{%
   \chapter*{\listtablename}
-  \setstretch{0.95}  
+  \setstretch{0.95}
   \@starttoc{lot}%
   % retorna o espaçamento ao seu valor original
   \setlinespacing
@@ -518,7 +518,7 @@
         \samepagechapter*{\abstractname}\setlength{\parindent}{0pt}
 }{%
   \vspace{12pt}
-  
+
   \noindent\textbf{\keywordsname:} \@englishkeywords.
 \end{otherlanguage}
 }
@@ -547,7 +547,7 @@
         \addtocontents{lot}{\protect\addvspace{10\p@}}%
         \pagestyle{iiufrgs}\let\ps@plain\ps@iiufrgs%
         \@makechapterhead{#2}{\@chappositioning}\@afterheading
-        
+
 }
 
 \def\@makechapterhead#1#2{%
@@ -581,7 +581,7 @@
     \setcounter{chapter}{0}%
     \renewcommand{\thechapter}{\Alph{chapter}}%
     \gdef\@chapapp{\texorpdfstring{\MakeUppercase{#1}}{#1}\space}%
-    \gdef\@chapappextra{--\space}%
+    \gdef\@chapappextra{---\space}%
     \gdef\@chappositioning{\centering}
 }
 \newcommand{\annex}{\appendix[\annexname]}
@@ -658,7 +658,7 @@
 %==============================================================================
 % Ajuste do formato das citações e referências
 %==============================================================================
-%\setlength{\bibhang}{0pt} 
+%\setlength{\bibhang}{0pt}
 %\let\cite\citep %Linhas desativadas pelo Valdez, faziam o layout nunca ter parenteses
 
 %
