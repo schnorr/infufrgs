@@ -29,7 +29,7 @@ all:
 install:
 	install -d $(INPUTS) $(DOC) $(BIB)
 	cp -R inputs/* $(INPUTS)
-	cp README.md COPYING CHANGELOG BUGS $(DOC)
+	cp README.md COPYING CHANGELOG $(DOC)
 	@echo
 	@echo "Arquivos instalados com sucesso em $(INSTALLDIR)."
 	@echo
