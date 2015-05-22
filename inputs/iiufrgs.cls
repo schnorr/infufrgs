@@ -63,6 +63,7 @@
 % outros
 \iiu@novodoc{nominatalocal}
 \DeclareOption{english}{\@englishtrue\OptionNotUsed}\newif\if@english
+\DeclareOption{noabntcite}{\@noabntcitetrue\OptionNotUsed}\newif\if@noabntcite
 \DeclareOption{oneside}{\AtEndOfClass{\@twosidefalse}\OptionNotUsed}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions\relax
@@ -123,6 +124,8 @@
   \RequirePackage[T1]{fontenc}
 \fi
 
+\if@noabntcite
+\else
 \RequirePackage[
     % Habilita o uso de citações no formato autor-data.
 	alf,
@@ -131,6 +134,7 @@
     % não é o padrão do abntex2.
     abnt-emphasize=bf
 ]{abntex2cite}
+\fi
 
 %==============================================================================
 % Margens do texto
