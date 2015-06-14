@@ -15,4 +15,6 @@
 \providecommand{\nominataCoordname}{\nominataCoordECPname}
 \providecommand{\nomeDoProgramaPG}{ECP}
 \providecommand{\titulacaoEm}{\ecpTitulacaoEm}
+\providecommand{\nominataPRAPG}{\nominataPRAG}
+\providecommand{\nominataPRAPGname}{\nominataPRAGname}
 \course{\cgec}
