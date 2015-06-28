@@ -1,10 +1,10 @@
 %==============================================================================
-% iiufrgs - classe de documento com padrões do II/UFRGS 
+% iiufrgs - classe de documento com padrões do II/UFRGS
 % $Id: iiufrgs.cls,v 4.4.0 2010/08/13 12:00:00 laffernandes Exp $
 %
 % Copyright (C) 2001-2014 UFRGS TeX Users Group
 %
-% This program is free software; you can redistribute it and/or modify 
+% This program is free software; you can redistribute it and/or modify
 % it under the terms of the GNU General Public License as published by
 % the Free Software Foundation; either version 2 of the License, or
 % (at your option) any later version.
@@ -64,6 +64,7 @@
 % outros
 \iiu@novodoc{nominatalocal}
 \DeclareOption{english}{\@englishtrue\OptionNotUsed}\newif\if@english
+\DeclareOption{noabntcite}{\@noabntcitetrue\OptionNotUsed}\newif\if@noabntcite
 \DeclareOption{oneside}{\AtEndOfClass{\@twosidefalse}\OptionNotUsed}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions\relax
@@ -99,7 +100,7 @@
 \settocfeature[lot][1]{entryhook}{\tablename\hspace{0.2em}}
 
 \RequirePackage[%
-        bookmarksnumbered=true,	
+        bookmarksnumbered=true,
         breaklinks=true,
         unicode=true,
 %
@@ -124,6 +125,8 @@
   \RequirePackage[T1]{fontenc}
 \fi
 
+\if@noabntcite
+\else
 \RequirePackage[
     % Habilita o uso de citações no formato autor-data.
 	alf,
@@ -132,6 +135,13 @@
     % não é o padrão do abntex2.
     abnt-emphasize=bf
 ]{abntex2cite}
+\fi
+
+\vfuzz=30pt % prevent overfull \vbox while \output is active
+
+% prevent underfull \vbox while \output is active:
+\edef\orig@output{\the\output}
+\output{\setbox\@cclv\vbox{\unvbox\@cclv\vspace{0pt plus 50pt}}\orig@output}
 
 %==============================================================================
 % Margens do texto
@@ -171,7 +181,7 @@
 % espaçamento entre as linhas
 \newcommand{\setlinespacing}{\setstretch{1.415}}
 \setlinespacing
-        
+
 %==============================================================================
 % Numeração das páginas
 %==============================================================================
@@ -293,7 +303,7 @@
   \begin{titlepage}
       \thetitlepage
   \end{titlepage}%
-  \clearpage        
+  \clearpage
   \setcounter{page}{2}%
   \@ifundefined{@cipspecificinfo}{\@makenominatapage}{\@makecippage}
   \setlinespacing
@@ -317,7 +327,7 @@
     \vfill
   }
   \centerline{\@city}
-  \centerline{\ii@date}				
+  \centerline{\ii@date}
   \vspace{8mm}
 }
 \def\@topbox{%
@@ -366,7 +376,7 @@
                 \iiu@cipwindow
         \end{center}
         \vfill
-        \nominata        
+        \nominata
 }
 
 %===============================================================================
@@ -400,19 +410,19 @@
 \newcommand{\nominata}{
   \setstretch{0.95}
   \noindent\MakeUppercase{\ufrgs}
-  
+
   \noindent\nominataReitname: \nominataReit
-  
+
   \noindent\nominataPRCAname: \nominataPRCA
-  
+
   \noindent\nominataPRAPGname: \nominataPRAPG
-  
+
   \noindent\nominataDirname: \nominataDir
-  
+
   \noindent\nominataCoordname: \nominataCoord
-  
+
   \noindent\nominataBibchefename: \nominataBibchefe
-  
+
   \setlinespacing
   \vspace{18.25mm}
 }
@@ -424,7 +434,7 @@
 \renewcommand{\@dotsep}{0}
 \newlength{\dottedspace}
 \newcommand{\pnbox}[1]{\settowidth{\dottedspace}{\bfseries#1}\hb@xt@\dottedspace{#1}}
-      
+
 \newcommand\samepagechapter{
                     %\thispagestyle{plain}%
                     \global\@topnum\z@
@@ -444,14 +454,14 @@
 }
 \renewcommand{\listoffigures}{%
   \chapter*{\listfigurename}
-  \setstretch{0.95}  
+  \setstretch{0.95}
   \@starttoc{lof}%
   % retorna o espaçamento ao seu valor original
   \setlinespacing
 }
 \renewcommand{\listoftables}{%
   \chapter*{\listtablename}
-  \setstretch{0.95}  
+  \setstretch{0.95}
   \@starttoc{lot}%
   % retorna o espaçamento ao seu valor original
   \setlinespacing
@@ -519,7 +529,7 @@
         \samepagechapter*{\abstractname}\setlength{\parindent}{0pt}
 }{%
   \vspace{12pt}
-  
+
   \noindent\textbf{\keywordsname:} \@englishkeywords.
 \end{otherlanguage}
 }
@@ -537,23 +547,24 @@
 \newcounter{schapter}
 \newcommand{\ii@chapterfont}{\@setfontsize\Large{12}{18}}
 \def\@chapapp{}
+\def\@chapappextra{}
 \def\@chappositioning{\noindent}
 \def\@chapter[#1]#2{%
         \xdef\Hy@chapapp{CHAPTER}%
         \gdef\theHchapter{\thechapter}%
         \refstepcounter{chapter}%
-        \addcontentsline{toc}{chapter}{\@chapapp\thechapter~#1}%
+        \addcontentsline{toc}{chapter}{\@chapapp\thechapter~\@chapappextra#1}%
         \addtocontents{lof}{\protect\addvspace{10\p@}}%
         \addtocontents{lot}{\protect\addvspace{10\p@}}%
         \pagestyle{iiufrgs}\let\ps@plain\ps@iiufrgs%
         \@makechapterhead{#2}{\@chappositioning}\@afterheading
-        
+
 }
 
 \def\@makechapterhead#1#2{%
         %\vspace*{90pt}
         %\vspace{12pt}
-        \reset@font{#2{\ii@chapterfont\textbf{\@chapapp\thechapter\hphantom{~}\MakeUppercase{#1}}\par}}
+        \reset@font{#2{\ii@chapterfont\textbf{\@chapapp\thechapter\hphantom{~}\@chapappextra\MakeUppercase{#1}}\par}}
         \addvspace{\baselineskip}
         \noindent
         %\par
@@ -563,41 +574,26 @@
         \refstepcounter{schapter}%
         \if@aftertoc%
             \hyperdef{SCHAPTER}{\theschapter}{}%
-            \@makeschapterhead{#1}\@afterheading
-            
-            \addcontentsline{toc}{chapter}{\@chapapp\xspace{}#1}%
+            \@makeschapterhead{#1}\@afterheading%
+            \addcontentsline{toc}{chapter}{\@chapapp\xspace{}\@chapappextra#1}%
         \else%
             \pdfbookmark[0]{#1}{MUTESCHAPTER.\theschapter}%
-            \@makeschapterhead{#1}\@afterheading
-            
+            \@makeschapterhead{#1}\@afterheading%
         \fi%
         \addtocontents{lof}{\protect\addvspace{10\p@}}%
-        \addtocontents{lot}{\protect\addvspace{10\p@}}
-        
+        \addtocontents{lot}{\protect\addvspace{10\p@}}%
 }
 \def\@makeschapterhead#1{%
         %\vspace*{90pt}
-        \reset@font\centerline{\ii@chapterfont\textbf{\MakeUppercase{\@chapapp\xspace{}#1}}}
+        \reset@font\centerline{\ii@chapterfont\textbf{\MakeUppercase{\@chapapp\xspace{}\@chapappextra#1}}}
         \addvspace{18pt}
 }
 \renewcommand{\appendix}[1][\appendixname]{
-  \def\@makechapterhead##1##2{%
-    % \vspace*{90pt}
-    % \vspace{12pt}
-    \reset@font{##2{\ii@chapterfont\textbf{\@chapapp\thechapter\hphantom{~}<\MakeUppercase{##1}>}\par}}
-    \addvspace{\baselineskip}%
-    %\noindent%
-    % \par
-  } 
-  \def\@makeschapterhead##1{%
-    % \vspace*{90pt}
-    \reset@font\centerline{\ii@chapterfont\textbf{\MakeUppercase{\@chapapp\xspace{}<##1>}}}
-    \addvspace{\baselineskip}
-  }
-  \setcounter{chapter}{0}%
-  \renewcommand{\thechapter}{\Alph{chapter}}%
-  \gdef\@chapapp{\texorpdfstring{\MakeUppercase{#1}}{#1}\space}%
-  \gdef\@chappositioning{\centering}
+    \setcounter{chapter}{0}%
+    \renewcommand{\thechapter}{\Alph{chapter}}%
+    \gdef\@chapapp{\texorpdfstring{\MakeUppercase{#1}}{#1}\space}%
+    \gdef\@chapappextra{---\space}%
+    \gdef\@chappositioning{\centering}
 }
 \newcommand{\annex}{\appendix[\annexname]}
 
@@ -634,6 +630,7 @@
 %==============================================================================
 \renewenvironment{quote}{%
         \setstretch{1}%
+        \small%
         \begin{list}{}{\setlength{\leftmargin}{40mm}\item\relax}
         \fontsize{10bp}{12bp}\selectfont%
 }{%
@@ -672,7 +669,7 @@
 %==============================================================================
 % Ajuste do formato das citações e referências
 %==============================================================================
-%\setlength{\bibhang}{0pt} 
+%\setlength{\bibhang}{0pt}
 %\let\cite\citep %Linhas desativadas pelo Valdez, faziam o layout nunca ter parenteses
 
 %

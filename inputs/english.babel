@@ -40,7 +40,7 @@
 	\def\listsymbolname{List of Symbols}%
 	\def\annexname{Annex}%
 	\def\keywordsname{Keywords}%
-	\def\cipcaption{CIP -- CATALOGING-IN-PUBLICATION}%
+	\def\cipcaption{CIP --- CATALOGING-IN-PUBLICATION}%
 	\def\byname{by}%
 	\def\dissname{Thesis (Master)}%
         \def\pgmicroTitulacaoEm{Microeletronics}
