@@ -40,6 +40,7 @@
 % programas
 \iiu@novodoc{cic}
 \iiu@novodoc{ecp}
+\iiu@novodoc{unibral}
 \iiu@novodoc{pgmicro}
 \iiu@novodoc{ppgc}
 

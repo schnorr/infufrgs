@@ -1,0 +1,64 @@
+%
+% UFRGS TeX Users Group
+% Institute of Informatics --- UFRGS
+% Porto Alegre, Brazil
+% http://www.inf.ufrgs.br/utug
+% Discussion list: utug-l@inf.ufrgs.br
+%
+% Copyright (C) 2001,2003 UFRGS TeX Users Group
+% This is free software, distributed under the GNU GPL; please take
+% a look in `iiufrgs.cls' to see complete information on using, copying
+% and redistributing these files
+%
+\ProvidesFile{resumo-unibral.def}[2015/05/19 Definições para alunos do intercâmbio UNIBRAL-II]
+
+% Since we present the thesis at both UFRGS and TU Berlin, we have
+% two sets of advisors to display at the title page.
+
+\renewcommand{\titlepageadvisorinfo}{%
+        \@ifundefined{@advisor}{}{\advisorname:~\@advisor\\}%
+        \@ifundefined{@coadvisor}{}{\coadvisorname:~\@coadvisor\\}%
+        \@ifundefined{@advisorDE}{}{\advisornameDE:~\@advisorDE\\}%
+        \@ifundefined{@coadvisorDE}{}{\coadvisornameDE:~\@coadvisorDE\\}%
+}
+\DeclareRobustCommand{\advisorDE}[3][]{
+    \gdef\@advisorDElast{#2}
+    \gdef\@advisorDEfirst{#3}
+    \gdef\@advisorDE{#1~#3 #2}
+}
+\DeclareRobustCommand{\coadvisorDE}[3][]{
+    \gdef\@coadvisorDElast{#2}
+    \gdef\@coadvisorDEfirst{#3}
+    \gdef\@coadvisorDE{#1~#3 #2}
+}
+
+\newcommand{\advisorname}{Orientador brasileiro}
+\newcommand{\coadvisorname}{Co-orientador brasileiro}
+\newcommand{\advisornameDE}{Orientador alem\~{a}o}
+\newcommand{\coadvisornameDE}{Co-orientador alem\~{a}o}
+
+
+% It must be disclaimed that the thesis was previously submitted to the TUB
+\newcommand{\titlepagespecificinfo}{\tcspecificinfo \\ \\ \unibralspecificinfo}
+
+\newcommand{\unibralspecificinfo}{
+    Trabalho realizado na Technische Universit\"at Berlin dentro do acordo de
+    dupla diploma\c c\~ao UFRGS - TU Berlin.
+}
+
+
+% The text should be preceded by the declaration that it is an extended summary
+\DeclareRobustCommand{\extendedsummary}[1][ingl\^es]{
+    \chapter*{\extendedsummaryname}\setlength{\parindent}{0pt}
+    \extendedsummarydescr
+}
+
+\newcommand{\extendedsummaryname}{Resumo Estendido}
+\newcommand{\extendedsummarylang}{ingl\^es}
+\newcommand{\extendedsummarydescr}{
+    Este \'e um resumo estendido em portugu\^es para a Universidade Federal do
+    Rio Grande do Sul do original que segue. O trabalho de conclus\~ao original,
+    em \extendedsummarylang, foi apresentado na Technische Universit\"at Berlin
+    atrav\'es do programa de dupla diploma\c c\~ao UNIBRAL II entre as duas
+    universidades.
+}
