@@ -556,6 +556,7 @@
         \addcontentsline{toc}{chapter}{\@chapapp\thechapter~\@chapappextra#1}%
         \addtocontents{lof}{\protect\addvspace{10\p@}}%
         \addtocontents{lot}{\protect\addvspace{10\p@}}%
+        \addtocontents{lol}{\protect\addvspace{10\p@}}%
         \pagestyle{iiufrgs}\let\ps@plain\ps@iiufrgs%
         \@makechapterhead{#2}{\@chappositioning}\@afterheading
 
