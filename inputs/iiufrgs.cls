@@ -72,6 +72,7 @@
 %==============================================================================
 % Herança da classe `report' e inclusão de pacotes e arquivos necessários
 %==============================================================================
+
 \LoadClass[12pt,a4paper,twoside]{report}
 
 \RequirePackage{xspace}
@@ -92,6 +93,7 @@
 \RequirePackage{ccaption}
 \RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
+\RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \RequirePackage[tocindentauto,tocfullflat]{tocstyle}
 \settocfeature[toc][0]{entryhook}{\bfseries\uppercase}
 \settocfeature[toc][1]{entryhook}{\bfseries}
