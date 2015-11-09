@@ -139,11 +139,11 @@
 ]{abntex2cite}
 \fi
 
-\vfuzz=30pt % prevent overfull \vbox while \output is active
+\vfuzz=30pt % prevent "overfull \vbox while \output is active" warning
 
 % prevent underfull \vbox while \output is active:
-\edef\orig@output{\the\output}
-\output{\setbox\@cclv\vbox{\unvbox\@cclv\vspace{0pt plus 50pt}}\orig@output}
+% \edef\orig@output{\the\output}
+% \output{\setbox\@cclv\vbox{\unvbox\@cclv\vspace{0pt plus 50pt}}\orig@output}
 
 %==============================================================================
 % Margens do texto
