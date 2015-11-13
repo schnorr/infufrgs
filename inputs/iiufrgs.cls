@@ -139,50 +139,24 @@
 ]{abntex2cite}
 \fi
 
-\vfuzz=30pt % prevent overfull \vbox while \output is active
+% espaçamento entre as linhas
+\newcommand{\setlinespacing}{\setstretch{1.415}}
+\setlinespacing
 
-% prevent underfull \vbox while \output is active:
-\edef\orig@output{\the\output}
-\output{\setbox\@cclv\vbox{\unvbox\@cclv\vspace{0pt plus 50pt}}\orig@output}
+% estes valores estão no segundo parágrafo da introdução dos documentos da biblioteca e, portanto, estão corretos
+% a numeração deve estar a 20mm do topo, logo headsep=30mm-20mm = 10mm
+\RequirePackage[top=30mm,bottom=20mm,left=30mm,right=30mm,headsep=10mm]{geometry}
+%\RequirePackage{calc}
+
+\vfuzz=30pt % prevent "overfull \vbox while \output is active" warning
 
 %==============================================================================
 % Margens do texto
 %==============================================================================
-% estes valores estão no segundo parágrafo da introdução dos documentos da biblioteca e, portanto, estão corretos
-\newlength{\ii@topmargin}\setlength{\ii@topmargin}{30mm}
-\newlength{\ii@pagenummargin}\setlength{\ii@pagenummargin}{20mm}
-\newlength{\ii@bottommargin}\setlength{\ii@bottommargin}{20mm}
-\newlength{\ii@sidemargin}\setlength{\ii@sidemargin}{30mm}
-\setlength{\marginparwidth}{25mm}
 
-% ajuste das medidas verticais
-\setlength{\topmargin}{\ii@pagenummargin}
-        \addtolength{\topmargin}{-1em} % isto é +- a altura do núm. da página
-        \addtolength{\topmargin}{-1in}
-\setlength{\headheight}{1em}
-\setlength{\headsep}{\ii@topmargin}
-        \addtolength{\headsep}{-\ii@pagenummargin}
-\setlength{\textheight}{\paperheight}
-        \addtolength{\textheight}{-\ii@topmargin}
-        \addtolength{\textheight}{-\ii@bottommargin}
-\setlength{\footskip}{\ii@bottommargin}
-
-% ajuste das medidas horizontais
-\setlength{\oddsidemargin}{\ii@sidemargin}
-        \addtolength{\oddsidemargin}{-1in}
-\setlength{\evensidemargin}{\oddsidemargin}
-\setlength{\textwidth}{\paperwidth}
-        \addtolength{\textwidth}{-\ii@sidemargin} % remove margem à esquerda
-        \addtolength{\textwidth}{-20mm} % remove margem à direita
-\setlength{\marginparsep}{\ii@sidemargin}
-        \addtolength{\marginparsep}{-\marginparwidth}
-        \setlength{\marginparsep}{.5\marginparsep}
 % indentação dos parágrafos (medido no olho)
 \setlength{\parindent}{3em}
-
-% espaçamento entre as linhas
-\newcommand{\setlinespacing}{\setstretch{1.415}}
-\setlinespacing
+\AtBeginDocument{\setlength{\parskip}{0mm}}
 
 %==============================================================================
 % Numeração das páginas
@@ -313,13 +287,11 @@
 \newcommand{\thetitlepage}{%
   \noindent\@topbox\\
   \vspace{5.9ex}\\
-  % \lefthyphenmin=64 remove hifenização
   \setstretch{0.95}
   \@ifundefined{titlepagespecificinfo}{}{
     \hspace*{\fill}\makebox[.56\textwidth][l]{%
       \parbox[b]{0.56\textwidth}{\lefthyphenmin=64\titlepagespecificinfo}%
     }%
-    % \vfill\\
     \vspace{5.5ex}\\
   }
   \@ifundefined{@advisor}{}{
@@ -349,7 +321,6 @@
                 \@ifundefined{@authorb}{}{\MakeUppercase{\@authorb}\\}%
                 \@ifundefined{@authorc}{}{\MakeUppercase{\@authorc}\\}%
                 \@ifundefined{@authord}{}{\MakeUppercase{\@authord}\\}%
-                %\vspace{\stretch{4}}
                 \vspace{12.65ex}
                 {\large\textbf{\@title}\par}
                 \vfill
