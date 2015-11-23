@@ -630,6 +630,11 @@
 %==============================================================================
 % Ajuste das legendas das figuras e tabelas
 %==============================================================================
+\RequirePackage{float}
+\floatstyle{plaintop}
+\restylefloat{figure}
+\restylefloat{table}
+
 \captiondelim{ -- }
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
