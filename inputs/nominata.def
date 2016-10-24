@@ -12,13 +12,13 @@
 %
 
 % Reitoria
-\providecommand{\nominataReit}{Prof.~Carlos Alexandre Netto}
+\providecommand{\nominataReit}{Prof.~Rui Vicente Oppermann}
 \providecommand{\nominataReitname}{Reitor}
-\providecommand{\nominataPRCA}{Prof.~Rui Vicente Oppermann}
-\providecommand{\nominataPRCAname}{Vice-Reitor}
+\providecommand{\nominataPRCA}{Prof\textsuperscript{a}.~Jane Fraga Tutikian}
+\providecommand{\nominataPRCAname}{Vice-Reitora}
 
 % PROPG
-\providecommand{\nominataPRAPG}{Prof.~Vladimir Pinheiro do Nascimento}
+\providecommand{\nominataPRAPG}{Prof.~Celso Giannetti Loureiro Chaves}
 \providecommand{\nominataPRAPGname}{Pr{\'o}-Reitor de P{\'o}s-Gradua{\c{c}}{\~a}o}
 
 % Instituto de Informática
@@ -56,4 +56,3 @@
 %ECP
 \providecommand{\nominataCoordECP}{Prof.~Raul Fernando Weber}
 \providecommand{\nominataCoordECPname}{Coordenador do Curso de Engenharia de Computa{\c{c}}{\~a}o}
-
