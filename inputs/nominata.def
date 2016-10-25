@@ -22,8 +22,8 @@
 \providecommand{\nominataPRAPGname}{Pr{\'o}-Reitor de P{\'o}s-Gradua{\c{c}}{\~a}o}
 
 % Instituto de Informática
-\providecommand{\nominataDir}{Prof.~Luis da Cunha Lamb}
-\providecommand{\nominataDirname}{Diretor do Instituto de Inform{\'a}tica}
+\providecommand{\nominataDir}{Prof\textsuperscript{a}.~Carla Maria Dal Sasso Freitas}
+\providecommand{\nominataDirname}{Diretora do Instituto de Inform{\'a}tica}
 
 % PPGC
 \providecommand{\nominataCoordPPGC}{Prof.~Luigi Carro}
