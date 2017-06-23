@@ -38,7 +38,7 @@
 \providecommand{\nominataBibchefename}{Bibliotec{\'a}ria-chefe do Instituto de Inform{\'a}tica}
 
 % INA (Informática Aplicada)
-\providecommand{\nominataChefeINA}{Prof.~Carlos Arthur Lang Lisb{\^o}a}
+\providecommand{\nominataChefeINA}{Prof.~Renata Galante}
 \providecommand{\nominataChefeINAname}{Chefe do \deptINA}
 
 % INT (Informática Teórica)
