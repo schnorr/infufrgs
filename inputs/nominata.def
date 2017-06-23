@@ -50,9 +50,9 @@
 \providecommand{\nominataPRAGname}{Pr{\'o}-Reitor de Gradua{\c{c}}{\~a}o}
 
 %CIC
-\providecommand{\nominataCoordCIC}{Prof.~Carlos Arthur Lang Lisb{\^o}a}
+\providecommand{\nominataCoordCIC}{Prof.~Raul Fernando Weber}
 \providecommand{\nominataCoordCICname}{Coordenador do Curso de Ci{\^e}ncia de Computa{\c{c}}{\~a}o}
 
 %ECP
-\providecommand{\nominataCoordECP}{Prof.~Raul Fernando Weber}
+\providecommand{\nominataCoordECP}{Prof.~Renato Ventura Henriques}
 \providecommand{\nominataCoordECPname}{Coordenador do Curso de Engenharia de Computa{\c{c}}{\~a}o}
