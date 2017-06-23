@@ -1,9 +1,9 @@
 % LaTex source code
 % File: "diss.tex"
 % Created: "Ter, 08 Abr 2014 14:27:10 +0200 (kassick)"
-% Updated: "Qua, 01 Abr 2015 14:41:12 -0300 (kassick)"
+% Updated: "2017-01-18 12:42:25 kassick"
 % $Id$
-% Copyright (C) 2014, Rodrigo Virote Kassick <rvkassick@inf.ufrgs.br> 
+% Copyright (C) 2014, Rodrigo Virote Kassick <rvkassick@inf.ufrgs.br>
 % exemplo genérico de uso da classe iiufrgs.cls baseado em
 % $Id: iiufrgs.tex,v 1.1.1.1 2005/01/18 23:54:42 avila Exp $
 %
@@ -17,13 +17,13 @@
 %   * ecp       -- Graduação em Ciência da Computação
 %   * ppgc      -- Programa de Pós Graduação em Computação
 %   * pgmigro   -- Programa de Pós Graduação em Microeletrônica
-%   
+%
 % Tipos de Documento:
 %   * tc                -- Trabalhos de Conclusão (apenas cic e ecp)
 %   * diss ou mestrado  -- Dissertações de Mestrado (ppgc e pgmicro)
 %   * tese ou doutorado -- Teses de Doutorado (ppgc e pgmicro)
 %   * ti                -- Trabalho Individual (ppgc e pgmicro)
-% 
+%
 %\documentclass[tese]{iiufrgs}
 %\documentclass[tc-cic]{iiufrgs}
 %\documentclass[tc-ecp]{iiufrgs}
@@ -48,7 +48,7 @@
 \else
     \usepackage[utf8]{inputenc}
 \fi
-    
+
 \usepackage[alf,abnt-emphasize=bf]{abntex2cite}	% pacote para usar citações abnt
 
 % Alguns pacotes úteis
@@ -61,7 +61,7 @@
 %\usepackage{color}              % Definições de cores
 %\usepackage{hhline}
 %\usepackage{tabularx}           % permite colunas tipo parágrafo que expandem pro espaço disponível
-%\usepackage{longtable}          % longtable e xtab dão suporte a tabelas muito 
+%\usepackage{longtable}          % longtable e xtab dão suporte a tabelas muito
 %\usepackage{xtab}               % longas (mais de uma página). Escolha uma
 %\usepackage{multirow}           % Permite mesclar linhas de um tabular
 %\usepackage{calc}               % Para operar counters
@@ -311,7 +311,7 @@ O formato adotado pela ABNT prevê apenas três níveis (capítulo, seção e su
 A classe \emph{iiufrgs} faz uso do pacote \emph{abnTeX2} com algumas alterações
 feitas por Sandro Rama Fiorini. Culpe ele se algo der errado. Agradeça a ele
 pelo que der certo. As modificações dão uma camada de tinta NATBIB-style,
-já que o abntex2 usa uns comandos de citação feitos para alienívenas de 5 braços 
+já que o abntex2 usa uns comandos de citação feitos para alienívenas de 5 braços
 wtf. Exemplos de citação:
 
 \begin{itemize}
@@ -322,7 +322,7 @@ wtf. Exemplos de citação:
     \item \emph{citen or citenum}: Segundo \citen{Adams2009Conceptual},
         unicórnios são verdes.
     \item \emph{citeauthor e citeyearpar}: Segundo artigos de
-        \citeauthor{Adams2009Conceptual} , unicórnios são verdes 
+        \citeauthor{Adams2009Conceptual} , unicórnios são verdes
         \citeyearpar{Adams2009Conceptual}.
 
 \end{itemize}
@@ -332,6 +332,10 @@ produz saída de acordo com as exigências da biblioteca.
 
 Recomenda-se o uso de bibtex para gerenciar as referências (veja o arquivo
 biblio.bib).
+
+\textbf{Nota sobre o bibabnt}: O bibabnt usa alguns campos de forma \emph{peculiar}. Em especial o \texttt{@inproceedings} e o \texttt{@inbook} exigem que alguns campos setados de maneira arbitrária para que funcionem.
+
+Veja por exemplo as entradas para \citeauthor{Maddox1992Perceptual} (com erro) e \citeauthor{balouek:2013:grid5000} (correta).
 
 % e aqui vai a parte principal
 %
@@ -354,3 +358,8 @@ Ignore this content
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
