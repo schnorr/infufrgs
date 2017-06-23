@@ -42,7 +42,7 @@
 \providecommand{\nominataChefeINAname}{Chefe do \deptINA}
 
 % INT (Informática Teórica)
-\providecommand{\nominataChefeINT}{Prof.~Edson Prestes e Silva Junior}
+\providecommand{\nominataChefeINT}{Prof.~{\'A}lvaro Freitas Moreira}
 \providecommand{\nominataChefeINTname}{Chefe do \deptINT}
 
 % Graduação
