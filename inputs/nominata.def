@@ -30,8 +30,8 @@
 \providecommand{\nominataCoordnamePPGC}{Coordenador do PPGC}
 
 % PGMicro
-\providecommand{\nominataCoordPGMICRO}{Prof.~Gilson In{\'a}cio Wirth}
-\providecommand{\nominataCoordnamePGMICRO}{Coordenador do PGMICRO}
+\providecommand{\nominataCoordPGMICRO}{Prof.~Fernanda Gusm{\~a}o de Lima Kastensmidt}
+\providecommand{\nominataCoordnamePGMICRO}{Coordenadora do PGMICRO}
 
 % Biblioteca
 \providecommand{\nominataBibchefe}{Beatriz Regina Bastos Haro}
