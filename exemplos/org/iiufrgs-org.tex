@@ -1,0 +1,31 @@
+% Helper code
+
+% Renomeia date e author para compatibilidade com o org
+\let\olddate\date \renewcommand\date[1]{\olddate{#1}{}}
+\let\oldauthor\author \renewcommand\author[1]{\oldauthor{}{#1}}
+
+% Fontes bonitinhas. Reconfigure à vontade, desde que pareça times ainda
+\ifxetex
+    \usepackage{tgpagella} %serif
+    \usepackage{tgadventor} %sans
+    \usepackage{tgcursor} %tt
+\else
+    \usepackage{times}              % pacote para usar fonte Adobe Times
+\fi
+
+% Hack para fazer as figuras como a biblioteca espera
+\newcommand\alias[2]{\csgdef{alias:#1}{#2}}
+\newcommand\A[1]{\csuse{alias:#1}}
+
+\newcommand\thelegend[1]{
+ \alias{thelegendvalue}{#1}
+}
+
+\let\oldcaption\caption
+\renewcommand\caption[1]{%
+  \oldcaption{#1}
+
+  \ifcsvoid{alias:thelegendvalue}{}{\expandafter\legend{\A{thelegendvalue}}}
+
+   \global\csundef{alias:thelegendvalue}
+}

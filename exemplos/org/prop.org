@@ -1,0 +1,327 @@
+* Preamble                                                           :ignore:
+#+TITLE: Exemplo de Documento II-UFRGS com ORG-Mode
+#+AUTHOR: Rodrigo Virote Kassick
+#+DATE: Agosto de 2017
+#+LANGUAGE: pt
+#+LATEX_CLASS: iiufrgs
+#+LATEX_CLASS_OPTIONS: [ppgc, prop-tese, english, openright, ppgc]
+#+LATEX_HEADER: \input{iiufrgs-org.tex}
+#+LATEX_HEADER: \advisor[Prof.~Dr.]{Orientador}{Senhor}
+#+LATEX_HEADER: \coadvisor[Prof.~Dr.]{Orientador}{Senhor C.O.}
+#+TAGS: noexport(n) deprecated(d) success(s) failed(f) pending(p)
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+SEQ_TODO: TODO(t!) STARTED(s!) WAITING(w!) REVIEW(r!) PENDING(p!) | DONE(d!) CANCELLED(c!) DEFERRED(f!)
+#+STARTUP: overview indent
+#+OPTIONS: ^:nil _:nil
+#+OPTIONS: ':t toc:nil
+
+** ORG Functions -- no export                                     :noexport:
+
+#+NAME: org_include_graphics
+#+BEGIN_SRC elisp :output raw :results drawer :var name="name" caption="" legend="" file="file" width="\"\"" extra-headers=""
+(format (concat "#+NAME: %s\n"
+                "#+ATTR_LATEX: :caption \\caption{\\label{%s} %s} %s %s %s\n"
+                "[[%s]]")
+        name
+        name
+        caption
+        (if (> (length legend) 0)
+            (format "\\legend{%s}" legend)
+          "")
+        extra-headers
+        (if (> (length width) 0)
+            (format ":width %s" width)
+          "")
+        file)
+#+END_SRC
+
+* Dedicatória                                                        :ignore:
+
+
+#+BEGIN_EXPORT latex
+\clearpage
+\begin{flushright}
+\mbox{}\vfill
+{\sffamily\itshape
+#+END_EXPORT
+
+/Dedicatória/ não devem gerar chapter ou section. Use a tag :ignore: . Assim, o org-mode organiza como seções, mas o o export engine não gera o header.
+
+# Dedicatória in normal org mode. Or just join both exports and do whatever
+
+"If I have seen farther than others,\\
+it is because I stood on the shoulders of giants."
+
+--- \textsc{Sir. Isaac Newton}
+
+#+BEGIN_EXPORT latex
+}
+\end{flushright}
+#+END_EXPORT
+
+* Agradecimentos
+:PROPERTIES:
+:UNNUMBERED: t
+:END:
+
+*Seções como agradecimentos não devem ser numeradas. Use a propriedade UNNUMBERED para fazer isso.*
+
+Agradeço ao \LaTeX{} por não ter vírus de macro...
+
+E ao Emacs por (teoricamente) tê-los.
+
+E ao VIM por também (teoricante) tê-los em uma linguagem diferente de ELISP.
+
+E pelo M-x butterfly
+
+* Abstract                                                           :ignore:
+
+# A tag ignore diz para não criar um novo section, chapter ou whatever: A divisão é lógica, apenas para o org.
+
+\keyword{kw1}
+\keyword{kw2}
+
+#+ATTR_LATEX:
+#+BEGIN_abstract
+The abstract.
+
+Se você estiver escrevendo em português, esse é o abstract em português.
+
+If you're writing in english, this is the abstract in english
+#+END_abstract
+
+* English Abstract                                                   :ignore:
+
+#+ATTR_LATEX: :options {The Title}{kw1, kw2, kw3}
+#+BEGIN_englishabstract
+The abstract text in english!
+
+*IMPORTANT NOTE*: If you're writing in english, than this becomes the "Resumo" in portuguese
+#+END_englishabstract
+
+* Abreviaturas                                                       :ignore:
+
+#+ATTR_LATEX: :options {XXXXX}
+#+BEGIN_listofabbrv
+\item[SMP] Symmetric Multi-Processor
+\item[NUMA] Non-Uniform Memory Access
+\item[SIMD] Single Instruction Multiple Data
+\item[SPMD] Single Program Multiple Data
+\item[ABNT] Associação Brasileira de Normas Técnicas
+#+END_listofabbrv
+
+* List of Figures and Tables and toc                                 :ignore:
+
+# Apenas chamar list of figures tb
+
+\listoffigures
+
+\listoftables
+
+\tableofcontents
+
+* Introduction
+:PROPERTIES:
+:CUSTOM_ID: sec:introducao
+:END:
+<<sec:intro>>
+
+No início dos tempos, Donald E. Knuth criou o \TeX. Algum tempo depois, Leslie Lamport criou o \LaTeX. Graças a eles, não somos obrigados a usar o Word nem o StarOffice.
+
+O exemplo é quebrado em 4 arquivos:
+- [[./prop.org]]: Este arquivo. Contém o texto principal do documento.
+
+  Pode-se quebrar o documento org em vários usando o comando include. Isso pode ser útil para quebrar o documento em vários documentos menores.
+  #+BEGIN_EXAMPLE
+  ,#+INCLUDE: outro_arquivo.org
+  #+END_EXAMPLE
+
+- [[./latexmkrc]]: Esse arquivo não é *estritamente necessário*. Ele poder ser utilizado caso a sua instalação do iiufrgs se encontre em um diretório não padrão. Por exemplo, o latexmkrc desse documento faz referência ao iiufrgs em [[../../inputs/]]. Para utilizar o latexmk, deve-se configurar a variável =org-latex-pdf-process=. Esse documento faz essa configuração automaticamente com /Local Variables/. Ao abrí-lo no emacs, o editor irá perguntar se você aceita configurar as variáveis e irá apresentar os valores sugeridos pelo documento. Pressione ! ou y.
+
+  #+BEGIN_EXAMPLE
+  # Local Variables:
+  # org-latex-pdf-process: ("latexmk -cd -bibtex -pdfxe %f && latexmk -cd -c %f")
+  # End:
+  #+END_EXAMPLE
+
+- [[./iiufrgs-org.tex]]: Comandos para permitir a integração do org com o iiufrgs de forma não traumática.
+
+  - Redefinição de =date= e =author= para que a data e o autor do preâmbulo apareçam corretamente
+
+  - Redefinição do comando caption para que possamos fornecer uma legenda para as figuras (ver figure [[fig:ex1]])
+
+** Dependências Externas
+
+- emacs
+- org-mode (>9.0)
+- org-ref
+- latexmk (se o iiufrgs for instalado em um diretório do sistema ou se os arquivos se encontram no diretório atual, essa dependência não é necessária e você pode remover a referência ao org-latex-pdf-process nas variáveis locais desse arquivo).
+- xelatex ou outro compilador latex. Se utilizar o latexmk, lembre-se de alterar o comando nas variáveis locais.
+
+** Configurações Necessárias no org-mode
+
+Para que esse documento funcione as-it-is, são necessárias algumas configurações:
+
+- =org-latex-pdf-process=: Se necessário qualquer coisa não padrão (como latexmk) para compilar, deve-se configurar o processo de compilação de forma manual. Aqui, usa-se latexmk para gerar um pdf usando XeLaTeX com a opção de apenas gerar o pdf na última compilação (o desempenho é melhor assim).
+
+  #+BEGIN_SRC elisp :eval never
+  (setq org-latex-pdf-process
+        '("latexmk -cd -bibtex -pdfxe %f && latexmk -cd -c %f"))
+  #+END_SRC
+- =org-latex-classes=: Deve-se configurar uma classe de documento /iiufrgs/ para que o ox-export gere o tex corretamente.
+
+  #+BEGIN_SRC elisp :eval never
+  (setq org-latex-classes
+        '(("iiufrgs"
+           "\\documentclass{iiufrgs}\n\\usepackage[alf,abnt-emphasize=bf]{abntex2cite}\n[DEFAULT-PACKAGES]\n[PACKAGES]\n[EXTRA]\n"
+           ("\\chapter{%s}" . "\\chapter*{%s}")
+           ("\\section{%s}" . "\\section*{%s}")
+           ("\\subsection{%s}" . "\\subsection*{%s}")
+           ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
+  #+END_SRC
+- =org-latex-prefer-user-labels=: Deve estar setado para t para que os labels utilizados sejam os mesmos fornecidos no org. Assim, pode-se utilizar tanto referências normais do tex com o comando =\ref= quanto citações normais com o src_lisp{[[nome:da:ref]]}.
+
+  #+BEGIN_SRC elisp :eval never
+  (setq org-latex-prefer-user-labels t)
+  #+END_SRC
+
+Estas variáveis podem ser configuradas no seu =init.el= ou podem ser configuradas como buffer-local via /Local Variables/, basta que o arquivo possua o seguinte texto ao fim (ver fim do arquivo).
+
+Elas também podem ser configuradas no header do arquivo org via src_lisp{#+BIND:}, desde que a variável =org-export-allow-bind-keys= esteja habilitada.
+
+* Referenciando Seções
+
+No org, pode-se usar dois tipos de referência: Usando um custom_id (propriedades) ou usando um custom target com $<<$ e $>>$:
+- Usando custom target entre $<<$ e $>>$: Seção [[sec:intro]]
+- Usando referência com src_lisp{[[#id:em:propriedades]]}: Seção [[#sec:introducao]]
+- Usando link padrão org: [[*Referenciando Seções][texto do link]]
+
+* Figuras e Tabelas
+<<sec:fig_format>>
+
+Esta seção faz referência às Figuras [[fig:estrutura]], [[fig:ex1]] e \ref{fig:ex2}, a título de exemplo. A primeira figura apresenta a estrutura de uma figura. A \emph{descrição} deve aparecer \textbf{acima} da figura. Abaixo da figura, deve ser indicado a origem da imagem, mesmo se essa for apenas os autores do texto.
+
+A Figura \ref{fig:ex1} representa o caso mais comum, onde a figura propriamente dita é importada de um arquivo (neste exemplo em formato \texttt{.pdf}. Veja a seção \ref{sec:fig_format}). A Figura \ref{fig:ex2} exemplifica o uso do environment \texttt{picture}, para desenhar usando o próprio \LaTeX.
+
+** Figura gerada via svg com o latexmk                              :ignore:
+
+Figuras podem ser inseridas diretamente de arquivo, inclusive convertidas através do latexmk (ver [[fig:ex1]]). Esse é o caso mais simples. Lembre-se que, pelas regras da biblioteca, figuras devem ter uma legenda obrigatória informando a fonte. Use o comando =thelegend= no CAPTION da figura para adicioná-lo.
+
+#+NAME:   fig:ex1
+#+CAPTION: Figura importada de um arquivo .pdf \thelegend{Fonte: Os Autores}
+#+ATTR_LATEX: :width "" :caption
+[[./fig.pdf]]
+
+Também pode-se utilizar a função =org_include_graphics= para gerar um código, apenas deve-se passar os parâmetros corretamente. (ver [[fig:outra]])
+
+#+CALL: org_include_graphics(name="fig:outra",caption="Esta figura foi inserida com org\\_include\\_graphics",legend="Fonte: Org Mode", file="./fig.pdf") :output raw :results drawer
+
+#+RESULTS:
+:RESULTS:
+#+NAME: fig:outra
+#+ATTR_LATEX: :caption \caption{\label{fig:outra} LALA} \thelegend{Fonte: Who CAres}  :width ""
+[[./fig.pdf]]
+:END:
+
+** Código gerado automaticamente                                    :ignore:
+
+Para uma figura a partir de LaTeX, cria um source block e execute-o. Após, adicione os atributos e nomes antes do RESULTS
+#+BEGIN_EXAMPLE
+,#+NAME: fig:estrutura-code
+,#+BEGIN_SRC latex :file picture.pdf :results raw :fit yes :cache yes
+\begin{picture}(100,100)
+        \put(0,0){\line(0,1){100}}
+        \put(0,0){\line(1,0){100}}
+        \put(100,100){\line(0,-1){100}}
+        \put(100,100){\line(-1,0){100}}
+        \put(10,50){Uma Imagem!!!}
+\end{picture}
+,#+END_SRC
+
+,#+ATTR_LATEX: :caption \caption{\label{fig:estrutura} A legenda} \legend{Fonte: Os Autores}
+,#+ATTR_LATEX: :width 0.3\textwidth
+,#+RESULTS[8a9d458f624e17090a594f148421333e7dad9bdd]: fig:estrutura-code
+[[file:picture.pdf]]
+#+END_EXAMPLE
+
+#+NAME: fig:estrutura-code
+#+BEGIN_SRC latex :file picture.pdf :results raw :fit yes :cache yes
+\begin{picture}(100,100)
+        \put(0,0){\line(0,1){100}}
+        \put(0,0){\line(1,0){100}}
+        \put(100,100){\line(0,-1){100}}
+        \put(100,100){\line(-1,0){100}}
+        \put(10,50){Texto no meio de um retangulo}
+\end{picture}
+#+END_SRC
+
+#+NAME: fig:estrutura
+#+CAPTION: A legenda \thelegend{Fonte: Os Autores de novo}
+#+ATTR_LATEX: :width 0.3\textwidth
+#+RESULTS[f04b40fc4d583a38ea9c6ef67db0646bb5678de9]: fig:estrutura-code
+[[file:picture.pdf]]
+
+** Figura em latex                                                  :ignore:
+
+Figuras também podem ser colocadas diretamente em latex. Neste caso, deve-se usar =ref= para referenciá-las: \ref{fig:ex2}.
+#+BEGIN_EXPORT latex
+\begin{figure}
+    \caption{Exemplo de figura desenhada com o environment \texttt{picture}.}
+    \begin{center}
+        \setlength{\unitlength}{.1em}
+        \begin{picture}(100,100)
+                \put(20,20){\circle{20}}
+                \put(20,20){\small\makebox(0,0){a}}
+                \put(80,80){\circle{20}}
+                \put(80,80){\small\makebox(0,0){b}}
+                \put(28,28){\vector(1,1){44}}
+        \end{picture}
+    \end{center}
+    \legend{Fonte: Os Autores}
+    \label{fig:ex2}
+\end{figure}
+#+END_EXPORT
+
+* Citações
+
+Pode-se utilizar citações tipo natbib. É necessário o pacote org-xref, disponível no melpa e requisitado automaticamente no layer bibtex do spacemacs.
+
+- Cite: cite:737633
+- citet: citet:gibson1996rwg
+- citep citep:cormen_conceitual
+- citeauthor citeauthor:cormen_conceitual
+- citeyear citeyear:cormen_conceitual
+
+* Bibliography                                                      :ignore:
+
+bibliographystyle:abntex2-alf
+bibliography:./IO.bib
+
+# Pode-de referenciar vários arquivos de bibliografia
+# bibliography:Benchmarks.bib
+# bibliography:BRAMS.bib
+# bibliography:IO-Optimizations.bib
+# bibliography:Modeling.bib
+# bibliography:MPI-IO.bib
+# bibliography:Navaux_other.bib
+# bibliography:OLAM_plus_PFS.bib
+# bibliography:PFS.bib
+# bibliography:Rastro-or-Monitoring.bib
+# bibliography:Seismic.bib
+# bibliography:Test_With_Matthias.bib
+# bibliography:Test_With_Matthias_Mapping.bib
+# bibliography:Test_With_Matthias_Weather_Models.bib
+# bibliography:TI-2011-2.bib
+# bibliography:Weather.bib
+
+* Postamble                                                 :noexport:ignore:
+<<sec:postamble>>
+
+The contentes of this section are ignored, it's here only to keep colapsed the local variables
+
+# Local Variables:
+# org-latex-pdf-process: ("latexmk -cd -bibtex -pdfxe %f && latexmk -cd -c %f")
+# org-latex-classes: (("iiufrgs" "\\documentclass{iiufrgs}\n\\usepackage[alf,abnt-emphasize=bf]{abntex2cite}\n[DEFAULT-PACKAGES]\n[PACKAGES]\n[EXTRA]\n" ("\\chapter{%s}" . "\\chapter*{%s}") ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
+# org-latex-prefer-user-labels: t
+# End:
