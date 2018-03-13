@@ -77,7 +77,7 @@
 
 \RequirePackage{xspace}
 \RequirePackage{keyval}
-\RequirePackage{fixltx2e}
+%\RequirePackage{fixltx2e}
 
 \RequirePackage[english,brazilian]{babel}
 \input{brazilian.babel}
