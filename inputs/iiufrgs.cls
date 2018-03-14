@@ -135,7 +135,9 @@
 	% O modelo da UFRGS requer que os títulos dos trabalhos estejam em negrito.
     % Isso é opcional na norma ABNT (que permite que seja usado itálico) e
     % não é o padrão do abntex2.
-    abnt-emphasize=bf
+    abnt-emphasize=bf,
+    %Para não usar 'et al' nas referências (mas mantém nas citações)
+    abnt-etal-list=0
 ]{abntex2cite}
 \fi
 
