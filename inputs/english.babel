@@ -61,7 +61,7 @@
 	\def\proptesespecificinfo{Ph.D. Thesis Proposal}%
 	\def\tcname{Trabalho de Conclus\~{a}o}%
         \def\cicTitulacaoEm{Computer Science}
-        \def\ecpTitulacaoEm{Computer Engeneering}
+        \def\ecpTitulacaoEm{Computer Engineering}
 	\def\tcspecificinfo{%
                 Work presented in partial fulfillment\\
                 of the requirements for the degree of\\
