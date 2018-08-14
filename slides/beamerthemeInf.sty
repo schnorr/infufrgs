@@ -1,0 +1,384 @@
+%% beamerthemeInf.sty
+%% Copyright 2012 Bruno Menegola
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status ‘maintained’.
+%
+% The Current Maintainer of this work is Bruno Menegola.
+%
+% This work consists of all files listed in MANIFEST
+%
+%
+% Description
+% ===========
+%
+% This file configures a beamer theme for presentation files. The
+% design was based on the style present in the visual identity manual
+% of the Institute of Informatics from Federal University of Rio Grande
+% do Sul.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%               Preamble                %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mode<presentation>
+
+\usepackage{pgf}
+\usepackage{color}
+\usepackage[overload]{textcase}
+\usepackage{ifthen}
+\usepackage[tracking=true]{microtype}
+\usepackage{ifsym}
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{amsthm}
+
+\newlength{\InfOutterTitleWidth}
+\newlength{\InfOutterTitleRightMargin}
+\newlength{\InfOutterTitleBottomMargin}
+\newlength{\InfOutterFrametitleWidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%                Colors                 %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{InfRed}{RGB}{255, 0, 0}
+\definecolor{InfLightGray}{RGB}{172, 172, 172}
+\definecolor{InfGray}{RGB}{127, 127, 127}
+\definecolor{InfBlack}{RGB}{0, 0, 0}
+\definecolor{InfWhite}{RGB}{255, 255, 255}
+
+\setbeamercolor{frametitle}{fg = InfWhite}
+\setbeamercolor{title}{fg = InfBlack}
+\setbeamercolor{section in toc}{fg = InfBlack}
+\setbeamercolor{section in toc shaded}{fg = InfBlack}
+\setbeamercolor{item}{fg = InfBlack}
+\setbeamercolor{subitem}{fg = InfBlack}
+\setbeamercolor{subsubitem}{fg = InfBlack}
+\setbeamercolor{description item}{fg = InfBlack}
+\setbeamercolor{caption}{fg = InfBlack}
+\setbeamercolor{caption name}{fg = InfBlack}
+\setbeamercolor{normal text}{fg = InfBlack}
+\setbeamercolor{theorem title}{fg = InfGray}
+\setbeamercolor{theorem body}{fg = InfBlack}
+\setbeamercolor{qed symbol}{fg = InfGray}
+\setbeamercolor{block title}{fg = InfGray, bg = InfWhite}
+\setbeamercolor{block body}{bg = InfWhite}
+\setbeamercolor{block title example}{fg = InfGray, bg = InfWhite}
+\setbeamercolor{block title alerted}{fg = InfRed, bg = InfWhite}
+\setbeamercolor{part title}{fg=InfBlack}
+\setbeamercolor{section name}{fg=InfGray}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%                Fonts                  %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usefonttheme{professionalfonts}
+\setbeamerfont{title}{size = \huge}
+\setbeamerfont{frametitle}{size = \normalsize}
+\setbeamerfont{theorem title}{series = \normalfont}
+\setbeamerfont{theorem body}{series = \itshape}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%             Inner Theme               %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\useinnertheme{rounded}
+
+\setbeamertemplate{itemize item}{%
+    \color{InfRed}$\bullet$\hspace{5pt}
+}
+\setbeamertemplate{itemize subitem}{%
+    \color{InfRed}$\bullet$\hspace{4pt}
+}
+\setbeamertemplate{itemize subsubitem}{%
+    \color{InfRed}$\bullet$\hspace{3pt}
+}
+\setbeamertemplate{enumerate item}{%
+    \color{InfRed}\insertenumlabel.\hspace{5pt}
+}
+\setbeamertemplate{enumerate subitem}{%
+    \color{InfRed}\insertsubenumlabel.\hspace{4pt}
+}
+\setbeamertemplate{enumerate subsubitem}{%
+    \color{InfRed}\insertsubsubenumlabel.\hspace{3pt}
+}
+\setbeamertemplate{section in toc}{%
+    \color{InfRed}\inserttocsectionnumber.\hspace{10pt}\color{InfBlack}\inserttocsection\par
+}
+\setbeamertemplate{subsection in toc}{%
+    \leftskip=2em\color{InfRed}$\bullet$\hspace{9pt}\color{InfBlack}\inserttocsubsection\par
+}
+\setbeamertemplate{theorem begin}{%
+    \usebeamerfont{theorem title}%
+    \usebeamercolor[fg]{theorem title}%
+    \inserttheoremname \inserttheoremnumber%
+    \ifx\inserttheoremaddition\@empty\else\ (\inserttheoremaddition)\fi%
+    \inserttheorempunctuation\hspace{1ex}%
+    \usebeamerfont{theorem body}%
+    \usebeamercolor[fg]{theorem body}
+}
+\setbeamertemplate{theorem end}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%             Outter Theme              %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\InfOutterTitleWidth}{0.25\paperwidth}
+\setlength{\InfOutterTitleRightMargin}{8pt}
+\setlength{\InfOutterTitleBottomMargin}{5pt}
+\setlength{\InfOutterFrametitleWidth}{0.65\textwidth}
+\newlength{\InfOutterFrameLeftMargin}
+\setlength{\InfOutterFrameLeftMargin}{0pt}
+
+\newcommand{\InfSectionFontSize}{
+    \SetTracking[spacing={-50*,30*,50*}]{encoding=OT1}{-80}%
+    \fontfamily{phv}%
+    \fontsize{80}{85}%
+    \selectfont
+}
+
+% Fix to the line spacing problem inside headline
+% From http://tex.stackexchange.com/questions/66199/beamer-line-spread-in-headline-is-ignored
+\def\beamer@typesetheadorfoot#1{% typeset the head or footline
+  {\parskip0pt %\offinterlineskip%
+    \hbox{%
+      \hskip-\Gm@lmargin%
+      \hbox{%
+        \vbox{%
+          \@tempdima=\textwidth%
+          \textwidth=\paperwidth%
+          \hsize=\textwidth%
+          \def\\{,}%
+          \usebeamertemplate***{#1}%
+        }}%
+      \hskip-\Gm@rmargin%
+    }}\hfil%
+}
+
+\newif\ifInfNumberedSection
+\newcommand{\InfSetNumberedSection}{\InfNumberedSectiontrue}
+\newcommand{\InfUnsetNumberedSection}{\InfNumberedSectionfalse}
+\AtBeginSection[\InfUnsetNumberedSection]{\InfSetNumberedSection}
+\newcommand{\InfSectionNumber}{%
+    \ifInfNumberedSection%
+        \the\beamer@tocsectionnumber%
+    \fi%
+}
+
+\setbeamertemplate{headline}[text line]{%
+    \raisebox{0pt}[0pt][0pt]{%
+        \begin{pgfpicture}{0pt}{42pt}{0pt}{0pt}
+            \pgfrect[fill]
+                {\pgfpoint{0.0\paperwidth-\beamer@leftmargin}{1.25pt}}
+                {\pgfpoint{1.0\paperwidth}{41pt}}
+            \pgfputat
+                {\pgfpoint{0.15\paperwidth-\beamer@leftmargin}{-2pt}}
+                {\pgfbox[right,bottom]{\color{InfGray}\InfSectionFontSize\bfseries\scalebox{1.0}[0.8]{\textls{\InfSectionNumber}}}}
+            \color{InfWhite}
+            \pgfrect[fill]
+                {\pgfpoint{0.0\paperwidth-\beamer@leftmargin}{1.25pt}}
+                {\pgfpoint{0.5\paperwidth}{-8pt}}
+            \pgfsetlinewidth{2.5pt}
+            \color{InfRed}
+            \pgfline
+                {\pgfpoint{\paperwidth-\InfOutterTitleWidth-\InfOutterTitleRightMargin-\beamer@leftmargin}{0pt}}
+                {\pgfpoint{1.0\paperwidth-\beamer@leftmargin}{0pt}}
+            \color{InfLightGray}
+            \pgfputat
+                {\pgfpoint{\paperwidth-\InfOutterTitleWidth-\InfOutterTitleRightMargin-\beamer@leftmargin}{\InfOutterTitleBottomMargin+1.25pt}}
+                {\pgfbox[left,bottom]
+                    {%
+                        \begin{minipage}[t][39.75pt][b]{\InfOutterTitleWidth}%
+                            \linespread{1.1}\raggedright\tiny\bfseries\MakeTextUppercase{\beamer@shorttitle}
+                        \end{minipage}
+                    }
+                }
+            \setlength{\InfOutterFrameLeftMargin}{\beamer@leftmargin}
+        \end{pgfpicture}
+    }
+}
+
+\setbeamertemplate{sidebar canvas right}{}
+
+\setbeamertemplate{frametitle}{%
+    \footnotesize%
+    \def\InfTop{}
+    \def\InfMiddle{}
+    \def\InfBottom{\small\color{InfWhite}\raggedright\MakeTextUppercase{\beamer@frametitle}\ifnum\beamer@autobreakcount>0\relax{}\space\usebeamertemplate*{frametitle continuation}\fi}
+    \@ifundefined{lastsubsection}{
+        \@ifundefined{lastsection}{}{\ifthenelse{\equal{\lastsection}{}}{}{%
+            \def\InfMiddle{\vspace{0.4em}\tiny\color{InfLightGray}\raggedright\MakeTextUppercase{\lastsection}\\}%
+        }}
+    }{
+        \ifthenelse{\equal{\lastsubsection}{}}{
+            \@ifundefined{lastsection}{}{\ifthenelse{\equal{\lastsection}{}}{}{%
+                \def\InfMiddle{\vspace{0.4em}\tiny\color{InfLightGray}\raggedright\MakeTextUppercase{\lastsection}\\}%
+            }}
+        }{
+            \@ifundefined{lastsection}{}{\ifthenelse{\equal{\lastsection}{}}{}{%
+                \def\InfTop{\tiny\color{InfGray}\raggedright\MakeTextUppercase{\lastsection}~\\}%
+            }}
+            \def\InfMiddle{\vspace{0.4em}\tiny\color{InfLightGray}\raggedright\MakeTextUppercase{\lastsubsection}\\}%
+        }
+    }
+    \parbox{\InfOutterFrametitleWidth}{
+        \begin{pgfpicture}{-25pt}{0pt}{\textwidth}{39.75pt}
+            \pgfputat
+                {\pgfpoint{0pt}{\InfOutterTitleBottomMargin}}
+                {\pgfbox[left,base]{%
+                    \begin{minipage}[b][39.75pt][b]{\InfOutterFrametitleWidth}%
+                        \InfTop\InfMiddle\InfBottom%
+                    \end{minipage}
+                 }}
+        \end{pgfpicture}
+    }
+}
+
+\newcommand{\InfFootline}{%
+    \raisebox{9pt}{%
+        \makebox[\paperwidth]{%
+            \scriptsize\hfill\insertframenumber\hspace{6pt}
+        }
+    }
+}
+
+\setbeamertemplate{footline}{%
+    \usebeamerfont{structure}
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=0pt]{title in head/foot}%
+        \InfFootline
+        \raisebox{0pt}[0pt][0pt]{%
+            \begin{pgfpicture}{0pt}{0pt}{0pt}{0pt}
+                \pgfsetlinewidth{1.5pt}
+                \color{InfRed}
+                \pgfline
+                    {\pgfpoint{0.0\paperwidth}{0.75pt}}
+                    {\pgfpoint{1.0\paperwidth}{0.75pt}}
+            \end{pgfpicture}
+        }
+    \end{beamercolorbox}
+}
+
+\setbeamertemplate{navigation symbols}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%              Title Page               %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\InfSubtitleSep}{~---~}
+
+\setbeamertemplate{title page}{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=\paperheight,center]{title}%
+    \raisebox{0pt}[0pt][0pt]{%
+            \begin{pgfpicture}{0pt}{0pt}{\paperwidth}{\paperheight}
+            \pgfrect[fill]
+                {\pgfpoint{0.00\paperwidth}{0.215\paperheight}}
+                {\pgfpoint{1.00\paperwidth}{0.785\paperheight}}
+            \color{InfRed}
+            \pgfrect[fill]
+                {\pgfpoint{0.4\paperwidth}{0.200\paperheight}}
+                {\pgfpoint{0.6\paperwidth}{0.015\paperheight}}
+            \pgfputat
+                {\pgfpoint{0.4\paperwidth}{0.215\paperheight+2\InfOutterTitleBottomMargin}}
+                {\pgfbox[left,bottom]{%
+                    \begin{minipage}[t][0.785\paperheight][b]{0.6\paperwidth-2\InfOutterTitleRightMargin}%
+                        \vfill
+                        \vspace{1.5em}
+                        \includegraphics[width=0.3\paperwidth]{inf-logo-dark.pdf}
+                        \vfill
+                        \raggedright\color{InfLightGray}\large\bfseries\MakeTextUppercase{\inserttitle}
+                    \end{minipage}
+                 }}
+            \normalsize
+            \pgfputat
+                {\pgfpoint{0.4\paperwidth}{0.00\paperheight}}
+                {\pgfbox[left,bottom]{%
+                    \color{InfBlack}
+                    \begin{minipage}[t][0.200\paperheight][c]{0.6\paperwidth-2\InfOutterTitleRightMargin}%
+                        \insertauthor~\\
+                        {
+                            \color{InfGray}\scriptsize%
+                            \insertsubtitle%
+                            \ifthenelse{\equal{\insertsubtitle}{}}{}{%
+                                \ifthenelse{\equal{\insertdate}{}}{}{%
+                                    \InfSubtitleSep%
+                                }%
+                            }%
+                            \insertdate%
+                        }
+                    \end{minipage}
+                 }}
+        \end{pgfpicture}
+    }
+    \end{beamercolorbox}
+}
+
+\setbeamertemplate{section page}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=\paperheight,center]{title}%
+    \raisebox{0pt}[0pt][0pt]{%
+      \begin{pgfpicture}{0pt}{0pt}{\paperwidth}{\paperheight}
+        \pgfrect[fill]
+                {\pgfpoint{0.00\paperwidth}{0.215\paperheight}}
+                {\pgfpoint{1.00\paperwidth}{0.785\paperheight}}
+                \color{InfRed}
+                \pgfrect[fill]
+                {\pgfpoint{0.4\paperwidth}{0.200\paperheight}}
+                {\pgfpoint{0.6\paperwidth}{0.015\paperheight}}
+                \pgfputat
+                    {\pgfpoint{0.4\paperwidth}{0.215\paperheight+2\InfOutterTitleBottomMargin}}
+                    {\pgfbox[left,bottom]{%
+                        \begin{minipage}[t][0.785\paperheight][b]{0.6\paperwidth-2\InfOutterTitleRightMargin}%
+                          \vfill
+                          \vspace{1.5em}
+
+                          \vfill
+                          \raggedright\color{InfLightGray}\large\bfseries\insertsection
+                        \end{minipage}
+                    }}
+                    \normalsize
+                    \pgfputat
+                        {\pgfpoint{0.4\paperwidth}{0.00\paperheight-1em}}
+                        {\pgfbox[left,bottom]{%
+                            \color{InfBlack}
+                            \begin{minipage}[t][0.200\paperheight+1em][b]{0.6\paperwidth-2\InfOutterTitleRightMargin}%
+
+                            \end{minipage}
+                       }}
+     \end{pgfpicture}
+    }
+  \end{beamercolorbox}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%                Others                 %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\InfTitlePage}[0]{
+    \begin{frame}[plain]
+        \titlepage
+    \end{frame}
+}
+
+\newcommand{\InfContacts}[0]{
+    \parbox{\textwidth}{%
+        \centering
+        {\bfseries \insertauthor}~\\
+        {\small \insertinstitute}~\\
+        \vspace{30pt}
+        \includegraphics[width=0.2\paperwidth]{inf-logo-white.pdf}
+    }
+}
+
+\mode
+<all>
