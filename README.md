@@ -1,31 +1,37 @@
-UFRGS TeX Users Group
-=====================
+#+TITLE: UFRGS TeX Users Group (UTUG)
 
-Estes arquivos compoem o pacote de estilos LaTeX de documentos para o INF/UFRGS. 
+Estes arquivos compõem o pacote de estilos LaTeX de documentos para o
+Instituto de Informática da Universidade Federal do Rio Grande do Sul
+(INF/UFRGS). Várias classes de documentos são disponibilizadas, como
+por exemplo:
 
-Várias classes de documentos são disponibilizadas, como por exemplo:
+- =iiufrgs.cls=, para documentos do tipo TI, dissertacao, tese, etc
+- =sa.cls=, para produzir artigos para o Seminário de Andamento
+- =iiletter=, para produzir cartas com logotípos do II, em duas versões
 
-  * **iiufrgs.cls**, para documentos do tipo TI, dissertacao, tese, etc.
-  * **sa.cls**, para produzir artigos para o Seminário de Andamento
-  * **iiletter**, para produzir cartas com logotípos do II, em duas versões
+Cada uma tem um arquivo de exemplo, no diretório =exemplos=.
 
-Cada uma tem um arquivo de exemplo, no diretório "exemplos".
+* Participação
 
-### Participação
+Comentários e sugestões são **MUITO** bem-vindos. Envie-os para a lista
+de discussões do grupo de usuários TeX da UFRGS:
 
-Comentários e sugestões são **MUITO** bem-vindos. Envie-os para a lista de discussões do grupo de usuários TeX da UFRGS:
-
-  * utug-l@inf.ufrgs.br
+- =utug-l@inf.ufrgs.br=
 
 Para cadastrar-se na lista, visite
 
-  * https://listas.inf.ufrgs.br/mailman/listinfo/utug-l
+- https://listas.inf.ufrgs.br/mailman/listinfo/utug-l
 
-ou envie e-mail para utug-l-request@inf.ufrgs.br com a palavra _subscribe_ no corpo da mensagem.
+ou envie e-mail para utug-l-request@inf.ufrgs.br com a palavra
+_subscribe_ no corpo da mensagem. Notem que a lista tem sido bem pouco
+utilizada ultimamente, portanto dê preferência para disponibilizar
+issues no GitHub.
 
-### Instalação
+* Instalação
 
-Os arquivos necessários para compilar os fontes tex encontram-se no diretório *inputs/* . Copie todos os arquivos para o diretório do seu documento ou utilize o Makefile para outras opções.
+Os arquivos necessários para compilar os fontes tex encontram-se no
+diretório *inputs/* . Copie todos os arquivos para o diretório do seu
+documento ou utilize o Makefile para outras opções.
 
 Os links abaixo podem ser úteis para a instalação do pacote:
 
