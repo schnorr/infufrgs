@@ -18,6 +18,12 @@ A versão mais atual do estilo INF/UFRGS encontra-se no github:
 
 + <a href="https://github.com/schnorr/iiufrgs">https://github.com/schnorr/iiufrgs</a>
 
+
+Um template para Beamer no estilo INF/UFRGS pode ser encontrado aqui:
+
+- <a href='https://github.com/menegola/inf-beamer'>https://github.com/menegola/inf-beamer</a>
+- ZIP direto deste site: <a href='inf-beamer-master.zip'>ZIP Beamer INF/UFRGS</a>
+
 Caso tu venhas encontrar algum problema de compatibilidade com o
 estilo exigido pela biblioteca do INF/UFRGS, não hesitas em nos enviar
 um pull request através do github, ou um patch para a lista de
