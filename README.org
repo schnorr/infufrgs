@@ -1,6 +1,7 @@
+#+STARTUP: overview indent
 #+TITLE: UFRGS TeX Users Group (UTUG)
 
-* Apresentação
+* Apresentação do conteúdo
 
 Estes arquivos compõem o pacote de estilos LaTeX de documentos para o
 Instituto de Informática da Universidade Federal do Rio Grande do Sul
@@ -10,6 +11,7 @@ por exemplo:
 - [[./inputs/iiufrgs.cls]], para documentos do tipo TI, dissertacao, tese, etc
 - [[./inputs/sa.cls]], para produzir artigos para o Seminário de Andamento
 - [[./inputs/iiletter.cls]], para produzir cartas com logotípos do II, em duas versões
+- [[./slides/]], para criar apresentações com o estilo INF/UFRGS
 
 Cada uma tem um arquivo de exemplo, no diretório [[./exemplos]].
 
