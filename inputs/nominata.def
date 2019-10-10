@@ -26,8 +26,8 @@
 \providecommand{\nominataDirname}{Diretora do Instituto de Inform{\'a}tica}
 
 % PPGC
-\providecommand{\nominataCoordPPGC}{Prof.~Jo{\~a}o Luiz Dihl Comba}
-\providecommand{\nominataCoordnamePPGC}{Coordenador do PPGC}
+\providecommand{\nominataCoordPPGC}{Prof\textsuperscript{a}.~Luciana Salete Buriol}
+\providecommand{\nominataCoordnamePPGC}{Coordenadora do PPGC}
 
 % PGMicro
 \providecommand{\nominataCoordPGMICRO}{Prof.~Fernanda Gusm{\~a}o de Lima Kastensmidt}
