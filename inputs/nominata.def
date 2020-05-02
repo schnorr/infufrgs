@@ -30,8 +30,8 @@
 \providecommand{\nominataCoordnamePPGC}{Coordenadora do PPGC}
 
 % PGMicro
-\providecommand{\nominataCoordPGMICRO}{Prof.~Fernanda Gusm{\~a}o de Lima Kastensmidt}
-\providecommand{\nominataCoordnamePGMICRO}{Coordenadora do PGMICRO}
+\providecommand{\nominataCoordPGMICRO}{Prof.~Tiago Roberto Balen}
+\providecommand{\nominataCoordnamePGMICRO}{Coordenador do PGMICRO}
 
 % Biblioteca
 \providecommand{\nominataBibchefe}{Beatriz Regina Bastos Haro}
@@ -54,5 +54,5 @@
 \providecommand{\nominataCoordCICname}{Coordenador do Curso de Ci{\^e}ncia de Computa{\c{c}}{\~a}o}
 
 %ECP
-\providecommand{\nominataCoordECP}{Prof.~Renato Ventura Henriques}
+\providecommand{\nominataCoordECP}{Prof.~Andr{\'e} In{\'a}cio Reis}
 \providecommand{\nominataCoordECPname}{Coordenador do Curso de Engenharia de Computa{\c{c}}{\~a}o}
