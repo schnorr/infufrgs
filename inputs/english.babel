@@ -43,7 +43,7 @@
 	\def\cipcaption{CIP --- CATALOGING-IN-PUBLICATION}%
 	\def\byname{by}%
 	\def\dissname{Thesis (Master)}%
-        \def\pgmicroTitulacaoEm{Microeletronics}
+        \def\pgmicroTitulacaoEm{Microelectronics}
         \def\ppgcTitulacaoEm{Computer Science}
 	\def\dissspecificinfo{%
 		Thesis presented in partial fulfillment\\
