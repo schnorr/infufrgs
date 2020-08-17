@@ -1,0 +1,186 @@
+# -*- coding: utf-8 -*-
+# -*- mode: org -*-
+
+#+TITLE: Exemplo Template UFRGS Dissertação 
+#+AUTHOR: Lucas Leandro Nesi
+#+EMAIL: lucas.nesi@inf.ufrgs.br
+#+DATE: Agosto@@latex:}{@@2020
+#+STARTUP: overview indent
+#+LANGUAGE: pt-br
+#+OPTIONS: H:3 creator:nil timestamp:nil skip:nil toc:nil num:t ^:nil ~:~
+#+OPTIONS: author:nil title:t date:t
+#+TAGS: noexport(n) deprecated(d) ignore(i)
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LaTeX_CLASS: IIUFRGS
+#+LaTeX_CLASS_OPTIONS: [ppgc, diss, openright, english]
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage{enumitem}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+
+#+LaTeX_HEADER: \usepackage[linesnumbered,ruled,boxed,commentsnumbered]{algorithm2e}
+
+#+LATEX_HEADER: \author{Seu sobrenome}{Seu nome}
+#+LATEX_HEADER: \advisor[Prof.~Dr.]{Orientador sobrenome}{Orientador nome}
+
+#+LaTeX_HEADER: \def\manualleg[#1]{{\centering\legend{#1}\par}}
+#+LATEX_HEADER: \renewcommand{\nominataCoord}{Prof\textsuperscript{a}.~Luciana Salete Buriol}
+#+LATEX_HEADER: \renewcommand{\nominataCoordname}{Coordenadora do PPGC}
+
+#+LaTeX_HEADER: \keyword{HPC}
+
+
+* Main Text                                                        :ignore:
+** Latex configurations                                             :ignore:
+#+BEGIN_EXPORT latex
+\def\etal{~\textit{et al.}\xspace}
+\def\ie{i.e.,\xspace}
+\setlist[itemize]{noitemsep}
+#+END_EXPORT
+
+** Pre Text                                                         :ignore:
+*** Cover                                                          :ignore:
+#+BEGIN_EXPORT latex
+% folha de rosto
+% às vezes é necessário redefinir algum comando logo antes de produzir
+% a folha de rosto:
+% \renewcommand{\coordname}{Coordenadora do Curso}
+% \maketitle
+#+END_EXPORT
+*** Dedic                                                          :ignore:
+#+BEGIN_EXPORT latex
+\clearpage
+\begin{flushright}
+\mbox{}\vfill
+{\sffamily\itshape
+``Something.''\\}
+--- \textsc{Someone}
+\end{flushright}
+#+END_EXPORT
+*** Thanks                                                         :ignore:
+#+BEGIN_EXPORT latex
+\chapter*{Acknowledgements}
+#+END_EXPORT
+
+#+LaTeX: \def\ACKLINE{\\}
+
+To my advisor, 
+*** Abstract                                                       :ignore:
+
+#+LaTeX: \begin{abstract}
+
+Something
+#+LaTeX: \end{abstract}
+
+#+LaTeX: \begin{englishabstract}{}{Palavra Chave 1, 2, 3}
+Alguma coisa
+
+#+LaTeX: \end{englishabstract}
+
+*** Lists                                                          :ignore:
+#+BEGIN_EXPORT latex
+
+% lista de abreviaturas e siglas
+% o parametro deve ser a abreviatura mais longa
+\begin{listofabbrv}{SPMD}
+        \item[API] Application Programming Interface
+\end{listofabbrv}
+
+% idem para a lista de símbolos
+%\begin{listofsymbols}{$\alpha\beta\pi\omega$}
+%       \item[$\sum{\frac{a}{b}}$] Somatório do produtório
+%       \item[$\alpha\beta\pi\omega$] Fator de inconstância do resultado
+%\end{listofsymbols}
+
+% lista de figuras
+\listoffigures
+
+% lista de tabelas
+\listoftables
+
+% sumario
+\tableofcontents
+#+END_EXPORT
+** Introduction
+
+Exemplo citação cite:schnorr2013visualizing
+
+Exemplo Figura [[img.example]]
+
+#+NAME: img.example
+#+ATTR_LATEX: :width 0.98\linewidth
+#+CAPTION: Example\legend{Source: Author.}
+[[./picture.pdf]]
+
+** Conclusion
+:PROPERTIES:
+:CUSTOM_ID: sec.con
+:END:
+
+...
+
+* References                                                         :ignore:
+# bibliographystyle:abntex2-alf
+[[bibliography:refs.bib]]
+
+* Pre Appendix                                                       :ignore:
+#+BEGIN_EXPORT latex
+\appendix
+\begin{otherlanguage}{brazilian}
+#+END_EXPORT
+* Resumo Expandido em Português
+
+...
+
+* Post Appendix                                                      :ignore:
+#+BEGIN_EXPORT latex
+\end{otherlanguage}
+#+END_EXPORT
+
+* Bibtex                                                           :noexport:
+
+Tangle this file with C-c C-v t
+
+#+begin_src bibtex :tangle refs.bib
+
+@incollection{schnorr2013visualizing,
+  title={Visualizing More Performance Data Than What Fits on Your Screen},
+  author={Schnorr, Lucas M and Legrand, Arnaud},
+  booktitle={Tools for High Performance Computing 2012},
+  pages={149--162},
+  year={2013},
+  publisher={Springer}
+}
+
+#+end_src
+
+* Emacs setup                                                      :noexport:
+# Local Variables:
+# eval: (add-to-list 'load-path ".")
+# eval: (require 'ox-extra)
+# eval: (require 'org-inlinetask)
+# eval: (require 'org-ref)
+# eval: (require 'doi-utils)
+# eval: (ox-extras-activate '(ignore-headlines))
+# eval: (setq ispell-local-dictionary "american")
+# eval: (eval (flyspell-mode t))
+# eval: (setq org-latex-to-pdf-process '("pdflatex -interaction nonstopmode -output-directory %o %f ; bibtex `basename %f | sed 's/\.tex//'` ; pdflatex -interaction nonstopmode -output-directory  %o %f ; pdflatex -interaction nonstopmode -output-directory %o %f"))
+# eval: (setq org-latex-caption-above nil)
+# eval: (require 'ox)
+# eval: (defun legend-source-custom-filter (contents backend info)
+#  (when (eq backend 'latex)
+#    (replace-regexp-in-string "\\\\legend" "}\n{\\\\legend" contents))
+#  )
+# eval: (add-to-list 'org-export-filter-final-output-functions 'legend-source-custom-filter)
+# eval: (add-to-list 'org-latex-classes
+#             '("IIUFRGS"
+#               "\\documentclass{iiufrgs}" ; São permitidas subdivisões até o 5º nível (onde o capítulo é o 1º nível)
+#               ("\\chapter{%s}" . "\\chapter*{%s}")  
+#               ("\\section{%s}" . "\\section*{%s}")
+#               ("\\subsection{%s}" . "\\subsection*{%s}")
+#               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+#               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+# ))
+# End:
