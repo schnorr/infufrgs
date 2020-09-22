@@ -46,14 +46,14 @@
         \def\pgmicroTitulacaoEm{Microelectronics}
         \def\ppgcTitulacaoEm{Computer Science}
 	\def\dissspecificinfo{%
-		Thesis presented in partial fulfillment\\
-		of the requirements for the degree of\\
+		Thesis presented in partial fulfillment
+		of the requirements for the degree of
 		Master of \titulacaoEm
 	}%
 	\def\tesename{Thesis (Ph.D.)}%
 	\def\tesespecificinfo{%
-		Thesis presented in partial fulfillment\\
-		of the requirements for the degree of\\
+		Thesis presented in partial fulfillment
+		of the requirements for the degree of
 		Doctor of \titulacaoEm
 	}%
 	\def\planodoutoradospecificinfo{PhD Work Plan}%
@@ -63,8 +63,8 @@
         \def\cicTitulacaoEm{Computer Science}
         \def\ecpTitulacaoEm{Computer Engineering}
 	\def\tcspecificinfo{%
-                Work presented in partial fulfillment\\
-                of the requirements for the degree of\\
+                Work presented in partial fulfillment
+                of the requirements for the degree of
                 Bachelor in \titulacaoEm
 	}%
 	\def\rpname{Research Report}%
