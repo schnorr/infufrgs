@@ -28,7 +28,7 @@
 	\def\examplename{Example}%
 	\def\exercisename{Exercise}%
 	\def\propertyname{Property}%
-	\def\remarknamek{Remark}%
+	\def\remarkname{Remark}%
 	\def\lemmaname{Lemma}%
 	\def\theoremname{Theorem}%
 	\def\proofname{Proof}%
