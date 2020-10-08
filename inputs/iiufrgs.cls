@@ -90,7 +90,6 @@
 \RequirePackage{indentfirst}
 \RequirePackage{iidefs}
 \RequirePackage{setspace}
-\RequirePackage{ccaption}
 \RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
 \RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
@@ -630,20 +629,16 @@
 %==============================================================================
 % Ajuste das legendas das figuras e tabelas
 %==============================================================================
-\RequirePackage{float}
-\floatstyle{plaintop}
-\restylefloat{figure}
-\restylefloat{table}
-
-\captiondelim{ -- }
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{0pt}
-\setlength{\belowlegendskip}{0pt}
-
-\captiontitlefont{\small}
-
-
-
+\RequirePackage[
+        format=plain,labelsep=endash,justification=centering,font=small,
+        skip=0pt
+]{caption}
+% The command `\legend` does not exist in the `caption` package, but is the
+% same as `\caption*` which does not number the caption, do not go in the list
+% of figures (or tables), and will be below the figure/table if it is placed
+% below it. The only thing that needs adjust is returning the font size to
+% the normal size.
+\newcommand{\legend}[1]{\caption*{\normalsize #1}}
 
 %==============================================================================
 % Ajuste do formato das citações e referências
