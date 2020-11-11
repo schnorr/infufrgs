@@ -46,8 +46,8 @@
 \providecommand{\nominataChefeINTname}{Chefe do \deptINT}
 
 % Graduação
-\providecommand{\nominataPRAG}{Prof.~Vladimir Pinheiro do Nascimento}
-\providecommand{\nominataPRAGname}{Pr{\'o}-Reitor de Gradua{\c{c}}{\~a}o}
+\providecommand{\nominataPRAG}{Prof\textsuperscript{a}.~C{\'i}ntia In{\^e}s Boll}
+\providecommand{\nominataPRAGname}{Pr{\'o}-Reitora de Gradua{\c{c}}{\~a}o}
 
 %CIC
 \providecommand{\nominataCoordCIC}{Prof.~S{\'e}rgio Luis Cechin}
