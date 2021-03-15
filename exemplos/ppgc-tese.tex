@@ -98,10 +98,14 @@
 % \dept{INA}                                 % departamento relacionado
 
 %
-% palavras-chave
-% iniciar todas com letras minúsculas, exceto no caso de abreviaturas
+% Palavras-chave
+% A primeira palavra de cada palavra-chave (que, ironicamente, pode ser várias palavras) deve sempre
+% começar em maíuscula (novo padrão da biblioteca), as demais palavras começam em minúscula, exceto
+% se são nomes próprios.
 %
-\keyword{formatação eletrônica de documentos}
+\keyword{Formatação eletrônica de documentos}
+\keyword{Padronização de documentos}
+\keyword{Instituto de Informática da UFRGS}
 \keyword{\LaTeX}
 \keyword{ABNT}
 \keyword{UFRGS}
@@ -133,7 +137,7 @@ Agradeço ao \LaTeX\ por não ter vírus de macro\ldots
 
 
 
-% resumo na língua do documento
+% Resumo na língua do documento.
 \begin{abstract}
 Este documento é um exemplo de como formatar documentos para o
 Instituto de Informática da UFRGS usando as classes \LaTeX\
@@ -142,24 +146,36 @@ para comandos mais genéricos. \emph{O texto do resumo não deve
 conter mais do que 500 palavras.}
 \end{abstract}
 
-% resumo na outra língua
-% como parametros devem ser passados o titulo e as palavras-chave
-% na outra língua, separadas por vírgulas
-\begin{englishabstract}{Using \LaTeX\ to Prepare Documents at II/UFRGS}{Electronic document preparation, \LaTeX, ABNT, UFRGS}
+% Resumo na outra língua, se o documento estiver em português, esse estará em inglês,
+% se o documento estiver em inglês, este deve estar em português.
+% Devem ser passados como parâmetros: o título e as palavras-chave
+% na outra língua, separadas por pontos, sem ponto após a última palavra-chave.
+% O mesmo padrão de capitalizar a primeira palavra de cada palavra-chave deve ser seguido aqui.
+% Seguindo a ideia de não traduzir nomes próprios, nem UFRGS, nem ABNT, nem "Instituto de Informática
+% da UFRGS" são traduzidos.
+\begin{englishabstract}{Using \LaTeX\ to Prepare Documents at II/UFRGS}{Electronic formatting of documents. Instituto de Informática da UFRGS. \LaTeX. ABNT. UFRGS}
 This document is an example on how to prepare documents at II/UFRGS
 using the \LaTeX\ classes provided by the UTUG\@. At the same time, it
 may serve as a guide for general-purpose commands. \emph{The text in
 the abstract should not contain more than 500~words.}
 \end{englishabstract}
 
+% lista de figuras
+\listoffigures
+
+% lista de tabelas
+\listoftables
+
 % lista de abreviaturas e siglas
 % o parametro deve ser a abreviatura mais longa
+% As abreviações devem estar em ordem alfabética (levando em conta só a abreviação mesmo,
+% não o que significa cada palavra).
 \begin{listofabbrv}{SPMD}
-        \item[SMP] Symmetric Multi-Processor
+        \item[ABNT] Associação Brasileira de Normas Técnicas
         \item[NUMA] Non-Uniform Memory Access
         \item[SIMD] Single Instruction Multiple Data
+        \item[SMP] Symmetric Multi-Processor
         \item[SPMD] Single Program Multiple Data
-        \item[ABNT] Associação Brasileira de Normas Técnicas
 \end{listofabbrv}
 
 % idem para a lista de símbolos
@@ -167,12 +183,6 @@ the abstract should not contain more than 500~words.}
 %       \item[$\sum{\frac{a}{b}}$] Somatório do produtório
 %       \item[$\alpha\beta\pi\omega$] Fator de inconstância do resultado
 %\end{listofsymbols}
-
-% lista de figuras
-\listoffigures
-
-% lista de tabelas
-\listoftables
 
 % sumario
 \tableofcontents

@@ -28,7 +28,7 @@
 	\def\examplename{Exemplo}%
 	\def\exercisename{Exerc\'{\i}cio}%
 	\def\propertyname{Property}%
-	\def\remarknamek{Observa\c{c}\~{a}o}%
+	\def\remarkname{Observa\c{c}\~{a}o}%
 	\def\lemmaname{Lema}%
 	\def\theoremname{Teorema}%
 	\def\proofname{Prova}%
