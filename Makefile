@@ -30,6 +30,7 @@ install:
 	install -d $(INPUTS) $(DOC) $(BIB)
 	cp -R inputs/* $(INPUTS)
 	cp README.org COPYING CHANGELOG $(DOC)
+	cp -R inputs/*.bst $(BIB)
 	@echo
 	@echo "Arquivos instalados com sucesso em $(INSTALLDIR)."
 	@echo
