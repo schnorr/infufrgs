@@ -27,7 +27,6 @@
 \RequirePackage[brazilian]{babel}
 \RequirePackage{graphicx}
     \RequirePackage{keyval}
-\RequirePackage{fixltx2e}
 \RequirePackage{epstopdf}
 \RequirePackage{iidefs}
 
