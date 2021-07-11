@@ -26,8 +26,8 @@
 \providecommand{\nominataDirname}{Diretora do Instituto de Inform{\'a}tica}
 
 % PPGC
-\providecommand{\nominataCoordPPGC}{Prof\textsuperscript{a}.~Luciana Salete Buriol}
-\providecommand{\nominataCoordnamePPGC}{Coordenadora do PPGC}
+\providecommand{\nominataCoordPPGC}{Prof.~Claudio Rosito Jung}
+\providecommand{\nominataCoordnamePPGC}{Coordenador do PPGC}
 
 % PGMicro
 \providecommand{\nominataCoordPGMICRO}{Prof.~Tiago Roberto Balen}
