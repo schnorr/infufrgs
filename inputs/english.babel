@@ -35,7 +35,7 @@
 	\def\figurename{Figure}%
 	\def\tablename{Table}%
 	\def\advisorname{Advisor}%
-	\def\coadvisorname{Coadvisor}%
+	\def\coadvisorname{Co-advisor}%
 	\def\listabbrvname{List of Abbreviations and Acronyms}%
 	\def\listsymbolname{List of Symbols}%
 	\def\annexname{Annex}%
