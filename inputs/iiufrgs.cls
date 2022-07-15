@@ -230,6 +230,27 @@
 }
 
 %==============================================================================
+% Definição das palavras-chave no segundo idioma (máx. 10)
+%==============================================================================
+\newcounter{translatedkwcounter}
+\newcommand{\translatedkeyword}[1]{
+        \addtocounter{translatedkwcounter}{1}
+        \expandafter\gdef\csname translatedkeyw\alph{translatedkwcounter}\endcsname{#1}
+}
+\newcommand{\@translatedabstractkw}{%
+        \@ifundefined{translatedkeywa}{}{\expandafter\MakeUppercase\translatedkeywa}%
+        \@ifundefined{translatedkeywb}{}{. \translatedkeywb}%
+        \@ifundefined{translatedkeywc}{}{. \translatedkeywc}%
+        \@ifundefined{translatedkeywd}{}{. \translatedkeywd}%
+        \@ifundefined{translatedkeywe}{}{. \translatedkeywe}%
+        \@ifundefined{translatedkeywf}{}{. \translatedkeywf}%
+        \@ifundefined{translatedkeywg}{}{. \translatedkeywg}%
+        \@ifundefined{translatedkeywh}{}{. \translatedkeywh}%
+        \@ifundefined{translatedkeywi}{}{. \translatedkeywi}%
+        \@ifundefined{translatedkeywj}{}{. \translatedkeywj}%
+}
+
+%==============================================================================
 % Redefinição da data (para ter mês e ano separados)
 %==============================================================================
 \renewcommand{\date}[2]{
@@ -501,6 +522,36 @@
   \vspace{12pt}
 
   \noindent\textbf{\keywordsname:} \@englishkeywords.
+\end{otherlanguage}
+}
+
+%==============================================================================
+% Definição do título traduzido no segundo idioma
+%==============================================================================
+\newcommand{\translatedtitle}[1]{%
+    \gdef\@translatedtitle{#1}%
+}%
+
+%==============================================================================
+% Translated Abstract
+%==============================================================================
+\newenvironment{translatedabstract}[0]{%
+        \if@openright\cleardoublepage\else\clearpage\fi%
+        \iflanguage{english}{
+                \begin{otherlanguage}{brazilian}
+        }{
+                \begin{otherlanguage}{english}
+        }
+        \begin{center}%
+            \textbf{\@ifundefined{@translatedtitle}{\@title}{\@translatedtitle}}%
+            \vspace{12pt}
+        \end{center}
+
+        \samepagechapter*{\abstractname}\setlength{\parindent}{0pt}
+}{%
+  \vspace{12pt}
+
+  \noindent\textbf{\keywordsname:} \@translatedabstractkw.
 \end{otherlanguage}
 }
 
