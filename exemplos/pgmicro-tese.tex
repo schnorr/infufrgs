@@ -12,13 +12,13 @@
 %   * ecp       -- Graduação em Ciência da Computação
 %   * ppgc      -- Programa de Pós Graduação em Computação
 %   * pgmigro   -- Programa de Pós Graduação em Microeletrônica
-%   
+%
 % Tipos de Documento:
 %   * tc                -- Trabalhos de Conclusão (apenas cic e ecp)
 %   * diss ou mestrado  -- Dissertações de Mestrado (ppgc e pgmicro)
 %   * tese ou doutorado -- Teses de Doutorado (ppgc e pgmicro)
 %   * ti                -- Trabalho Individual (ppgc e pgmicro)
-% 
+%
 % Outras Opções:
 %   * english    -- para textos em inglês
 %   * openright  -- Força início de capítulos em páginas ímpares (padrão da
@@ -44,6 +44,7 @@
 % Informações gerais
 %
 \title{Um Exemplo de Monografia do Instituto de Informática da UFRGS}
+\translatedtitle{Using \LaTeX\ to Prepare Documents at II/UFRGS}
 
 \author{Flaumann}{Fritz Gutenberg}
 % alguns documentos podem ter varios autores:
@@ -107,6 +108,15 @@
 \keyword{UFRGS}
 
 %
+% palavras-chave na lingua estrangeira
+% iniciar todas com letras minúsculas, exceto no caso de abreviaturas
+%
+\translatedkeyword{electronic document preparation}
+\translatedkeyword{\LaTeX}
+\translatedkeyword{ABNT}
+\translatedkeyword{UFRGS}
+
+%
 % inicio do documento
 %
 \begin{document}
@@ -143,14 +153,12 @@ conter mais do que 500 palavras.}
 \end{abstract}
 
 % resumo na outra língua
-% como parametros devem ser passados o titulo e as palavras-chave
-% na outra língua, separadas por vírgulas
-\begin{englishabstract}{Using \LaTeX\ to Prepare Documents at II/UFRGS}{Electronic document preparation, \LaTeX, ABNT, UFRGS}
+\begin{translatedabstract}
 This document is an example on how to prepare documents at II/UFRGS
 using the \LaTeX\ classes provided by the UTUG\@. At the same time, it
 may serve as a guide for general-purpose commands. \emph{The text in
 the abstract should not contain more than 500~words.}
-\end{englishabstract}
+\end{translatedabstract}
 
 % lista de abreviaturas e siglas
 % o parametro deve ser a abreviatura mais longa
@@ -270,7 +278,7 @@ O formato adotado pela ABNT prevê apenas três níveis (capítulo, seção e su
 A classe \emph{iiufrgs} faz uso do pacote \emph{abnTeX2} com algumas alterações
 feitas por Sandro Rama Fiorini. Culpe ele se algo der errado. Agradeça a ele
 pelo que der certo. As modificações dão uma camada de tinta NATBIB-style,
-já que o abntex2 usa uns comandos de citação feitos para alienígenas de 5 braços 
+já que o abntex2 usa uns comandos de citação feitos para alienígenas de 5 braços
 wtf. Exemplos de citação:
 
 \begin{itemize}
@@ -281,7 +289,7 @@ wtf. Exemplos de citação:
     \item \emph{citen or citenum}: Segundo \citen{Adams2009Conceptual},
         unicórnios são verdes.
     \item \emph{citeauthor e citeyearpar}: Segundo artigos de
-        \citeauthor{Adams2009Conceptual} , unicórnios são verdes 
+        \citeauthor{Adams2009Conceptual} , unicórnios são verdes
         \citeyearpar{Adams2009Conceptual}.
 
 \end{itemize}
