@@ -31,8 +31,3 @@ site.
 Os arquivos necessários para compilar os fontes tex encontram-se no
 diretório [[./inputs]]. Copie todos os arquivos para o diretório do seu
 documento ou utilize o =Makefile= para outras opções.
-
-Os links abaixo podem ser úteis para a instalação do pacote:
-
-- http://www.tex.ac.uk/cgi-bin/texfaq2html?label=privinst
-- http://www.tex.ac.uk/cgi-bin/texfaq2html?label=what-TDS
