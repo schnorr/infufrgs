@@ -480,9 +480,7 @@
         \chapter*{\abstractname}\setlength{\parindent}{0pt}
 }{%
     %\par\vfill
-    %\\
     \\
-
     \vspace{\parskip}\noindent\textbf{\keywordsname:} \@abstractkw.
 }
 
