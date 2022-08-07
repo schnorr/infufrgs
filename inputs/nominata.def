@@ -34,8 +34,8 @@
 \providecommand{\nominataCoordnamePGMICRO}{Coordenador do PGMICRO}
 
 % Biblioteca
-\providecommand{\nominataBibchefe}{Beatriz Regina Bastos Haro}
-\providecommand{\nominataBibchefename}{Bibliotec{\'a}ria-chefe do Instituto de Inform{\'a}tica}
+\providecommand{\nominataBibchefe}{Alexsander Borges Ribeiro}
+\providecommand{\nominataBibchefename}{Bibliotec{\'a}rio-chefe do Instituto de Inform{\'a}tica}
 
 % INA (Informática Aplicada)
 \providecommand{\nominataChefeINA}{Prof.~Renata Galante}
