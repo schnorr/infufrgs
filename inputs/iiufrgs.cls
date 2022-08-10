@@ -217,16 +217,16 @@
         \@ifundefined{keywj}{}{10.~\expandafter\MakeUppercase\keywj\@. }%
 }
 \newcommand{\@abstractkw}{%
-        \@ifundefined{keywa}{}{\expandafter\MakeUppercase\keywa}%
-        \@ifundefined{keywb}{}{. \keywb}%
-        \@ifundefined{keywc}{}{. \keywc}%
-        \@ifundefined{keywd}{}{. \keywd}%
-        \@ifundefined{keywe}{}{. \keywe}%
-        \@ifundefined{keywf}{}{. \keywf}%
-        \@ifundefined{keywg}{}{. \keywg}%
-        \@ifundefined{keywh}{}{. \keywh}%
-        \@ifundefined{keywi}{}{. \keywi}%
-        \@ifundefined{keywj}{}{. \keywj}%
+        \@ifundefined{keywa}{}{\keywa.}%
+        \@ifundefined{keywb}{}{ \keywb.}%
+        \@ifundefined{keywc}{}{ \keywc.}%
+        \@ifundefined{keywd}{}{ \keywd.}%
+        \@ifundefined{keywe}{}{ \keywe.}%
+        \@ifundefined{keywf}{}{ \keywf.}%
+        \@ifundefined{keywg}{}{ \keywg.}%
+        \@ifundefined{keywh}{}{ \keywh.}%
+        \@ifundefined{keywi}{}{ \keywi.}%
+        \@ifundefined{keywj}{}{ \keywj.}%
 }
 
 %==============================================================================
@@ -238,16 +238,16 @@
         \expandafter\gdef\csname translatedkeyw\alph{translatedkwcounter}\endcsname{#1}
 }
 \newcommand{\@translatedabstractkw}{%
-        \@ifundefined{translatedkeywa}{}{\expandafter\MakeUppercase\translatedkeywa}%
-        \@ifundefined{translatedkeywb}{}{. \translatedkeywb}%
-        \@ifundefined{translatedkeywc}{}{. \translatedkeywc}%
-        \@ifundefined{translatedkeywd}{}{. \translatedkeywd}%
-        \@ifundefined{translatedkeywe}{}{. \translatedkeywe}%
-        \@ifundefined{translatedkeywf}{}{. \translatedkeywf}%
-        \@ifundefined{translatedkeywg}{}{. \translatedkeywg}%
-        \@ifundefined{translatedkeywh}{}{. \translatedkeywh}%
-        \@ifundefined{translatedkeywi}{}{. \translatedkeywi}%
-        \@ifundefined{translatedkeywj}{}{. \translatedkeywj}%
+        \@ifundefined{translatedkeywa}{}{\translatedkeywa.}%
+        \@ifundefined{translatedkeywb}{}{ \translatedkeywb.}%
+        \@ifundefined{translatedkeywc}{}{ \translatedkeywc.}%
+        \@ifundefined{translatedkeywd}{}{ \translatedkeywd.}%
+        \@ifundefined{translatedkeywe}{}{ \translatedkeywe.}%
+        \@ifundefined{translatedkeywf}{}{ \translatedkeywf.}%
+        \@ifundefined{translatedkeywg}{}{ \translatedkeywg.}%
+        \@ifundefined{translatedkeywh}{}{ \translatedkeywh.}%
+        \@ifundefined{translatedkeywi}{}{ \translatedkeywi.}%
+        \@ifundefined{translatedkeywj}{}{ \translatedkeywj.}%
 }
 
 %==============================================================================
@@ -502,7 +502,7 @@
 }{%
     %\par\vfill
     \\
-    \vspace{\parskip}\noindent\textbf{\keywordsname:} \@abstractkw.
+    \vspace{\parskip}\noindent\textbf{\keywordsname:} \@abstractkw
 }
 
 \newenvironment{translatedabstract}[0]{%
@@ -525,7 +525,7 @@
     \ifnum\value{translatedkwcounter}>0
         \vspace{12pt}
 
-        \noindent\textbf{\keywordsname:} \@translatedabstractkw.
+        \noindent\textbf{\keywordsname:} \@translatedabstractkw
     \else
         \PackageWarningNoLine{iiufrgs}{No translated keyword has been defined. Use
         the translatedkeyword command to define them.}
