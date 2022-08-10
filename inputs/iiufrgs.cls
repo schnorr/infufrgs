@@ -495,7 +495,7 @@
 }
 
 %==============================================================================
-% Resumo (abstract) e Abstract (englishabstract)
+% Resumo (abstract) e Abstract (translatedabstract)
 %==============================================================================
 \renewenvironment{abstract}{%
         \chapter*{\abstractname}\setlength{\parindent}{0pt}
@@ -505,6 +505,35 @@
     \vspace{\parskip}\noindent\textbf{\keywordsname:} \@abstractkw.
 }
 
+\newenvironment{translatedabstract}[0]{%
+    \if@openright\cleardoublepage\else\clearpage\fi%
+    \iflanguage{english}{
+        \begin{otherlanguage}{brazilian}
+    }{
+        \begin{otherlanguage}{english}
+    }
+    \@ifundefined{@translatedtitle}{%
+        \PackageWarningNoLine{iiufrgs}{Translated title not defined. Use the translatedtitle command to define it}
+    }{%
+        \begin{center}%
+            \textbf{\@translatedtitle}%
+            \vspace{12pt}
+        \end{center}
+    }
+    \samepagechapter*{\abstractname}\setlength{\parindent}{0pt}
+}{%
+    \ifnum\value{translatedkwcounter}>0
+        \vspace{12pt}
+
+        \noindent\textbf{\keywordsname:} \@translatedabstractkw.
+    \else
+        \PackageWarningNoLine{iiufrgs}{No translated keyword has been defined. Use
+        the translatedkeyword command to define them.}
+    \fi
+    \end{otherlanguage}
+}
+
+% Deprecated
 \newenvironment{englishabstract}[2]{%
         \PackageWarning{iiufrgs}{The 'englishabstract' is deprecated, use 'translatedabstract'
         instead (https://github.com/schnorr/infufrgs/pull/80)}
@@ -533,29 +562,6 @@
 \newcommand{\translatedtitle}[1]{%
     \gdef\@translatedtitle{#1}%
 }%
-
-%==============================================================================
-% Translated Abstract
-%==============================================================================
-\newenvironment{translatedabstract}[0]{%
-        \if@openright\cleardoublepage\else\clearpage\fi%
-        \iflanguage{english}{
-                \begin{otherlanguage}{brazilian}
-        }{
-                \begin{otherlanguage}{english}
-        }
-        \begin{center}%
-            \textbf{\@ifundefined{@translatedtitle}{\@title}{\@translatedtitle}}%
-            \vspace{12pt}
-        \end{center}
-
-        \samepagechapter*{\abstractname}\setlength{\parindent}{0pt}
-}{%
-  \vspace{12pt}
-
-  \noindent\textbf{\keywordsname:} \@translatedabstractkw.
-\end{otherlanguage}
-}
 
 
 %==============================================================================
