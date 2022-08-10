@@ -506,6 +506,8 @@
 }
 
 \newenvironment{englishabstract}[2]{%
+        \PackageWarning{iiufrgs}{The 'englishabstract' is deprecated, use 'translatedabstract'
+        instead (https://github.com/schnorr/infufrgs/pull/80)}
         \if@openright\cleardoublepage\else\clearpage\fi%
         \gdef\@englishkeywords{#2}%
         \iflanguage{english}{
