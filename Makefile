@@ -13,7 +13,8 @@ INSTALLDIR = $(DEFAULT_INSTALLDIR)
 
 INPUTS = $(INSTALLDIR)/tex/latex/iiufrgs
 DOC = $(INSTALLDIR)/doc/latex/iiufrgs
-BIB = $(INSTALLDIR)/bibtex/bst
+BST = $(INSTALLDIR)/bibtex/bst
+BIB = $(INSTALLDIR)/bibtex/bib
 
 all:
 	@echo "Digite \`\`make install'' para instalar o pacote."
@@ -29,7 +30,8 @@ all:
 install:
 	install -d $(INPUTS) $(DOC) $(BIB)
 	cp -R inputs/* $(INPUTS)
-	cp -R inputs/*.bst $(BIB)
+	cp -R inputs/*.bst $(BST)
+	cp -R inputs/*.bib $(BIB)
 	cp README.org COPYING CHANGELOG $(DOC)
 	@echo
 	@echo "Arquivos instalados com sucesso em $(INSTALLDIR)."
