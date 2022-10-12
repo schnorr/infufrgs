@@ -84,6 +84,8 @@ Alguma coisa
 
 % lista de abreviaturas e siglas
 % o parametro deve ser a abreviatura mais longa
+% A NBR 14724:2011 estipula que a ordem das abreviações
+% na lista deve ser alfabética (como no exemplo abaixo).
 \begin{listofabbrv}{SPMD}
         \item[API] Application Programming Interface
 \end{listofabbrv}
