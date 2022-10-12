@@ -1,10 +1,10 @@
-% 
+%
 % exemplo genérico de uso da classe iiufrgs.cls
 % $Id: iiufrgs.tex,v 1.1.1.1 2005/01/18 23:54:42 avila Exp $
-% 
+%
 % This is an example file and is hereby explicitly put in the
 % public domain.
-% 
+%
 \documentclass[cic,tc]{iiufrgs}
 % Para usar o modelo, deve-se informar o programa e o tipo de documento.
 % Programas :
@@ -12,13 +12,13 @@
 % * ecp       -- Graduação em Ciência da Computação
 % * ppgc      -- Programa de Pós Graduação em Computação
 % * pgmigro   -- Programa de Pós Graduação em Microeletrônica
-% 
+%
 % Tipos de Documento:
 % * tc                -- Trabalhos de Conclusão (apenas cic e ecp)
 % * diss ou mestrado  -- Dissertações de Mestrado (ppgc e pgmicro)
 % * tese ou doutorado -- Teses de Doutorado (ppgc e pgmicro)
 % * ti                -- Trabalho Individual (ppgc e pgmicro)
-% 
+%
 % Outras Opções:
 % * english    -- para textos em inglês
 % * openright  -- Força início de capítulos em páginas ímpares (padrão da
@@ -39,10 +39,11 @@
 
 \usepackage[alf,abnt-emphasize=bf]{abntex2cite}	% pacote para usar citações abnt
 
-% 
+%
 % Informações gerais
-% 
+%
 \title{Um Exemplo de Monografia do Instituto de Informática da UFRGS}
+\translatedtitle{Using \LaTeX\ to Prepare Documents at II/UFRGS}
 
 \author{Flaumann}{Fritz Gutenberg}
 % alguns documentos podem ter varios autores:
@@ -96,20 +97,29 @@
 % \coord[Profa.~Dra.]{Weber}{Taisy da Silva} % coordenador do curso
 % \dept{INA}                                 % departamento relacionado
 
-% 
+%
 % palavras-chave
-% iniciar todas com letras minúsculas, exceto no caso de abreviaturas
-% 
-\keyword{formatação eletrônica de documentos}
+% iniciar todas com letras maiúsculas, exceto no caso de abreviaturas
+%
+\keyword{Formatação eletrônica de documentos}
 \keyword{\LaTeX}
 \keyword{ABNT}
 \keyword{UFRGS}
 
+%
+% palavras-chave na lingua estrangeira
+% iniciar todas com letras maiúsculas, exceto no caso de abreviaturas
+%
+\translatedkeyword{Electronic document preparation}
+\translatedkeyword{\LaTeX}
+\translatedkeyword{ABNT}
+\translatedkeyword{UFRGS}
+
 %\settowidth{\seclen}{1.10~}
 
-% 
+%
 % inicio do documento
-% 
+%
 \begin{document}
 
 % folha de rosto
@@ -144,14 +154,12 @@
 \end{abstract}
 
 % resumo na outra língua
-% como parametros devem ser passados o titulo e as palavras-chave
-% na outra língua, separadas por vírgulas
-\begin{englishabstract}{Using \LaTeX\ to Prepare Documents at II/UFRGS}{Electronic document preparation. \LaTeX. ABNT. UFRGS}
-    This document is an example on how to prepare documents at II/UFRGS
-    using the \LaTeX\ classes provided by the UTUG\@. At the same time, it
-    may serve as a guide for general-purpose commands. \emph{The text in
-      the abstract should not contain more than 500~words.}
-\end{englishabstract}
+\begin{translatedabstract}
+This document is an example on how to prepare documents at II/UFRGS
+using the \LaTeX\ classes provided by the UTUG\@. At the same time, it
+may serve as a guide for general-purpose commands. \emph{The text in
+the abstract should not contain more than 500~words.}
+\end{translatedabstract}
 
 % lista de figuras
 \listoffigures
@@ -197,14 +205,14 @@ A Figura~\ref{fig:ex1} representa o caso mais comum, onde a figura propriamente 
     \begin{center}
         % Aqui vai um includegraphics , um picture environment ou qualquer
         % outro comando necessário para incorporar o formato de imagem
-        % utilizado.        
+        % utilizado.
         \begin{picture}(100,100)
             \put(0,0){\line(0,1){100}}
             \put(0,0){\line(1,0){100}}
             \put(100,100){\line(0,-1){100}}
             \put(100,100){\line(-1,0){100}}
             \put(10,50){Uma Imagem}
-        \end{picture}    
+        \end{picture}
     \end{center}
     \label{fig:estrutura}
     \legend{Fonte: Os Autores}
@@ -321,7 +329,7 @@ Agora vamos fazer várias seções para termos valores de 2 dígitos no \content
 
 
 % e aqui vai a parte principal
-% 
+%
 % \chapter{Estado da arte}
 % \chapter{Mais estado da arte}
 % \chapter{A minha contribuição}
@@ -332,7 +340,7 @@ Agora vamos fazer várias seções para termos valores de 2 dígitos no \content
 % aqui será usado o environment padrao `thebibliography'; porém, sugere-se
 % seriamente o uso de BibTeX e do estilo abnt.bst (veja na página do
 % UTUG)
-% 
+%
 % observe também o estilo meio estranho de alguns labels; isso é
 % devido ao uso do pacote `natbib', que permite fazer citações de
 % autores, ano, e diversas combinações desses

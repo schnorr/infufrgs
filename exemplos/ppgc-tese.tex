@@ -12,13 +12,13 @@
 %   * ecp       -- Graduação em Ciência da Computação
 %   * ppgc      -- Programa de Pós Graduação em Computação
 %   * pgmigro   -- Programa de Pós Graduação em Microeletrônica
-%   
+%
 % Tipos de Documento:
 %   * tc                -- Trabalhos de Conclusão (apenas cic e ecp)
 %   * diss ou mestrado  -- Dissertações de Mestrado (ppgc e pgmicro)
 %   * tese ou doutorado -- Teses de Doutorado (ppgc e pgmicro)
 %   * ti                -- Trabalho Individual (ppgc e pgmicro)
-% 
+%
 % Outras Opções:
 %   * english    -- para textos em inglês
 %   * openright  -- Força início de capítulos em páginas ímpares (padrão da
@@ -44,6 +44,7 @@
 % Informações gerais
 %
 \title{Um Exemplo de Monografia do Instituto de Informática da UFRGS}
+\translatedtitle{An Example of a Monograph from the Informatics Institute of UFRGS}
 
 \author{Flaumann}{Fritz Gutenberg}
 % alguns documentos podem ter varios autores:
@@ -111,6 +112,19 @@
 \keyword{UFRGS}
 
 %
+% palavras-chave na lingua estrangeira
+% A primeira palavra de cada palavra-chave (que, ironicamente, pode ser várias palavras) deve sempre
+% começar em maíuscula (novo padrão da biblioteca), as demais palavras começam em minúscula, exceto
+% se são nomes próprios. Nomes próprios não dvem ser traduzidos.
+%
+\translatedkeyword{Electronic document preparation}
+\translatedkeyword{Document standardization}
+\translatedkeyword{Instituto de Informática da UFRGS}
+\translatedkeyword{\LaTeX}
+\translatedkeyword{ABNT}
+\translatedkeyword{UFRGS}
+
+%
 % inicio do documento
 %
 \begin{document}
@@ -146,19 +160,13 @@ para comandos mais genéricos. \emph{O texto do resumo não deve
 conter mais do que 500 palavras.}
 \end{abstract}
 
-% Resumo na outra língua, se o documento estiver em português, esse estará em inglês,
-% se o documento estiver em inglês, este deve estar em português.
-% Devem ser passados como parâmetros: o título e as palavras-chave
-% na outra língua, separadas por pontos, sem ponto após a última palavra-chave.
-% O mesmo padrão de capitalizar a primeira palavra de cada palavra-chave deve ser seguido aqui.
-% Seguindo a ideia de não traduzir nomes próprios, nem UFRGS, nem ABNT, nem "Instituto de Informática
-% da UFRGS" são traduzidos.
-\begin{englishabstract}{Using \LaTeX\ to Prepare Documents at II/UFRGS}{Electronic formatting of documents. Instituto de Informática da UFRGS. \LaTeX. ABNT. UFRGS}
+% resumo na outra língua
+\begin{translatedabstract}
 This document is an example on how to prepare documents at II/UFRGS
 using the \LaTeX\ classes provided by the UTUG\@. At the same time, it
 may serve as a guide for general-purpose commands. \emph{The text in
 the abstract should not contain more than 500~words.}
-\end{englishabstract}
+\end{translatedabstract}
 
 % lista de figuras
 \listoffigures
@@ -280,7 +288,7 @@ O formato adotado pela ABNT prevê apenas três níveis (capítulo, seção e su
 A classe \emph{iiufrgs} faz uso do pacote \emph{abnTeX2} com algumas alterações
 feitas por Sandro Rama Fiorini. Culpe ele se algo der errado. Agradeça a ele
 pelo que der certo. As modificações dão uma camada de tinta NATBIB-style,
-já que o abntex2 usa uns comandos de citação feitos para alienígenas de 5 braços 
+já que o abntex2 usa uns comandos de citação feitos para alienígenas de 5 braços
 wtf. Exemplos de citação:
 
 \begin{itemize}
@@ -291,7 +299,7 @@ wtf. Exemplos de citação:
     \item \emph{citen or citenum}: Segundo \citen{Adams2009Conceptual},
         unicórnios são verdes.
     \item \emph{citeauthor e citeyearpar}: Segundo artigos de
-        \citeauthor{Adams2009Conceptual} , unicórnios são verdes 
+        \citeauthor{Adams2009Conceptual} , unicórnios são verdes
         \citeyearpar{Adams2009Conceptual}.
 
 \end{itemize}

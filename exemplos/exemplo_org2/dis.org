@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # -*- mode: org -*-
 
-#+TITLE: Exemplo Template UFRGS Dissertação 
+#+TITLE: Exemplo Template UFRGS Dissertação
 #+AUTHOR: Lucas Leandro Nesi
 #+EMAIL: lucas.nesi@inf.ufrgs.br
 #+DATE: Agosto@@latex:}{@@2020
@@ -30,6 +30,7 @@
 #+LATEX_HEADER: \renewcommand{\nominataCoordname}{Coordenadora do PPGC}
 
 #+LaTeX_HEADER: \keyword{HPC}
+#+LaTeX_HEADER: \translatedkeyword{HPC}
 
 
 * Main Text                                                        :ignore:
@@ -66,7 +67,7 @@
 
 #+LaTeX: \def\ACKLINE{\\}
 
-To my advisor, 
+To my advisor,
 *** Abstract                                                       :ignore:
 
 #+LaTeX: \begin{abstract}
@@ -74,10 +75,10 @@ To my advisor,
 Something
 #+LaTeX: \end{abstract}
 
-#+LaTeX: \begin{englishabstract}{}{Palavra Chave 1, 2, 3}
+#+LaTeX: \begin{translatedabstract}
 Alguma coisa
 
-#+LaTeX: \end{englishabstract}
+#+LaTeX: \end{translatedabstract}
 
 *** Lists                                                          :ignore:
 #+BEGIN_EXPORT latex
@@ -179,7 +180,7 @@ Tangle this file with C-c C-v t
 # eval: (add-to-list 'org-latex-classes
 #             '("IIUFRGS"
 #               "\\documentclass{iiufrgs}" ; São permitidas subdivisões até o 5º nível (onde o capítulo é o 1º nível)
-#               ("\\chapter{%s}" . "\\chapter*{%s}")  
+#               ("\\chapter{%s}" . "\\chapter*{%s}")
 #               ("\\section{%s}" . "\\section*{%s}")
 #               ("\\subsection{%s}" . "\\subsection*{%s}")
 #               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")

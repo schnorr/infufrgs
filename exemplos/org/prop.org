@@ -16,6 +16,8 @@
 #+OPTIONS: ^:nil _:nil
 #+OPTIONS: ':t toc:nil
 
+#+LATEX_HEADER: \translatedtitle{II-UFRGS example document using ORG-Mode}
+
 ** ORG Functions -- no export                                     :noexport:
 
 #+NAME: org_include_graphics
@@ -82,6 +84,11 @@ E pelo M-x butterfly
 \keyword{kw1}
 \keyword{kw2}
 
+# Tags no segundo idioma do documento
+
+\translatedkeyword{kw1}
+\translatedkeyword{kw2}
+
 #+ATTR_LATEX:
 #+BEGIN_abstract
 The abstract.
@@ -93,12 +100,12 @@ If you're writing in english, this is the abstract in english
 
 * English Abstract                                                   :ignore:
 
-#+ATTR_LATEX: :options {The Title}{kw1, kw2, kw3}
-#+BEGIN_englishabstract
+#+ATTR_LATEX:
+#+BEGIN_translatedabstract
 The abstract text in english!
 
 *IMPORTANT NOTE*: If you're writing in english, than this becomes the "Resumo" in portuguese
-#+END_englishabstract
+#+END_translatedabstract
 
 * Abreviaturas                                                       :ignore:
 
