@@ -18,7 +18,7 @@
 \providecommand{\nominataPRCAname}{Vice-Reitora}
 
 % PROPG
-\providecommand{\nominataPRAPG}{Prof.~Celso Giannetti Loureiro Chaves}
+\providecommand{\nominataPRAPG}{Prof.~Júlio Otávio Jardim Barcellos}
 \providecommand{\nominataPRAPGname}{Pr{\'o}-Reitor de P{\'o}s-Gradua{\c{c}}{\~a}o}
 
 % Instituto de Informática
@@ -26,11 +26,11 @@
 \providecommand{\nominataDirname}{Diretora do Instituto de Inform{\'a}tica}
 
 % PPGC
-\providecommand{\nominataCoordPPGC}{Prof.~Claudio Rosito Jung}
+\providecommand{\nominataCoordPPGC}{Prof.~Alberto Egon Schaeffer Filho}
 \providecommand{\nominataCoordnamePPGC}{Coordenador do PPGC}
 
 % PGMicro
-\providecommand{\nominataCoordPGMICRO}{Prof.~Tiago Roberto Balen}
+\providecommand{\nominataCoordPGMICRO}{Prof.~Cláudio Radtke}
 \providecommand{\nominataCoordnamePGMICRO}{Coordenador do PGMICRO}
 
 % Biblioteca
