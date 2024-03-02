@@ -18,7 +18,7 @@
 \providecommand{\nominataPRCAname}{Vice-Reitora}
 
 % PROPG
-\providecommand{\nominataPRAPG}{Prof.~Júlio Otávio Jardim Barcellos}
+\providecommand{\nominataPRAPG}{Prof.~J{\'u}lio Otávio Jardim Barcellos}
 \providecommand{\nominataPRAPGname}{Pr{\'o}-Reitor de P{\'o}s-Gradua{\c{c}}{\~a}o}
 
 % Instituto de Informática
@@ -30,7 +30,7 @@
 \providecommand{\nominataCoordnamePPGC}{Coordenador do PPGC}
 
 % PGMicro
-\providecommand{\nominataCoordPGMICRO}{Prof.~Cláudio Radtke}
+\providecommand{\nominataCoordPGMICRO}{Prof.~Cl{\'a}udio Radtke}
 \providecommand{\nominataCoordnamePGMICRO}{Coordenador do PGMICRO}
 
 % Biblioteca
