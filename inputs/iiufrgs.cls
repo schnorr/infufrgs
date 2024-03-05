@@ -500,9 +500,10 @@
 \renewenvironment{abstract}{%
         \chapter*{\abstractname}\setlength{\parindent}{0pt}
 }{%
-    %\par\vfill
-    \\
-    \vspace{\parskip}\noindent\textbf{\keywordsname:} \@abstractkw
+    \ifnum\value{kwcounter}>0
+        \\
+        \vspace{\parskip}\noindent\textbf{\keywordsname:} \@abstractkw
+    \fi
 }
 
 \newenvironment{translatedabstract}[0]{%
@@ -522,13 +523,15 @@
     }
     \samepagechapter*{\abstractname}\setlength{\parindent}{0pt}
 }{%
-    \ifnum\value{translatedkwcounter}>0
-        \vspace{12pt}
-
-        \noindent\textbf{\keywordsname:} \@translatedabstractkw
-    \else
-        \PackageWarningNoLine{iiufrgs}{No translated keyword has been defined. Use
-        the translatedkeyword command to define them.}
+    \ifnum\value{kwcounter}>0
+        \ifnum\value{translatedkwcounter}>0
+            \vspace{12pt}
+    
+            \noindent\textbf{\keywordsname:} \@translatedabstractkw
+        \else
+            \PackageWarningNoLine{iiufrgs}{No translated keywords have been
+            defined. Use the translatedkeyword command to define them.}
+        \fi
     \fi
     \end{otherlanguage}
 }
