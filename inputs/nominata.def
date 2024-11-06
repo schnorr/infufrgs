@@ -46,7 +46,7 @@
 \providecommand{\nominataChefeINAname}{Chefe do \deptINA}
 
 % INT (Informática Teórica)
-\providecommand{\nominataChefeINT}{Prof.~{\'A}lvaro Freitas Moreira}
+\providecommand{\nominataChefeINT}{Prof\textsuperscript{a}.~Mariana Luderitz Kolberg Fernandes}
 \providecommand{\nominataChefeINTname}{Chefe do \deptINT}
 
 %CIC
