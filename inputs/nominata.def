@@ -14,8 +14,8 @@
 % Reitoria
 \providecommand{\nominataReit}{Prof\textsuperscript{a}.~Maria Barbosa}
 \providecommand{\nominataReitname}{Reitora}
-\providecommand{\nominataPRCA}{Prof\textsuperscript{a}.~Patricia Pranke}
-\providecommand{\nominataPRCAname}{Vice-Reitora}
+\providecommand{\nominataPRCA}{Prof.~Pedro Costa}
+\providecommand{\nominataPRCAname}{Vice-Reitor}
 
 % PROPG
 \providecommand{\nominataPRAPG}{Prof.~J{\'u}lio Otávio Jardim Barcellos}
