@@ -43,6 +43,7 @@
 \iiu@novodoc{unibral}
 \iiu@novodoc{pgmicro}
 \iiu@novodoc{ppgc}
+\iiu@novodoc{ppgl}
 
 % tipos de documento
 \iiu@novodoc{dipl}
