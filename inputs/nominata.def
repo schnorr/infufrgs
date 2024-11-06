@@ -12,8 +12,8 @@
 %
 
 % Reitoria
-\providecommand{\nominataReit}{Prof.~Carlos Andr{\'e} Bulh{\~o}es}
-\providecommand{\nominataReitname}{Reitor}
+\providecommand{\nominataReit}{Prof\textsuperscript{a}.~Maria Barbosa}
+\providecommand{\nominataReitname}{Reitora}
 \providecommand{\nominataPRCA}{Prof\textsuperscript{a}.~Patricia Pranke}
 \providecommand{\nominataPRCAname}{Vice-Reitora}
 
