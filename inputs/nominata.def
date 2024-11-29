@@ -12,7 +12,7 @@
 %
 
 % Reitoria
-\providecommand{\nominataReit}{Prof\textsuperscript{a}.~Maria Barbosa}
+\providecommand{\nominataReit}{Prof\textsuperscript{a}.~Marcia Barbosa}
 \providecommand{\nominataReitname}{Reitora}
 \providecommand{\nominataPRCA}{Prof.~Pedro Costa}
 \providecommand{\nominataPRCAname}{Vice-Reitor}
