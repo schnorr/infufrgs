@@ -1,0 +1,223 @@
+%==============================================================================
+% example.tex — Complete usage example for the infufrgs class
+%
+% This file is hereby placed in the public domain.
+%
+% Compile sequence:
+%   pdflatex example
+%   bibtex   example
+%   pdflatex example
+%   pdflatex example
+%==============================================================================
+
+% Select program (ppgc, pgmicro, cic, ecp, ppgl) and document type
+% (diss/mestrado, tese/doutorado, tc/dipl, ti, rp, espec, pep, prop-tese,
+%  plano-doutorado).  Add `english' for English-language documents.
+\documentclass[ppgc,diss,english]{infufrgs}
+
+% If using pdfLaTeX, declare the input encoding (UTF-8 is recommended).
+% Not needed with XeLaTeX or LuaLaTeX.
+\usepackage[utf8]{inputenc}
+
+% For figure inclusion
+\usepackage{graphicx}
+
+% Optionally load math packages
+% \usepackage{amsmath}
+
+%------------------------------------------------------------------------------
+% Document metadata
+%------------------------------------------------------------------------------
+\title{Um Exemplo de Monografia do Instituto de Informática da UFRGS}
+\translatedtitle{Using \LaTeX\ to Prepare Documents at INF/UFRGS}
+
+% Author: \author{Surname}{First Name(s)}
+\author{Flaumann}{Fritz Gutenberg}
+% Multiple authors are supported:
+%\author{Flaumann}{Frida Gutenberg}
+
+% Advisor (title is optional): \advisor[Title]{Surname}{First Name(s)}
+\advisor[Prof.~Dr.]{Lamport}{Leslie}
+% Co-advisor is optional:
+%\coadvisor[Prof.~Dr.]{Knuth}{Donald Ervin}
+
+% Date of the defence.  Defaults to the current month and year if omitted.
+%\date{maio}{2001}
+
+% Location of the defence.  Defaults to Porto Alegre, RS.
+%\location{Itaquaquecetuba}{SP}
+
+%------------------------------------------------------------------------------
+% Keywords — use Title Case; up to 10 keywords per language
+%------------------------------------------------------------------------------
+\keyword{Ciência da Computação}
+\keyword{Formatação de documentos}
+\keyword{LaTeX}
+
+\translatedkeyword{Computer Science}
+\translatedkeyword{Document formatting}
+\translatedkeyword{LaTeX}
+
+%------------------------------------------------------------------------------
+% Nominata — override individual fields if the bundled defaults are stale.
+% Example:
+%   \renewcommand{\nominataReit}{Prof\textsuperscript{a}.~Nome Sobrenome}
+%   \renewcommand{\nominataReitname}{Reitora}
+%------------------------------------------------------------------------------
+
+%==============================================================================
+\begin{document}
+%==============================================================================
+
+% Title page + CIP (or nominata page)
+\maketitle
+
+%------------------------------------------------------------------------------
+% Optional front matter
+%------------------------------------------------------------------------------
+\begin{dedicatoria}
+  À minha família.
+\end{dedicatoria}
+
+\begin{agradecimentos}
+  Agradeço a todos que contribuíram para a realização deste trabalho.
+\end{agradecimentos}
+
+%------------------------------------------------------------------------------
+% Abstract in the primary language
+%------------------------------------------------------------------------------
+\begin{abstract}
+  Este documento demonstra o uso da classe \textit{infufrgs} para a preparação
+  de monografias, dissertações e teses no Instituto de Informática da UFRGS.
+  A classe fornece formatação automática da folha de rosto, sumário, listas de
+  figuras e tabelas, referências no padrão ABNT e outros elementos
+  pré-textuais e pós-textuais.
+\end{abstract}
+
+%------------------------------------------------------------------------------
+% Abstract in the second language (translatedabstract)
+%------------------------------------------------------------------------------
+\begin{translatedabstract}
+  This document demonstrates the use of the \textit{infufrgs} class for
+  preparing monographs, dissertations and theses at the Institute of
+  Informatics of UFRGS.  The class provides automatic formatting of the
+  title page, table of contents, lists of figures and tables, ABNT-style
+  references, and other front- and back-matter elements.
+\end{translatedabstract}
+
+%------------------------------------------------------------------------------
+% Lists
+%------------------------------------------------------------------------------
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+% Optional: list of abbreviations
+\begin{listofabbrv}{UFRGS}
+  \item[ABNT] Associação Brasileira de Normas Técnicas
+  \item[INF]  Instituto de Informática
+  \item[PPGC] Programa de Pós-Graduação em Computação
+  \item[UFRGS] Universidade Federal do Rio Grande do Sul
+\end{listofabbrv}
+
+% Optional: list of symbols
+% \begin{listofsymbols}{$\alpha$}
+%   \item[$\alpha$] Alpha coefficient
+% \end{listofsymbols}
+
+%==============================================================================
+% Text body
+%==============================================================================
+
+\chapter{Introdução}
+
+Este capítulo introduz o tema do trabalho.  Citações bibliográficas seguem a
+norma ABNT; por exemplo, a linguagem \LaTeX\ foi descrita por
+\cite{lamport1994latex}.
+
+Figuras devem ser referenciadas pelo número (Figura~\ref{fig:exemplo}).
+
+\begin{figure}[htbp]
+  \centering
+  \fbox{\rule{0pt}{4cm}\rule{6cm}{0pt}}
+  \caption{Exemplo de figura com legenda centralizada.}
+  \label{fig:exemplo}
+\end{figure}
+
+\section{Organização do Texto}
+
+O restante deste documento está organizado da seguinte forma.  O
+Capítulo~\ref{cap:fundamentacao} apresenta a fundamentação teórica.
+O Capítulo~\ref{cap:conclusao} apresenta as conclusões.
+
+\chapter{Fundamentação Teórica}
+\label{cap:fundamentacao}
+
+\section{Formatação}
+
+A classe \texttt{infufrgs} herda da classe \texttt{report} do \LaTeX.  As
+margens, o espaçamento entre linhas, a numeração de páginas e os títulos de
+capítulos e seções são configurados automaticamente de acordo com as normas
+do Instituto.
+
+\subsection{Tabelas}
+
+Tabelas devem ter título acima do corpo e ser referenciadas no texto
+(Tabela~\ref{tab:exemplo}).
+
+\begin{table}[htbp]
+  \centering
+  \caption{Exemplo de tabela com legenda centralizada.}
+  \label{tab:exemplo}
+  \begin{tabular}{lcc}
+    \hline
+    \textbf{Coluna A} & \textbf{Coluna B} & \textbf{Coluna C} \\
+    \hline
+    Linha 1 & 1.0 & 2.0 \\
+    Linha 2 & 3.0 & 4.0 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\subsubsection{Citações longas}
+
+Citações com mais de três linhas devem ser destacadas em bloco, com recuo de
+4\,cm à esquerda:
+
+\begin{quote}
+  Esta é uma citação longa de exemplo.  O ambiente \texttt{quote} da classe
+  \texttt{infufrgs} aplica automaticamente o recuo, o tamanho de fonte e o
+  espaçamento simples exigidos pela norma.
+\end{quote}
+
+\chapter{Conclusão}
+\label{cap:conclusao}
+
+Este documento demonstrou os principais recursos da classe \texttt{infufrgs}.
+
+%==============================================================================
+% Back matter
+%==============================================================================
+
+% Appendices start with \appendix (optional \annexname for annexes)
+\appendix
+
+\chapter{Exemplo de Apêndice}
+
+Apêndices contêm material elaborado pelo próprio autor.
+
+\annex
+
+\chapter{Exemplo de Anexo}
+
+Anexos contêm material de terceiros reproduzido para documentação.
+
+%------------------------------------------------------------------------------
+% References (ABNT author-date style)
+%------------------------------------------------------------------------------
+\bibliographystyle{abntex2-alf}
+\bibliography{example}
+
+\end{document}

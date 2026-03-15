@@ -1,0 +1,899 @@
+%==============================================================================
+% documentation.tex — User Manual for the infufrgs LaTeX class
+%
+% Copyright (C) 2001–2025 UFRGS TeX Users Group
+%
+% This work may be distributed and/or modified under the conditions of
+% the LaTeX Project Public License, either version 1.3c of this license
+% or (at your option) any later version.
+% The latest version of this license is in
+%   https://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% Compile with:
+%   pdflatex documentation
+%   pdflatex documentation
+%==============================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+\usepackage{array}
+\usepackage{parskip}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black,
+            bookmarksnumbered=true]{hyperref}
+
+\geometry{top=25mm,bottom=25mm,left=30mm,right=25mm}
+
+%------------------------------------------------------------------------------
+% Convenience macros
+%------------------------------------------------------------------------------
+\newcommand{\pkg}[1]{\textsf{#1}}
+\newcommand{\cls}[1]{\textsf{#1}}
+\newcommand{\opt}[1]{\texttt{#1}}
+\newcommand{\cmd}[1]{\texttt{\textbackslash #1}}
+\newcommand{\env}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{#1}}
+\newcommand{\meta}[1]{\textit{\textlangle#1\textrangle}}
+
+% Inline code box
+\definecolor{codebg}{rgb}{0.96,0.96,0.96}
+\newcommand{\code}[1]{%
+  \colorbox{codebg}{\texttt{\small #1}}}
+
+% Verbatim environment for code listings
+\DefineVerbatimEnvironment{latex}{Verbatim}{%
+  frame=single,
+  framesep=2mm,
+  fontsize=\small,
+  rulecolor=\color{gray!50},
+  xleftmargin=4mm,
+  xrightmargin=4mm,
+  gobble=0}
+
+% Note box
+\newenvironment{note}{%
+  \begin{center}
+  \begin{minipage}{0.93\linewidth}
+  \colorbox{yellow!20}{\parbox{\linewidth-2\fboxsep}{%
+  \smallskip\textbf{Note:}\enspace\ignorespaces
+}{%
+  \smallskip}}
+  \end{minipage}
+  \end{center}}
+
+%------------------------------------------------------------------------------
+% Document metadata
+%------------------------------------------------------------------------------
+\title{%
+  \pkg{infufrgs} — LaTeX Class for\\[4pt]
+  INF/UFRGS Academic Documents\\[8pt]
+  \large\normalfont User Manual\\[4pt]
+  \large\normalfont Version~5.0.0 (2025/03/15)}
+\author{UFRGS TeX Users Group\\
+  \small Institute of Informatics — UFRGS, Porto Alegre, Brazil\\
+  \small\url{https://www.inf.ufrgs.br/utug}}
+\date{}
+
+%==============================================================================
+\begin{document}
+%==============================================================================
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+  \noindent
+  The \cls{infufrgs} document class typesets theses, dissertations,
+  monographs, research reports, and related academic documents following
+  the typographic and bibliographic standards required by the Institute
+  of Informatics (INF) of the Universidade Federal do Rio Grande do Sul
+  (UFRGS), Porto Alegre, Brazil.  This manual describes version~5.0.0,
+  a self-contained single-file consolidation released under the
+  LaTeX Project Public Licence~1.3c.
+\end{abstract}
+
+\tableofcontents
+
+%==============================================================================
+\section{Introduction}
+%==============================================================================
+
+The \cls{infufrgs} class has been maintained by the UFRGS TeX Users Group
+since~2001.  It builds on the standard \cls{report} class and provides:
+%
+\begin{itemize}
+  \item automatic typesetting of the title page and CIP
+        (Catalogação na Publicação) block;
+  \item front-matter environments for abstracts in two languages,
+        dedications, acknowledgements, and lists of abbreviations
+        and symbols;
+  \item chapter, section, and caption formatting that complies with
+        the ABNT standards adopted by INF/UFRGS;
+  \item built-in support for ABNT-style bibliographic citations via
+        the \pkg{abntex2cite} package;
+  \item support for several undergraduate and graduate programmes
+        at INF/UFRGS and the Microelectronics and Letters
+        Post-Graduate Programmes;
+  \item optional theorem/definition environments (\opt{formais} option);
+  \item support for UNIBRAL (UFRGS–TU\,Berlin) double-degree documents
+        (\opt{unibral} option).
+\end{itemize}
+%
+Version~5.0.0 is a major modernisation: all auxiliary files
+(\file{iidefs.sty}, \file{*.def}, \file{*.babel}) have been
+consolidated into the single file \file{infufrgs.cls}.
+
+%==============================================================================
+\section{Requirements}
+\label{sec:requirements}
+%==============================================================================
+
+\cls{infufrgs} requires a reasonably modern TeX installation.
+TeX~Live~2021 or later (or MiK\TeX{} with all packages updated) is
+recommended.  The following packages must be available; all of them
+are part of standard TeX~Live and MiK\TeX{} distributions.
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+  \toprule
+  Package & Purpose \\
+  \midrule
+  \pkg{xspace}       & Smart spacing after macros \\
+  \pkg{keyval}       & Key–value option parsing \\
+  \pkg{iftex}        & Engine detection (\cmd{ifpdftex}, \cmd{ifxetex}, \cmd{ifluatex}) \\
+  \pkg{babel}        & Language support (Brazilian Portuguese and English) \\
+  \pkg{lastpage}     & \verb|\pageref{LastPage}| for CIP \\
+  \pkg{indentfirst}  & Indent first paragraph of each section \\
+  \pkg{setspace}     & Line-spacing control \\
+  \pkg{titlesec}     & Section heading formatting \\
+  \pkg{tocloft}      & Table-of-contents formatting \\
+  \pkg{fancyhdr}     & Page header/footer \\
+  \pkg{xcolor}       & Colour support \\
+  \pkg{graphicx}     & Figure inclusion \\
+  \pkg{caption}      & Caption formatting \\
+  \pkg{hyperref}     & PDF hyperlinks and metadata \\
+  \pkg{hypcap}       & Correct hyperlink anchors for floats \\
+  \pkg{geometry}     & Page layout \\
+  \pkg{newtxtext}, \pkg{newtxmath} & Times-based fonts (pdf\LaTeX{} only) \\
+  \pkg{fontspec}     & OpenType fonts (Xe\LaTeX/Lua\LaTeX{} only) \\
+  \pkg{abntex2cite}  & ABNT citation style (part of \pkg{abntex2}) \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+The \pkg{abntex2} bundle is shipped with TeX~Live and MiK\TeX{}.
+Font packages \pkg{newtxtext}/\pkg{newtxmath} are available in TeX~Live
+as \texttt{tex-newtx}.
+
+%==============================================================================
+\section{Installation}
+\label{sec:installation}
+%==============================================================================
+
+Copy \file{infufrgs.cls} to a directory where \TeX{} can find it.
+Common choices are:
+%
+\begin{itemize}
+  \item the same directory as your document (simplest);
+  \item \texttt{TEXMFHOME/tex/latex/infufrgs/} for a personal
+        installation (run \texttt{texhash} afterwards).
+\end{itemize}
+%
+When installed from CTAN via TeX~Live (\texttt{tlmgr install infufrgs})
+or MiK\TeX, no manual step is required.
+
+%==============================================================================
+\section{Class Options}
+\label{sec:options}
+%==============================================================================
+
+Options are supplied as a comma-separated list in the
+\cmd{documentclass} argument:
+
+\begin{latex}
+\documentclass[<programme>,<document-type>,...]{infufrgs}
+\end{latex}
+
+\subsection{Programme options}
+\label{sec:progopts}
+
+Exactly one programme option should be given.
+
+\begin{center}
+\begin{tabular}{@{}lp{0.70\linewidth}@{}}
+  \toprule
+  Option      & Programme \\
+  \midrule
+  \opt{cic}     & Ciência da Computação (undergraduate) \\
+  \opt{ecp}     & Engenharia de Computação (undergraduate) \\
+  \opt{ppgc}    & Programa de Pós-Graduação em Computação \\
+  \opt{pgmicro} & Programa de Pós-Graduação em Microeletrônica \\
+  \opt{ppgl}    & Programa de Pós-Graduação em Letras \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Document-type options}
+\label{sec:doctypeopts}
+
+Exactly one document-type option should be given.
+
+\begin{center}
+\begin{tabular}{@{}lp{0.68\linewidth}@{}}
+  \toprule
+  Option(s)              & Document type \\
+  \midrule
+  \opt{tc} / \opt{dipl}             & Trabalho de Conclusão (bachelor's monograph) \\
+  \opt{diss} / \opt{mestrado}       & Dissertação de Mestrado (Master's thesis) \\
+  \opt{tese} / \opt{doutorado}      & Tese de Doutorado (Doctoral thesis) \\
+  \opt{espec}                       & Monografia de Especialização \\
+  \opt{ti}                          & Trabalho Individual \\
+  \opt{rp}                          & Relatório de Pesquisa \\
+  \opt{pep}                         & Plano de Estudos e Pesquisa \\
+  \opt{prop-tese}                   & Proposta de Tese de Doutorado \\
+  \opt{plano-doutorado}             & Plano de Doutorado \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Other options}
+\label{sec:otheropts}
+
+\begin{center}
+\begin{tabular}{@{}lp{0.68\linewidth}@{}}
+  \toprule
+  Option              & Effect \\
+  \midrule
+  \opt{english}       & Typeset the document in English (headings, captions, etc.) \\
+  \opt{oneside}       & Single-sided layout (default is two-sided) \\
+  \opt{noabntcite}    & Do not automatically load \pkg{abntex2cite};
+                        load it yourself or use a different citation package \\
+  \opt{nominatalocal} & Read nominata data from \file{nominatalocal.def}
+                        instead of the built-in defaults
+                        (see Section~\ref{sec:nominata}) \\
+  \opt{formais}       & Load theorem/definition environments
+                        (see Section~\ref{sec:formais}) \\
+  \opt{unibral}       & Enable UNIBRAL double-degree support
+                        (see Section~\ref{sec:unibral}) \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+Any option not recognised by \cls{infufrgs} is passed through to the
+underlying \cls{report} class.
+
+%==============================================================================
+\section{Document Preamble — Metadata Commands}
+\label{sec:preamble}
+%==============================================================================
+
+All the following commands should appear in the preamble, i.e., between
+\cmd{documentclass} and \cmd{begin\{document\}}.
+
+\subsection{Title and translated title}
+
+\begin{latex}
+\title{<title of the document>}
+\translatedtitle{<title in the other language>}
+\end{latex}
+
+\cmd{title} sets the document title.  \cmd{translatedtitle} provides
+the title in the second language (Portuguese if the document is in
+English, English if the document is in Portuguese).  The translated
+title is displayed on the \env{translatedabstract} page.
+
+\subsection{Author(s)}
+
+\begin{latex}
+\author{<surname>}{<first name(s)>}
+\end{latex}
+
+Up to four authors are supported; call \cmd{author} once for each.
+The arguments are kept separate so that the CIP block (Catalogação na
+Publicação) can format the name correctly.  Example:
+
+\begin{latex}
+\author{Flaumann}{Fritz Gutenberg}
+\author{Flaumann}{Frida Gutenberg}
+\end{latex}
+
+\subsection{Advisor and co-advisor}
+
+\begin{latex}
+\advisor[<title>]{<surname>}{<first name(s)>}
+\coadvisor[<title>]{<surname>}{<first name(s)>}
+\end{latex}
+
+The optional \meta{title} argument is printed before the name
+(e.g., \texttt{Prof.\textasciitilde Dr.}).  \cmd{coadvisor} is optional.
+
+\subsection{Date}
+
+\begin{latex}
+\date{<month>}{<year>}
+\end{latex}
+
+If omitted, the current month and year are used.
+For a Portuguese document use the month name in Portuguese
+(e.g., \texttt{maio}); for an English document, in English
+(e.g., \texttt{May}).
+
+\subsection{Location}
+
+\begin{latex}
+\location{<city>}{<state abbreviation>}
+\end{latex}
+
+Defaults to \texttt{Porto\textasciitilde Alegre} / \texttt{RS}.
+
+\subsection{Keywords}
+
+\begin{latex}
+\keyword{<keyword in the primary language>}
+\translatedkeyword{<keyword in the secondary language>}
+\end{latex}
+
+Call these commands once per keyword (up to ten each).  Keywords appear
+after the abstract text and in the PDF metadata.
+
+\subsection{Department (optional)}
+
+\begin{latex}
+\dept{<department code>}
+\end{latex}
+
+Currently recognised codes: \opt{INA} (Departamento de Informática
+Aplicada) and \opt{INT} (Departamento de Informática Teórica).
+
+\subsection{Additional commands for specific document types}
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+  \toprule
+  Document type & Command & Argument \\
+  \midrule
+  \opt{ti}    & \cmd{ti}\texttt{[release]\{number\}}
+              & Release (default \texttt{I}) and TI number \\
+  \opt{rp}    & \cmd{rp}\texttt{\{number\}}
+              & RP number \\
+  \opt{rp}    & \cmd{financ}\texttt{\{agencies\}}
+              & Funding agencies (optional) \\
+  \opt{espec} & \cmd{espec}\texttt{\{specialisation name\}}
+              & Name of the specialisation programme \\
+  \opt{espec} & \cmd{coord}\texttt{[title]\{surname\}\{first name\}}
+              & Course coordinator \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+%==============================================================================
+\section{Front Matter}
+\label{sec:frontmatter}
+%==============================================================================
+
+\subsection{Title page and CIP/nominata}
+
+\begin{latex}
+\begin{document}
+\maketitle
+\end{latex}
+
+\cmd{maketitle} generates:
+\begin{enumerate}
+  \item the title page, and
+  \item for Master/Doctoral/Specialisation documents: a CIP
+        (Catalogação na Publicação) block followed by the
+        \emph{nominata} (administrative officers listing);
+        for other document types: only the nominata.
+\end{enumerate}
+
+\subsection{Dedication}
+
+\begin{latex}
+\begin{dedicatoria}
+  To my family.
+\end{dedicatoria}
+\end{latex}
+
+Produces a page with the dedication text flush-right at the bottom.
+No section heading is added.
+
+\subsection{Acknowledgements}
+
+\begin{latex}
+\begin{agradecimentos}
+  I thank everyone who contributed\ldots
+\end{agradecimentos}
+\end{latex}
+
+Produces an unnumbered chapter titled \textit{Agradecimentos}.
+
+%==============================================================================
+\section{Abstracts}
+\label{sec:abstracts}
+%==============================================================================
+
+\subsection{Primary-language abstract}
+
+\begin{latex}
+\begin{abstract}
+  <Abstract text.>
+\end{abstract}
+\end{latex}
+
+Produces an unnumbered chapter titled \textit{Resumo} (or
+\textit{Abstract} for English documents).  The keywords defined with
+\cmd{keyword} are appended automatically.
+
+\subsection{Secondary-language abstract}
+
+\begin{latex}
+\begin{translatedabstract}
+  <Abstract in the other language.>
+\end{translatedabstract}
+\end{latex}
+
+The environment automatically switches to the other language
+(English↔Brazilian Portuguese).  The title of the document in the
+other language, set with \cmd{translatedtitle}, is displayed above
+the abstract text.  The keywords defined with \cmd{translatedkeyword}
+are appended automatically.
+
+\bigskip
+\noindent\textbf{Deprecated:} the \env{englishabstract} environment
+from earlier versions is still accepted for backwards compatibility
+but produces a warning.  Replace it with \env{translatedabstract}.
+
+%==============================================================================
+\section{Lists}
+\label{sec:lists}
+%==============================================================================
+
+The standard list commands work as usual:
+
+\begin{latex}
+\tableofcontents
+\listoffigures
+\listoftables
+\end{latex}
+
+\subsection{List of abbreviations and acronyms}
+
+\begin{latex}
+\begin{listofabbrv}{<widest-label>}
+  \item[ABNT]  Associação Brasileira de Normas Técnicas
+  \item[INF]   Instituto de Informática
+  \item[UFRGS] Universidade Federal do Rio Grande do Sul
+\end{listofabbrv}
+\end{latex}
+
+The mandatory argument \meta{widest-label} (e.g., \texttt{UFRGS}) is used
+to compute the column width so that all abbreviations align.
+
+\subsection{List of symbols}
+
+\begin{latex}
+\begin{listofsymbols}{<widest-symbol>}
+  \item[$\alpha$] Alpha coefficient
+  \item[$\beta$]  Beta coefficient
+\end{listofsymbols}
+\end{latex}
+
+Same structure as \env{listofabbrv}.
+
+%==============================================================================
+\section{Main Text}
+\label{sec:maintext}
+%==============================================================================
+
+\subsection{Sectioning}
+
+The class provides all standard \cls{report} sectioning commands:
+\cmd{chapter}, \cmd{section}, \cmd{subsection}, \cmd{subsubsection},
+and \cmd{paragraph}.  Section depth is set to~5 (\cmd{secnumdepth}).
+
+Chapter headings are typeset in bold, 12\,pt, uppercase, flush-left.
+Sections and subsections are bold; subsubsections are italic.
+
+Chapters and sections are recorded in the table of contents with
+uppercase names for chapters.
+
+\subsection{Figures and tables}
+
+Standard \env{figure} and \env{table} float environments are used.
+Captions are formatted with an em-dash separator, centred,
+in 10\,pt type.
+
+\begin{latex}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{filename}
+  \caption{Caption text.}
+  \label{fig:label}
+\end{figure}
+\end{latex}
+
+The \cmd{legend} command produces an unnumbered caption:
+
+\begin{latex}
+\legend{Source: <reference>}
+\end{latex}
+
+\subsection{Long quotations}
+
+The \env{quote} environment is redefined to comply with ABNT formatting:
+4\,cm left indentation, 10\,pt font, single spacing.
+
+\begin{latex}
+\begin{quote}
+  Long quotation text of more than three lines goes here.
+\end{quote}
+\end{latex}
+
+\subsection{Lists}
+
+The \env{enumerate}, \env{itemize}, and \env{description} environments
+are redefined with reduced vertical spacing to match the ABNT style.
+
+%==============================================================================
+\section{Back Matter}
+\label{sec:backmatter}
+%==============================================================================
+
+\subsection{Appendices}
+
+\begin{latex}
+\appendix
+\chapter{First Appendix}
+...
+\end{latex}
+
+\cmd{appendix} resets the chapter counter and switches to alphabetic
+numbering.  The optional argument overrides the heading label
+(default: \textit{Apêndice} / \textit{Appendix}).
+
+\subsection{Annexes}
+
+\begin{latex}
+\annex
+\chapter{First Annex}
+...
+\end{latex}
+
+\cmd{annex} is similar to \cmd{appendix} but uses the heading label
+\textit{Anexo} / \textit{Annex}.  In Brazilian academic convention,
+appendices contain material produced by the author; annexes contain
+third-party material reproduced for documentation.
+
+\subsection{Bibliography}
+
+The class automatically loads \pkg{abntex2cite} (unless the
+\opt{noabntcite} option is given).  Use one of the ABNT styles:
+
+\begin{latex}
+\bibliographystyle{abntex2-alf}   % author-year citations
+%\bibliographystyle{abntex2-num}  % numeric citations
+\bibliography{<bib file(s)>}
+\end{latex}
+
+%==============================================================================
+\section{Special Features}
+%==============================================================================
+
+\subsection{Formal environments (\opt{formais} option)}
+\label{sec:formais}
+
+Loading \opt{formais} adds a collection of theorem-like environments
+and two additional lists.
+
+\subsubsection{Theorem-like environments}
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+  \toprule
+  Environment & Name \\
+  \midrule
+  \env{theorem}      & Theorem / Teorema \\
+  \env{lemma}        & Lemma / Lema \\
+  \env{corollary}    & Corollary / Corolário \\
+  \env{proposition}  & Proposition / Proposição \\
+  \env{conjecture}   & Conjecture / Conjectura \\
+  \env{definition}   & Definition / Definição \\
+  \env{example}      & Example / Exemplo \\
+  \env{exercise}     & Exercise / Exercício \\
+  \env{property}     & Property / Propriedade \\
+  \env{remark}       & Remark / Observação \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+All environments take an optional name argument.  Example:
+
+\begin{latex}
+\begin{theorem}[Pythagorean theorem]
+  In a right triangle, $a^2 + b^2 = c^2$.
+\end{theorem}
+\begin{proof}
+  See any introductory geometry text.
+\end{proof}
+\end{latex}
+
+\subsubsection{Lists of definitions and theorems}
+
+\begin{latex}
+\listofdefinitions
+\listoftheorems
+\end{latex}
+
+These produce numbered lists analogous to \cmd{listoffigures}.
+
+\subsection{UNIBRAL double-degree (\opt{unibral} option)}
+\label{sec:unibral}
+
+The \opt{unibral} option activates support for the UNIBRAL programme
+(joint double-degree between UFRGS and Technische Universität Berlin).
+
+\subsubsection{Additional commands}
+
+\begin{latex}
+\advisorDE[<title>]{<surname>}{<first name>}
+\coadvisorDE[<title>]{<surname>}{<first name>}
+\end{latex}
+
+These set the German advisor and co-advisor, which appear on the title
+page alongside the Brazilian advisor(s).
+
+\subsubsection{Extended summary}
+
+\begin{latex}
+\extendedsummary
+<Portuguese extended summary for UFRGS.>
+\end{latex}
+
+Produces the \emph{Resumo Estendido} chapter required by UFRGS for
+double-degree theses.
+
+%==============================================================================
+\section{Nominata Customisation}
+\label{sec:nominata}
+%==============================================================================
+
+The nominata is the list of UFRGS administrative officers printed on
+the CIP/nominata page.  The class ships with defaults reflecting the
+current officeholders; however, these data change every few years.
+
+\subsection{Overriding individual fields}
+
+Any nominata field can be updated in the preamble with
+\cmd{renewcommand}:
+
+\begin{latex}
+\renewcommand{\nominataReit}{Prof\textsuperscript{a}.~Ana Silva}
+\renewcommand{\nominataReitname}{Reitora}
+\end{latex}
+
+The available fields are listed in the table below.
+
+\begin{center}
+\footnotesize
+\begin{tabular}{@{}ll@{}}
+  \toprule
+  Command & Content \\
+  \midrule
+  \cmd{nominataReit}          & Rector \\
+  \cmd{nominataReitname}      & Rector's title \\
+  \cmd{nominataPRCA}          & Vice-rector \\
+  \cmd{nominataPRCAname}      & Vice-rector's title \\
+  \cmd{nominataPRAPG}         & Pro-rector for Graduate Studies \\
+  \cmd{nominataPRAPGname}     & Pro-rector's title \\
+  \cmd{nominataPRAG}          & Pro-rector for Undergraduate Studies \\
+  \cmd{nominataPRAGname}      & Pro-rector's title \\
+  \cmd{nominataDir}           & Director of INF \\
+  \cmd{nominataDirname}       & Director's title \\
+  \cmd{nominataCoordPPGC}     & PPGC coordinator \\
+  \cmd{nominataCoordnamePPGC} & PPGC coordinator title \\
+  \cmd{nominataCoordPGMICRO}  & PGMICRO coordinator \\
+  \cmd{nominataCoordnamePGMICRO} & PGMICRO coordinator title \\
+  \cmd{nominataBibchefe}      & Head librarian \\
+  \cmd{nominataBibchefename}  & Head librarian's title \\
+  \cmd{nominataChefeINA}      & Head of INA department \\
+  \cmd{nominataChefeINAname}  & INA department head title \\
+  \cmd{nominataChefeINT}      & Head of INT department \\
+  \cmd{nominataChefeINTname}  & INT department head title \\
+  \cmd{nominataCoordCIC}      & CIC course coordinator \\
+  \cmd{nominataCoordCICname}  & CIC coordinator title \\
+  \cmd{nominataCoordECP}      & ECP course coordinator \\
+  \cmd{nominataCoordECPname}  & ECP coordinator title \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{External file (\opt{nominatalocal} option)}
+
+If the \opt{nominatalocal} class option is given, all nominata data
+are read from the file \file{nominatalocal.def} (searched via the
+normal \TeX{} input path).  This file should contain
+\cmd{providecommand} or \cmd{renewcommand} definitions for the fields
+listed above.  This mechanism is convenient when the same nominata
+data are shared by many documents in an institutional repository.
+
+%==============================================================================
+\section{A Complete Minimal Example}
+\label{sec:example}
+%==============================================================================
+
+The following skeleton compiles a Master's dissertation for PPGC:
+
+\begin{latex}
+\documentclass[ppgc,diss]{infufrgs}
+
+\usepackage[utf8]{inputenc}   % for pdfLaTeX; not needed for XeLaTeX/LuaLaTeX
+\usepackage{graphicx}
+
+\title{Title of the Dissertation}
+\translatedtitle{Título da Dissertação}
+\author{Surname}{First Name}
+\advisor[Prof.~Dr.]{AdvisorSurname}{AdvisorFirst}
+% \coadvisor[Prof.~Dr.]{CoAdvisorSurname}{CoAdvisorFirst}
+\date{March}{2025}
+
+\keyword{Keyword one}
+\keyword{Keyword two}
+\translatedkeyword{Primeira palavra-chave}
+\translatedkeyword{Segunda palavra-chave}
+
+\begin{document}
+
+\maketitle
+
+\begin{dedicatoria}
+  To my family.
+\end{dedicatoria}
+
+\begin{agradecimentos}
+  I thank everyone\ldots
+\end{agradecimentos}
+
+\begin{abstract}
+  Abstract text in English.
+\end{abstract}
+
+\begin{translatedabstract}
+  Texto do resumo em português.
+\end{translatedabstract}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\begin{listofabbrv}{UFRGS}
+  \item[ABNT]  Associação Brasileira de Normas Técnicas
+  \item[UFRGS] Universidade Federal do Rio Grande do Sul
+\end{listofabbrv}
+
+\chapter{Introduction}
+...
+
+\appendix
+\chapter{Supporting Material}
+...
+
+\bibliographystyle{abntex2-alf}
+\bibliography{references}
+
+\end{document}
+\end{latex}
+
+A fully compiled example is provided in the file \file{example.tex}
+(together with \file{example.bib}).
+
+%==============================================================================
+\section{Compilation}
+\label{sec:compilation}
+%==============================================================================
+
+\cls{infufrgs} works with pdf\LaTeX, Xe\LaTeX, and Lua\LaTeX.
+
+For pdf\LaTeX{}, declare the input encoding in the preamble:
+\begin{latex}
+\usepackage[utf8]{inputenc}
+\end{latex}
+This is not required for Xe\LaTeX{} or Lua\LaTeX, which handle UTF-8
+natively.
+
+The typical compilation sequence for a document with a bibliography is:
+
+\begin{latex}
+pdflatex <document>
+bibtex   <document>
+pdflatex <document>
+pdflatex <document>
+\end{latex}
+
+Or, using \texttt{latexmk}:
+
+\begin{latex}
+latexmk -pdf <document>
+\end{latex}
+
+%==============================================================================
+\section{Package Files}
+\label{sec:files}
+%==============================================================================
+
+The distribution contains the following files:
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+  \toprule
+  File & Purpose \\
+  \midrule
+  \file{infufrgs.cls}    & The document class (single self-contained file) \\
+  \file{documentation.tex} & This user manual (source) \\
+  \file{example.tex}     & Complete compilable usage example \\
+  \file{example.bib}     & Bibliography database for the example \\
+  \file{README.md}       & Short introduction and quick-start guide \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+%==============================================================================
+\section{Licence}
+\label{sec:licence}
+%==============================================================================
+
+This work may be distributed and/or modified under the conditions of the
+\textbf{LaTeX Project Public License} (LPPL), either version~1.3c of
+this licence or (at your option) any later version.  The latest version
+of this licence is at \url{https://www.latex-project.org/lppl.txt} and
+version~1.3c or later is part of all distributions of \LaTeX{} version
+2005/12/01 or later.
+
+This work has the LPPL maintenance status \textit{maintained}.
+
+\medskip
+\noindent
+Copyright \textcopyright\ 2001–2025 UFRGS TeX Users Group\\
+Institute of Informatics — UFRGS, Porto Alegre, Brazil\\
+\url{https://www.inf.ufrgs.br/utug}
+
+%==============================================================================
+\section{Version History}
+\label{sec:history}
+%==============================================================================
+
+\begin{description}
+  \item[5.0.0 (2025/03/15)]
+    Major modernisation.  All auxiliary files
+    (\file{iidefs.sty}, \file{*.def}, \file{*.babel}) consolidated
+    into \file{infufrgs.cls}.
+    Replaced deprecated \pkg{tocstyle} with \pkg{tocloft}.
+    Replaced obsolete \pkg{times} font package with
+    \pkg{newtxtext}/\pkg{newtxmath} (pdf\LaTeX) and \pkg{fontspec}
+    with TeX Gyre Termes (Xe/Lua\LaTeX).
+    Added \pkg{iftex} for engine detection.
+    Licence changed from GPL-2 to LPPL~1.3c.
+    TOC uppercase chapter titles now use \cmd{texorpdfstring} so
+    PDF bookmarks retain mixed-case titles.
+    Added \env{translatedabstract} environment; deprecated
+    \env{englishabstract} (kept for backwards compatibility).
+
+  \item[4.x series (2010–2024)]
+    Various maintenance updates: nominata updates, minor bug fixes,
+    compatibility with evolving \LaTeX{} distributions.
+
+  \item[1.0 (2001)]
+    Initial release by the UFRGS TeX Users Group.
+\end{description}
+
+%==============================================================================
+\end{document}
+%==============================================================================
