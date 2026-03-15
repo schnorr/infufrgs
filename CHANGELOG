@@ -1,3 +1,47 @@
+Versão 5.0.0 - 15/mar/2026
+==========================
+Modernização maior da classe; renomeada de `iiufrgs` para `infufrgs`
+e preparada para submissão ao CTAN.
+
+Consolidação em arquivo único:
+- Todos os arquivos auxiliares (iidefs.sty, nominata.def, cic.def,
+  ecp.def, dipl.def, ppgc.def, pgmicro.def, *.babel) foram
+  incorporados em infufrgs.cls; a distribuição passa a ser um único
+  arquivo de classe auto-suficiente.
+
+Fontes:
+- Substituído o pacote `times` (obsoleto) por `newtxtext` e
+  `newtxmath` (pdfLaTeX) e por `fontspec` com TeX Gyre Termes
+  (XeLaTeX / LuaLaTeX).
+- Adicionado `iftex` para detecção robusta do motor TeX.
+
+Formatação do sumário:
+- Substituído o pacote `tocstyle` (depreciado pelo KOMA-Script) por
+  `tocloft`; títulos de capítulos em maiúsculas no sumário agora usam
+  \texorpdfstring, preservando a capitalização normal nos bookmarks
+  do PDF.
+
+Licença:
+- Licença alterada de GPL-2 para LaTeX Project Public License 1.3c
+  (LPPL 1.3c), padrão para pacotes distribuídos pelo CTAN.
+  O status de manutenção é `maintained`.
+
+Documentação (nova):
+- Adicionado documentation.tex: manual do usuário completo em LaTeX
+  (13 páginas), cobrindo todas as opções de classe, comandos,
+  ambientes, compilação, licença e histórico de versões.
+- Adicionado example.tex e example.bib: exemplo completo e
+  compilável de dissertação de mestrado do PPGC.
+- README.md revisado: corrigidas instruções de compilação e
+  atualizada a lista de arquivos distribuídos.
+- Adicionado .gitignore: exclui arquivos auxiliares do TeX (*.aux,
+  *.bbl, *.blg, *.toc, etc.) do repositório e do pacote CTAN.
+
+Compatibilidade retroativa:
+- O ambiente `englishabstract` continua aceito (com aviso de uso
+  depreciado); substituído pelo ambiente `translatedabstract`.
+- Todos os comandos e opções das versões anteriores são mantidos.
+
 Versão 4.4.0 (bab8a192) → b8beba9 - 2011-05-19 a 2025-09-11
 ============================================================
 Cobre todos os commits entre bab8a192 (2011-05-19) e b8beba9
