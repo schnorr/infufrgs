@@ -1,3 +1,141 @@
+Versão 4.4.0 (bab8a192) → b8beba9 - 2011-05-19 a 2025-09-11
+============================================================
+Cobre todos os commits entre bab8a192 (2011-05-19) e b8beba9
+(2025-09-11), organizados por ano, do mais recente ao mais antigo.
+
+2025
+----
+- Nominata: atualização geral dos nomes das autoridades da Reitoria,
+  Instituto de Informática, departamentos e coordenações de curso
+  (set/2025) [929629b]
+
+2024
+----
+- Adicionado suporte ao PPG Letras (Programa de Pós-Graduação em
+  Letras da UFRGS): nova opção de classe `ppgl`, com definições de
+  nominata e titulação [9e9eacb, 6117880]
+- Keywords: a linha "Palavras-chave:" / "Keywords:" é omitida
+  automaticamente quando nenhuma keyword foi definida [20ed8cc]
+- Corrigidos caracteres especiais na nominata [4eaf267]
+- Nominata: atualização do reitor, vice-reitor, pró-reitoras de PG
+  e G, chefes dos departamentos INA e INT, coordenador da COMGRAD
+  ECP, coordenadores do PROPG, PPGC e PGMICRO [0fdb13d..70bd988,
+  ad4b655, 7364aa0]
+
+2023
+----
+- Atualizado estilo bibliográfico (abntex2-alf.bst) para conformidade
+  com a nova NBR 10520:2023 [f65ae00]
+
+2022
+----
+- Adicionado novo ambiente `translatedabstract` para o resumo na
+  segunda língua; permite definir título traduzido (\translatedtitle)
+  e palavras-chave traduzidas (\translatedkeyword) de forma unificada
+  [87d46e0]
+- Depreciado o ambiente `englishabstract`; mantido por compatibilidade
+  retroativa com aviso de uso [8ced9bf]
+- Tratados os casos em que título traduzido ou palavras-chave
+  traduzidas não estão definidos [3c2769e]
+- Refatorada a junção de palavras-chave na geração do abstract [bce072e]
+- Corrigido \hbox underfull no ambiente abstract [a230d19]
+- Corrigida definição do co-orientador (\coadvisor) [0fb8fc0]
+- Adicionada opção `bibjustif` ao carregamento de abntex2cite
+  (referências justificadas) [1072499]
+- Nominata: atualização do bibliotecário-chefe e coordenador do
+  Curso de Ciência da Computação [4ce2ff5, e21df60]
+
+2021
+----
+- Removido o pacote `fixltx2e` (obsoleto no LaTeX2e moderno) [09d02cd]
+- Exemplo PPGC: adicionada seção de "Resumo Expandido" [40ff38b]
+- Nominata: atualização do coordenador do PPGC e da COMGRAD CIC
+  [97b1fc6, e4ff51a]
+
+2020
+----
+- Pacote `tocstyle` (marcado obsoleto pelo KOMA-Script) incluído
+  localmente para evitar quebra em instalações modernas [a81cf31]
+- Corrigida formatação das legendas (captions) para o novo padrão
+  ABNT [b98d6a0]
+- Nominata: atualização do reitor, vice-reitora e pró-reitora
+  [dfdb513, aab80a6, 250c1ec]
+
+2019
+----
+- Nominata: correção e atualização de nomes do PPGC e da reitoria
+  [321de49, 08c14fc, 64063d7]
+
+2017–2018
+---------
+- Nominata: atualização de vice-decano, coordenadores de CIC, ECP,
+  PPGC, PGMICRO e chefes de INT/INA/Reitoria [vários commits]
+
+2016
+----
+- Nominata: atualização do nome da diretora do Instituto de
+  Informática e de outros cargos [6fd6b35, fa7e6cc]
+
+2015
+----
+- Adicionada a opção de classe `noabntcite`: impede o carregamento
+  automático do abntex2cite (útil quando se usa outro pacote de
+  citações) [a1811ae]
+- Adicionado suporte ao programa de dupla-titulação UNIBRAL
+  (UFRGS + TU Berlin): nova opção `unibral` com comandos
+  \advisorDE, \coadvisorDE e ambiente \extendedsummary [9419d2d]
+- Adicionado pacote `xcolor` ao carregamento padrão da classe [e6cee90]
+- Uso do pacote `geometry` para definição de margens (substitui
+  cálculo manual); espaçamento entre parágrafos definido como zero
+  [93b4af4]
+- Legendas de figuras e tabelas posicionadas sempre acima dos floats,
+  conforme as normas do INF [a0260d5]
+- Pacote abntex2cite movido para dentro da classe (carregado
+  automaticamente) [ad6a52b]
+- Corrigido tamanho de fonte no ambiente `quote` [d818bfd]
+- Corrigidos problemas com apêndices (\appendix) e \chapter* dentro
+  de apêndices [5b5e1e6, b35a2ec, d86b7ec, 26be331]
+- Corrigidos espaçamentos antes/após capítulos, seções, na folha de
+  rosto e na nominata [25f0eaf, 5e01fb2, eebeaca]
+- Suporte a XeTeX melhorado: correção na busca de fontes [35dcf33]
+- Nominata: atualização de coordenadores da ECP e CIC [8f3b8cf]
+
+2014
+----
+- Reestruturação principal: criados arquivos de definição separados
+  por curso (cic.def, ecp.def, dipl.def) e por programa de
+  pós-graduação; nominata movida para nominata.def [db5b3d7, aacb955,
+  1bf44f5, f65c163]
+- Adicionada opção `nominatalocal`: lê dados da nominata a partir do
+  arquivo nominatalocal.def (repositórios institucionais) [dc4d540]
+- Adicionado alias `tc` para a opção `dipl` (Trabalho de Conclusão)
+  [24f086d]
+- Suporte inicial a XeLaTeX: usa TeX Gyre Termes como fonte principal
+  (substitui Adobe Times) [e5f4ee4, e097e86]
+- Substituído natbib por abntex2 para citações no padrão ABNT [10fe723]
+- Adicionado suporte a hyperref: âncoras corretas em capítulos e
+  apêndices; autor e título inseridos nos metadados PDF [601370f,
+  7619b37, f587d07]
+- Codificação T1 movida para dentro da classe [dc3b988]
+- Corrigidas margens, tamanho de capítulos/seções e espaçamento de
+  linha (1,5) [e7fbdb9]
+- Corrigido TOC: negrito, pontos de guia, subsubseções e espaçamento
+  [113ba27, 8e58a7e, af05978, 2b447c4, a6432ab]
+- Adicionado \samepagechapter (capítulo na mesma página) [2565803]
+- Corrigido: nominata agora aparece nos TCs [e8c743e]
+- `tc` passa a se referir ao Trabalho de Conclusão de graduação
+  (não mais ao de mestrado) [570b5b2]
+- Atualizados ambientes agradecimentos, enumerate, itemize e
+  description [5ad26e7, 2624f22]
+- Palavras-chave separadas por ponto no abstract [e17d25c]
+- Removida dependência do pacote `subfig` [f3d5ef8]
+- README convertido para Markdown (README.md) [80c609e]
+
+2011
+----
+- Todos os arquivos convertidos para codificação UTF-8 [693d1cd]
+
+============================================================
 Versão 4.3.1 - 14/jan/2005
 ==========================
 - uso de macros babel nos nomes da area de Formais (thanks Felipe Damasio)
