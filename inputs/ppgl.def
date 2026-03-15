@@ -1,6 +1,0 @@
-\ProvidesFile{ppgl.def}[2024/11/06 Definições para o PPG Letras (UFRGS) https://www.ufrgs.br/ppgletras/]
-\providecommand{\nominataCoord}{Prof\textsuperscript{a}.~Elaine Barros Indrusiak}
-\providecommand{\nominataCoordname}{Coordenadora do PPG Letras}
-\providecommand{\nomeDoProgramaPG}{PPG Letras}
-\providecommand{\titulacaoEm}{Letras}
-\course{Programa de P{\'o}s-Gradua{\c{c}}{\~a}o em Letras}
