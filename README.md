@@ -106,17 +106,7 @@ pdflatex example
 
 ## Changes from previous versions
 
-Version 5.0.0 (2025-03-15) is a major modernisation:
-
-* **Single file**: all auxiliary files (`iidefs.sty`, `*.def`, `*.babel`)
-  have been consolidated into `infufrgs.cls`.
-* **Replaced `tocstyle`** (deprecated alpha package) with `tocloft`.
-* **Replaced `times`** (obsolete font package) with `newtxtext`/`newtxmath`
-  for pdfLaTeX and `fontspec`/TeX Gyre Termes for XeLaTeX/LuaLaTeX.
-* **Added `iftex`** for robust TeX engine detection.
-* **License changed** from GPL-2 to LPPL 1.3c (standard for CTAN packages).
-* TOC uppercase chapter titles are now applied cleanly via
-  `\texorpdfstring`, so PDF bookmarks keep the normal-case title.
+* See the CHANGELOG file.
 
 ## Maintainer
 
