@@ -5,7 +5,7 @@
 % All auxiliary files (iidefs.sty, *.def, *.babel) have been inlined so
 % that this single file is sufficient to compile documents.
 %
-% Copyright (C) 2001-2025 UFRGS TeX Users Group
+% Copyright (C) 2001-2026 UFRGS TeX Users Group
 %
 % This work may be distributed and/or modified under the conditions of
 % the LaTeX Project Public License, either version 1.3c of this license
@@ -28,7 +28,7 @@
 %==============================================================================
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{infufrgs}%
-  [2025/03/15 v5.0.0 Document formatting for INF/UFRGS]
+  [2026-03-15 v5.0.0 Document formatting for INF/UFRGS]
 
 %==============================================================================
 % Option declarations

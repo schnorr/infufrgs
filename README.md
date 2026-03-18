@@ -118,6 +118,10 @@ Version 5.0.0 (2025-03-15) is a major modernisation:
 * TOC uppercase chapter titles are now applied cleanly via
   `\texorpdfstring`, so PDF bookmarks keep the normal-case title.
 
+## Maintainer
+
+* Lucas Mello Schnorr (@schnorr)
+
 ## License
 
 This work may be distributed and/or modified under the conditions of the
