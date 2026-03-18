@@ -23,7 +23,7 @@ all: package
 pdfs: $(PDFS)
 
 package: pdfs
-	tar -czf "$(ARCHIVE)" $(ARCHIVE_CONTENTS)
+	tar -czf "$(ARCHIVE)" --transform "s,^,$(PACKAGE)-$(VERSION)/," -- $(ARCHIVE_CONTENTS)
 
 $(DOC_PDF): $(DOC_SOURCE) infufrgs.cls
 	pdflatex -interaction=nonstopmode -halt-on-error -jobname="$(basename $@)" $(DOC_SOURCE)
