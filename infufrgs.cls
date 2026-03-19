@@ -28,7 +28,7 @@
 %==============================================================================
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{infufrgs}%
-  [2026-03-15 v5.0.0 Document formatting for INF/UFRGS]
+  [2026-03-18 v5.0.1 Document formatting for INF/UFRGS]
 
 %==============================================================================
 % Option declarations
