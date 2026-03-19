@@ -884,27 +884,28 @@
 }
 
 %==============================================================================
-% Table of contents formatting
-% Replaces the deprecated tocstyle package with tocloft-based settings.
-% - Chapter entries: bold + uppercase (uppercase applied at \addcontentsline)
-% - Section entries: bold
-% - LOF/LOT entries prefixed with figure/table name
+% Table of contents / list of figures / list of tables formatting
+% (tocloft replaces the deprecated tocstyle package)
 %==============================================================================
 
-% No indentation (flat style, equivalent to tocfullflat)
+% \RequirePackage[tocindentauto,tocfullflat]{tocstyle}
+% -> zero indentation at every level (tocfullflat)
 \setlength{\cftchapindent}{0pt}
 \setlength{\cftsecindent}{0pt}
 \setlength{\cftsubsecindent}{0pt}
 \setlength{\cftsubsubsecindent}{0pt}
 \setlength{\cftparaindent}{0pt}
 
-% Chapter: bold font + bold page number, no dot leader (like section headings)
+% \settocfeature[toc][0]{entryhook}{\bfseries\uppercase}
+% -> chapter entries in bold; uppercase is applied at \addcontentsline (see \chapter)
+%    dot leaders same as other levels (\cftchapdotsep defaults to \cftnodots=10000,
+%    i.e. no dots; override it to match section entries)
 \renewcommand{\cftchapfont}{\bfseries}
 \renewcommand{\cftchappagefont}{\bfseries}
-\renewcommand{\cftchapleader}{\cftdotfill{\cftnodots}}
-\renewcommand{\cftnodots}{0}          % no dots for chapters (style preference)
+\renewcommand{\cftchapdotsep}{\cftdotsep}
 
-% Section: bold font + bold page number
+% \settocfeature[toc][1]{entryhook}{\bfseries}
+% -> section entries in bold
 \renewcommand{\cftsecfont}{\bfseries}
 \renewcommand{\cftsecpagefont}{\bfseries}
 
@@ -914,46 +915,56 @@
 \setlength{\cftsubsecnumwidth}{3.3em}
 \setlength{\cftsubsubsecnumwidth}{4.1em}
 
-% LOF: prefix each entry with the figure name (e.g. "Figura 1.1 ...")
-\renewcommand{\cftfigpresnum}{\figurename\hspace{0.2em}}
-\AtBeginDocument{\settowidth{\cftfignumwidth}{\cftfigpresnum 99.99\quad}}
+% \settocstylefeature{pagenumberbox}{\pnbox}
+% -> \pnbox sized the page-number box to the bold width of its content.
+%    tocloft equivalent: widen \@pnumwidth to the bold width of a 3-digit number.
+\newlength{\dottedspace}
+\AtBeginDocument{%
+  \settowidth{\dottedspace}{\bfseries 999}%
+  \ifdim\dottedspace>\@pnumwidth \setlength{\@pnumwidth}{\dottedspace}\fi}
 
-% LOT: prefix each entry with the table name (e.g. "Tabela 1.1 ...")
+% \settocfeature[lof][1]{entryhook}{\figurename\hspace{0.2em}}
+% -> prefix LOF entries with the figure name; no indentation; tight number field
+\renewcommand{\cftfigpresnum}{\figurename\hspace{0.2em}}
+\setlength{\cftfigindent}{0pt}
+\AtBeginDocument{\settowidth{\cftfignumwidth}{\cftfigpresnum 99.99\enspace}}
+
+% \settocfeature[lot][1]{entryhook}{\tablename\hspace{0.2em}}
+% -> prefix LOT entries with the table name; no indentation; tight number field
 \renewcommand{\cfttabpresnum}{\tablename\hspace{0.2em}}
-\AtBeginDocument{\settowidth{\cfttabnumwidth}{\cfttabpresnum 99.99\quad}}
+\setlength{\cfttabindent}{0pt}
+\AtBeginDocument{\settowidth{\cfttabnumwidth}{\cfttabpresnum 99.99\enspace}}
 
 % Suppress tocloft's default spacing between chapters in TOC
 \renewcommand{\cftbeforechapskip}{1.0em \@plus\p@}
-
-\renewcommand{\@dotsep}{0}
-
-\newlength{\dottedspace}
 
 \setcounter{tocdepth}{3}
 
 \newif\if@aftertoc
 \@aftertocfalse
 
-\renewcommand{\tableofcontents}{%
-  \chapter*{\contentsname}%
-  \vspace{0.4\baselineskip}%
-  \setstretch{0.95}%
-  \@starttoc{toc}\@aftertoctrue
-  \setlinespacing
-}
-
-\renewcommand{\listoffigures}{%
-  \chapter*{\listfigurename}%
-  \setstretch{0.95}%
-  \@starttoc{lof}%
-  \setlinespacing
-}
-
-\renewcommand{\listoftables}{%
-  \chapter*{\listtablename}%
-  \setstretch{0.95}%
-  \@starttoc{lot}%
-  \setlinespacing
+% tocloft overrides \tableofcontents, \listoffigures, \listoftables via \AtBeginDocument.
+% We use our own \AtBeginDocument hook (registered later) to restore our definitions.
+\AtBeginDocument{%
+  \renewcommand{\tableofcontents}{%
+    \chapter*{\contentsname}%
+    \vspace{0.4\baselineskip}%
+    \singlespacing%
+    \@starttoc{toc}\@aftertoctrue
+    \setlinespacing
+  }%
+  \renewcommand{\listoffigures}{%
+    \chapter*{\listfigurename}%
+    \singlespacing%
+    \@starttoc{lof}%
+    \setlinespacing
+  }%
+  \renewcommand{\listoftables}{%
+    \chapter*{\listtablename}%
+    \singlespacing%
+    \@starttoc{lot}%
+    \setlinespacing
+  }%
 }
 
 %==============================================================================
