@@ -1,6 +1,6 @@
 PACKAGE := infufrgs
 VERSION := $(shell sed -n '1{s/^Version[[:space:]]*//;p;q;}' CHANGELOG)
-ARCHIVE := $(PACKAGE)-$(VERSION).tgz
+ARCHIVE := $(PACKAGE).tgz
 
 DOC_SOURCE := infufrgs-doc.tex
 DOC_PDF := infufrgs-doc.pdf
@@ -13,7 +13,7 @@ EXAMPLE_AUX := infufrgs-example.aux infufrgs-example.bbl infufrgs-example.blg in
 	infufrgs-example.lot infufrgs-example.out infufrgs-example.toc
 
 PDFS := $(DOC_PDF) $(EXAMPLE_PDF)
-ARCHIVE_CONTENTS := $(wildcard *.tex) $(wildcard *.bib) CHANGELOG COPYING \
+ARCHIVE_CONTENTS := $(wildcard *.tex) $(wildcard *.bib) README.md CHANGELOG COPYING \
 	infufrgs.cls $(PDFS)
 
 .PHONY: all pdfs package clean
@@ -23,7 +23,7 @@ all: package
 pdfs: $(PDFS)
 
 package: pdfs
-	tar -czf "$(ARCHIVE)" --transform "s,^,$(PACKAGE)-$(VERSION)/," -- $(ARCHIVE_CONTENTS)
+	tar -czf "$(ARCHIVE)" --transform "s,^,$(PACKAGE)/," -- $(ARCHIVE_CONTENTS)
 
 $(DOC_PDF): $(DOC_SOURCE) infufrgs.cls
 	pdflatex -interaction=nonstopmode -halt-on-error -jobname="$(basename $@)" $(DOC_SOURCE)
