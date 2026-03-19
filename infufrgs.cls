@@ -935,8 +935,12 @@
 \setlength{\cfttabindent}{0pt}
 \AtBeginDocument{\settowidth{\cfttabnumwidth}{\cfttabpresnum 99.99\enspace}}
 
-% Suppress tocloft's default spacing between chapters in TOC
-\renewcommand{\cftbeforechapskip}{1.0em \@plus\p@}
+% Tight dot leaders in all lists: \@dotsep=0 equivalent for tocloft
+% (tocloft uses \cftdotfill{\cftdotsep} where arg is mu-units on each side of the dot)
+\renewcommand{\cftdotsep}{0}
+
+% Zero extra space before chapter entries in TOC (single spacing throughout)
+\setlength{\cftbeforechapskip}{0pt}
 
 \setcounter{tocdepth}{3}
 
