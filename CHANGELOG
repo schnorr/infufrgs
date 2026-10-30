@@ -1,6 +1,7 @@
 Version 5.0.1 2026-03-18
 ========================
 
+- Suporte ao moderno sistema biblatex + biber através da opção de classe `biblatex` (estilo ABNT), mantendo compatibilidade retroativa com `abntex2cite` e comandos estilo natbib.
 - Adjustements necessary for CTAN submission.
 
 Versão 5.0.0 2026-03-15

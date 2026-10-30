@@ -13,7 +13,16 @@
 % Select program (ppgc, pgmicro, cic, ecp, ppgl) and document type
 % (diss/mestrado, tese/doutorado, tc/dipl, ti, rp, espec, pep, prop-tese,
 %  plano-doutorado).  Add `english' for English-language documents.
+%
+% Bibliography management:
+%   * Default / abntex2cite: uses BibTeX with abntex2-alf.bst
+%   * Option `biblatex': uses modern biblatex + biber with style=abnt (recommended)
+%     \documentclass[ppgc,diss,english,biblatex]{infufrgs}
+%     \addbibresource{infufrgs-example.bib}
 \documentclass[ppgc,diss,english]{infufrgs}
+
+% When using biblatex, specify the bibliography resource in the preamble:
+%\addbibresource{infufrgs-example.bib}
 
 % If using pdfLaTeX, declare the input encoding (UTF-8 is recommended).
 % Not needed with XeLaTeX or LuaLaTeX.
@@ -217,6 +226,10 @@ Anexos contêm material de terceiros reproduzido para documentação.
 %------------------------------------------------------------------------------
 % References (ABNT author-date style)
 %------------------------------------------------------------------------------
+% When using biblatex:
+%\printbibliography
+
+% When using default abntex2cite (BibTeX):
 \bibliographystyle{abntex2-alf}
 \bibliography{infufrgs-example}
 

@@ -254,7 +254,9 @@ Exactly one document-type option should be given.
   \midrule
   \opt{english}       & Typeset the document in English (headings, captions, etc.) \\
   \opt{oneside}       & Single-sided layout (default is two-sided) \\
-  \opt{noabntcite}    & Do not automatically load \pkg{abntex2cite};
+  \opt{biblatex}      & Use \pkg{biblatex} with \pkg{biblatex-abnt} and \textsf{biber} \\
+  \opt{abntex2cite}   & Use legacy \pkg{abntex2cite} with \textsf{BibTeX} (default if no bibliography option is specified) \\
+  \opt{noabntcite}    & Do not automatically load any citation package;
                         load it yourself or use a different citation package \\
   \opt{nominatalocal} & Read nominata data from \file{nominatalocal.def}
                         instead of the built-in defaults
@@ -575,8 +577,24 @@ third-party material reproduced for documentation.
 
 \subsection{Bibliography}
 
-The class automatically loads \pkg{abntex2cite} (unless the
-\opt{noabntcite} option is given).  Use one of the ABNT styles:
+The class supports two bibliography management approaches:
+
+\subsubsection{Modern approach (\opt{biblatex} option, recommended)}
+When the \opt{biblatex} option is passed to \cls{infufrgs}, the class loads \pkg{biblatex} with the \pkg{biblatex-abnt} style (author-date, \opt{style=abnt}), processed by \textsf{biber}:
+
+\begin{latex}
+% In the preamble:
+\documentclass[ppgc,diss,biblatex]{infufrgs}
+\addbibresource{references.bib}
+
+% In the document body (where references should appear):
+\printbibliography
+\end{latex}
+
+Standard citation commands like \cmd{cite}, \cmd{textcite}, \cmd{parencite}, \cmd{citeonline}, and \cmd{citeyearpar} are supported out of the box.
+
+\subsubsection{Legacy approach (\opt{abntex2cite} / BibTeX, default)}
+Unless \opt{biblatex} or \opt{noabntcite} is specified, the class automatically loads \pkg{abntex2cite}. Use one of the ABNT styles with \textsf{BibTeX}:
 
 \begin{latex}
 \bibliographystyle{abntex2-alf}   % author-year citations
