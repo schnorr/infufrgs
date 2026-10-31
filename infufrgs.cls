@@ -80,8 +80,11 @@
 \DeclareOption{english}{\@englishtrue}
 
 % --- Citations ---
-\newif\if@noabntcite  \@noabntcitefalse
-\DeclareOption{noabntcite}{\@noabntcitetrue}
+\newif\if@noabntcite   \@noabntcitefalse
+\newif\if@usebiblatex  \@usebiblatexfalse
+\DeclareOption{noabntcite}{\@noabntcitetrue\@usebiblatexfalse}
+\DeclareOption{abntex2cite}{\@usebiblatexfalse\@noabntcitefalse}
+\DeclareOption{biblatex}{\@usebiblatextrue\@noabntcitefalse}
 
 % --- Nominata ---
 \newif\if@nominatalocal  \@nominatalocalfalse
@@ -148,7 +151,22 @@
 
 % ABNT citations (optional, can be loaded by user with \RequirePackage directly)
 \if@noabntcite\else
-  \RequirePackage[alf,abnt-emphasize=bf,bibjustif]{abntex2cite}
+  \if@usebiblatex
+    \RequirePackage{csquotes}
+    \RequirePackage[
+      backend=biber,
+      style=abnt,
+      natbib=true,
+      justify=true
+    ]{biblatex}
+    % Avoid conflicts if user packages or legacy templates mention abntex2cite
+    \@namedef{ver@abntex2cite.sty}{9999/12/31}
+    \@namedef{opt@abntex2cite.sty}{alf,num,abnt-emphasize=bf,bibjustif}
+    \newcommand{\citeonline}{\textcite}
+    \newcommand{\citeauthoronline}{\citeauthor}
+  \else
+    \RequirePackage[alf,abnt-emphasize=bf,bibjustif]{abntex2cite}
+  \fi
 \fi
 
 % Geometry
